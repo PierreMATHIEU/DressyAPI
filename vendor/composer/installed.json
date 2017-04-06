@@ -302,49 +302,51 @@
         ]
     },
     {
-        "name": "heroku/heroku-buildpack-php",
-        "version": "v121",
-        "version_normalized": "121.0.0.0",
+        "name": "slim/pdo",
+        "version": "1.10.0",
+        "version_normalized": "1.10.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/heroku/heroku-buildpack-php.git",
-            "reference": "727aa850a02a7af94c9225237464be8e8c8ff6db"
+            "url": "https://github.com/FaaPz/Slim-PDO.git",
+            "reference": "9424e6d5f3737a71722ab1f868c1d3090b63287d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/727aa850a02a7af94c9225237464be8e8c8ff6db",
-            "reference": "727aa850a02a7af94c9225237464be8e8c8ff6db",
+            "url": "https://api.github.com/repos/FaaPz/Slim-PDO/zipball/9424e6d5f3737a71722ab1f868c1d3090b63287d",
+            "reference": "9424e6d5f3737a71722ab1f868c1d3090b63287d",
             "shasum": ""
         },
-        "time": "2017-03-27T23:33:27+00:00",
-        "bin": [
-            "bin/heroku-hhvm-apache2",
-            "bin/heroku-hhvm-nginx",
-            "bin/heroku-php-apache2",
-            "bin/heroku-php-nginx"
-        ],
+        "require": {
+            "ext-pdo": "*",
+            "php": ">=5.3.0"
+        },
+        "time": "2016-08-14T11:42:49+00:00",
         "type": "library",
         "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Slim\\PDO\\": "src/PDO/"
+            }
+        },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
         ],
         "authors": [
             {
-                "name": "David Zuelke",
-                "email": "dz@heroku.com"
+                "name": "Fabian de Laender",
+                "email": "fabian@faapz.nl",
+                "homepage": "http://faapz.nl",
+                "role": "Developer"
             }
         ],
-        "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP/HHVM and Apache2/Nginx as on Heroku",
-        "homepage": "https://github.com/heroku/heroku-buildpack-php",
+        "description": "PDO database library for Slim Framework",
+        "homepage": "https://github.com/FaaPz/Slim-PDO",
         "keywords": [
-            "apache",
-            "apache2",
-            "foreman",
-            "heroku",
-            "hhvm",
-            "nginx",
-            "php"
+            "database",
+            "framework",
+            "pdo",
+            "slim"
         ]
     }
 ]
