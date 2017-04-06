@@ -45,7 +45,7 @@ class DbHandler {
             $insertStatement = $slimPdo->insert(array('user_last_name', 'user_first_name', 'user_mail','user_password','user_api_key','user_login','user_country'))
                                        ->into('users')
                                        ->values(array($name,'popo',$email, $password_hash, $api_key,'aa','aa'));
-            $insertId = $insertStatement->execute(false);
+            $result = $insertStatement->execute();
             $insertStatement->close();
 
             // Check for successful insertion
