@@ -130,7 +130,7 @@ $app->post('/register', function() use ($app) {
 
             // validating email address
             validateEmail($email);
-
+            
             $db = new DbHandler();
             $res = $db->createUser($name, $email, $password);
 
