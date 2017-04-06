@@ -14,7 +14,7 @@ class DbConnect {
      * Etablit la connection avec la BDD
      */
     function connect() {
-        //include_once dirname(__FILE__) . '/Config.php';
+        include_once dirname(__FILE__) . '/Config.php';
         $dbtype="pgsql";
         $dbhost="ec2-54-243-124-240.compute-1.amazonaws.com";
         $dbuser="mfpyjwdlehhhvo";
@@ -27,12 +27,12 @@ class DbConnect {
 
         //$pdo = new \Slim\PDO\Database($dsn, $usr, $pwd);
 
-        $bdd = new PDO ("pgsql:host=".$dbhost.";dbname=".$dbname."", "".$dbuser."", "".$dbpass."") or die(print_r($bdd->errorInfo()));
-        $bdd->exec("SET NAMES utf8");
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+        $this->conn = new PDO ("pgsql:host=".$dbhost.";dbname=".$dbname."", "".$dbuser."", "".$dbpass."") or die(print_r($bdd->errorInfo()));
+        $this->conn->exec("SET NAMES utf8");
+        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
         //$this->conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-        return $bdd;
+        return $this->conn;
     }
 
 }
