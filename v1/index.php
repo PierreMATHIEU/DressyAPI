@@ -133,7 +133,7 @@ $app->post('/register', function() use ($app) {
 
             $db = new DbHandler();
           //  echoRespnse(200, $db);
-            //$res = $db->createUser($name, $email, $password);
+            $res = $db->createUser($name, $email, $password);
 
             if ($res == USER_CREATED_SUCCESSFULLY) {
                 $response["error"] = false;
