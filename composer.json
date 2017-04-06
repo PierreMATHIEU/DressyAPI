@@ -1,6 +1,5 @@
 {
     "require": {
-        "slim/slim": "^3.0",
-        "heroku/heroku-buildpack-php": "^121.0"
+        "slim/slim": "^3.0"
     }
 }
