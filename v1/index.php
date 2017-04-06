@@ -135,15 +135,15 @@ $app->post('/register', function() use ($app) {
           //  echoRespnse(200, $db);
             $res = $db->createUser($name, $email, $password);
 
-            if ($res == USER_CREATED_SUCCESSFULLY) {
+            if ($res == 1) {
                 $response["error"] = false;
                 $response["message"] = "You are successfully registered";
                 echoRespnse(201, $response);
-            } else if ($res == USER_CREATE_FAILED) {
+            } else if ($res == 2) {
                 $response["error"] = true;
                 $response["message"] = "Oops! An error occurred while registereing";
                 echoRespnse(200, $response);
-            } else if ($res == USER_ALREADY_EXISTED) {
+            } else if ($res == 3) {
                 $response["error"] = true;
                 $response["message"] = "Sorry, this email already existed";
                 echoRespnse(200, $response);

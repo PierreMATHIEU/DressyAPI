@@ -37,7 +37,7 @@ class DbHandler {
             $api_key = $this->generateApiKey();
 
             // insert query
-             $stmt = $this->conn->prepare("INSERT INTO user (user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(?, 'popo', ?, ?, ?, 'aa','aa')");
+             $stmt = $this->conn->prepare("INSERT INTO users (user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(?, 'popo', ?, ?, ?, 'aa','aa')");
              $stmt->bind_param("ssss", $name, $email, $password_hash, $api_key);
              $result = $stmt->execute();
 
@@ -51,14 +51,14 @@ class DbHandler {
             // Check for successful insertion
             if ($result) {
                 // User successfully inserted
-                return USER_CREATED_SUCCESSFULLY;
+                return 1;
             } else {
                 // Failed to create user
-                return USER_CREATE_FAILED;
+                return 2;
             }
         } else {
             // User with same email already existed in the db
-            return USER_ALREADY_EXISTED;
+            return 3;
         }
 
         return $response;
