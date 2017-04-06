@@ -130,9 +130,10 @@ $app->post('/register', function() use ($app) {
 
             // validating email address
             validateEmail($email);
-            
+
             $db = new DbHandler();
-            $res = $db->createUser($name, $email, $password);
+          //  echoRespnse(200, $db);
+            //$res = $db->createUser($name, $email, $password);
 
             if ($res == USER_CREATED_SUCCESSFULLY) {
                 $response["error"] = false;

@@ -31,7 +31,6 @@ class DbConnect {
         $db->exec("SET NAMES utf8");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
         //$this->conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
         return $db;
     }
 

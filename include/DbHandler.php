@@ -37,16 +37,16 @@ class DbHandler {
             $api_key = $this->generateApiKey();
 
             // insert query
-            // $stmt = $this->conn->prepare("INSERT INTO user (user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(?, 'popo', ?, ?, ?, 'aa','aa')");
-            // $stmt->bind_param("ssss", $name, $email, $password_hash, $api_key);
-            // $result = $stmt->execute();
+             $stmt = $this->conn->prepare("INSERT INTO user (user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(?, 'popo', ?, ?, ?, 'aa','aa')");
+             $stmt->bind_param("ssss", $name, $email, $password_hash, $api_key);
+             $result = $stmt->execute();
 
             // INSERT INTO users ( id , usr , pwd ) VALUES ( ? , ? , ? )
-            $insertStatement = $slimPdo->insert(array('user_last_name', 'user_first_name', 'user_mail','user_password','user_api_key','user_login','user_country'))
-                                       ->into('users')
-                                       ->values(array($name,'popo',$email, $password_hash, $api_key,'aa','aa'));
-            $result = $insertStatement->execute();
-            $insertStatement->close();
+            // $insertStatement = $slimPdo->insert(array('user_last_name', 'user_first_name', 'user_mail','user_password','user_api_key','user_login','user_country'))
+            //                            ->into('users')
+            //                            ->values(array($name,'popo',$email, $password_hash, $api_key,'aa','aa'));
+            // $result = $insertStatement->execute();
+            $stmt->close();
 
             // Check for successful insertion
             if ($result) {
