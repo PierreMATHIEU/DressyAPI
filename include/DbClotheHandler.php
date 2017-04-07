@@ -41,7 +41,7 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
         $db = new DbConnect();
         $this->conn = $db->getDB();
         $sth = $this->conn->prepare("SELECT * FROM clothing WHERE clothing_id = :id");
-        $sth->bindParam(':id', $id, PDO::PARAM_INT);
+        $sth->bindParam(':id', $clothingId, PDO::PARAM_INT);
         $sth->execute();
         $clothe = $sth->fetch(PDO::FETCH_OBJ);
 
