@@ -15,7 +15,7 @@ $app = new \Slim\Slim();
 $user_id = NULL;
 
 
-$app->get('/clothing', function ($id) {
+$app->get('/clothing/:id', function ($id) {
     $app = \Slim\Slim::getInstance();
 
     try
@@ -28,7 +28,7 @@ $app->get('/clothing', function ($id) {
         // $sth->execute();
         //
         // $student = $sth->fetch(PDO::FETCH_OBJ);
-        $id = $app->request()->post('id');
+        //$id = $app->request()->post('id');
         $db = new DbClotheHandler();
 
             // creating new task
