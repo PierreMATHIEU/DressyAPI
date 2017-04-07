@@ -10,7 +10,7 @@ class DbClotheHandler {
   //     $this->conn = $db->getDB();
   // }
 
-  function getDB()
+  public function getDB()
   {
     $dbtype="pgsql";
     $dbhost="ec2-54-243-124-240.compute-1.amazonaws.com";
@@ -51,8 +51,8 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
    * @param int $clothingId
    */
   public function viewClothe($clothingId) {
-    $db = getDB();
-    $sth = $db->prepare("SELECT * FROM clothing WHERE clothing_id = :id");
+        $db = getDB();
+        $sth = $db->prepare("SELECT * FROM clothing WHERE clothing_id = :id");
         $sth->bindParam(':id', $clothingId, PDO::PARAM_INT);
         $sth->execute();
         $clothe = $sth->fetch(PDO::FETCH_OBJ);
