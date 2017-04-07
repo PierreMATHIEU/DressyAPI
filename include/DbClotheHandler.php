@@ -45,10 +45,10 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
         $clothe = $sth->fetch(PDO::FETCH_OBJ);
 
         if ($sth) {
-            // User successfully inserted
+            // Success
             return $clothe;
         } else {
-            // Failed to create user
+            // Failed
             return false;
         }
       }

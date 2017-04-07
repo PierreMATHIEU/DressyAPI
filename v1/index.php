@@ -20,19 +20,8 @@ $app->get('/clothing/:id', function ($id) {
 
     try
     {
-
-        // $db = getDB();
-        // $sth = $db->prepare("SELECT * FROM clothing WHERE clothing_id = :id");
-        //
-        // $sth->bindParam(':id', $id, PDO::PARAM_INT);
-        // $sth->execute();
-        //
-        // $student = $sth->fetch(PDO::FETCH_OBJ);
-        //$id = $app->request()->post('id');
         $db = new DbClotheHandler();
-
-            // creating new task
-            $clothe_id = $db->viewClothe($id);
+        $clothe_id = $db->viewClothe($id);
         if($clothe_id) {
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
