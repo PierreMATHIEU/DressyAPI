@@ -1,15 +1,15 @@
 <?php
-
+require dirname(__FILE__) . '/DbConnect.php';
 class DbClotheHandler {
 
   private $conn;
 
-  function __construct() {
-      require_once dirname(__FILE__) . '/DbConnect.php';
-      // opening db connection
-      $db = new DbConnect();
-      $this->conn = $db->connect();
-  }
+  // function __construct() {
+  //     require_once dirname(__FILE__) . '/DbConnect.php';
+  //     // opening db connection
+  //     $db = new DbConnect();
+  //     $this->conn = $db->getDB();
+  // }
 
   /**
  * Create clothe
@@ -32,4 +32,27 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
           return CLOTHE_CREATE_FAILED;
       }
     }
+
+    /**
+   * View clothing
+   * @param int $clothingId
+   */
+  public function viewClothe($clothingId) {
+        $db = new DbConnect();
+        $this->conn = $db->getDB();
+        $sth = $this->conn->prepare("SELECT * FROM clothing WHERE clothing_id = :id");
+        $sth->bindParam(':id', $id, PDO::PARAM_INT);
+        $sth->execute();
+        $clothe = $sth->fetch(PDO::FETCH_OBJ);
+
+        if ($sth) {
+            // User successfully inserted
+            return $clothe;
+        } else {
+            // Failed to create user
+            return false;
+        }
+      }
+
+
 }
