@@ -15,6 +15,69 @@ $app = new \Slim\Slim();
 $user_id = NULL;
 
 
+function getDB()
+{
+  $dbtype="pgsql";
+  $dbhost="ec2-54-243-124-240.compute-1.amazonaws.com";
+  $dbuser="mfpyjwdlehhhvo";
+  $dbpass="008e494e873a65a1b1c70d46ec85074032c08ae7eaa7a53e78ae4c2bb195caa8";
+  $dbname="dccpro45ju5lof";
+
+  $dbConnection = new PDO ("pgsql:host=".$dbhost.";dbname=".$dbname."", "".$dbuser."", "".$dbpass."") or die(print_r($bdd->errorInfo()));
+  $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    return $dbConnection;
+}
+
+$app->get('/clothing/:id', function ($id) {
+    $app = \Slim\Slim::getInstance();
+
+    try
+    {
+        $db = getDB();
+        $sth = $db->prepare("SELECT * FROM clothing WHERE clothing_id = :id");
+
+        $sth->bindParam(':id', $id, PDO::PARAM_INT);
+        $sth->execute();
+
+        $student = $sth->fetch(PDO::FETCH_OBJ);
+
+        if($student) {
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($student);
+            $db = null;
+        } else {
+            throw new PDOException('No records found.');
+        }
+
+    } catch(PDOException $e) {
+        $app->response()->setStatus(404);
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Authentification avec l'API_KEY
  */
