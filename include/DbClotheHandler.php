@@ -1,5 +1,4 @@
 <?php
-require dirname(__FILE__) . '/DbConnect.php';
 class DbClotheHandler {
 
   private $conn;
@@ -10,6 +9,20 @@ class DbClotheHandler {
   //     $db = new DbConnect();
   //     $this->conn = $db->getDB();
   // }
+
+  function getDB()
+  {
+    $dbtype="pgsql";
+    $dbhost="ec2-54-243-124-240.compute-1.amazonaws.com";
+    $dbuser="mfpyjwdlehhhvo";
+    $dbpass="008e494e873a65a1b1c70d46ec85074032c08ae7eaa7a53e78ae4c2bb195caa8";
+    $dbname="dccpro45ju5lof";
+
+    $dbConnection = new PDO ("pgsql:host=".$dbhost.";dbname=".$dbname."", "".$dbuser."", "".$dbpass."") or die(print_r($bdd->errorInfo()));
+    $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+      return $dbConnection;
+  }
 
   /**
  * Create clothe
@@ -38,9 +51,8 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
    * @param int $clothingId
    */
   public function viewClothe($clothingId) {
-        $db = new DbConnect();
-        $this->conn = $db->getDB();
-        $sth = $this->conn->prepare("SELECT * FROM clothing WHERE clothing_id = :id");
+    $db = getDB();
+    $sth = $db->prepare("SELECT * FROM clothing WHERE clothing_id = :id");
         $sth->bindParam(':id', $clothingId, PDO::PARAM_INT);
         $sth->execute();
         $clothe = $sth->fetch(PDO::FETCH_OBJ);
