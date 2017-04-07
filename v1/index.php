@@ -32,7 +32,7 @@ $app->get('/clothing/:id', function ($id) {
         $db = new DbClotheHandler();
 
             // creating new task
-            $clothe_id = $db->viewClothe($id);
+            $clothe_id = $db->viewClothe(1);
         if($clothe_id) {
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');

@@ -38,6 +38,7 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
    * @param int $clothingId
    */
   public function viewClothe($clothingId) {
+
         $sth = $this->conn->prepare("SELECT * FROM clothing WHERE clothing_id = :id");
         $sth->bindParam(':id', $clothingId, PDO::PARAM_INT);
         $sth->execute();
