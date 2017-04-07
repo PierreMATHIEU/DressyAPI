@@ -15,7 +15,7 @@ $app = new \Slim\Slim();
 $user_id = NULL;
 
 
-$app->get('/clothing/:id', function ($id) {
+$app->get('/clothing', function ($id) {
     $app = \Slim\Slim::getInstance();
 
     try
@@ -32,7 +32,7 @@ $app->get('/clothing/:id', function ($id) {
         $db = new DbClotheHandler();
 
             // creating new task
-            $clothe_id = $db->viewClothe(1);
+            $clothe_id = $db->viewClothe($id);
         if($clothe_id) {
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
