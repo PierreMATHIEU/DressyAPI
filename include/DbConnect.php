@@ -13,7 +13,7 @@ class DbConnect {
     /**
      * Etablit la connection avec la BDD
      */
-     function getDB()
+     public function getDB()
      {
        $dbtype="pgsql";
        $dbhost="ec2-54-243-124-240.compute-1.amazonaws.com";
