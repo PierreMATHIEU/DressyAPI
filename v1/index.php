@@ -59,7 +59,7 @@ $app->post('/register', function() use ($app) {
 
             //$allPostVars = json_decode($allPostVars,1);
 
-            $user = new User($allPostVars['user_lastName'], $allPostVars['user_fisrtName'], $allPostVars['user_mail'], $allPostVars['user_password'], $allPostVars['user_pseudo'], $allPostVars['user_country']);
+            $user = new User($allPostVars['user_pseudo'], $allPostVars['user_password'], $allPostVars['user_fisrtName'], $allPostVars['user_lastName'], $allPostVars['user_mail'], $allPostVars['user_country']);
 
             // $name = $allPostVars['user_lastName'];
             // $firstname = $allPostVars['user_fisrtName'];
