@@ -69,7 +69,7 @@ $app->post('/register', function() use ($app) {
             $db = new DbHandler();
             $res = $db->createUser($name, $firstname, $email, $password, $login, $country);
 
-            if ($res == 1) {
+            if ($res == is_string()) {
                 ////$response["message"] = "You are successfully registered";
 
                 echoRespnse(201, $res);

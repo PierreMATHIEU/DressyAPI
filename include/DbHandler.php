@@ -65,8 +65,6 @@ class DbHandler {
           }
           $stmt->close();
         }
-
-        return $response;
     }
 
     /**
