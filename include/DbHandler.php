@@ -26,8 +26,9 @@ class DbHandler {
         require_once 'PassHash.php';
         $response = array();
 
-        // First check if user already existed in db
-         if (!$this->isUserExists($email)) {
+        $sql="SELECT user_last_name FROM users WHERE user_mail='$email'";
+        $stmt = $conn->prepare($sql);
+        if ($stmt->rowcount() = 0){
             // Generating password hash
             $password_hash = PassHash::hash($password);
 
@@ -105,22 +106,7 @@ class DbHandler {
         }
     }
 
-    /**
-     * Checking for duplicate user by email address
-     * @param String $email email to check in db
-     * @return boolean
-     */
-    private function isUserExists($email) {
-        $stmt = $this->conn->prepare("SELECT user_id from users WHERE user_mail = :email");
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->execute();
-
-        $num_rows = $stmt->fetch(PDO::FETCH_OBJ);
-
-        $stmt->close();
-        return $num_rows > 0;
-    }
-
+    
     /**
      * Fetching user by email
      * @param String $email User email id
