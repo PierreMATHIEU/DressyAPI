@@ -1,12 +1,12 @@
 <?php
 
 class User{
-    private $user_pseudo;
-    private $user_password;
-    private $user_fisrtName;
-    private $user_lastName;
-    private $user_mail;
-    private $user_country;
+    public $user_pseudo;
+    public $user_password;
+    public $user_fisrtName;
+    public $user_lastName;
+    public $user_mail;
+    public $user_country;
 
     public function __construct($user_pseudo, $user_password, $user_fisrtName, $user_lastName, $user_mail, $user_country) {
       $this->user_pseudo = $user_pseudo;
