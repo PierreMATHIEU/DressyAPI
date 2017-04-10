@@ -37,9 +37,9 @@ class DbHandler {
             $api_key = $this->generateApiKey();
 
             // insert query
-             $stmt = $this->conn->prepare("INSERT INTO users (user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(?, 'popo', ?, ?, ?, 'aa','aa')");
-             $stmt->bind_param("ssss", $name, $email, $password_hash, $api_key);
-             $result = $stmt->execute();
+            //  $stmt = $this->conn->prepare("INSERT INTO users (user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(?, 'popo', ?, ?, ?, 'aa','aa')");
+            //  $stmt->bind_param("ssss", $name, $email, $password_hash, $api_key);
+            //  $result = $stmt->execute();
 
              $stmt = $this->conn->prepare("INSERT INTO users (user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(:name, :firstname, :mail, :password, :apikey, :login, :country)");
 
@@ -53,7 +53,7 @@ class DbHandler {
               $stmt->execute();
 
 
-            $stmt->close();
+              $stmt->close();
 
             // Check for successful insertion
             if ($stmt) {
