@@ -1,6 +1,6 @@
 <?php
 
-class User{
+public class User{
     public $user_pseudo;
     public $user_password;
     public $user_fisrtName;
