@@ -69,15 +69,15 @@ $app->post('/register', function() use ($app) {
             $db = new DbHandler();
             $res = $db->createUser($name, $firstname, $email, $password, $login, $country);
 
-            if ($res == is_string()) {
+            if (is_string($res)) {
                 ////$response["message"] = "You are successfully registered";
 
                 echoRespnse(201, $res);
-            } else if ($res == 2) {
+            } else if ($res === 2) {
                 $response["error"] = true;
                 $response["message"] = "Oops! An error occurred while registereing";
                 echoRespnse(200, $response);
-            } else if ($res == 3) {
+            } else if ($res === 3) {
                 $response["error"] = true;
                 $response["message"] = "Sorry, this email already existed";
                 echoRespnse(200, $response);
