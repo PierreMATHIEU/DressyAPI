@@ -27,7 +27,7 @@ class DbHandler {
         $response = array();
 
         // First check if user already existed in db
-        if (!$this->isUserExists($email)) {
+        // if (!$this->isUserExists($email)) {
             // Generating password hash
             $password_hash = PassHash::hash($password);
 
@@ -44,7 +44,7 @@ class DbHandler {
               $stmt->bindParam(':name', $name, PDO::PARAM_STR);
               $stmt->bindParam(':firstname', '$firstname', PDO::PARAM_STR);
               $stmt->bindParam(':mail', $email, PDO::PARAM_STR);
-              $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+              $stmt->bindParam(':password', $password_hash, PDO::PARAM_STR);
               $stmt->bindParam(':apikey', $api_key, PDO::PARAM_STR);
               $stmt->bindParam(':login', 'login', PDO::PARAM_STR);
               $stmt->bindParam(':country', 'country', PDO::PARAM_STR);
@@ -61,10 +61,10 @@ class DbHandler {
                 // Failed to create user
                 return 2;
             }
-        } else {
-            // User with same email already existed in the db
-            return 3;
-        }
+        // } else {
+        //     // User with same email already existed in the db
+        //     return 3;
+        // }
 
         return $response;
     }
