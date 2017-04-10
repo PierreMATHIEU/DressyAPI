@@ -49,9 +49,14 @@ $app->post('/register', function() use ($app) {
             $response = array();
 
             // reading post params
-            $allPostVars = $app->request->post();
-            var_dump($allPostVars);
-            $allPostVars = json_decode($allPostVars,1);
+            //$allPostVars = $app->request->post();
+
+            $content = trim(file_get_contents("php://input"));
+            var_dump($content);
+          //Attempt to decode the incoming RAW post data from JSON.
+            $allPostVars = json_decode($content, true);
+
+            //$allPostVars = json_decode($allPostVars,1);
 
             $name = $allPostVars['user_lastName'];
             $firstname = $allPostVars['user_fisrtName'];
