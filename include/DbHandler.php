@@ -118,9 +118,11 @@ class DbHandler {
      * @return boolean
      */
     private function isUserExists($email) {
-        $stmt = $this->conn->prepare("SELECT user_id from user WHERE user_mail = ?");
-        $stmt->bind_param("s", $email);
+        $stmt = $this->conn->prepare("SELECT user_id from users WHERE user_mail = :email");
+
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
+
         $stmt->store_result();
         $num_rows = $stmt->num_rows;
         $stmt->close();
