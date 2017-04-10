@@ -3,6 +3,7 @@
 /**
 *Gère les évènement avec la base de données -> CRUD
  */
+ require dirname(__FILE__) . '/DbConnect.php';
 class DbHandler {
 
     private $conn;
@@ -11,10 +12,8 @@ class DbHandler {
         require_once dirname(__FILE__) . '/DbConnect.php';
         // opening db connection
         $db = new DbConnect();
-        $this->conn = $db->connect();
+        $this->conn = $db->getDB();
     }
-
-
 
 
     /* ------------- `users` table method ------------------ */
