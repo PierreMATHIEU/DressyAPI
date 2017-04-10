@@ -1,5 +1,4 @@
 <?php
-require dirname(__FILE__) . '/DbConnect.php';
 class DbClotheHandler {
 
   private $conn;
@@ -33,25 +32,25 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
       }
     }
 
-    /**
-   * View clothing
-   * @param int $clothingId
-   */
-  public function viewClothe($clothingId) {
+/**
+* View clothing
+* @param int $clothingId
+*/
+public function viewClothe($clothingId) {
 
-        $sth = $this->conn->prepare("SELECT * FROM clothing WHERE clothing_id = :id");
-        $sth->bindParam(':id', $clothingId, PDO::PARAM_INT);
-        $sth->execute();
-        $clothe = $sth->fetch(PDO::FETCH_OBJ);
+    $sth = $this->conn->prepare("SELECT * FROM clothing WHERE clothing_id = :id");
+    $sth->bindParam(':id', $clothingId, PDO::PARAM_INT);
+    $sth->execute();
+    $clothe = $sth->fetch(PDO::FETCH_OBJ);
 
-        if ($sth) {
-            // Success
-            return $clothe;
-        } else {
-            // Failed
-            return false;
-        }
-      }
+    if ($sth) {
+        // Success
+        return $clothe;
+    } else {
+        // Failed
+        return false;
+    }
+  }
 
 
 }

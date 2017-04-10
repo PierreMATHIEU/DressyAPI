@@ -3,7 +3,6 @@
 /**
 *Gère les évènement avec la base de données -> CRUD
  */
- require dirname(__FILE__) . '/DbConnect.php';
 class DbHandler {
 
     private $conn;
