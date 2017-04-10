@@ -72,7 +72,7 @@ $app->post('/register', function() use ($app) {
             if ($res == 1) {
                 ////$response["message"] = "You are successfully registered";
 
-                echoRespnse(201, "Zoulou");
+                echoRespnse(201, $res);
             } else if ($res == 2) {
                 $response["error"] = true;
                 $response["message"] = "Oops! An error occurred while registereing";

@@ -58,7 +58,7 @@ class DbHandler {
           // Check for successful insertion
           if ($stmt) {
               // User successfully inserted
-              return 1;
+              return $api_key;
           } else {
               // Failed to create user
               return 2;
