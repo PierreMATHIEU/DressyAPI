@@ -39,7 +39,7 @@ class DbHandler {
             //  $stmt->bind_param("ssss", $name, $email, $password_hash, $api_key);
             //  $result = $stmt->execute();
 
-             $stmt = $this->conn->prepare("INSERT INTO users (user_type_id, user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(1, ':name', ':firstname', ':mail', ':password', ':apikey', ':login', ':country')");
+             $stmt = $this->conn->prepare("INSERT INTO users (user_id, user_type_id, user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(nextval('index_sequence'), 1, ':name', ':firstname', ':mail', ':password', ':apikey', ':login', ':country')");
 
               // $stmt->bindParam(':name', '$name', PDO::PARAM_STR);
               // $stmt->bindParam(':firstname', 'aa', PDO::PARAM_STR);
