@@ -5,6 +5,9 @@ require_once '../include/DbClotheHandler.php';
 require_once '../include/PassHash.php';
 require '.././libs/Slim/Slim.php';
 
+
+require_once '../models/User.php';
+
 //require '../vendor/autoload.php';
 
 \Slim\Slim::registerAutoloader();
@@ -56,22 +59,22 @@ $app->post('/register', function() use ($app) {
 
             //$allPostVars = json_decode($allPostVars,1);
 
-            $name = $allPostVars['user_lastName'];
-            $firstname = $allPostVars['user_fisrtName'];
-            $email = $allPostVars['user_mail'];
-            $password = $allPostVars['user_password'];
-            $login = $allPostVars['user_pseudo'];
-            $country = $allPostVars['user_country'];
+            $user = new User($allPostVars['user_lastName'], $allPostVars['user_fisrtName'], $allPostVars['user_mail'], $allPostVars['user_password'], $allPostVars['user_pseudo'], $allPostVars['user_country']);
+
+            // $name = $allPostVars['user_lastName'];
+            // $firstname = $allPostVars['user_fisrtName'];
+            // $email = $allPostVars['user_mail'];
+            // $password = $allPostVars['user_password'];
+            // $login = $allPostVars['user_pseudo'];
+            // $country = $allPostVars['user_country'];
 
             // validating email address
             validateEmail($email);
 
             $db = new DbHandler();
-            $res = $db->createUser($name, $firstname, $email, $password, $login, $country);
+            $res = $db->createUser($user);
 
             if (is_string($res)) {
-                ////$response["message"] = "You are successfully registered";
-
                 echoRespnse(201, $res);
             } else if ($res === 2) {
                 $response["error"] = true;
@@ -93,6 +96,7 @@ function authenticate(\Slim\Route $route) {
     $headers = apache_request_headers();
     $response = array();
     $app = \Slim\Slim::getInstance();
+
 
     // Verifying Authorization Header
     if (isset($headers['Authorization'])) {
