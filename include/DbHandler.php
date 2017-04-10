@@ -30,7 +30,7 @@ class DbHandler {
         $sth->bindValue(':email', $email, PDO::PARAM_STR);
         $sth->execute();
 
-        if ($sth->fetchColumn() = 0){
+        if ($sth){
             // Generating password hash
             $password_hash = PassHash::hash($password);
 
