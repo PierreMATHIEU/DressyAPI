@@ -30,38 +30,38 @@ class DbHandler {
         $sth->bindValue(':email', $email, PDO::PARAM_STR);
         $sth->execute();
 
+        //Check si l'adresse email éxiste
         if ($sth){
-            // Generating password hash
-            $password_hash = PassHash::hash($password);
-
-            // Generating API key
-            $api_key = $this->generateApiKey();
-
-            $stmt = $this->conn->prepare("INSERT INTO users(user_id, user_type_id, user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(nextval('index_sequence'), 1,:name,:firstname,:mail,:password,:apikey,:login,:country)");
-
-            $stmt->bindValue(':name', $name, PDO::PARAM_STR);
-             $stmt->bindValue(':firstname', 'aa', PDO::PARAM_STR);
-             $stmt->bindValue(':mail', $email, PDO::PARAM_STR);
-             $stmt->bindValue(':password', $password_hash, PDO::PARAM_STR);
-             $stmt->bindValue(':apikey', $api_key, PDO::PARAM_STR);
-             $stmt->bindValue(':login', 'login', PDO::PARAM_STR);
-             $stmt->bindValue(':country', 'country', PDO::PARAM_STR);
-             $stmt->execute();
-
-
-              //$stmt->close();
-
-            // Check for successful insertion
-            if ($stmt) {
-                // User successfully inserted
-                return 1;
-            } else {
-                // Failed to create user
-                return 2;
-            }
-        } else {
-            // User with same email already existed in the db
             return 3;
+        } else {
+          // Generating password hash
+          $password_hash = PassHash::hash($password);
+
+          // Generating API key
+          $api_key = $this->generateApiKey();
+
+          $stmt = $this->conn->prepare("INSERT INTO users(user_id, user_type_id, user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(nextval('index_sequence'), 1,:name,:firstname,:mail,:password,:apikey,:login,:country)");
+
+          $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+           $stmt->bindValue(':firstname', 'aa', PDO::PARAM_STR);
+           $stmt->bindValue(':mail', $email, PDO::PARAM_STR);
+           $stmt->bindValue(':password', $password_hash, PDO::PARAM_STR);
+           $stmt->bindValue(':apikey', $api_key, PDO::PARAM_STR);
+           $stmt->bindValue(':login', 'login', PDO::PARAM_STR);
+           $stmt->bindValue(':country', 'country', PDO::PARAM_STR);
+           $stmt->execute();
+
+
+            //$stmt->close();
+
+          // Check for successful insertion
+          if ($stmt) {
+              // User successfully inserted
+              return 1;
+          } else {
+              // Failed to create user
+              return 2;
+          }
         }
 
         return $response;
