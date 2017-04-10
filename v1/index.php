@@ -50,7 +50,6 @@ $app->post('/register', function() use ($app) {
 
             // reading post params
             //$allPostVars = $app->request->post();
-
             $content = trim(file_get_contents("php://input"));
           //Attempt to decode the incoming RAW post data from JSON.
             $allPostVars = json_decode($content, true);
@@ -71,9 +70,9 @@ $app->post('/register', function() use ($app) {
             $res = $db->createUser($name, $firstname, $email, $password, $login, $country);
 
             if ($res == 1) {
-                $response["error"] = false;
-                $response["message"] = "You are successfully registered";
-                echoRespnse(201, $response);
+                ////$response["message"] = "You are successfully registered";
+
+                echoRespnse(201, "Zoulou");
             } else if ($res == 2) {
                 $response["error"] = true;
                 $response["message"] = "Oops! An error occurred while registereing";
