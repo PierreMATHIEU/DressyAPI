@@ -43,7 +43,7 @@ public function viewClothe($clothingId) {
     $sth->execute();
     $clothe = $sth->fetch(PDO::FETCH_OBJ);
 
-    if ($sth->rowCount() > 0) {
+    if ($sth) {
         // Success
         return $clothe;
     } else {
@@ -51,5 +51,4 @@ public function viewClothe($clothingId) {
         return false;
     }
   }
-
 }

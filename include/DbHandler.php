@@ -31,7 +31,7 @@ class DbHandler {
         $sth->execute();
         
         //Check si l'adresse email éxiste
-        if ($sth){
+        if ($sth->rowCount() > 0){
             return 3;
         } else {
           // Generating password hash
