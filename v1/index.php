@@ -54,9 +54,10 @@ $app->post('/register', function() use ($app) {
             $name = $allPostVars['name'];
             $email = $allPostVars['email'];
             $password = $allPostVars['password'];
-            echo $name;
+            //echo $name;
+            
             // validating email address
-            validateEmail($email);
+            //validateEmail($email);
 
             $db = new DbHandler();
             $res = $db->createUser($name, $email, $password);
