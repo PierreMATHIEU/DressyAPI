@@ -53,7 +53,7 @@ class DbHandler {
            $stmt->execute();
 
 
-           $stmt->close();
+
 
           // Check for successful insertion
           if ($stmt) {
@@ -63,6 +63,7 @@ class DbHandler {
               // Failed to create user
               return 2;
           }
+          $stmt->close();
         }
 
         return $response;
