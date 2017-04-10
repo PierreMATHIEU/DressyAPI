@@ -23,16 +23,16 @@ class DbHandler {
      * @param String $password User login password
      */
     public function createUser($name, $email, $password) {
-        require_once 'PassHash.php';
-        $response = array();
+        //require_once 'PassHash.php';
+        //$response = array();
 
         // First check if user already existed in db
         // if (!$this->isUserExists($email)) {
             // Generating password hash
-            $password_hash = PassHash::hash($password);
+            //$password_hash = PassHash::hash($password);
 
             // Generating API key
-            $api_key = $this->generateApiKey();
+            //$api_key = $this->generateApiKey();
 
             // insert query
             //  $stmt = $this->conn->prepare("INSERT INTO users (user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(?, 'popo', ?, ?, ?, 'aa','aa')");
