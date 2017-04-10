@@ -69,7 +69,7 @@ $app->post('/register', function() use ($app) {
             // $country = $allPostVars['user_country'];
 
             // validating email address
-            validateEmail($allPostVars['user_mail']);
+            validateEmail($user->getUser_mail());
 
             $db = new DbHandler();
             $res = $db->createUser($user);
