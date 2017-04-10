@@ -52,5 +52,4 @@ public function viewClothe($clothingId) {
     }
   }
 
-
 }
