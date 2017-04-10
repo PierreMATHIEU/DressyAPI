@@ -37,23 +37,53 @@ $app->get('/clothing/:id', function ($id) {
     }
 });
 
+/**
+ * User Registration
+ * url - /register
+ * method - POST
+ * params - name, email, password
+ */
+$app->post('/register', function() use ($app) {
+              $app = \Slim\Slim::getInstance();
+            // check for required params
+            verifyRequiredParams(array('name', 'email', 'password'));
+
+            $response = array();
+
+            // reading post params
+            $allPostVars = $app->request->post();
+            $name = $allPostVars['name'];
+            $email = $allPostVars['email'];
+            $password = $allPostVars['password'];
+
+            // validating email address
+            validateEmail($email);
+
+            $db = new DbHandler();
+            $res = $db->createUser($name, $email, $password);
+
+            if ($res == 1) {
+                $response["error"] = false;
+                $response["message"] = "You are successfully registered";
+                echoRespnse(201, $response);
+
+                //
+                // $app->response->setStatus(200);
+                // $app->response()->headers->set('Content-Type', 'application/json');
+                // echo json_encode($res);
+                // $db = null;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            } else if ($res == 2) {
+                $response["error"] = true;
+                $response["message"] = "Oops! An error occurred while registereing";
+                echoRespnse(200, $response);
+            } else if ($res == 3) {
+                $response["error"] = true;
+                $response["message"] = "Sorry, this email already existed";
+                echoRespnse(200, $response);
+            }
+        });
 
 
 
@@ -160,7 +190,7 @@ function validateEmail($email) {
  * method - POST
  * params - name, email, password
  */
-$app->post('/register', function() use ($app) {
+$app->post('/registerOLD', function() use ($app) {
             // check for required params
             verifyRequiredParams(array('name', 'email', 'password'));
 

@@ -41,15 +41,22 @@ class DbHandler {
              $stmt->bind_param("ssss", $name, $email, $password_hash, $api_key);
              $result = $stmt->execute();
 
-            // INSERT INTO users ( id , usr , pwd ) VALUES ( ? , ? , ? )
-            // $insertStatement = $slimPdo->insert(array('user_last_name', 'user_first_name', 'user_mail','user_password','user_api_key','user_login','user_country'))
-            //                            ->into('users')
-            //                            ->values(array($name,'popo',$email, $password_hash, $api_key,'aa','aa'));
-            // $result = $insertStatement->execute();
+             $stmt = $this->conn->prepare("INSERT INTO users (user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(:name, :firstname, :mail, :password, :apikey, :login, :country)");
+
+              $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+              $stmt->bindParam(':firstname', '$firstname', PDO::PARAM_STR);
+              $stmt->bindParam(':mail', $email, PDO::PARAM_STR);
+              $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+              $stmt->bindParam(':apikey', $api_key, PDO::PARAM_STR);
+              $stmt->bindParam(':login', 'login', PDO::PARAM_STR);
+              $stmt->bindParam(':country', 'country', PDO::PARAM_STR);
+              $stmt->execute();
+
+
             $stmt->close();
 
             // Check for successful insertion
-            if ($result) {
+            if ($stmt) {
                 // User successfully inserted
                 return 1;
             } else {
