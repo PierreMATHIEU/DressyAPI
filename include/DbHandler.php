@@ -26,9 +26,11 @@ class DbHandler {
         require_once 'PassHash.php';
         $response = array();
 
-        $sql="SELECT user_last_name FROM users WHERE user_mail='$email'";
-        $stmt = $conn->prepare($sql);
-        if ($stmt->rowcount() = 0){
+        $sth = $this->conn->prepare("SELECT * FROM users WHERE user_mail = :email");
+        $sth->bindValue(':email', $email, PDO::PARAM_STR);
+        $sth->execute();
+
+        if ($sth->fetchColumn() = 0){
             // Generating password hash
             $password_hash = PassHash::hash($password);
 
@@ -106,7 +108,7 @@ class DbHandler {
         }
     }
 
-    
+
     /**
      * Fetching user by email
      * @param String $email User email id
