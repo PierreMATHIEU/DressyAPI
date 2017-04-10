@@ -29,7 +29,7 @@ class DbHandler {
         $sth = $this->conn->prepare("SELECT * FROM users WHERE user_mail = :email");
         $sth->bindValue(':email', $email, PDO::PARAM_STR);
         $sth->execute();
-
+        echo $sth;
         //Check si l'adresse email éxiste
         if ($sth){
             return 3;
