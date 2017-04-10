@@ -70,7 +70,7 @@ $app->post('/register', function() use ($app) {
 
             // validating email address
             var_dump($user);
-            var_dump($user->getUser_mail());die;
+            //var_dump($user->getUser_mail());die;
 
             validateEmail($user->getUser_mail());
 
