@@ -41,13 +41,13 @@ class DbHandler {
 
              $stmt = $this->conn->prepare("INSERT INTO users (user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(':name', ':firstname', ':mail', ':password', ':apikey', ':login', ':country')");
 
-              // $stmt->bindParam(':name', '$name', PDO::PARAM_STR);
-              // $stmt->bindParam(':firstname', 'aa', PDO::PARAM_STR);
-              // $stmt->bindParam(':mail', '$email', PDO::PARAM_STR);
-              // $stmt->bindParam(':password', '$password_hash', PDO::PARAM_STR);
-              // $stmt->bindParam(':apikey', '$api_key', PDO::PARAM_STR);
-              // $stmt->bindParam(':login', 'login', PDO::PARAM_STR);
-              // $stmt->bindParam(':country', 'country', PDO::PARAM_STR);
+              $stmt->bindParam(':name', '$name', PDO::PARAM_STR);
+              $stmt->bindParam(':firstname', 'aa', PDO::PARAM_STR);
+              $stmt->bindParam(':mail', '$email', PDO::PARAM_STR);
+              $stmt->bindParam(':password', '$password_hash', PDO::PARAM_STR);
+              $stmt->bindParam(':apikey', '$api_key', PDO::PARAM_STR);
+              $stmt->bindParam(':login', 'login', PDO::PARAM_STR);
+              $stmt->bindParam(':country', 'country', PDO::PARAM_STR);
               $stmt->execute();
 
 
