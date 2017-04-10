@@ -52,7 +52,6 @@ $app->post('/register', function() use ($app) {
             //$allPostVars = $app->request->post();
 
             $content = trim(file_get_contents("php://input"));
-            var_dump($content);
           //Attempt to decode the incoming RAW post data from JSON.
             $allPostVars = json_decode($content, true);
 
