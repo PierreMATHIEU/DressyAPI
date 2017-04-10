@@ -115,8 +115,8 @@ class DbHandler {
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
 
-        $stmt->store_result();
-        $num_rows = $stmt->num_rows;
+        $num_rows = $stmt->fetch(PDO::FETCH_OBJ);
+
         $stmt->close();
         return $num_rows > 0;
     }
