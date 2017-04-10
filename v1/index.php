@@ -45,7 +45,7 @@ $app->get('/clothing/:id', function ($id) {
  */
 $app->post('/register', function() use ($app) {
             // check for required params
-            verifyRequiredParams(array('name', 'email', 'password'));
+            verifyRequiredParams(array('login', 'name', 'firstname', 'email', 'password', 'country'));
             $response = array();
 
             // reading post params
