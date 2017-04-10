@@ -27,19 +27,13 @@ class DbHandler {
         $response = array();
 
         // First check if user already existed in db
-        // if (!$this->isUserExists($email)) {
+         if (!$this->isUserExists($email)) {
             // Generating password hash
             $password_hash = PassHash::hash($password);
 
             // Generating API key
             $api_key = $this->generateApiKey();
 
-            // insert query
-            //  $stmt = $this->conn->prepare("INSERT INTO users (user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(?, 'popo', ?, ?, ?, 'aa','aa')");
-            //  $stmt->bind_param("ssss", $name, $email, $password_hash, $api_key);
-            //  $result = $stmt->execute();
-
-            //  $stmt = $this->conn->prepare("INSERT INTO users(user_id, user_type_id, user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(3, 1,:name,:firstname,:mail,:password,:apikey,:login,:country)");
             $stmt = $this->conn->prepare("INSERT INTO users(user_id, user_type_id, user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(nextval('index_sequence'), 1,:name,:firstname,:mail,:password,:apikey,:login,:country)");
 
             $stmt->bindValue(':name', $name, PDO::PARAM_STR);
@@ -62,10 +56,10 @@ class DbHandler {
                 // Failed to create user
                 return 2;
             }
-        // } else {
-        //     // User with same email already existed in the db
-        //     return 3;
-        // }
+        } else {
+            // User with same email already existed in the db
+            return 3;
+        }
 
         return $response;
     }
@@ -118,7 +112,6 @@ class DbHandler {
      */
     private function isUserExists($email) {
         $stmt = $this->conn->prepare("SELECT user_id from users WHERE user_mail = :email");
-
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
 
