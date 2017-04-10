@@ -46,34 +46,27 @@ $app->get('/clothing/:id', function ($id) {
 $app->post('/register', function() use ($app) {
             // check for required params
             verifyRequiredParams(array('name', 'email', 'password'));
-
             $response = array();
 
             // reading post params
             $allPostVars = $app->request->post();
             $name = $allPostVars['name'];
+            $firstname = $allPostVars['firstname'];
             $email = $allPostVars['email'];
             $password = $allPostVars['password'];
-            //echo $name;
-            
+            $login = $allPostVars['login'];
+            $country = $allPostVars['country'];
+
             // validating email address
-            //validateEmail($email);
+            validateEmail($email);
 
             $db = new DbHandler();
-            $res = $db->createUser($name, $email, $password);
+            $res = $db->createUser($name, $firstname, $email, $password, $login, $country);
 
             if ($res == 1) {
                 $response["error"] = false;
                 $response["message"] = "You are successfully registered";
                 echoRespnse(201, $response);
-
-                //
-                // $app->response->setStatus(200);
-                // $app->response()->headers->set('Content-Type', 'application/json');
-                // echo json_encode($res);
-                // $db = null;
-
-
             } else if ($res == 2) {
                 $response["error"] = true;
                 $response["message"] = "Oops! An error occurred while registereing";
@@ -84,8 +77,6 @@ $app->post('/register', function() use ($app) {
                 echoRespnse(200, $response);
             }
         });
-
-
 
 
 /**

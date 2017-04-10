@@ -22,15 +22,16 @@ class DbHandler {
      * @param String $email User login email id
      * @param String $password User login password
      */
-    public function createUser($name, $email, $password) {
+    public function createUser($name, $firstname, $email, $password, $login, $country) {
         require_once 'PassHash.php';
         $response = array();
 
+        //Check si l'adresse email éxiste
         $sth = $this->conn->prepare("SELECT * FROM users WHERE user_mail = :email");
         $sth->bindValue(':email', $email, PDO::PARAM_STR);
         $sth->execute();
-        
-        //Check si l'adresse email éxiste
+
+
         if ($sth->rowCount() > 0){
             return 3;
         } else {
@@ -43,16 +44,16 @@ class DbHandler {
           $stmt = $this->conn->prepare("INSERT INTO users(user_id, user_type_id, user_last_name, user_first_name, user_mail, user_password, user_api_key, user_login, user_country) values(nextval('index_sequence'), 1,:name,:firstname,:mail,:password,:apikey,:login,:country)");
 
           $stmt->bindValue(':name', $name, PDO::PARAM_STR);
-           $stmt->bindValue(':firstname', 'aa', PDO::PARAM_STR);
+           $stmt->bindValue(':firstname', $firstname, PDO::PARAM_STR);
            $stmt->bindValue(':mail', $email, PDO::PARAM_STR);
            $stmt->bindValue(':password', $password_hash, PDO::PARAM_STR);
            $stmt->bindValue(':apikey', $api_key, PDO::PARAM_STR);
-           $stmt->bindValue(':login', 'login', PDO::PARAM_STR);
-           $stmt->bindValue(':country', 'country', PDO::PARAM_STR);
+           $stmt->bindValue(':login', $login, PDO::PARAM_STR);
+           $stmt->bindValue(':country', $country, PDO::PARAM_STR);
            $stmt->execute();
 
 
-            //$stmt->close();
+           $stmt->close();
 
           // Check for successful insertion
           if ($stmt) {
