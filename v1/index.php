@@ -44,7 +44,6 @@ $app->get('/clothing/:id', function ($id) {
  * params - name, email, password
  */
 $app->post('/register', function() use ($app) {
-              $app = \Slim\Slim::getInstance();
             // check for required params
             verifyRequiredParams(array('name', 'email', 'password'));
 
