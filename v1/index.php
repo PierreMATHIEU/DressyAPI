@@ -50,7 +50,9 @@ $app->post('/register', function() use ($app) {
 
             // reading post params
             $allPostVars = $app->request->post();
+            echo $allPostVars;
             $allPostVars = json_decode($allPostVars,1);
+
             $name = $allPostVars['user_lastName'];
             $firstname = $allPostVars['user_fisrtName'];
             $email = $allPostVars['user_mail'];
