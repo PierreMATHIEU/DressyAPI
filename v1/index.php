@@ -7,6 +7,7 @@ require '.././libs/Slim/Slim.php';
 
 
 require_once '../models/User.php';
+require_once '../models/UserLogin.php';
 
 //require '../vendor/autoload.php';
 
