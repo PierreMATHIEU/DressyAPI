@@ -17,6 +17,11 @@ class User{
       $this->user_country = $user_country;
      }
 
+     public function __construct($user_pseudo, $user_password) {
+       $this->user_pseudo = $user_pseudo;
+       $this->user_password = $user_password;
+      }
+      
     public function setUser_pseudo($user_pseudo) {
            $this->user_pseudo = $user_pseudo;
        }

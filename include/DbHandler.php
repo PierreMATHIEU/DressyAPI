@@ -71,11 +71,11 @@ class DbHandler {
      * @param String $password User login password
      * @return boolean User login status success/fail
      */
-    public function checkLogin($email, $password) {
+    public function checkLogin($user) {
         // fetching user by email
-        $stmt = $this->conn->prepare("SELECT user_password FROM user WHERE user_mail = ?");
+        $stmt = $this->conn->prepare("SELECT user_password FROM users WHERE user_mail = :mail");
 
-        $stmt->bind_param("s", $email);
+        $stmt->bindValue(':mail', $user->getUser_mail(), PDO::PARAM_STR);
 
         $stmt->execute();
 

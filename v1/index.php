@@ -47,8 +47,6 @@ $app->get('/clothing/:id', function ($id) {
  * params - name, email, password
  */
 $app->post('/register', function() use ($app) {
-            // check for required params
-            //verifyRequiredParams(array('user_pseudo', 'user_lastName', 'user_fisrtName', 'user_mail', 'user_password', 'user_country'));
             $response = array();
 
             // reading post params
@@ -61,18 +59,7 @@ $app->post('/register', function() use ($app) {
 
             $user = new User($allPostVars['user_pseudo'], $allPostVars['user_password'], $allPostVars['user_fisrtName'], $allPostVars['user_lastName'], $allPostVars['user_mail'], $allPostVars['user_country']);
 
-            // $name = $allPostVars['user_lastName'];
-            // $firstname = $allPostVars['user_fisrtName'];
-            // $email = $allPostVars['user_mail'];
-            // $password = $allPostVars['user_password'];
-            // $login = $allPostVars['user_pseudo'];
-            // $country = $allPostVars['user_country'];
-
             // validating email address
-            var_dump($user);
-
-          var_dump($user->getUser_mail());
-
             validateEmail($user->getUser_mail());
 
             $db = new DbHandler();
@@ -91,7 +78,43 @@ $app->post('/register', function() use ($app) {
             }
         });
 
+/**
+ * User Login
+ * url - /login
+ * method - POST
+ * params - email, password
+ */
+$app->post('/login', function() use ($app) {
+            // check for required params
+            //verifyRequiredParams(array('email', 'password'));
+            $response = array();
 
+            $content = trim(file_get_contents("php://input"));
+            $allPostVars = json_decode($content, true);
+
+            $user = new User($allPostVars['user_pseudo'], $allPostVars['user_password']);
+
+            $db = new DbHandler();
+            // check for correct email and password
+            if ($db->checkLogin($user)) {
+                // get the user by email
+                $res = $db->getUserByEmail($user->getUser_mail());
+
+                if ($res != NULL) {
+                    echoRespnse(201, $res);
+                } else {
+                    // unknown error occurred
+                    $response['error'] = true;
+                    $response['message'] = "An error occurred. Please try again";
+                }
+            } else {
+                // user credentials are wrong
+                $response['error'] = true;
+                $response['message'] = 'Login failed. Incorrect credentials';
+            }
+
+            echoRespnse(200, $response);
+        });
 /**
  * Authentification avec l'API_KEY
  */
