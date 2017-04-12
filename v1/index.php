@@ -101,7 +101,7 @@ $app->post('/login', function() use ($app) {
             $db = new DbHandler();
             // check for correct email and password
             if ($db->checkLogin($userLogin)) {
-                var_dump("plop");
+                var_dump("plop ca marche");
                 // get the user by email
                 $res = $db->getUserByEmail($userLogin->getUser_mail());
 
