@@ -22,10 +22,10 @@ class User{
      * @param $user_pseudo
      * @param $user_password
      */
-    /*public function __construct ($user_pseudo, $user_password) {
+    public function __constructLogin ($user_pseudo, $user_password) {
        $this->user_pseudo = $user_pseudo;
        $this->user_password = $user_password;
-      }*/
+      }
       
     public function setUser_pseudo($user_pseudo) {
            $this->user_pseudo = $user_pseudo;
