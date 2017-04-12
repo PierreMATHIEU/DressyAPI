@@ -114,7 +114,7 @@ class DbHandler {
             $api_key = $res['user_api_key'];
             $user = array();
             $user["user_api_key"] = $api_key;
-            $stmt->close();
+            
             return $user;
         } else {
             return NULL;
