@@ -88,9 +88,9 @@ class DbHandler {
             // Found user with the email
             // Now verify the password
 
-            $stmt->fetch();
+            //$stmt->fetch();
 
-            $stmt->close();
+            //$stmt->close();
             var_dump("ok1");
 
             if (PassHash::check_password($password_hash, $user->getUser_password())) {
