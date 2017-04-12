@@ -103,15 +103,17 @@ $app->post('/login', function() use ($app) {
                 // get the user by email
                 $res = $db->getUserByEmail($userLogin);
                 if ($res != NULL) {
-                    echoRespnse(200, $res);
+                    $response['status'] = "success";
+                    $response['api_key'] = $res;
+                    echoRespnse(200, $response);
                 } else {
                     // unknown error occurred
-                    $response['error'] = true;
+                    $response['status'] = "error";
                     $response['message'] = "An error occurred. Please try again";
                 }
             } else {
                 // user credentials are wrong
-                $response['error'] = true;
+                $response['status'] = "error";
                 $response['message'] = 'Login failed. Incorrect credentials';
             }
 
