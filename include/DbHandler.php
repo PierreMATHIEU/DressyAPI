@@ -71,7 +71,7 @@ class DbHandler {
      * @param String $password User login password
      * @return boolean User login status success/fail
      */
-    public function checkLogin($user, $password) {
+    public function checkLogin($user) {
         // fetching user by email
         $stmt = $this->conn->prepare("SELECT user_password FROM users WHERE user_mail = :mail");
 
@@ -90,7 +90,7 @@ class DbHandler {
 
             $stmt->close();
 
-            if (PassHash::check_password($password_hash, $password)) {
+            if (PassHash::check_password($password_hash, $user->getUser_password())) {
                 // User password is correct
                 return TRUE;
             } else {
