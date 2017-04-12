@@ -107,13 +107,10 @@ class DbHandler {
     public function getUserByEmail($user) {
         $stmt = $this->conn->prepare("SELECT user_api_key FROM users WHERE user_login = :login");
         $stmt->bindValue(':login', $user->getUser_pseudo(), PDO::PARAM_STR);
-        $stmt->execute();
-
-        $res = $stmt->fetch();
-        $api_key = $res['user_api_key'];
 
         if ($stmt->execute()) {
-            // $user = $stmt->get_result()->fetch_assoc();
+            $res = $stmt->fetch();
+            $api_key = $res['user_api_key'];
             $user = array();
             $user["user_api_key"] = $api_key;
             $stmt->close();
