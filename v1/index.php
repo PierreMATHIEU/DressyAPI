@@ -67,15 +67,15 @@ $app->post('/register', function() use ($app) {
             $res = $db->createUser($user);
 
             if (is_string($res)) {
-                $response["error"] = false;
+                $response['status'] = "success";
                 $response["api_key"] = $res;
                 echoRespnse(200, $response);
             } else if ($res === 2) {
-                $response["error"] = true;
+                $response['status'] = "error";
                 $response["message"] = "Oops! An error occurred while registereing";
                 echoRespnse(400, $response);
             } else if ($res === 3) {
-                $response["error"] = true;
+                $response['status'] = "error";
                 $response["message"] = "Sorry, this email already existed";
                 echoRespnse(400, $response);
             }
