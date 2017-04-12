@@ -105,8 +105,8 @@ class DbHandler {
      * @param String $email User email id
      */
     public function getUserByEmail($user) {
-        $stmt = $this->conn->prepare("SELECT user_api_key FROM user WHERE user_mail = :mail");
-        $stmt->bindValue(':login', $user->getUser_mail(), PDO::PARAM_STR);
+        $stmt = $this->conn->prepare("SELECT user_api_key FROM users WHERE user_login = :login");
+        $stmt->bindValue(':login', $user->getUser_pseudo(), PDO::PARAM_STR);
         $stmt->execute();
 
         $res = $stmt->fetch();

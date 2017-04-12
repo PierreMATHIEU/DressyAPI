@@ -105,7 +105,7 @@ $app->post('/login', function() use ($app) {
                 $res = $db->getUserByEmail($userLogin->getUser_mail());
 
                 if ($res != NULL) {
-                    echoRespnse(201, $res);
+                    echoRespnse(200, $res);
                 } else {
                     // unknown error occurred
                     $response['error'] = true;
