@@ -100,10 +100,8 @@ $app->post('/login', function() use ($app) {
             $db = new DbHandler();
             // check for correct email and password
             if ($db->checkLogin($userLogin)) {
-                var_dump("plop ca marche");
                 // get the user by email
                 $res = $db->getUserByEmail($userLogin);
-                var_dump($res);
                 if ($res != NULL) {
                     echoRespnse(200, $res);
                 } else {
@@ -117,7 +115,7 @@ $app->post('/login', function() use ($app) {
                 $response['message'] = 'Login failed. Incorrect credentials';
             }
 
-            echoRespnse(200, $response);
+            echoRespnse(400, $response);
         });
 /**
  * Authentification avec l'API_KEY
