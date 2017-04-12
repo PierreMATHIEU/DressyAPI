@@ -102,8 +102,8 @@ $app->post('/login', function() use ($app) {
             if ($db->checkLogin($userLogin)) {
                 var_dump("plop ca marche");
                 // get the user by email
-                $res = $db->getUserByEmail($userLogin->getUser_mail());
-
+                $res = $db->getUserByEmail($userLogin);
+                var_dump($res);
                 if ($res != NULL) {
                     echoRespnse(200, $res);
                 } else {
