@@ -97,7 +97,6 @@ $app->post('/login', function() use ($app) {
 
             $userLogin = new UserLogin($allPostVars['user_pseudo'], $allPostVars['user_password']);
 
-            var_dump($userLogin);
             $db = new DbHandler();
             // check for correct email and password
             if ($db->checkLogin($userLogin)) {

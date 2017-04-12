@@ -74,34 +74,21 @@ class DbHandler {
     public function checkLogin($user) {
         // fetching user by email
         $stmt = $this->conn->prepare("SELECT user_password FROM users WHERE user_login = :login");
-
         $stmt->bindValue(':login', $user->getUser_pseudo(), PDO::PARAM_STR);
-
         $stmt->execute();
 
         $res = $stmt->fetch();
-        //$password_hash = $stmt->fetchColumn();
         $password_hash = $res['user_password'];
 
-        var_dump($password_hash);
-        var_dump($stmt->rowCount());
-        
         if ($stmt->rowCount()> 0) {
             // Found user with the email
             // Now verify the password
 
-            //$stmt->fetch();
-
-            //$stmt->close();
-            var_dump("ok1");
-
             if (PassHash::check_password($password_hash, $user->getUser_password())) {
                 // User password is correct
-                var_dump("okok");
                 return TRUE;
             } else {
                 // user password is incorrect
-                var_dump("okfalse");
                 return FALSE;
             }
         } else {
@@ -117,16 +104,17 @@ class DbHandler {
      * Fetching user by email
      * @param String $email User email id
      */
-    public function getUserByEmail($email) {
-        $stmt = $this->conn->prepare("SELECT user_last_name, user_mail, user_api_key FROM user WHERE user_mail = ?");
-        $stmt->bind_param("s", $email);
+    public function getUserByEmail($user) {
+        $stmt = $this->conn->prepare("SELECT user_api_key FROM user WHERE user_mail = :mail");
+        $stmt->bindValue(':login', $user->getUser_mail(), PDO::PARAM_STR);
+        $stmt->execute();
+
+        $res = $stmt->fetch();
+        $api_key = $res['user_api_key'];
+
         if ($stmt->execute()) {
             // $user = $stmt->get_result()->fetch_assoc();
-            $stmt->bind_result($name, $email, $api_key);
-            $stmt->fetch();
             $user = array();
-            $user["user_last_name"] = $name;
-            $user["user_mail"] = $email;
             $user["user_api_key"] = $api_key;
             $stmt->close();
             return $user;
