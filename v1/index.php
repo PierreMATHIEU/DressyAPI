@@ -66,8 +66,8 @@ $app->post('/register', function() use ($app) {
             $res = $db->createUser($user);
 
             if (is_string($res)) {
-                $response["error"] = true;
-                $response["message"] = $res;
+                $response["error"] = false;
+                $response["api_key"] = $res;
                 echoRespnse(200, $response);
             } else if ($res === 2) {
                 $response["error"] = true;
