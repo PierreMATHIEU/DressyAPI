@@ -90,12 +90,15 @@ class DbHandler {
             $stmt->fetch();
 
             $stmt->close();
+            var_dump("ok1");
 
             if (PassHash::check_password($password_hash, $user->getUser_password())) {
                 // User password is correct
+                var_dump("okok");
                 return TRUE;
             } else {
                 // user password is incorrect
+                var_dump("okfalse");
                 return FALSE;
             }
         } else {
