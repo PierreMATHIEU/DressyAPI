@@ -111,9 +111,9 @@ class DbHandler {
         if ($stmt->execute()) {
             $res = $stmt->fetch();
             $api_key = $res['user_api_key'];
-            $user = array();
-            $user["user_api_key"] = $api_key;
-            return $user;
+            //$user = array();
+            //$user["user_api_key"] = $api_key;
+            return $api_key;
         } else {
             return NULL;
         }

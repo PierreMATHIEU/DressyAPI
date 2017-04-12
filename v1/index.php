@@ -105,7 +105,6 @@ $app->post('/login', function() use ($app) {
                 if ($res != NULL) {
                     $response['status'] = "success";
                     $response['api_key'] = $res;
-                    echoRespnse(200, $response);
                 } else {
                     // unknown error occurred
                     $response['status'] = "error";
