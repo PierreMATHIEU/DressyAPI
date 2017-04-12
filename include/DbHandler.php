@@ -79,11 +79,13 @@ class DbHandler {
 
         $stmt->execute();
 
-        $password_hash = $stmt->fetch();
+        $res = $stmt->fetch();
         //$password_hash = $stmt->fetchColumn();
+        $password_hash = $res['user_password'];
 
-        var_dump($password_hash['user_password']);
+        var_dump($password_hash);
         var_dump($stmt->rowCount());
+        
         if ($stmt->rowCount()> 0) {
             // Found user with the email
             // Now verify the password
