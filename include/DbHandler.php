@@ -109,6 +109,7 @@ class DbHandler {
         $stmt->bindValue(':login', $user->getUser_pseudo(), PDO::PARAM_STR);
 
         if ($stmt->execute()) {
+            var_dump("zdqd");
             $res = $stmt->fetch();
             $api_key = $res['user_api_key'];
             $user = array();
