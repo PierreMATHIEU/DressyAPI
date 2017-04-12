@@ -94,14 +94,14 @@ $app->post('/login', function() use ($app) {
             $content = trim(file_get_contents("php://input"));
             $allPostVars = json_decode($content, true);
 
-            $user = new User($allPostVars['user_pseudo'], $allPostVars['user_password']);
+            $userLogin = new UserLogin($allPostVars['user_pseudo'], $allPostVars['user_password']);
 
-            var_dump($user);
+            var_dump($userLogin);
             $db = new DbHandler();
             // check for correct email and password
-            if ($db->checkLogin($user)) {
+            if ($db->checkLogin($userLogin)) {
                 // get the user by email
-                $res = $db->getUserByEmail($user->getUser_mail());
+                $res = $db->getUserByEmail($userLogin->getUser_mail());
 
                 if ($res != NULL) {
                     echoRespnse(201, $res);
