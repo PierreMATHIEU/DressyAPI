@@ -37,8 +37,9 @@ function authenticate(\Slim\Route $route) {
         $db = new DbHandler();
             var_dump("ok1");
         // get the api key
-        $api_key = $headers['Authorization'];
 
+        $api_key = $headers['Authorization'];
+        var_dump($api_key);
         // validating api key
         if (!$db->isValidApiKey($api_key)) {
             // api key is not present in users table
