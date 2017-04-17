@@ -262,7 +262,7 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
  * method GET
  * url /clothe
  */
-$app->get('/clothe', 'authenticate', function() {
+$app->post('/clothe', 'authenticate', function() use ($app) {
     var_dump("aa");
     global $user_id;
     $response = array();
