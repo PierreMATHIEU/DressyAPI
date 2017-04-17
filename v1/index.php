@@ -270,9 +270,10 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
     $response = array();
     $db = new DbClotheHandler();
 
+    var_dump($clothing_id);
     // fetching all user tasks
     $result = $db->viewClothing($user_id,$clothing_id);
-    var_dump($clothing_id);
+
 
     $response['status'] = "success";
     $response["clothe"] = array();
