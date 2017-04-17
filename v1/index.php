@@ -263,7 +263,7 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
                 $tmp["cloth_category"] = $value->getClothCategory();
                 $tmp["cloth_brand"] = $value->getClothBrand();
                 $tmp["cloth_material"] = $value->getClothMaterial();
-                array_push($response["clothe"], $tmp);
+                array_push($response["clothes"], $tmp);
             }
             //echoRespnse(200, $response);
             $app->response->setStatus(200);
