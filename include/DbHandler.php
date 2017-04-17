@@ -167,7 +167,7 @@ class DbHandler {
         $stmt->bindValue(':api_key', $api_key, PDO::PARAM_STR);
         $stmt->execute();
         $num_rows = $stmt->rowCount();
-        $stmt->close();
+        //$stmt->close();
         return $num_rows > 0;
     }
 
