@@ -5,7 +5,6 @@ require_once '../include/DbClotheHandler.php';
 require_once '../include/PassHash.php';
 require '.././libs/Slim/Slim.php';
 
-
 require_once '../models/User.php';
 require_once '../models/UserLogin.php';
 
@@ -13,7 +12,6 @@ require_once '../models/UserLogin.php';
 
 \Slim\Slim::registerAutoloader();
 
-$app = new \Slim\Slim();
 
 // User id from db - Global Variable
 $user_id = NULL;
@@ -22,14 +20,15 @@ $user_id = NULL;
  * Authentification avec l'API_KEY
  */
 function authenticate(\Slim\Route $route) {
+    $app = new \Slim\Slim();
     // Getting request headers
     var_dump("plopi");
-
+    $headers = $app->request->headers;
    // $headers = apache_request_headers();
     $response = array();
     $app = \Slim\Slim::getInstance();
 
-var_dump(get_headers());
+var_dump($headers);
 //var_dump($headers);
 
     // Verifying Authorization Header
