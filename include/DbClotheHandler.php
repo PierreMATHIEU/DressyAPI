@@ -44,7 +44,6 @@ public function viewClothe() {
 
     if ($sth) {
         // Success
-        var_dump('success');
         return $clothe;
     } else {
         // Failed

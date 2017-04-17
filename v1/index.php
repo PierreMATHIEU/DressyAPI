@@ -278,6 +278,7 @@ $app->get('/clothe', 'authenticate', function(){
     var_dump($result);
     // looping through result and preparing tasks array
     while ($task = $result->fetch()) {
+        var_dump("popodipopo");
         var_dump($task);
         $tmp = array();
         $tmp["name"] = $task["cloth_name"];
