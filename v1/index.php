@@ -51,11 +51,8 @@ function authenticate(\Slim\Route $route) {
             global $user_id;
             // get user primary key id
             $user = $db->getUserId($api_key);
-            var_dump($user);
-            var_dump($user["user_id"]);
             if ($user != NULL){
-                $user_id = $user["user_id"];
-                var_dump($user_id);
+                $user_id = $user;
             }
 
         }
@@ -272,12 +269,12 @@ $app->get('/clothe', 'authenticate', function(){
     global $user_id;
     $response = array();
     $db = new DbClotheHandler();
-
+    var_dump($user_id);
     // fetching all user tasks
     $result = $db->viewClothe();
 
     $response["error"] = false;
-    $response["tasks"] = array();
+    $response["clothe"] = array();
 
     // looping through result and preparing tasks array
     while ($task = $result->fetch()) {
