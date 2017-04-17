@@ -282,7 +282,7 @@ $app->get('/clothe', 'authenticate', function(){
     $response["error"] = false;
 
     foreach ($result as $value){
-        var_dump($value['cloth_name']);
+        var_dump($value);
     }
 
     //var_dump($clotheTab);
