@@ -301,6 +301,8 @@ $app->get('/clothe', 'authenticate', function() {
     global $user_id;
     $response = array();
     $db = new DbClotheHandler();
+    var_dump("1");
+    var_dump($user_id);
 
     // fetching all user tasks
     $result = $db->viewClothe();
