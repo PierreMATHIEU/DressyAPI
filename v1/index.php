@@ -25,12 +25,12 @@ function authenticate(\Slim\Route $route) {
     // Getting request headers
     var_dump("plopi");
 
-    $headers = apache_request_headers();
+   // $headers = apache_request_headers();
     $response = array();
     //$app = \Slim\Slim::getInstance();
 
 var_dump("ok");
-var_dump($headers);
+//var_dump($headers);
 
     // Verifying Authorization Header
     if (isset($headers['Authorization'])) {
@@ -262,7 +262,7 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
  * method GET
  * url /clothe
  */
-$app->post('/clothe', 'authenticate', function() use ($app) {
+$app->get('/clothe', 'authenticate', function(){
     var_dump("aa");
     global $user_id;
     $response = array();
