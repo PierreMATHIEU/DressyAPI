@@ -63,6 +63,7 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
                 array_push($clotheReponce, $newClothe);
             }
             $sth->closeCursor();
+            var_dump($clotheReponce);
 
             return $clotheReponce;
         } else {
