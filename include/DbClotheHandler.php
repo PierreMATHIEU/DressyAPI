@@ -42,7 +42,6 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
      * @param int $clothingId
      */
     public function viewClothing($user_id,$clothing_id) {
-        $clothetab = array();
         $clotheReponce = array();
         //$sth = $this->conn->prepare("SELECT * FROM clothe");
         $sth = $this->conn->prepare("SELECT cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage,
@@ -60,6 +59,7 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
 
             while ($clothe = $sth->fetch()) {
                 $clothetab = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage']);
+                var_dump($clothetab);
                 $newClothe = new Clothes($clothe['clothing_url_image'],$clothetab,$clothe['clothing_vote']);
                 array_push($clotheReponce, $newClothe);
             }
