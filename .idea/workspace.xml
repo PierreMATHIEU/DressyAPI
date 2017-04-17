@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fd1abc-d113-4ecb-b90f-8298f2706b2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Clothes.php" afterPath="$PROJECT_DIR$/models/Clothes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v1/index.php" afterPath="$PROJECT_DIR$/v1/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/DbClotheHandler.php" afterPath="$PROJECT_DIR$/include/DbClotheHandler.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,16 +70,16 @@
       <file leaf-file-name="DbClotheHandler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="84" column="94" lean-forward="false" selection-start-line="84" selection-start-column="81" selection-end-line="84" selection-end-column="94" />
+            <state relative-caret-position="31">
+              <caret line="70" column="63" lean-forward="false" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
               <folding>
-                <marker date="1492442605514" expanded="true" signature="553:699" ph="INSERT INTO clothe... " />
-                <marker date="1492442605514" expanded="true" signature="1248:1268" ph="SELECT * FRO... clothe" />
-                <marker date="1492442605514" expanded="true" signature="1309:1848" ph="SELECT cloth... clothe" />
-                <marker date="1492442605514" expanded="true" signature="1309:1860" ph="SELECT * FRO... clothe" />
-                <marker date="1492442605514" expanded="true" signature="1315:1848" ph="select cloth... clothe" />
-                <marker date="1492442605514" expanded="true" signature="2651:3023" ph="SELECT cloth... clothing" />
-                <marker date="1492442605514" expanded="true" signature="3712:3732" ph="SELECT * FRO... clothe" />
+                <marker date="1492442779337" expanded="true" signature="553:699" ph="INSERT INTO clothe... " />
+                <marker date="1492442779337" expanded="true" signature="1248:1268" ph="SELECT * FRO... clothe" />
+                <marker date="1492442779337" expanded="true" signature="1309:1848" ph="SELECT cloth... clothe" />
+                <marker date="1492442779337" expanded="true" signature="1309:1860" ph="SELECT * FRO... clothe" />
+                <marker date="1492442779337" expanded="true" signature="1315:1848" ph="select cloth... clothe" />
+                <marker date="1492442779337" expanded="true" signature="2554:2926" ph="SELECT cloth... clothing" />
+                <marker date="1492442779337" expanded="true" signature="3503:3523" ph="SELECT * FRO... clothe" />
               </folding>
             </state>
           </provider>
@@ -113,9 +112,9 @@
         <option value="$PROJECT_DIR$/models/UserLogin.php" />
         <option value="$PROJECT_DIR$/include/DbHandler.php" />
         <option value="$PROJECT_DIR$/models/Clothe.php" />
-        <option value="$PROJECT_DIR$/include/DbClotheHandler.php" />
         <option value="$PROJECT_DIR$/v1/index.php" />
         <option value="$PROJECT_DIR$/models/Clothes.php" />
+        <option value="$PROJECT_DIR$/include/DbClotheHandler.php" />
       </list>
     </option>
   </component>
@@ -303,12 +302,12 @@
       <option name="presentableId" value="Default" />
       <updated>1492016502131</updated>
       <workItem from="1492016507348" duration="7676000" />
-      <workItem from="1492416573473" duration="23316000" />
+      <workItem from="1492416573473" duration="23406000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30992000" />
+    <option name="totallyTimeSpent" value="31082000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -458,6 +457,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/Clothes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -470,26 +477,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Clothes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="84" column="94" lean-forward="false" selection-start-line="84" selection-start-column="81" selection-end-line="84" selection-end-column="94" />
+        <state relative-caret-position="31">
+          <caret line="70" column="63" lean-forward="false" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
           <folding>
-            <marker date="1492442605514" expanded="true" signature="553:699" ph="INSERT INTO clothe... " />
-            <marker date="1492442605514" expanded="true" signature="1248:1268" ph="SELECT * FRO... clothe" />
-            <marker date="1492442605514" expanded="true" signature="1309:1848" ph="SELECT cloth... clothe" />
-            <marker date="1492442605514" expanded="true" signature="1309:1860" ph="SELECT * FRO... clothe" />
-            <marker date="1492442605514" expanded="true" signature="1315:1848" ph="select cloth... clothe" />
-            <marker date="1492442605514" expanded="true" signature="2651:3023" ph="SELECT cloth... clothing" />
-            <marker date="1492442605514" expanded="true" signature="3712:3732" ph="SELECT * FRO... clothe" />
+            <marker date="1492442779337" expanded="true" signature="553:699" ph="INSERT INTO clothe... " />
+            <marker date="1492442779337" expanded="true" signature="1248:1268" ph="SELECT * FRO... clothe" />
+            <marker date="1492442779337" expanded="true" signature="1309:1848" ph="SELECT cloth... clothe" />
+            <marker date="1492442779337" expanded="true" signature="1309:1860" ph="SELECT * FRO... clothe" />
+            <marker date="1492442779337" expanded="true" signature="1315:1848" ph="select cloth... clothe" />
+            <marker date="1492442779337" expanded="true" signature="2554:2926" ph="SELECT cloth... clothing" />
+            <marker date="1492442779337" expanded="true" signature="3503:3523" ph="SELECT * FRO... clothe" />
           </folding>
         </state>
       </provider>

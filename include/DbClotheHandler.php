@@ -69,8 +69,6 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
         }
     }
     public function viewDetailsClothing($user_id,$clothing_id){
-        $clotheReponce = array();
-        //$sth = $this->conn->prepare("SELECT * FROM clothe");
         $sth = $this->conn->prepare("SELECT clothing_url_image, clothing_vote
                                               FROM clothing
                                               JOIN clothing_clothe ON clothing_clothe.clothing_id=clothing.clothing_id
@@ -81,11 +79,8 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
         $sth->execute();
 
         if ($sth) {
-            while ($clothe = $sth->fetch()) {
-                $newClothe = new Clothes($clothe['clothing_url_image'], $clothe['clothing_vote']);
-                array_push($clotheReponce, $newClothe);
-            }
-            $sth->closeCursor();
+            $clothe = $sth->fetch();
+            $clotheReponce = new Clothes($clothe['clothing_url_image'], $clothe['clothing_vote']);
             return $clotheReponce;
         } else {
             // Failed
