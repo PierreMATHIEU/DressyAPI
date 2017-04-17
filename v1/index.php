@@ -29,7 +29,7 @@ function authenticate(\Slim\Route $route) {
     $response = array();
     $app = \Slim\Slim::getInstance();
 
-var_dump(apache_request_headers());
+var_dump(get_headers());
 //var_dump($headers);
 
     // Verifying Authorization Header
