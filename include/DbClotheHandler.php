@@ -40,6 +40,7 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
 * @param int $clothingId
 */
 public function viewClothe() {
+    $clotheReponce = array();
     $sth = $this->conn->prepare("SELECT * FROM clothe");
 
     $sth->execute();
@@ -51,10 +52,11 @@ public function viewClothe() {
             //var_dump("popodipopo");
             $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color']);
             //var_dump($newClothe);
+            array_push($clotheReponce, $newClothe);
         }
         $sth->closeCursor();
 
-        return $newClothe;
+        return $clotheReponce;
     } else {
         // Failed
         return false;
