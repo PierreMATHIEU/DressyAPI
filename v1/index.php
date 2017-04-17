@@ -286,6 +286,7 @@ $app->get('/clothe', 'authenticate', function(){
         $tmp["color"] = $task["cloth_color"];
         array_push($response["clothe"], $tmp);
     }
+    $result->closeCursor();
 
     echoRespnse(200, $response);
 });
