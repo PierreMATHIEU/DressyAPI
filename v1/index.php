@@ -237,9 +237,9 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
         });
 
 /**
- * Listing all clothe
+ * Listing clothing
  * method GET
- * url /clothe
+ * url /clothing/:id
  */
 $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
     $app = \Slim\Slim::getInstance();
@@ -253,7 +253,7 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
         $result = $db->viewClothing($user_id,$clothing_id);
         if($result){
             $response['status'] = "success";
-            $response["clothe"] = array();
+            $response["clothes"] = array();
             foreach ($result as $value){
                 $tmp = array();
                 $tmp["cloth_name"] = $value->getClothName();

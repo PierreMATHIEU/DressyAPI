@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fd1abc-d113-4ecb-b90f-8298f2706b2c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/DbClotheHandler.php" afterPath="$PROJECT_DIR$/include/DbClotheHandler.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v1/index.php" afterPath="$PROJECT_DIR$/v1/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,9 +18,10 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="39" column="45" lean-forward="false" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
+            <state relative-caret-position="196">
+              <caret line="255" column="30" lean-forward="false" selection-start-line="255" selection-start-column="30" selection-end-line="255" selection-end-column="30" />
               <folding>
+                <element signature="n#authenticate#0;n#!!top" expanded="false" />
                 <element signature="e#3255#4485#1#PHP" expanded="false" />
                 <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
                 <element signature="e#6456#7404#1#PHP" expanded="false" />
@@ -31,15 +33,15 @@
       <file leaf-file-name="DbClotheHandler.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+            <state relative-caret-position="309">
+              <caret line="58" column="138" lean-forward="false" selection-start-line="58" selection-start-column="138" selection-end-line="58" selection-end-column="138" />
               <folding>
-                <marker date="1492437506759" expanded="true" signature="515:661" ph="INSERT INTO clothe... " />
-                <marker date="1492437506759" expanded="true" signature="1210:1230" ph="SELECT * FRO... clothe" />
-                <marker date="1492437506759" expanded="true" signature="1271:1702" ph="SELECT cloth... clothe" />
-                <marker date="1492437506759" expanded="true" signature="1271:1714" ph="SELECT * FRO... clothe" />
-                <marker date="1492437506759" expanded="true" signature="1277:1702" ph="select cloth... clothe" />
-                <marker date="1492437506759" expanded="true" signature="2504:2524" ph="SELECT * FRO... clothe" />
+                <marker date="1492439827924" expanded="true" signature="515:661" ph="INSERT INTO clothe... " />
+                <marker date="1492439827924" expanded="true" signature="1210:1230" ph="SELECT * FRO... clothe" />
+                <marker date="1492439827924" expanded="true" signature="1271:1702" ph="SELECT cloth... clothe" />
+                <marker date="1492439827924" expanded="true" signature="1271:1714" ph="SELECT * FRO... clothe" />
+                <marker date="1492439827924" expanded="true" signature="1277:1702" ph="select cloth... clothe" />
+                <marker date="1492439827924" expanded="true" signature="2449:2469" ph="SELECT * FRO... clothe" />
               </folding>
             </state>
           </provider>
@@ -84,6 +86,7 @@
       <find>$user</find>
       <find>cloth_name</find>
       <find>fetch</find>
+      <find>validateEmail</find>
       <find>var_dump</find>
     </findStrings>
   </component>
@@ -99,8 +102,8 @@
         <option value="$PROJECT_DIR$/include/DbHandler.php" />
         <option value="$PROJECT_DIR$/models/Clothes.php" />
         <option value="$PROJECT_DIR$/models/Clothe.php" />
-        <option value="$PROJECT_DIR$/include/DbClotheHandler.php" />
         <option value="$PROJECT_DIR$/v1/index.php" />
+        <option value="$PROJECT_DIR$/include/DbClotheHandler.php" />
       </list>
     </option>
   </component>
@@ -288,12 +291,12 @@
       <option name="presentableId" value="Default" />
       <updated>1492016502131</updated>
       <workItem from="1492016507348" duration="7676000" />
-      <workItem from="1492416573473" duration="20223000" />
+      <workItem from="1492416573473" duration="20467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27899000" />
+    <option name="totallyTimeSpent" value="28143000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -337,6 +340,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#authenticate#0;n#!!top" expanded="false" />
             <element signature="e#3255#4485#1#PHP" expanded="false" />
             <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
             <element signature="e#6456#7404#1#PHP" expanded="false" />
@@ -453,24 +457,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        <state relative-caret-position="309">
+          <caret line="58" column="138" lean-forward="false" selection-start-line="58" selection-start-column="138" selection-end-line="58" selection-end-column="138" />
           <folding>
-            <marker date="1492437506759" expanded="true" signature="515:661" ph="INSERT INTO clothe... " />
-            <marker date="1492437506759" expanded="true" signature="1210:1230" ph="SELECT * FRO... clothe" />
-            <marker date="1492437506759" expanded="true" signature="1271:1702" ph="SELECT cloth... clothe" />
-            <marker date="1492437506759" expanded="true" signature="1271:1714" ph="SELECT * FRO... clothe" />
-            <marker date="1492437506759" expanded="true" signature="1277:1702" ph="select cloth... clothe" />
-            <marker date="1492437506759" expanded="true" signature="2504:2524" ph="SELECT * FRO... clothe" />
+            <marker date="1492439827924" expanded="true" signature="515:661" ph="INSERT INTO clothe... " />
+            <marker date="1492439827924" expanded="true" signature="1210:1230" ph="SELECT * FRO... clothe" />
+            <marker date="1492439827924" expanded="true" signature="1271:1702" ph="SELECT cloth... clothe" />
+            <marker date="1492439827924" expanded="true" signature="1271:1714" ph="SELECT * FRO... clothe" />
+            <marker date="1492439827924" expanded="true" signature="1277:1702" ph="select cloth... clothe" />
+            <marker date="1492439827924" expanded="true" signature="2449:2469" ph="SELECT * FRO... clothe" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="39" column="45" lean-forward="false" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
+        <state relative-caret-position="196">
+          <caret line="255" column="30" lean-forward="false" selection-start-line="255" selection-start-column="30" selection-end-line="255" selection-end-column="30" />
           <folding>
+            <element signature="n#authenticate#0;n#!!top" expanded="false" />
             <element signature="e#3255#4485#1#PHP" expanded="false" />
             <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
             <element signature="e#6456#7404#1#PHP" expanded="false" />
