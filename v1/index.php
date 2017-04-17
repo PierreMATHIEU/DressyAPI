@@ -265,15 +265,15 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
  * method GET
  * url /clothe
  */
-$app->get('/clothing/:id', 'authenticate', function($clothing_id){
+$app->get('/clothing', 'authenticate', function(){
     var_dump("aa");
     global $user_id;
     $response = array();
     $db = new DbClotheHandler();
     var_dump($user_id);
-    var_dump($clothing_id);
+    //var_dump($clothing_id);
     // fetching all user tasks
-    $result = $db->viewClothing($user_id,$clothing_id);
+    $result = $db->viewClothing($user_id,1);
 
 
     $response['status'] = "success";
