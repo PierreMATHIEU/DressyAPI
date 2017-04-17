@@ -266,10 +266,11 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
  * url /clothe
  */
 $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
+    var_dump("aa");
     global $user_id;
     $response = array();
     $db = new DbClotheHandler();
-
+    var_dump($user_id);
     var_dump($clothing_id);
     // fetching all user tasks
     $result = $db->viewClothing($user_id,$clothing_id);
