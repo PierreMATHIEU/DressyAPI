@@ -50,7 +50,7 @@ public function viewClothe() {
 
         while ($clothe = $sth->fetch()) {
             //var_dump("popodipopo");
-            $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color']);
+            $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference']);
             //var_dump($newClothe);
             array_push($clotheReponce, $newClothe);
         }
