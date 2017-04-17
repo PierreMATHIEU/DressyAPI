@@ -27,7 +27,7 @@ function authenticate(\Slim\Route $route) {
 
     $headers = apache_request_headers();
     $response = array();
-    $app = \Slim\Slim::getInstance();
+    //$app = \Slim\Slim::getInstance();
 
 var_dump("ok");
 var_dump($headers);
@@ -45,7 +45,7 @@ var_dump($headers);
             $response['status'] = "error";
             $response['message'] = "Access Denied. Invalid Api key";
             echoRespnse(401, $response);
-            $app->stop();
+            //$app->stop();
         } else {
             global $user_id;
             // get user primary key id
@@ -58,7 +58,7 @@ var_dump($headers);
         $response['status'] = "error";
         $response['message'] = "Api key is misssing";
         echoRespnse(400, $response);
-        $app->stop();
+        //$app->stop();
     }
 }
 
