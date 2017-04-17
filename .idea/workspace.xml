@@ -17,8 +17,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="253" column="63" lean-forward="false" selection-start-line="253" selection-start-column="63" selection-end-line="253" selection-end-column="63" />
+            <state relative-caret-position="60">
+              <caret line="257" column="33" lean-forward="false" selection-start-line="257" selection-start-column="33" selection-end-line="257" selection-end-column="33" />
               <folding>
                 <element signature="e#3255#4485#1#PHP" expanded="false" />
                 <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
@@ -31,8 +31,8 @@
       <file leaf-file-name="Clothes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Clothes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+            <state relative-caret-position="187">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -70,8 +70,8 @@
       <file leaf-file-name="DbClotheHandler.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="83" column="18" lean-forward="true" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="18" />
+            <state relative-caret-position="359">
+              <caret line="78" column="24" lean-forward="true" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
               <folding>
                 <marker date="1492442779337" expanded="true" signature="553:699" ph="INSERT INTO clothe... " />
                 <marker date="1492442779337" expanded="true" signature="1248:1268" ph="SELECT * FRO... clothe" />
@@ -81,6 +81,16 @@
                 <marker date="1492442779337" expanded="true" signature="2554:2926" ph="SELECT cloth... clothing" />
                 <marker date="1492442779337" expanded="true" signature="3503:3523" ph="SELECT * FRO... clothe" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DbConnect.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/DbConnect.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -302,12 +312,12 @@
       <option name="presentableId" value="Default" />
       <updated>1492016502131</updated>
       <workItem from="1492016507348" duration="7676000" />
-      <workItem from="1492416573473" duration="23460000" />
+      <workItem from="1492416573473" duration="23596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31136000" />
+    <option name="totallyTimeSpent" value="31272000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -408,14 +418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/DbConnect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/UserLogin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -459,16 +461,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/Clothes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        <state relative-caret-position="187">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="83" column="18" lean-forward="true" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="18" />
+        <state relative-caret-position="359">
+          <caret line="78" column="24" lean-forward="true" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
           <folding>
             <marker date="1492442779337" expanded="true" signature="553:699" ph="INSERT INTO clothe... " />
             <marker date="1492442779337" expanded="true" signature="1248:1268" ph="SELECT * FRO... clothe" />
@@ -481,10 +483,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/DbConnect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="253" column="63" lean-forward="false" selection-start-line="253" selection-start-column="63" selection-end-line="253" selection-end-column="63" />
+        <state relative-caret-position="60">
+          <caret line="257" column="33" lean-forward="false" selection-start-line="257" selection-start-column="33" selection-end-line="257" selection-end-column="33" />
           <folding>
             <element signature="e#3255#4485#1#PHP" expanded="false" />
             <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />

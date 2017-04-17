@@ -255,7 +255,7 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
         if($result){
             $response['status'] = "success";
             $response['urlImage'] = $res->getUrlImage();
-            $response["clothes"] = array();
+            $response["listClothe"] = array();
             foreach ($result as $value){
                 $tmp = array();
                 $tmp["cloth_name"] = $value->getClothName();
@@ -267,7 +267,7 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
                 $tmp["cloth_material"] = $value->getClothMaterial();
                 array_push($response["clothes"], $tmp);
             }
-            $response['vote'] = $res->getScore();
+            $response['score'] = $res->getScore();
 
             //echoRespnse(200, $response);
             $app->response->setStatus(200);
@@ -277,8 +277,6 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
         }else {
             throw new PDOException('No records found');
         }
-
-
     } catch(PDOException $e) {
         $app->response()->setStatus(404);
         echo '{"status":"error", "message":"'. $e->getMessage() .'"}';
