@@ -24,10 +24,13 @@ $user_id = NULL;
 function authenticate(\Slim\Route $route) {
     // Getting request headers
     var_dump("plopi");
+
     $headers = apache_request_headers();
     $response = array();
     $app = \Slim\Slim::getInstance();
-var_dump(ok);
+
+var_dump("ok");
+var_dump($headers);
 
     // Verifying Authorization Header
     if (isset($headers['Authorization'])) {
