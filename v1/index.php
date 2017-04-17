@@ -51,6 +51,7 @@ function authenticate(\Slim\Route $route) {
             global $user_id;
             // get user primary key id
             $user = $db->getUserId($api_key);
+            var_dump($user);
             if ($user != NULL){
                 $user_id = $user["user_id"];
                 var_dump($user_id);
