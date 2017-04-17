@@ -266,30 +266,39 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
  * url /clothe
  */
 $app->post('/clothing/:clothing_id', 'authenticate', function($clothing_id){
-    var_dump("aa");
-    global $user_id;
-    $response = array();
-    $db = new DbClotheHandler();
-    var_dump($user_id);
-    var_dump($clothing_id);
-    // fetching all user tasks
-    $result = $db->viewClothing($user_id,$clothing_id);
+    $app = \Slim\Slim::getInstance();
+    try
+    {
+        global $user_id;
+        $response = array();
+        $db = new DbClotheHandler();
 
+        // fetching all user tasks
+        $result = $db->viewClothing($user_id,$clothing_id);
 
-    $response['status'] = "success";
-    $response["clothe"] = array();
-    foreach ($result as $value){
-        $tmp = array();
-        $tmp["cloth_name"] = $value->getClothName();
-        $tmp["cloth_color"] = $value->getClothColor();
-        $tmp["cloth_reference"] = $value->getClothReference();
-        $tmp["cloth_urlImage"] = $value->getClothUrlImage();
-        $tmp["cloth_category"] = $value->getClothCategory();
-        $tmp["cloth_brand"] = $value->getClothBrand();
-        $tmp["cloth_material"] = $value->getClothMaterial();
-        array_push($response["clothe"], $tmp);
+        $response['status'] = "success";
+        $response["clothe"] = array();
+        foreach ($result as $value){
+            $tmp = array();
+            $tmp["cloth_name"] = $value->getClothName();
+            $tmp["cloth_color"] = $value->getClothColor();
+            $tmp["cloth_reference"] = $value->getClothReference();
+            $tmp["cloth_urlImage"] = $value->getClothUrlImage();
+            $tmp["cloth_category"] = $value->getClothCategory();
+            $tmp["cloth_brand"] = $value->getClothBrand();
+            $tmp["cloth_material"] = $value->getClothMaterial();
+            array_push($response["clothe"], $tmp);
+        }
+        //echoRespnse(200, $response);
+        $app->response->setStatus(200);
+        $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode($response);
+        $db = null;
+
+    } catch(PDOException $e) {
+        $app->response()->setStatus(404);
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
-    echoRespnse(200, $response);
 });
 
 $app->run();
