@@ -73,7 +73,7 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
     public function viewDetailsClothing($user_id,$clothing_id){
         $clotheReponce = array();
         //$sth = $this->conn->prepare("SELECT * FROM clothe");
-        $sth = $this->conn->prepare("SELECT clothing_id, clothing_url_image, clothing_vote
+        $sth = $this->conn->prepare("SELECT clothing_url_image, clothing_vote
                                               FROM clothing
                                               JOIN clothing_clothe ON clothing_clothe.clothing_id=clothing.clothing_id
                                               WHERE user_id=:user_id
@@ -83,19 +83,16 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
         $sth->execute();
 
         if ($sth) {
-
             while ($clothe = $sth->fetch()) {
                 $newClothe = new Clothe($clothe['clothing_url_image'], $clothe['clothing_vote']);
                 array_push($clotheReponce, $newClothe);
             }
             $sth->closeCursor();
-
             return $clotheReponce;
         } else {
             // Failed
             return false;
         }
-
     }
 
 /**
@@ -111,9 +108,7 @@ public function viewClothe() {
     if ($sth) {
 
         while ($clothe = $sth->fetch()) {
-            //var_dump("popodipopo");
             $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference']);
-            //var_dump($newClothe);
             array_push($clotheReponce, $newClothe);
         }
         $sth->closeCursor();

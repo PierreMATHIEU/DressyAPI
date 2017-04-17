@@ -251,10 +251,14 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
 
         // fetching all user tasks
         $result = $db->viewClothing($user_id,$clothing_id);
+        $res = $db->viewDetailsClothing($user_id,$clothing_id);
+        if($res){
+
+        }
         if($result){
             $response['status'] = "success";
+            $response['urlImage'] = $res->getUrlImage();
             $response["clothes"] = array();
-            var_dump($result);
             foreach ($result as $value){
                 $tmp = array();
                 $tmp["cloth_name"] = $value->getClothName();
@@ -266,10 +270,8 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
                 $tmp["cloth_material"] = $value->getClothMaterial();
                 array_push($response["clothes"], $tmp);
             }
-            $res = $db->viewDetailsClothing($user_id,$clothing_id);
-            if($res){
-                $response['vote'] = $res->getScore();
-            }
+            $response['vote'] = $res->getScore();
+
             //echoRespnse(200, $response);
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
