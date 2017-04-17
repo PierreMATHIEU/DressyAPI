@@ -26,12 +26,12 @@ function authenticate(\Slim\Route $route) {
     $headers = apache_request_headers();
     $response = array();
     $app = \Slim\Slim::getInstance();
-
+var_dump(ok);
 
     // Verifying Authorization Header
     if (isset($headers['Authorization'])) {
         $db = new DbHandler();
-
+            var_dump("ok1");
         // get the api key
         $api_key = $headers['Authorization'];
 
@@ -219,45 +219,6 @@ function validateEmail($email) {
 
     echo json_encode($response);
 }
-
-// /**
-//  * User Registration
-//  * url - /register
-//  * method - POST
-//  * params - name, email, password
-//  */
-// $app->post('/registerOLD', function() use ($app) {
-//             // check for required params
-//             verifyRequiredParams(array('name', 'email', 'password'));
-//
-//             $response = array();
-//
-//             // reading post params
-//             $name = $app->request->post('name');
-//             $email = $app->request->post('email');
-//             $password = $app->request->post('password');
-//
-//             // validating email address
-//             validateEmail($email);
-//
-//             $db = new DbHandler();
-//           //  echoRespnse(200, $db);
-//             $res = $db->createUser($name, $email, $password);
-//
-//             if ($res == 1) {
-//                 $response["error"] = false;
-//                 $response["message"] = "You are successfully registered";
-//                 echoRespnse(201, $response);
-//             } else if ($res == 2) {
-//                 $response["error"] = true;
-//                 $response["message"] = "Oops! An error occurred while registereing";
-//                 echoRespnse(200, $response);
-//             } else if ($res == 3) {
-//                 $response["error"] = true;
-//                 $response["message"] = "Sorry, this email already existed";
-//                 echoRespnse(200, $response);
-//             }
-//         });
 
 /*---------------------------------CLOTHE------------------------------------*/
 /**
