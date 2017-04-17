@@ -273,6 +273,10 @@ $app->get('/clothe', 'authenticate', function(){
     // fetching all user tasks
     $result = $db->viewClothe();
 
+    var_dump($result);
+
+
+
     $response["error"] = false;
     $response["clothe"] = $result;
     //var_dump("ok1");
