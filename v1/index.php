@@ -269,7 +269,7 @@ $app->get('/clothe', 'authenticate', function(){
     global $user_id;
     $response = array();
     $db = new DbClotheHandler();
-    var_dump($user_id);
+
     // fetching all user tasks
     $result = $db->viewClothe();
 
@@ -278,6 +278,7 @@ $app->get('/clothe', 'authenticate', function(){
 
     // looping through result and preparing tasks array
     while ($task = $result->fetch()) {
+        var_dump($task);
         $tmp = array();
         $tmp["name"] = $task["cloth_name"];
         $tmp["color"] = $task["cloth_color"];
