@@ -280,13 +280,15 @@ $app->get('/clothe', 'authenticate', function(){
 
 
     $response["error"] = false;
-
+    $response["clothe"] = array();
     foreach ($result as $value){
-        var_dump($value);
+        $tmp = array();
+        $tmp["name"] = $value->getClothName() ;
+        array_push($response["clothe"], $tmp);
     }
 
     //var_dump($clotheTab);
-    $response["clothe"] = $clotheTab;
+
 
     //var_dump("ok1");
     //var_dump($result);
