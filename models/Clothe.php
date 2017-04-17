@@ -28,7 +28,7 @@ class Clothe
      * @param $cloth_material
      * @param $cloth_partner
      */
-    public function __construct($cloth_name, $cloth_color, $cloth_reference, $cloth_urlImage, $cloth_category, $cloth_brand, $cloth_material, $cloth_partner)
+    public function __construct($cloth_name="", $cloth_color="", $cloth_reference=null, $cloth_urlImage=null, $cloth_category=null, $cloth_brand=null, $cloth_material=null, $cloth_partner=null)
     {
         $this->cloth_name = $cloth_name;
         $this->cloth_color = $cloth_color;
