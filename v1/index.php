@@ -259,6 +259,7 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
  * url /clothe
  */
 $app->get('/clothe', 'authenticate', function() use ($app) {
+    var_dump("aa");
     global $user_id;
     $response = array();
     $db = new DbClotheHandler();
