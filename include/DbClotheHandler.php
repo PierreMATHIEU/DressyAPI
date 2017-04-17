@@ -44,8 +44,7 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
     public function viewClothing($user_id,$clothing_id) {
         $clotheReponce = array();
         //$sth = $this->conn->prepare("SELECT * FROM clothe");
-        $sth = $this->conn->prepare("SELECT cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage,
-                                              clothing_url_image, clothing_vote
+        $sth = $this->conn->prepare("SELECT cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage
                                               FROM clothe
                                               JOIN clothing_clothe ON clothe.cloth_id=clothing_clothe.cloth_id
                                               JOIN clothing ON clothing_clothe.clothing_id=clothing.clothing_id
@@ -58,8 +57,8 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
         if ($sth) {
 
             while ($clothe = $sth->fetch()) {
-                //$clothetab = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage']);
-                $newClothe = new Clothes($clothe['clothing_url_image'],new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage']),$clothe['clothing_vote']);
+                $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage']);
+                //$newClothe = new Clothes($clothe['clothing_url_image'],new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage']),$clothe['clothing_vote']);
                 array_push($clotheReponce, $newClothe);
             }
             $sth->closeCursor();
@@ -70,6 +69,33 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
             // Failed
             return false;
         }
+    }
+    public function viewDetailsClothing($user_id,$clothing_id){
+        $clotheReponce = array();
+        //$sth = $this->conn->prepare("SELECT * FROM clothe");
+        $sth = $this->conn->prepare("SELECT clothing_id, clothing_url_image, clothing_vote
+                                              FROM clothing
+                                              JOIN clothing_clothe ON clothing_clothe.clothing_id=clothing.clothing_id
+                                              WHERE user_id=:user_id
+                                              AND clothing.clothing_id=:clothing_id");
+        $sth->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+        $sth->bindValue(':clothing_id', $clothing_id, PDO::PARAM_INT);
+        $sth->execute();
+
+        if ($sth) {
+
+            while ($clothe = $sth->fetch()) {
+                $newClothe = new Clothe($clothe['clothing_url_image'], $clothe['clothing_vote']);
+                array_push($clotheReponce, $newClothe);
+            }
+            $sth->closeCursor();
+
+            return $clotheReponce;
+        } else {
+            // Failed
+            return false;
+        }
+
     }
 
 /**
