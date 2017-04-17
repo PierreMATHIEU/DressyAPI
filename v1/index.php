@@ -49,6 +49,7 @@ function authenticate(\Slim\Route $route) {
             $app->stop();
         } else {
             global $user_id;
+            var_dump("ouf");
             // get user primary key id
             $user = $db->getUserId($api_key);
             var_dump($user);
