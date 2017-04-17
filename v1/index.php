@@ -254,7 +254,8 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
         if($result){
             $response['status'] = "success";
             $response["clothes"] = array();
-            foreach ($result as $value){
+            var_dump($result);
+            /*foreach ($result as $value){
                 $tmp = array();
                 $tmp["cloth_name"] = $value->getClothName();
                 $tmp["cloth_color"] = $value->getClothColor();
@@ -264,7 +265,7 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
                 $tmp["cloth_brand"] = $value->getClothBrand();
                 $tmp["cloth_material"] = $value->getClothMaterial();
                 array_push($response["clothes"], $tmp);
-            }
+            }*/
             //echoRespnse(200, $response);
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
