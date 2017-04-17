@@ -275,6 +275,12 @@ $app->get('/clothe', 'authenticate', function(){
 
     var_dump($result);
 
+    foreach ($result as $value){
+        $tmp = array();
+        $tmp["name"] = $value["cloth_name"];
+        $tmp["color"] = $value["cloth_color"];
+        array_push($response["clothe"], $tmp);
+    }
 
 
     $response["error"] = false;
