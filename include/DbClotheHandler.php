@@ -47,7 +47,7 @@ public function viewClothe() {
         while ($task = $sth->rowCount()) {
             var_dump("popodipopo");
             var_dump($task);
-            $newClothe = new Clothe($task['cloth_name'], $task['cloth_color'], $task['cloth_reference']);
+            $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference']);
 
         }
         $sth->closeCursor();
