@@ -265,7 +265,8 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
  * method GET
  * url /clothe
  */
-$app->get('/clothing', 'authenticate', function(){
+$app->get('/clothing/:id', 'authenticate', function($clothing_id){
+    $app = \Slim\Slim::getInstance();
     var_dump("aa");
     global $user_id;
     $response = array();
@@ -273,7 +274,7 @@ $app->get('/clothing', 'authenticate', function(){
     var_dump($user_id);
     //var_dump($clothing_id);
     // fetching all user tasks
-    $result = $db->viewClothing($user_id,1);
+    $result = $db->viewClothing($user_id,$clothing_id);
 
 
     $response['status'] = "success";
