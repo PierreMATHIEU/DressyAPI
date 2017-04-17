@@ -162,7 +162,7 @@ class DbHandler {
      * @return boolean
      */
     public function isValidApiKey($api_key) {
-        $stmt = $this->conn->prepare("SELECT user_id FROM user WHERE user_api_key = :api_key");
+        $stmt = $this->conn->prepare("SELECT user_id FROM users WHERE user_api_key = :api_key");
         $stmt->bindValue(':api_key', $api_key, PDO::PARAM_STR);
         $stmt->execute();
         $num_rows = $stmt->rowCount();

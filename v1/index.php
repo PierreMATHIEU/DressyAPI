@@ -24,15 +24,13 @@ $user_id = NULL;
  */
 function authenticate(\Slim\Route $route) {
     // Getting request headers
+
     $theapp = new \Slim\Slim();
-    var_dump("plopi");
     $headers = $theapp->request->headers;
+
    // $headers = apache_request_headers();
     $response = array();
     $app = \Slim\Slim::getInstance();
-
-var_dump($headers);
-//var_dump($headers);
 
     // Verifying Authorization Header
     if (isset($headers['Authorization'])) {
@@ -265,12 +263,9 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
  * url /clothe
  */
 $app->get('/clothe', 'authenticate', function(){
-    var_dump("aa");
     global $user_id;
     $response = array();
     $db = new DbClotheHandler();
-    var_dump("1");
-    var_dump($user_id);
 
     // fetching all user tasks
     $result = $db->viewClothe();
