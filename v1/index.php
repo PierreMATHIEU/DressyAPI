@@ -283,7 +283,13 @@ $app->get('/clothe', 'authenticate', function(){
     $response["clothe"] = array();
     foreach ($result as $value){
         $tmp = array();
-        $tmp["name"] = $value->getClothName() ;
+        $tmp["cloth_name"] = $value->getClothName();
+        $tmp["cloth_color"] = $value->getClothColor();
+        $tmp["cloth_reference"] = $value->getClothReference();
+        $tmp["cloth_urlImage"] = $value->getClothUrlImage();
+        $tmp["cloth_category"] = $value->getClothCategory();
+        $tmp["cloth_brand"] = $value->getClothBrand();
+        $tmp["cloth_material"] = $value->getClothMaterial();
         array_push($response["clothe"], $tmp);
     }
 

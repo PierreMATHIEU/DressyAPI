@@ -15,7 +15,6 @@ class Clothe
     private $cloth_category;
     private $cloth_brand;
     private $cloth_material;
-    private $cloth_partner;
 
     /**
      * Clothe constructor.
@@ -26,9 +25,8 @@ class Clothe
      * @param $cloth_category
      * @param $cloth_brand
      * @param $cloth_material
-     * @param $cloth_partner
      */
-    public function __construct($cloth_name="", $cloth_color="", $cloth_reference=null, $cloth_urlImage=null, $cloth_category=null, $cloth_brand=null, $cloth_material=null, $cloth_partner=null)
+    public function __construct($cloth_name="", $cloth_color="", $cloth_reference=null, $cloth_urlImage=null, $cloth_category=null, $cloth_brand=null, $cloth_material=null)
     {
         $this->cloth_name = $cloth_name;
         $this->cloth_color = $cloth_color;
@@ -37,7 +35,6 @@ class Clothe
         $this->cloth_category = $cloth_category;
         $this->cloth_brand = $cloth_brand;
         $this->cloth_material = $cloth_material;
-        $this->cloth_partner = $cloth_partner;
     }
 
 
@@ -152,23 +149,5 @@ class Clothe
     {
         $this->cloth_material = $cloth_material;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getClothPartner()
-    {
-        return $this->cloth_partner;
-    }
-
-    /**
-     * @param mixed $cloth_partner
-     */
-    public function setClothPartner($cloth_partner)
-    {
-        $this->cloth_partner = $cloth_partner;
-    }
-
-
 
 }
