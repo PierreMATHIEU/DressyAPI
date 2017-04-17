@@ -32,11 +32,11 @@
       <file leaf-file-name="DbClotheHandler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+            <state relative-caret-position="352">
+              <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
               <folding>
-                <marker date="1492432638249" expanded="true" signature="515:661" ph="INSERT INTO clothe... " />
-                <marker date="1492432638249" expanded="true" signature="1139:1159" ph="SELECT * FRO... clothe" />
+                <marker date="1492432712934" expanded="true" signature="515:661" ph="INSERT INTO clothe... " />
+                <marker date="1492432712934" expanded="true" signature="1123:1143" ph="SELECT * FRO... clothe" />
               </folding>
             </state>
           </provider>
@@ -286,15 +286,15 @@
       <option name="presentableId" value="Default" />
       <updated>1492016502131</updated>
       <workItem from="1492016507348" duration="7676000" />
-      <workItem from="1492416573473" duration="13434000" />
+      <workItem from="1492416573473" duration="13515000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21110000" />
+    <option name="totallyTimeSpent" value="21191000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24304539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -467,11 +467,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+        <state relative-caret-position="352">
+          <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
           <folding>
-            <marker date="1492432638249" expanded="true" signature="515:661" ph="INSERT INTO clothe... " />
-            <marker date="1492432638249" expanded="true" signature="1139:1159" ph="SELECT * FRO... clothe" />
+            <marker date="1492432712934" expanded="true" signature="515:661" ph="INSERT INTO clothe... " />
+            <marker date="1492432712934" expanded="true" signature="1123:1143" ph="SELECT * FRO... clothe" />
           </folding>
         </state>
       </provider>
