@@ -73,8 +73,8 @@ class DbHandler {
      */
     public function checkLogin($user) {
         // fetching user by email
-        $stmt = $this->conn->prepare("SELECT user_password FROM users WHERE user_login = :login");
-        $stmt->bindValue(':login', $user->getUser_pseudo(), PDO::PARAM_STR);
+        $stmt = $this->conn->prepare("SELECT user_password FROM users WHERE user_mail = :mail");
+        $stmt->bindValue(':mail', $user->getUser_mail(), PDO::PARAM_STR);
         $stmt->execute();
 
         $res = $stmt->fetch();
