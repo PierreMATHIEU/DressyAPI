@@ -11,7 +11,7 @@ class Clothe
     private $cloth_name;
     private $cloth_color;
     private $cloth_reference;
-    private $cloth_urlImage;
+    private $cloth_urlimage;
     private $cloth_category;
     private $cloth_brand;
     private $cloth_material;
@@ -21,17 +21,17 @@ class Clothe
      * @param $cloth_name
      * @param $cloth_color
      * @param $cloth_reference
-     * @param $cloth_urlImage
+     * @param $cloth_urlimage
      * @param $cloth_category
      * @param $cloth_brand
      * @param $cloth_material
      */
-    public function __construct($cloth_name="", $cloth_color="", $cloth_reference=null, $cloth_urlImage=null, $cloth_category=null, $cloth_brand=null, $cloth_material=null)
+    public function __construct($cloth_name="", $cloth_color="", $cloth_reference=null, $cloth_urlimage=null, $cloth_category=null, $cloth_brand=null, $cloth_material=null)
     {
         $this->cloth_name = $cloth_name;
         $this->cloth_color = $cloth_color;
         $this->cloth_reference = $cloth_reference;
-        $this->cloth_urlImage = $cloth_urlImage;
+        $this->i = $cloth_urlimage;
         $this->cloth_category = $cloth_category;
         $this->cloth_brand = $cloth_brand;
         $this->cloth_material = $cloth_material;
@@ -91,15 +91,15 @@ class Clothe
      */
     public function getClothUrlImage()
     {
-        return $this->cloth_urlImage;
+        return $this->cloth_urlimage;
     }
 
     /**
      * @param mixed $cloth_urlImage
      */
-    public function setClothUrlImage($cloth_urlImage)
+    public function setClothUrlImage($cloth_urlimage)
     {
-        $this->cloth_urlImage = $cloth_urlImage;
+        $this->cloth_urlimage = $cloth_urlimage;
     }
 
     /**
