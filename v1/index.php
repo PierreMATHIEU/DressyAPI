@@ -268,20 +268,24 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
 $app->get('/clothe', 'authenticate', function(){
     global $user_id;
     $response = array();
+    $clotheTab =array();
     $db = new DbClotheHandler();
 
     // fetching all user tasks
     $result = $db->viewClothe();
 
-    
 
-    foreach ($result as $value){
-        var_dump($value);
-    }
+
+
 
 
     $response["error"] = false;
-    $response["clothe"] = $result;
+
+    foreach ($result as $value){
+        array_push($clotheTab, $value);
+    }
+    $response["clothe"] = $clotheTab;
+
     //var_dump("ok1");
     //var_dump($result);
     // looping through result and preparing tasks array

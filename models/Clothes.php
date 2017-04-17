@@ -10,7 +10,7 @@ class Clothes
 {
     private $urlImage;
     private $listClothe = array();
-    private $score;
+    private $score = 0;
 
     /**
      * Clothes constructor.
