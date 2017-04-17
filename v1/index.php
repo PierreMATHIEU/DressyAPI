@@ -50,8 +50,11 @@ function authenticate(\Slim\Route $route) {
             global $user_id;
             // get user primary key id
             $user = $db->getUserId($api_key);
-            if ($user != NULL)
+            if ($user != NULL){
                 $user_id = $user["id"];
+                var_dump("win");
+            }
+
         }
     } else {
         // api key is missing in header
