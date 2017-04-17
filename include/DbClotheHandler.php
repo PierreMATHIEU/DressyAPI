@@ -40,6 +40,7 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
 * @param int $clothingId
 */
 public function viewClothe() {
+    $count = 0;
     $sth = $this->conn->prepare("SELECT * FROM clothe");
 
     $sth->execute();
@@ -47,12 +48,12 @@ public function viewClothe() {
 
     if ($sth) {
 
-        while ($task = $sth->rowCount()) {
+        while ($count === $sth->rowCount()) {
             var_dump("popodipopo");
             $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color']);
             var_dump($newClothe);
 
-            $task = $task+1;
+            $count = $count+1;
         }
         $sth->closeCursor();
 

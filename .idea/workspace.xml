@@ -32,11 +32,11 @@
       <file leaf-file-name="DbClotheHandler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="54" column="17" lean-forward="false" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="17" />
+            <state relative-caret-position="301">
+              <caret line="55" column="27" lean-forward="false" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
               <folding>
-                <marker date="1492432497444" expanded="true" signature="515:661" ph="INSERT INTO clothe... " />
-                <marker date="1492432497444" expanded="true" signature="1123:1143" ph="SELECT * FRO... clothe" />
+                <marker date="1492432543958" expanded="true" signature="515:661" ph="INSERT INTO clothe... " />
+                <marker date="1492432543958" expanded="true" signature="1139:1159" ph="SELECT * FRO... clothe" />
               </folding>
             </state>
           </provider>
@@ -286,12 +286,12 @@
       <option name="presentableId" value="Default" />
       <updated>1492016502131</updated>
       <workItem from="1492016507348" duration="7676000" />
-      <workItem from="1492416573473" duration="13296000" />
+      <workItem from="1492416573473" duration="13339000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20972000" />
+    <option name="totallyTimeSpent" value="21015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -467,11 +467,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="54" column="17" lean-forward="false" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="17" />
+        <state relative-caret-position="301">
+          <caret line="55" column="27" lean-forward="false" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
           <folding>
-            <marker date="1492432497444" expanded="true" signature="515:661" ph="INSERT INTO clothe... " />
-            <marker date="1492432497444" expanded="true" signature="1123:1143" ph="SELECT * FRO... clothe" />
+            <marker date="1492432543958" expanded="true" signature="515:661" ph="INSERT INTO clothe... " />
+            <marker date="1492432543958" expanded="true" signature="1139:1159" ph="SELECT * FRO... clothe" />
           </folding>
         </state>
       </provider>
