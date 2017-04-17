@@ -277,7 +277,7 @@ $app->get('/clothe', 'authenticate', function(){
     $response["clothe"] = array();
     var_dump($result);
     // looping through result and preparing tasks array
-    while ($task = $result->fetch()) {
+    while ($task = $result->fetch(PDO::FETCH_ASSOC)) {
         var_dump("popodipopo");
         var_dump($task);
         $tmp = array();
