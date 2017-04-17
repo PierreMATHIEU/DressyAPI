@@ -149,6 +149,7 @@ class DbHandler {
             $res = $stmt->fetch();
             $user_id = $res['user_id'];
             // $stmt->close();
+            var_dump($user_id);
             return $user_id;
         } else {
             return NULL;
