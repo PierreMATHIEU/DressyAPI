@@ -252,7 +252,6 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
         // fetching all user tasks
         $result = $db->viewClothing($user_id,$clothing_id);
         $res = $db->viewDetailsClothing($user_id,$clothing_id);
-        var_dump($res);
         if($result){
             $response['status'] = "success";
             $response['urlImage'] = $res->getUrlImage();
