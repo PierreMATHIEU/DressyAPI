@@ -35,11 +35,11 @@ function authenticate(\Slim\Route $route) {
     // Verifying Authorization Header
     if (isset($headers['Authorization'])) {
         $db = new DbHandler();
-            var_dump("ok1");
-        // get the api key
 
+        // get the api key
         $api_key = $headers['Authorization'];
         var_dump($api_key);
+
         // validating api key
         if (!$db->isValidApiKey($api_key)) {
             // api key is not present in users table
@@ -49,13 +49,12 @@ function authenticate(\Slim\Route $route) {
             $app->stop();
         } else {
             global $user_id;
-            var_dump("ouf");
             // get user primary key id
             $user = $db->getUserId($api_key);
             var_dump($user);
             if ($user != NULL){
                 $user_id = $user["id"];
-                var_dump("win");
+                var_dump($user_id);
             }
 
         }
@@ -279,16 +278,12 @@ $app->get('/clothe', 'authenticate', function(){
     $response["error"] = false;
     $response["tasks"] = array();
 
-    var_dump($result);
-
     // looping through result and preparing tasks array
-    while ($task = $result->fetch_assoc()) {
+    while ($task = $result->fetch()) {
         $tmp = array();
-        $tmp["id"] = $task["id"];
-        $tmp["task"] = $task["task"];
-        $tmp["status"] = $task["status"];
-        $tmp["createdAt"] = $task["created_at"];
-        array_push($response["tasks"], $tmp);
+        $tmp["name"] = $task["cloth_name"];
+        $tmp["color"] = $task["cloth_color"];
+        array_push($response["clothe"], $tmp);
     }
 
     echoRespnse(200, $response);

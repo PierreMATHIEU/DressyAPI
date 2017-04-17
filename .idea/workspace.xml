@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fd1abc-d113-4ecb-b90f-8298f2706b2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/DbHandler.php" afterPath="$PROJECT_DIR$/include/DbHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v1/index.php" afterPath="$PROJECT_DIR$/v1/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,27 +14,27 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+            <state relative-caret-position="1938">
+              <caret line="279" column="0" lean-forward="true" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
               <folding>
-                <element signature="e#1816#2404#1#PHP" expanded="false" />
-                <element signature="e#2531#3920#1#PHP" expanded="false" />
-                <element signature="e#4028#5258#1#PHP" expanded="false" />
+                <element signature="e#1762#2350#1#PHP" expanded="false" />
+                <element signature="e#2477#3866#1#PHP" expanded="false" />
+                <element signature="e#3974#5204#1#PHP" expanded="false" />
                 <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
-                <element signature="e#7229#8177#1#PHP" expanded="false" />
+                <element signature="e#7175#8123#1#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DbHandler.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DbHandler.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/DbHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="169" column="10" lean-forward="false" selection-start-line="169" selection-start-column="10" selection-end-line="169" selection-end-column="10" />
+            <state relative-caret-position="329">
+              <caret line="151" column="29" lean-forward="false" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="29" />
               <folding>
                 <element signature="n#createUser#0;n#DbHandler#0;n#!!top" expanded="false" />
                 <marker date="1492430035104" expanded="true" signature="769:813" ph="SELECT * FRO... users" />
@@ -73,8 +73,8 @@
         <option value="$PROJECT_DIR$/models/Clothes.php" />
         <option value="$PROJECT_DIR$/models/Clothe.php" />
         <option value="$PROJECT_DIR$/include/DbClotheHandler.php" />
-        <option value="$PROJECT_DIR$/v1/index.php" />
         <option value="$PROJECT_DIR$/include/DbHandler.php" />
+        <option value="$PROJECT_DIR$/v1/index.php" />
       </list>
     </option>
   </component>
@@ -262,12 +262,12 @@
       <option name="presentableId" value="Default" />
       <updated>1492016502131</updated>
       <workItem from="1492016507348" duration="7676000" />
-      <workItem from="1492416573473" duration="10834000" />
+      <workItem from="1492416573473" duration="11153000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18510000" />
+    <option name="totallyTimeSpent" value="18829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -311,11 +311,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1816#2404#1#PHP" expanded="false" />
-            <element signature="e#2531#3920#1#PHP" expanded="false" />
-            <element signature="e#4028#5258#1#PHP" expanded="false" />
+            <element signature="e#1762#2350#1#PHP" expanded="false" />
+            <element signature="e#2477#3866#1#PHP" expanded="false" />
+            <element signature="e#3974#5204#1#PHP" expanded="false" />
             <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
-            <element signature="e#7229#8177#1#PHP" expanded="false" />
+            <element signature="e#7175#8123#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -422,24 +422,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-          <folding>
-            <element signature="e#1816#2404#1#PHP" expanded="false" />
-            <element signature="e#2531#3920#1#PHP" expanded="false" />
-            <element signature="e#4028#5258#1#PHP" expanded="false" />
-            <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
-            <element signature="e#7229#8177#1#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/DbHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="169" column="10" lean-forward="false" selection-start-line="169" selection-start-column="10" selection-end-line="169" selection-end-column="10" />
+        <state relative-caret-position="329">
+          <caret line="151" column="29" lean-forward="false" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="29" />
           <folding>
             <element signature="n#createUser#0;n#DbHandler#0;n#!!top" expanded="false" />
             <marker date="1492430035104" expanded="true" signature="769:813" ph="SELECT * FRO... users" />
@@ -450,6 +436,20 @@
             <marker date="1492430035104" expanded="true" signature="4162:4209" ph="SELECT user_... user" />
             <marker date="1492430035104" expanded="true" signature="4701:4756" ph="SELECT user_... users" />
             <marker date="1492430035104" expanded="true" signature="5336:5391" ph="SELECT user_... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="279" column="0" lean-forward="true" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
+          <folding>
+            <element signature="e#1762#2350#1#PHP" expanded="false" />
+            <element signature="e#2477#3866#1#PHP" expanded="false" />
+            <element signature="e#3974#5204#1#PHP" expanded="false" />
+            <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
+            <element signature="e#7175#8123#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
