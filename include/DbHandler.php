@@ -142,7 +142,7 @@ class DbHandler {
      * @param String $api_key user api key
      */
     public function getUserId($api_key) {
-        $stmt = $this->conn->prepare("SELECT user_id FROM user WHERE user_api_key = :api_key");
+        $stmt = $this->conn->prepare("SELECT user_id FROM users WHERE user_api_key = :api_key");
         $stmt->bindValue(':api_key', $api_key, PDO::PARAM_STR);
 
         if ($stmt->execute()) {
