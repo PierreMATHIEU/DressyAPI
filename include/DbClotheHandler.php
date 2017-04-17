@@ -48,7 +48,7 @@ public function viewClothe() {
             var_dump("popodipopo");
             var_dump($task);
             $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference']);
-
+            var_dump($newClothe);
         }
         $sth->closeCursor();
 
