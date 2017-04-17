@@ -35,8 +35,43 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
       }
     }
 
+
+    /**
+     * View clothing
+     * @param int $clothingId
+     */
+    public function viewClothing($user_id,$clothing_id) {
+        $clotheReponce = array();
+        //$sth = $this->conn->prepare("SELECT * FROM clothe");
+        $sth = $this->conn->prepare("SELECT * 
+                                              FROM clothe
+                                              JOIN clothing_clothe ON clothe.cloth_id=clothing_clothe.cloth_id
+                                              JOIN clothing ON clothing_clothe.clothing_id=clothing.clothing_id
+                                              WHERE user_id=:user_id
+                                              AND clothing.clothing_id=:clothing_id");
+        $sth->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+        $sth->bindValue(':clothing_id', $clothing_id, PDO::PARAM_INT);
+        $sth->execute();
+
+        if ($sth) {
+
+            while ($clothe = $sth->fetch()) {
+                //var_dump("popodipopo");
+                $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference']);
+                //var_dump($newClothe);
+                array_push($clotheReponce, $newClothe);
+            }
+            $sth->closeCursor();
+
+            return $clotheReponce;
+        } else {
+            // Failed
+            return false;
+        }
+    }
+
 /**
-* View clothing
+* View clothe
 * @param int $clothingId
 */
 public function viewClothe() {
