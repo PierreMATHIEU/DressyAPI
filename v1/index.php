@@ -285,6 +285,7 @@ $app->get('/clothe', 'authenticate', function(){
         array_push($clotheTab, $value);
     }
     var_dump($clotheTab);
+    $response["clothe"] = array();
     array_push($response["clothe"], $clotheTab);
     //$response["clothe"] = $clotheTab;
 
