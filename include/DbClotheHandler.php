@@ -48,7 +48,7 @@ public function viewClothe() {
 
     if ($sth) {
 
-        while ($count === $sth->rowCount()) {
+        while ($count == $sth->rowCount()) {
             var_dump("popodipopo");
             $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color']);
             var_dump($newClothe);
