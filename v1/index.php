@@ -95,7 +95,7 @@ $app->post('/login', function() use ($app) {
             $content = trim(file_get_contents("php://input"));
             $allPostVars = json_decode($content, true);
 
-            $userLogin = new UserLogin($allPostVars['user_pseudo'], $allPostVars['user_password']);
+            $userLogin = new UserLogin($allPostVars['user_mail'], $allPostVars['user_password']);
 
             $db = new DbHandler();
             // check for correct email and password

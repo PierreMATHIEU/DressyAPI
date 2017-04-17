@@ -15,8 +15,8 @@ class UserLogin
     private $user_mail;
     private $user_country;
 
-    public function __construct($user_pseudo, $user_password) {
-        $this->user_pseudo = $user_pseudo;
+    public function __construct($user_mail, $user_password) {
+        $this->user_mail = $user_mail;
         $this->user_password = $user_password;
     }
 
