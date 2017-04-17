@@ -279,7 +279,7 @@ $app->get('/clothe', 'authenticate', function(){
 
 
 
-    $response["error"] = false;
+    $response['status'] = "success";
     $response["clothe"] = array();
     foreach ($result as $value){
         $tmp = array();
