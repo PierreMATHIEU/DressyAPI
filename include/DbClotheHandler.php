@@ -39,12 +39,12 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
 public function viewClothe() {
     $sth = $this->conn->prepare("SELECT * FROM clothe");
 
-
     $sth->execute();
     $clothe = $sth->fetch();
 
     if ($sth) {
         // Success
+        var_dump('success');
         return $clothe;
     } else {
         // Failed

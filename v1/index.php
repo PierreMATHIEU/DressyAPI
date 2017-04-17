@@ -275,7 +275,7 @@ $app->get('/clothe', 'authenticate', function(){
 
     $response["error"] = false;
     $response["clothe"] = array();
-
+    var_dump($result);
     // looping through result and preparing tasks array
     while ($task = $result->fetch()) {
         var_dump($task);
