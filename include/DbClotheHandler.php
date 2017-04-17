@@ -58,11 +58,9 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
 
             while ($clothe = $sth->fetch()) {
                 $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage']);
-                //$newClothe = new Clothes($clothe['clothing_url_image'],new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage']),$clothe['clothing_vote']);
-                array_push($clotheReponce, $newClothe);
+               array_push($clotheReponce, $newClothe);
             }
             $sth->closeCursor();
-            var_dump($clotheReponce);
 
             return $clotheReponce;
         } else {
@@ -84,7 +82,7 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
 
         if ($sth) {
             while ($clothe = $sth->fetch()) {
-                $newClothe = new Clothe($clothe['clothing_url_image'], $clothe['clothing_vote']);
+                $newClothe = new Clothes($clothe['clothing_url_image'], $clothe['clothing_vote']);
                 array_push($clotheReponce, $newClothe);
             }
             $sth->closeCursor();
