@@ -43,8 +43,16 @@ public function viewClothe() {
     $clothe = $sth->fetch();
 
     if ($sth) {
-        // Success
-        return $clothe;
+
+        while ($task = $sth->fetch()) {
+            var_dump("popodipopo");
+            var_dump($task);
+            $newClothe = new Clothe($task['cloth_name'], $task['cloth_color'], $task['cloth_reference']);
+
+        }
+        $sth->closeCursor();
+
+        return $newClothe;
     } else {
         // Failed
         return false;

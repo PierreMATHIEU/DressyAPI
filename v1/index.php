@@ -278,7 +278,7 @@ $app->get('/clothe', 'authenticate', function(){
     var_dump("ok1");
     var_dump($result);
     // looping through result and preparing tasks array
-    while ($task = $result->fetch(PDO::FETCH_ASSOC)) {
+    /*while ($task = $result->fetch()) {
         var_dump("popodipopo");
         var_dump($task);
         $tmp = array();
@@ -286,7 +286,7 @@ $app->get('/clothe', 'authenticate', function(){
         $tmp["color"] = $task["cloth_color"];
         array_push($response["clothe"], $tmp);
     }
-    $result->closeCursor();
+    $result->closeCursor();*/
 
     echoRespnse(200, $response);
 });
