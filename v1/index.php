@@ -284,6 +284,7 @@ $app->get('/clothe', 'authenticate', function(){
     foreach ($result as $value){
         array_push($clotheTab, $value);
     }
+    var_dump($clotheTab);
     $response["clothe"] = $clotheTab;
 
     //var_dump("ok1");
