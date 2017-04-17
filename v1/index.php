@@ -38,7 +38,6 @@ function authenticate(\Slim\Route $route) {
 
         // get the api key
         $api_key = $headers['Authorization'];
-        var_dump($api_key);
 
         // validating api key
         if (!$db->isValidApiKey($api_key)) {
@@ -272,7 +271,7 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
             echo json_encode($response);
             $db = null;
         }else {
-            throw new PDOException('No records found.');
+            throw new PDOException('No records found');
         }
 
 
