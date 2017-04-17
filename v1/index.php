@@ -282,12 +282,11 @@ $app->get('/clothe', 'authenticate', function(){
     $response["error"] = false;
 
     foreach ($result as $value){
-        array_push($clotheTab, $value);
+        var_dump($value['cloth_name']);
     }
-    var_dump($clotheTab);
-    $response["clothe"] = array();
-    array_push($response["clothe"], $clotheTab);
-    //$response["clothe"] = $clotheTab;
+
+    //var_dump($clotheTab);
+    $response["clothe"] = $clotheTab;
 
     //var_dump("ok1");
     //var_dump($result);
