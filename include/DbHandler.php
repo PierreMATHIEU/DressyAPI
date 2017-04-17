@@ -142,14 +142,13 @@ class DbHandler {
      * @param String $api_key user api key
      */
     public function getUserId($api_key) {
-        $stmt = $this->conn->prepare("SELECT user_id FROM user WHERE user_api_key = ?");
-        $stmt->bind_param("s", $api_key);
+        $stmt = $this->conn->prepare("SELECT user_id FROM user WHERE user_api_key = :api_key");
+        $stmt->bindValue(':api_key', $api_key, PDO::PARAM_STR);
+
         if ($stmt->execute()) {
-            $stmt->bind_result($user_id);
-            $stmt->fetch();
-            // TODO
-            // $user_id = $stmt->get_result()->fetch_assoc();
-            $stmt->close();
+            $res = $stmt->fetch();
+            $user_id = $res['user_id'];
+            // $stmt->close();
             return $user_id;
         } else {
             return NULL;
@@ -163,11 +162,10 @@ class DbHandler {
      * @return boolean
      */
     public function isValidApiKey($api_key) {
-        $stmt = $this->conn->prepare("SELECT user_id from user WHERE user_api_key = ?");
-        $stmt->bind_param("s", $api_key);
+        $stmt = $this->conn->prepare("SELECT user_id FROM user WHERE user_api_key = :api_key");
+        $stmt->bindValue(':api_key', $api_key, PDO::PARAM_STR);
         $stmt->execute();
-        $stmt->store_result();
-        $num_rows = $stmt->num_rows;
+        $num_rows = $stmt->rowCount();
         $stmt->close();
         return $num_rows > 0;
     }

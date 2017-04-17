@@ -36,12 +36,12 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
 * View clothing
 * @param int $clothingId
 */
-public function viewClothe($clothingId) {
+public function viewClothe() {
+    $sth = $this->conn->prepare("SELECT * FROM clothe");
 
-    $sth = $this->conn->prepare("SELECT * FROM clothing WHERE clothing_id = :id");
-    $sth->bindParam(':id', $clothingId, PDO::PARAM_INT);
+
     $sth->execute();
-    $clothe = $sth->fetch(PDO::FETCH_OBJ);
+    $clothe = $sth->fetch();
 
     if ($sth) {
         // Success

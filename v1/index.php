@@ -18,6 +18,47 @@ $app = new \Slim\Slim();
 // User id from db - Global Variable
 $user_id = NULL;
 
+/**
+ * Authentification avec l'API_KEY
+ */
+function authenticate(\Slim\Route $route) {
+    // Getting request headers
+    $headers = apache_request_headers();
+    $response = array();
+    $app = \Slim\Slim::getInstance();
+
+
+    // Verifying Authorization Header
+    if (isset($headers['Authorization'])) {
+        $db = new DbHandler();
+
+        // get the api key
+        $api_key = $headers['Authorization'];
+
+        // validating api key
+        if (!$db->isValidApiKey($api_key)) {
+            // api key is not present in users table
+            $response['status'] = "error";
+            $response['message'] = "Access Denied. Invalid Api key";
+            echoRespnse(401, $response);
+            $app->stop();
+        } else {
+            global $user_id;
+            // get user primary key id
+            $user = $db->getUserId($api_key);
+            if ($user != NULL)
+                $user_id = $user["id"];
+        }
+    } else {
+        // api key is missing in header
+        $response['status'] = "error";
+        $response['message'] = "Api key is misssing";
+        echoRespnse(400, $response);
+        $app->stop();
+    }
+}
+
+
 
 $app->get('/clothing/:id', function ($id) {
     $app = \Slim\Slim::getInstance();
@@ -118,42 +159,6 @@ $app->post('/login', function() use ($app) {
 
             echoRespnse(400, $response);
         });
-/**
- * Authentification avec l'API_KEY
- */
-function authenticate(\Slim\Route $route) {
-    // Getting request headers
-    $headers = apache_request_headers();
-    $response = array();
-    $app = \Slim\Slim::getInstance();
-
-
-    // Verifying Authorization Header
-    if (isset($headers['Authorization'])) {
-        $db = new DbHandler();
-
-        // get the api key
-        $api_key = $headers['Authorization'];
-        // validating api key
-        if (!$db->isValidApiKey($api_key)) {
-            // api key is not present in users table
-            $response["error"] = true;
-            $response["message"] = "Access Denied. Invalid Api key";
-            echoRespnse(401, $response);
-            $app->stop();
-        } else {
-            global $user_id;
-            // get user primary key id
-            $user_id = $db->getUserId($api_key);
-        }
-    } else {
-        // api key is missing in header
-        $response["error"] = true;
-        $response["message"] = "Api key is misssing";
-        echoRespnse(400, $response);
-        $app->stop();
-    }
-}
 
 /**
  * Verifying required params posted or not
@@ -253,45 +258,6 @@ function validateEmail($email) {
 //                 echoRespnse(200, $response);
 //             }
 //         });
-/**
- * User Login
- * url - /login
- * method - POST
- * params - email, password
- */
-$app->post('/login', function() use ($app) {
-            // check for required params
-            verifyRequiredParams(array('email', 'password'));
-
-            // reading post params
-            $email = $app->request()->post('email');
-            $password = $app->request()->post('password');
-            $response = array();
-
-            $db = new DbHandler();
-            // check for correct email and password
-            if ($db->checkLogin($email, $password)) {
-                // get the user by email
-                $user = $db->getUserByEmail($email);
-
-                if ($user != NULL) {
-                    $response["error"] = false;
-                    $response['name'] = $user['user_last_name'];
-                    $response['email'] = $user['user_mail'];
-                    $response['apiKey'] = $user['user_api_key'];
-                } else {
-                    // unknown error occurred
-                    $response['error'] = true;
-                    $response['message'] = "An error occurred. Please try again";
-                }
-            } else {
-                // user credentials are wrong
-                $response['error'] = true;
-                $response['message'] = 'Login failed. Incorrect credentials';
-            }
-
-            echoRespnse(200, $response);
-        });
 
 /*---------------------------------CLOTHE------------------------------------*/
 /**
@@ -325,5 +291,36 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
             }
             echoRespnse(201, $response);
         });
+
+/**
+ * Listing all clothe
+ * method GET
+ * url /clothe
+ */
+$app->get('/clothe', 'authenticate', function() {
+    global $user_id;
+    $response = array();
+    $db = new DbClotheHandler();
+
+    // fetching all user tasks
+    $result = $db->viewClothe();
+
+    $response["error"] = false;
+    $response["tasks"] = array();
+
+    var_dump($result);
+
+    // looping through result and preparing tasks array
+    while ($task = $result->fetch_assoc()) {
+        $tmp = array();
+        $tmp["id"] = $task["id"];
+        $tmp["task"] = $task["task"];
+        $tmp["status"] = $task["status"];
+        $tmp["createdAt"] = $task["created_at"];
+        array_push($response["tasks"], $tmp);
+    }
+
+    echoRespnse(200, $response);
+});
 
 $app->run();
