@@ -271,7 +271,7 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
     $db = new DbClotheHandler();
 
     // fetching all user tasks
-    $result = $db->viewClothe($user_id,$clothing_id);
+    $result = $db->viewClothing($user_id,$clothing_id);
     var_dump($clothing_id);
 
     $response['status'] = "success";
