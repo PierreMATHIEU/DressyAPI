@@ -23,6 +23,7 @@ $user_id = NULL;
  */
 function authenticate(\Slim\Route $route) {
     // Getting request headers
+    var_dump("plopi");
     $headers = apache_request_headers();
     $response = array();
     $app = \Slim\Slim::getInstance();
@@ -258,7 +259,7 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
  * method GET
  * url /clothe
  */
-$app->get('/clothe', function() {
+$app->get('/clothe', 'authenticate', function() {
     var_dump("aa");
     global $user_id;
     $response = array();
