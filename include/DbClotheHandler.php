@@ -45,7 +45,6 @@ public function viewClothe() {
 
     $sth->execute();
 
-
     if ($sth) {
 
         while ($clothe = $sth->fetch()) {

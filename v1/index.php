@@ -265,19 +265,13 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
  * method GET
  * url /clothe
  */
-$app->get('/clothe', 'authenticate', function(){
+$app->get('/clothing', 'authenticate', function(){
     global $user_id;
     $response = array();
-    $clotheTab =array();
     $db = new DbClotheHandler();
 
     // fetching all user tasks
     $result = $db->viewClothe();
-
-
-
-
-
 
     $response['status'] = "success";
     $response["clothe"] = array();
@@ -292,23 +286,6 @@ $app->get('/clothe', 'authenticate', function(){
         $tmp["cloth_material"] = $value->getClothMaterial();
         array_push($response["clothe"], $tmp);
     }
-
-    //var_dump($clotheTab);
-
-
-    //var_dump("ok1");
-    //var_dump($result);
-    // looping through result and preparing tasks array
-    /*while ($task = $result->fetch()) {
-        var_dump("popodipopo");
-        var_dump($task);
-        $tmp = array();
-        $tmp["name"] = $task["cloth_name"];
-        $tmp["color"] = $task["cloth_color"];
-        array_push($response["clothe"], $tmp);
-    }
-    $result->closeCursor();*/
-
     echoRespnse(200, $response);
 });
 
