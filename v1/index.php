@@ -274,9 +274,9 @@ $app->get('/clothe', 'authenticate', function(){
     $result = $db->viewClothe();
 
     $response["error"] = false;
-    $response["clothe"] = array();
-    var_dump("ok1");
-    var_dump($result);
+    $response["clothe"] = $result;
+    //var_dump("ok1");
+    //var_dump($result);
     // looping through result and preparing tasks array
     /*while ($task = $result->fetch()) {
         var_dump("popodipopo");

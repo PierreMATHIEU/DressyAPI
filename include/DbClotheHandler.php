@@ -48,9 +48,9 @@ public function viewClothe() {
     if ($sth) {
 
         while ($clothe = $sth->fetch()) {
-            var_dump("popodipopo");
+            //var_dump("popodipopo");
             $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color']);
-            var_dump($newClothe);
+            //var_dump($newClothe);
         }
         $sth->closeCursor();
 
