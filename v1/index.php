@@ -64,7 +64,6 @@ function authenticate(\Slim\Route $route) {
     }
 }
 
-
 /**
  * User Registration
  * url - /register
@@ -127,20 +126,22 @@ $app->post('/login', function() use ($app) {
                 // get the user by email
                 $res = $db->getUserByEmail($userLogin);
                 if ($res != NULL) {
-                    $response['status'] = "success";
                     $response['api_key'] = $res;
+                    echoRespnse(200, $response);
                 } else {
                     // unknown error occurred
                     $response['status'] = "error";
                     $response['message'] = "An error occurred. Please try again";
+                    echoRespnse(400, $response);
                 }
             } else {
                 // user credentials are wrong
                 $response['status'] = "error";
                 $response['message'] = 'Login failed. Incorrect credentials';
+                echoRespnse(400, $response);
             }
 
-            echoRespnse(400, $response);
+
         });
 
 /**
@@ -252,6 +253,7 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
         // fetching all user tasks
         $result = $db->viewClothing($user_id,$clothing_id);
         $res = $db->viewDetailsClothing($user_id,$clothing_id);
+
         if($result){
             $response['status'] = "success";
             $response['urlImage'] = $res->getUrlImage();
