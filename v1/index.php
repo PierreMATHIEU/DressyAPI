@@ -130,15 +130,12 @@ $app->post('/login', function() use ($app) {
                     echoRespnse(200, $response);
                 } else {
                     // unknown error occurred
-                    $response['status'] = "error";
-                    $response['message'] = "An error occurred. Please try again";
-                    echoRespnse(400, $response);
+
+                    echoRespnse(400);
                 }
             } else {
                 // user credentials are wrong
-                $response['status'] = "error";
-                $response['message'] = 'Login failed. Incorrect credentials';
-                echoRespnse(400, $response);
+                echoRespnse(400);
             }
 
 
