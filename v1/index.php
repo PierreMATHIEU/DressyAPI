@@ -33,11 +33,11 @@ function authenticate(\Slim\Route $route) {
     $app = \Slim\Slim::getInstance();
 
     // Verifying Authorization Header
-    if (isset($headers['Authorization'])) {
+    if (isset($headers['x-access-token'])) {
         $db = new DbHandler();
 
         // get the api key
-        $api_key = $headers['Authorization'];
+        $api_key = $headers['x-access-token'];
 
         // validating api key
         if (!$db->isValidApiKey($api_key)) {
@@ -137,8 +137,6 @@ $app->post('/login', function() use ($app) {
                 // user credentials are wrong
                 echoRespnse(400);
             }
-
-
         });
 
 /**
@@ -239,7 +237,7 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
  * method GET
  * url /clothing/:id
  */
-$app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
+$app->get('/getClothe', 'authenticate', function(){
     $app = \Slim\Slim::getInstance();
     try
     {
@@ -248,12 +246,12 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
         $db = new DbClotheHandler();
 
         // fetching all user tasks
-        $result = $db->viewClothing($user_id,$clothing_id);
-        $res = $db->viewDetailsClothing($user_id,$clothing_id);
+        $result = $db->viewAllClothe($user_id);
+        $res = $db->viewDetailsClothing($user_id);
 
         if($result){
-            $response['status'] = "success";
-            $response['urlImage'] = $res->getUrlImage();
+            //$response['status'] = "success";
+            //$response['urlImage'] = $res->getUrlImage();
             $response["listClothe"] = array();
             foreach ($result as $value){
                 $tmp = array();
@@ -266,7 +264,7 @@ $app->get('/clothing/:clothing_id', 'authenticate', function($clothing_id){
                 $tmp["cloth_material"] = $value->getClothMaterial();
                 array_push($response["listClothe"], $tmp);
             }
-            $response['score'] = $res->getScore();
+            //$response['score'] = $res->getScore();
 
             //echoRespnse(200, $response);
             $app->response->setStatus(200);

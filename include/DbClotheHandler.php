@@ -38,20 +38,20 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
 
 
     /**
-     * View clothing
+     * View clothe
      * @param int $clothingId
      */
-    public function viewClothing($user_id,$clothing_id) {
+    public function viewAllClothe($user_id) {
         $clotheReponce = array();
-        //$sth = $this->conn->prepare("SELECT * FROM clothe");
-        $sth = $this->conn->prepare("SELECT cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage
+
+        $sth = $this->conn->prepare("SELECT clothe_brand_libelle, user_id, clothe_category_libelle, clothe_material_libelle, cloth_name, cloth_color, cloth_reference, cloth_urlimage
                                               FROM clothe
                                               JOIN clothing_clothe ON clothe.cloth_id=clothing_clothe.cloth_id
-                                              JOIN clothing ON clothing_clothe.clothing_id=clothing.clothing_id
-                                              WHERE user_id=:user_id
-                                              AND clothing.clothing_id=:clothing_id");
+                                              JOIN clothe_category ON clothe_category.clothe_category_id=clothe.cloth_category_id 
+                                              JOIN clothe_brand ON clothe_brand.clothe_brand_id=clothe.cloth_brand_id
+                                              JOIN clothe_material ON clothe_material.clothe_material_id=clothe.cloth_material_id
+                                              WHERE user_id=:user_id");
         $sth->bindValue(':user_id', $user_id, PDO::PARAM_INT);
-        $sth->bindValue(':clothing_id', $clothing_id, PDO::PARAM_INT);
         $sth->execute();
 
         if ($sth) {
@@ -68,14 +68,13 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
             return false;
         }
     }
-    public function viewDetailsClothing($user_id,$clothing_id){
+
+    public function viewDetailsClothing($user_id){
         $sth = $this->conn->prepare("SELECT clothing_url_image, clothing_vote
                                               FROM clothing
                                               JOIN clothing_clothe ON clothing_clothe.clothing_id=clothing.clothing_id
-                                              WHERE user_id=:user_id
-                                              AND clothing.clothing_id=:clothing_id");
+                                              WHERE user_id=:user_id");
         $sth->bindValue(':user_id', $user_id, PDO::PARAM_INT);
-        $sth->bindValue(':clothing_id', $clothing_id, PDO::PARAM_INT);
         $sth->execute();
 
         if ($sth) {
