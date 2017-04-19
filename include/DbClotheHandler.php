@@ -56,7 +56,7 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
         if ($sth) {
 
             while ($clothe = $sth->fetch()) {
-                $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage']);
+                $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage'], $clothe['clothe_category_libelle'], $clothe['clothe_brand_libelle'], $clothe['clothe_material_libelle']);
                array_push($clotheReponce, $newClothe);
             }
             $sth->closeCursor();
