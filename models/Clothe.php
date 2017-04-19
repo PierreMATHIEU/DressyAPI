@@ -15,6 +15,7 @@ class Clothe
     private $cloth_category;
     private $cloth_brand;
     private $cloth_material;
+    private $user_id;
 
     /**
      * Clothe constructor.
@@ -26,7 +27,7 @@ class Clothe
      * @param $cloth_brand
      * @param $cloth_material
      */
-    public function __construct($cloth_name="", $cloth_color="", $cloth_reference=null, $cloth_urlimage=null, $cloth_category=null, $cloth_brand=null, $cloth_material=null)
+    public function __construct($cloth_name="", $cloth_color="", $cloth_reference=null, $cloth_urlimage=null, $cloth_category=null, $cloth_brand=null, $cloth_material=null, $user_id=0)
     {
         $this->cloth_name = $cloth_name;
         $this->cloth_color = $cloth_color;

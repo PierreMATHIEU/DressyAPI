@@ -63,7 +63,7 @@ function authenticate(\Slim\Route $route) {
         $app->stop();
     }
 }
-
+/*-----------------------------------------------------USER--------------------------------------------------------------*/
 /**
  * User Registration
  * url - /register
@@ -199,32 +199,32 @@ function validateEmail($email) {
     echo json_encode($response);
 }
 
-/*---------------------------------CLOTHE------------------------------------*/
+
+/*----------------------------------------------------CLOTHE---------------------------------------------------------*/
 /**
  * create clothe
- * url - /clothe_add
+ * url - /addClothe
  * method - POST
- * params - name, color, reference
+ * params - clothe
  */
-$app->post('/clothe_add', 'authenticate', function() use ($app) {
-            // check for required params
-            verifyRequiredParams(array('name', 'color', 'reference'));
-
-            // reading post params
-            $name = $app->request()->post('name');
-            $color = $app->request()->post('color');
-            $reference = $app->request()->post('reference');
+$app->post('/addClothe', 'authenticate', function() use ($app) {
             $response = array();
 
+            // reading post params
+            $content = trim(file_get_contents("php://input"));
+            //Attempt to decode the incoming RAW post data from JSON.
+            $allPostVars = json_decode($content, true);
+
+
+            $clothe= new Clothe($allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material']);
+
             $db = new DbClotheHandler();
+            $res = $db->createClothe($clothe);
 
-            // creating new task
-            $clothe_id = $db->createClothe($name, $color, $reference);
-
-            if ($clothe_id == CLOTHE_CREATED_SUCCESSFULLY) {
+            if ($res == CLOTHE_CREATED_SUCCESSFULLY) {
                 $response["error"] = false;
                 $response["message"] = "Clothe created successfully";
-                $response["name"] = $name;
+
             } else {
                 $response["error"] = true;
                 $response["message"] = "Failed to create clothe. Please try again";
@@ -233,9 +233,9 @@ $app->post('/clothe_add', 'authenticate', function() use ($app) {
         });
 
 /**
- * Listing clothing
+ * Liste des habits de l'utilisateur
  * method GET
- * url /clothing/:id
+ * url /getClothe
  */
 $app->get('/getClothe', 'authenticate', function(){
     $app = \Slim\Slim::getInstance();
@@ -266,12 +266,12 @@ $app->get('/getClothe', 'authenticate', function(){
             }
             //$response['score'] = $res->getScore();
 
-            //echoRespnse(200, $response);
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
             echo json_encode($response);
             $db = null;
         }else {
+            $app->response()->setStatus(401);
             throw new PDOException('No records found');
         }
     } catch(PDOException $e) {

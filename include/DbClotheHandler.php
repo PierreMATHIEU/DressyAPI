@@ -16,18 +16,24 @@ class DbClotheHandler {
 
   /**
  * Create clothe
- * @param String $clotheName
- * @param String $clotheColor
- * @param String $clotheReference
+ * @param Clothe $clothe
  */
-public function createClothe($clotheName, $clotheColor, $clotheReference) {
-      $stmt = $this->conn->prepare("INSERT INTO clothe(clothe_brand_id, clothe_category_id, clothe_material_id, clothe_name, clothe_color, clothe_reference) VALUES (1, 1, 1, ?, ?, ?)");
-      $stmt->bind_param("sss", $clotheName, $clotheColor, $clotheReference);
+public function createClothe($clothe) {
+      $stmt = $this->conn->prepare("INSERT INTO clothe(cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage, user_id) 
+                                              VALUES (:cloth_brand_id, :cloth_category_id, :cloth_material_id, :cloth_name, :cloth_color, :cloth_reference, :cloth_urlimage, :user_id)");
 
-      $result = $stmt->execute();
-      $stmt->close();
+        $stmt->bindValue(':cloth_brand_id', $clothe->getUser_lastName(), PDO::PARAM_INT);
+        $stmt->bindValue(':cloth_category_id', $clothe->getUser_fisrtName(), PDO::PARAM_INT);
+        $stmt->bindValue(':cloth_material_id', $clothe->getUser_mail(), PDO::PARAM_INT);
+        $stmt->bindValue(':cloth_name', $clothe, PDO::PARAM_STR);
+        $stmt->bindValue(':cloth_color', $clothe, PDO::PARAM_STR);
+        $stmt->bindValue(':cloth_reference', $clothe->getUser_pseudo(), PDO::PARAM_STR);
+        $stmt->bindValue(':cloth_urlimage', $clothe->getUser_country(), PDO::PARAM_STR);
+        $stmt->bindValue(':user_id', $clothe->getUser_country(), PDO::PARAM_INT);
 
-      if ($result) {
+        //$stmt->close();
+
+      if ($stmt->execute()) {
           // User successfully inserted
           return CLOTHE_CREATED_SUCCESSFULLY;
       } else {
@@ -67,6 +73,7 @@ public function createClothe($clotheName, $clotheColor, $clotheReference) {
             return false;
         }
     }
+
 
     public function viewDetailsClothing($user_id){
         $sth = $this->conn->prepare("SELECT clothing_url_image, clothing_vote
