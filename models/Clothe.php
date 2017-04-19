@@ -32,7 +32,7 @@ class Clothe
         $this->cloth_name = $cloth_name;
         $this->cloth_color = $cloth_color;
         $this->cloth_reference = $cloth_reference;
-        $this->i = $cloth_urlimage;
+        $this->cloth_urlimage = $cloth_urlimage;
         $this->cloth_category = $cloth_category;
         $this->cloth_brand = $cloth_brand;
         $this->cloth_material = $cloth_material;
