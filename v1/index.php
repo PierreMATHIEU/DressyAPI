@@ -308,7 +308,7 @@ $app->get('/getClothes', 'authenticate', function(){
                     $tmp["cloth_category"] = $value2->getClothCategory();
                     $tmp["cloth_brand"] = $value2->getClothBrand();
                     $tmp["cloth_material"] = $value2->getClothMaterial();
-                    array_push($response["listClothe"], $tmp);
+                    array_push($tmp1["listClothe"], $tmp);
                 }
                 $tmp1["score"] = $value->getScore();
                 array_push($response["listClothes"], $tmp1);
