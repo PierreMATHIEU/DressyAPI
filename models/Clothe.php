@@ -13,9 +13,9 @@ class Clothe
     private $cloth_color;
     private $cloth_reference;
     private $cloth_urlimage;
-    private $cloth_category;
-    private $cloth_brand;
-    private $cloth_material;
+    private $cloth_category= array();
+    private $cloth_brand=array();
+    private $cloth_material=array();
     private $user_id;
 
     /**
@@ -28,7 +28,7 @@ class Clothe
      * @param $cloth_brand
      * @param $cloth_material
      */
-       public function __construct($cloth_id=0,$cloth_name="", $cloth_color="", $cloth_reference=null, $cloth_urlimage=null, $cloth_category=null, $cloth_brand=null, $cloth_material=null, $user_id=0)
+       public function __construct($cloth_id=0,$cloth_name="", $cloth_color="", $cloth_reference=null, $cloth_urlimage=null, $cloth_category=array(), $cloth_brand=array(), $cloth_material=array(), $user_id=0)
     {
         $this->cloth_name = $cloth_name;
         $this->cloth_id = $cloth_id;
