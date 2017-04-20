@@ -8,51 +8,51 @@
  */
 class Category
 {
-    private $id;
-    private $libelle;
+    private $category_id;
+    private $category_libelle;
 
     /**
-     * Brand constructor.
-     * @param $id
-     * @param $libelle
+     * Category constructor.
+     * @param $category_id
+     * @param $category_libelle
      */
-    public function __construct($id=0, $libelle="")
+    public function __construct($category_id=0, $category_libelle="")
     {
-        $this->id = $id;
-        $this->libelle = $libelle;
+        $this->category_id = $category_id;
+        $this->category_libelle = $category_libelle;
     }
 
     /**
      * @return int
      */
-    public function getId()
+    public function getCategoryId()
     {
-        return $this->id;
+        return $this->category_id;
     }
 
     /**
-     * @param int $id
+     * @param int $category_id
      */
-    public function setId($id)
+    public function setCategoryId($category_id)
     {
-        $this->id = $id;
+        $this->category_id = $category_id;
     }
 
     /**
      * @return string
      */
-    public function getLibelle()
+    public function getCategoryLibelle()
     {
-        return $this->libelle;
+        return $this->category_libelle;
     }
 
     /**
-     * @param string $libelle
+     * @param string $category_libelle
      */
-    public function setLibelle($libelle)
+    public function setCategoryLibelle($category_libelle)
     {
-        $this->libelle = $libelle;
+        $this->category_libelle = $category_libelle;
     }
 
-    
+
 }
