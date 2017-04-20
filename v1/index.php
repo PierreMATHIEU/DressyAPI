@@ -265,6 +265,7 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmp["cloth_reference"] = $value->getClothReference();
                 $tmp["cloth_urlImage"] = $value->getClothUrlImage();
                 $tmp["cloth_category"] = array();
+                var_dump($value->getClothCategory());
                 foreach ($value->getClothCategory() as $valCat){
                     var_dump($valCat->getId());
                     $tmpCat = array();
