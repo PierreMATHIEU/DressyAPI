@@ -266,17 +266,12 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmp["cloth_urlImage"] = $value->getClothUrlImage();
 
                 $tmp["cloth_category"] = array();
-                //var_dump($value->getClothCategory()->getCategoryId());
-                //var_dump("entre");
-                //var_dump($value->getCategoryId());
-                foreach ($value->getClothCategory() as $valcat){
 
-                    $tmpCat = array();
-                    $tmpCat["category_id"]= $value->getClothCategory()->getCategoryId();
-                    $tmpCat["category_libelle"]= $value->getClothCategory()->getCategoryLibelle();
-                    array_push($tmp["cloth_category"], $tmpCat);
+                $tmpCat = array();
+                $tmpCat["category_id"]= $value->getClothCategory()->getCategoryId();
+                $tmpCat["category_libelle"]= $value->getClothCategory()->getCategoryLibelle();
+                array_push($tmp["cloth_category"], $tmpCat);
 
-                }
 
                 $tmp["cloth_brand"] = $value->getClothBrand();
                 $tmp["cloth_material"] = $value->getClothMaterial();
@@ -291,7 +286,7 @@ $app->get('/getClothe', 'authenticate', function(){
             $app->response()->setStatus(401);
             throw new PDOException('No records found');
         }
-    } catch(PDOException $e) {
+    }catch(PDOException $e) {
         $app->response()->setStatus(404);
         echo '{"status":"error", "message":"'. $e->getMessage() .'"}';
     }
