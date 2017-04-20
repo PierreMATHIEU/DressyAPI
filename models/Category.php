@@ -16,7 +16,7 @@ class Category
      * @param $id
      * @param $libelle
      */
-    public function __construct($id=null, $libelle="")
+    public function __construct($id=0, $libelle="")
     {
         $this->id = $id;
         $this->libelle = $libelle;
