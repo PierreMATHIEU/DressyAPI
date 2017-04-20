@@ -288,9 +288,12 @@ $app->get('/getClothes', 'authenticate', function(){
         $db = new DbClotheHandler();
 
         // fetching all user tasks
-        $result = $db->viewClothes($user_id);
-        $res = $db->viewDetailsClothing($user_id);
+        $result = $db->viewAllClothes($user_id);
         var_dump($result);
+
+
+        $res = $db->viewDetailsClothing($user_id);
+
         if($result){
 
             $response['urlImage'] = $res->getUrlImage();
