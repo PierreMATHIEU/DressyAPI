@@ -253,6 +253,7 @@ $app->get('/getClothe', 'authenticate', function(){
             $response["listClothe"] = array();
             foreach ($result as $value){
                 $tmp = array();
+                $tmp["cloth_id"] = $value->getClothId();
                 $tmp["cloth_name"] = $value->getClothName();
                 $tmp["cloth_color"] = $value->getClothColor();
                 $tmp["cloth_reference"] = $value->getClothReference();
@@ -276,6 +277,38 @@ $app->get('/getClothe', 'authenticate', function(){
         echo '{"status":"error", "message":"'. $e->getMessage() .'"}';
     }
 });
+
+/**
+ * create clothe
+ * url - /deleteClothe
+ * method - POST
+ * params - clothe
+ */
+$app->post('/deleteClothe', 'authenticate', function() use ($app) {
+    $response = array();
+
+    // reading post params
+    $content = trim(file_get_contents("php://input"));
+    //Attempt to decode the incoming RAW post data from JSON.
+    $allPostVars = json_decode($content, true);
+
+
+    $clothe= new Clothe($allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material']);
+
+    $db = new DbClotheHandler();
+    $res = $db->createClothe($clothe);
+
+    if ($res == CLOTHE_CREATED_SUCCESSFULLY) {
+        $response["error"] = false;
+        $response["message"] = "Clothe created successfully";
+
+    } else {
+        $response["error"] = true;
+        $response["message"] = "Failed to create clothe. Please try again";
+    }
+    echoRespnse(201, $response);
+});
+
 
 
 /*----------------------------------------------------CLOTHES---------------------------------------------------------*/
@@ -305,6 +338,7 @@ $app->get('/getClothes', 'authenticate', function(){
                 $tmp1["listClothe"] = array();
                 foreach ($value->getListClothe() as $value2){
                     $tmp = array();
+                    $tmp["cloth_id"] = $value2->getClothId();
                     $tmp["cloth_name"] = $value2->getClothName();
                     $tmp["cloth_color"] = $value2->getClothColor();
                     $tmp["cloth_reference"] = $value2->getClothReference();

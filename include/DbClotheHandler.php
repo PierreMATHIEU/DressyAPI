@@ -2,6 +2,9 @@
 
 require_once '../models/Clothe.php';
 require_once '../models/Clothes.php';
+require_once '../models/Brand.php';
+require_once '../models/Material.php';
+require_once '../models/Category.php';
 
 class DbClotheHandler {
 
@@ -49,7 +52,7 @@ class DbClotheHandler {
     public function viewAllClothe($user_id) {
         $clotheReponce = array();
 
-        $sth = $this->conn->prepare("SELECT clothe_brand_libelle, user_id, clothe_category_libelle, clothe_material_libelle, cloth_name, cloth_color, cloth_reference, cloth_urlimage
+        $sth = $this->conn->prepare("SELECT cloth_id,clothe_brand_libelle, user_id, clothe_category_libelle, clothe_material_libelle, cloth_name, cloth_color, cloth_reference, cloth_urlimage
                                               FROM clothe
                                               JOIN clothe_category ON clothe_category.clothe_category_id=clothe.cloth_category_id 
                                               JOIN clothe_brand ON clothe_brand.clothe_brand_id=clothe.cloth_brand_id
@@ -61,7 +64,10 @@ class DbClotheHandler {
         if ($sth) {
 
             while ($clothe = $sth->fetch()) {
-                $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage'], $clothe['clothe_category_libelle'], $clothe['clothe_brand_libelle'], $clothe['clothe_material_libelle']);
+                $newBrand = new Brand($clothe['clothe_brand_id'],$clothe['clothe_brand_libelle']);
+                $newCategory = new Category($clothe['clothe_category_id'],$clothe['clothe_category_libelle']);
+                $newMaterial = new Material($clothe['clothe_material_id'],$clothe['clothe_material_libelle']);
+                $newClothe = new Clothe($clothe['cloth_id'],$clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage'], $newCategory, $newBrand, $newMaterial);
                array_push($clotheReponce, $newClothe);
             }
             $sth->closeCursor();
@@ -99,8 +105,6 @@ class DbClotheHandler {
     public function viewAllClothes($user_id) {
         $clotheReponce = array();
 
-        $clothingID = 0;
-
         $sth = $this->conn->prepare("SELECT clothing_id, clothing_url_image,clothing_vote, user_id
                                               FROM clothing 
                                               WHERE clothing.user_id=:user_id");
@@ -129,10 +133,7 @@ class DbClotheHandler {
                 $sth2->closeCursor();
 
                 $newClothes = new Clothes($clothes['clothing_url_image'],$listClothe, $clothes['clothing_vote']);
-
-
                 array_push($clotheReponce, $newClothes);
-
             }
             $sth->closeCursor();
 
