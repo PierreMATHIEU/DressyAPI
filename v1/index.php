@@ -266,14 +266,14 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmp["cloth_urlImage"] = $value->getClothUrlImage();
 
                 $tmp["cloth_category"] = array();
-                var_dump($value->getClothCategory()->getCategoryId());
-                var_dump("entre");
-                var_dump($value->getCategoryId());
+                //var_dump($value->getClothCategory()->getCategoryId());
+                //var_dump("entre");
+                //var_dump($value->getCategoryId());
                 foreach ($value->getClothCategory() as $valcat){
-                    var_dump($valcat->getCategoryId());
+
                     $tmpCat = array();
-                    $tmpCat["category_id"]= $valcat->getCategoryId();
-                    $tmpCat["category_libelle"]= $valcat->getCategoryLibelle();
+                    $tmpCat["category_id"]= $value->getClothCategory()->getCategoryId();
+                    $tmpCat["category_libelle"]= $value->getClothCategory()->getCategoryLibelle();
                     array_push($tmp["cloth_category"], $tmpCat);
 
                 }
