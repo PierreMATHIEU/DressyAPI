@@ -152,8 +152,6 @@ public function viewClothes($user_id) {
         $sth->bindValue(':user_id', $user_id, PDO::PARAM_INT);
         $sth->execute();
 
-
-
         if ($sth) {
 
             while ($clothes = $sth->fetch()) {
@@ -182,8 +180,6 @@ public function viewClothes($user_id) {
 
             }
             $sth->closeCursor();
-
-
 
             return $clotheReponce;
         } else {

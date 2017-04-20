@@ -289,7 +289,7 @@ $app->get('/getClothes', 'authenticate', function(){
 
         // fetching all user tasks
         $result = $db->viewAllClothes($user_id);
-        //var_dump($result);
+        var_dump($result);
 
 
         if($result){
