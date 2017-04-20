@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fd1abc-d113-4ecb-b90f-8298f2706b2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Category.php" afterPath="$PROJECT_DIR$/models/Category.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v1/index.php" afterPath="$PROJECT_DIR$/v1/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="268" column="64" lean-forward="false" selection-start-line="268" selection-start-column="64" selection-end-line="268" selection-end-column="64" />
+            <state relative-caret-position="313">
+              <caret line="268" column="45" lean-forward="false" selection-start-line="268" selection-start-column="45" selection-end-line="268" selection-end-column="45" />
               <folding>
                 <element signature="e#2071#3460#1#PHP" expanded="false" />
                 <element signature="e#3568#4567#1#PHP" expanded="false" />
@@ -27,7 +26,7 @@
                 <element signature="n#validateEmail#0;n#!!top" expanded="false" />
                 <element signature="n#echoRespnse#0;n#!!top" expanded="false" />
                 <element signature="e#6561#7560#1#PHP" expanded="false" />
-                <element signature="e#9644#10507#1#PHP" expanded="false" />
+                <element signature="e#9638#10501#1#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -311,12 +310,12 @@
       <workItem from="1492416573473" duration="24496000" />
       <workItem from="1492617499159" duration="4325000" />
       <workItem from="1492626130110" duration="1126000" />
-      <workItem from="1492702919294" duration="14502000" />
+      <workItem from="1492702919294" duration="14871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52125000" />
+    <option name="totallyTimeSpent" value="52494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -406,7 +405,7 @@
             <element signature="n#validateEmail#0;n#!!top" expanded="false" />
             <element signature="n#echoRespnse#0;n#!!top" expanded="false" />
             <element signature="e#6561#7560#1#PHP" expanded="false" />
-            <element signature="e#9644#10507#1#PHP" expanded="false" />
+            <element signature="e#9638#10501#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -470,7 +469,7 @@
             <element signature="n#validateEmail#0;n#!!top" expanded="false" />
             <element signature="n#echoRespnse#0;n#!!top" expanded="false" />
             <element signature="e#6561#7560#1#PHP" expanded="false" />
-            <element signature="e#9644#10507#1#PHP" expanded="false" />
+            <element signature="e#9638#10501#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -542,7 +541,7 @@
             <element signature="n#validateEmail#0;n#!!top" expanded="false" />
             <element signature="n#echoRespnse#0;n#!!top" expanded="false" />
             <element signature="e#6561#7560#1#PHP" expanded="false" />
-            <element signature="e#9644#10507#1#PHP" expanded="false" />
+            <element signature="e#9638#10501#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -709,8 +708,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="268" column="64" lean-forward="false" selection-start-line="268" selection-start-column="64" selection-end-line="268" selection-end-column="64" />
+        <state relative-caret-position="313">
+          <caret line="268" column="45" lean-forward="false" selection-start-line="268" selection-start-column="45" selection-end-line="268" selection-end-column="45" />
           <folding>
             <element signature="e#2071#3460#1#PHP" expanded="false" />
             <element signature="e#3568#4567#1#PHP" expanded="false" />
@@ -718,7 +717,7 @@
             <element signature="n#validateEmail#0;n#!!top" expanded="false" />
             <element signature="n#echoRespnse#0;n#!!top" expanded="false" />
             <element signature="e#6561#7560#1#PHP" expanded="false" />
-            <element signature="e#9644#10507#1#PHP" expanded="false" />
+            <element signature="e#9638#10501#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
