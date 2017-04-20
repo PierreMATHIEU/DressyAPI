@@ -300,8 +300,6 @@ $app->get('/getClothes', 'authenticate', function(){
                 $tmp1["urlImage"] = $value->getUrlImage();
                 $tmp1["listClothe"] = array();
                 foreach ($value->getListClothe() as $value2){
-                    var_dump("plop");
-                    var_dump($value2);
                     $tmp = array();
                     $tmp["cloth_name"] = $value2->getClothName();
                     $tmp["cloth_color"] = $value2->getClothColor();
