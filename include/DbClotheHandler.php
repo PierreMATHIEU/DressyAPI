@@ -14,11 +14,11 @@ class DbClotheHandler {
         $this->conn = $db->getDB();
     }
 
-  /**
- * Create clothe
- * @param Clothe $clothe
- */
-public function createClothe($clothe) {
+    /**
+    * Create clothe
+    * @param Clothe $clothe
+    */
+    public function createClothe($clothe) {
       $stmt = $this->conn->prepare("INSERT INTO clothe(cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage, user_id) 
                                               VALUES (:cloth_brand_id, :cloth_category_id, :cloth_material_id, :cloth_name, :cloth_color, :cloth_reference, :cloth_urlimage, :user_id)");
 
@@ -41,7 +41,6 @@ public function createClothe($clothe) {
           return CLOTHE_CREATE_FAILED;
       }
     }
-
 
     /**
      * View clothe
@@ -93,54 +92,10 @@ public function createClothe($clothe) {
         }
     }
 
-/**
-* View clothe
-* @param int $clothingId
-*/
-public function viewClothes($user_id) {
-    $clotheReponce = array();
-    $clothesReponse = array();
-    $clothingID = 0;
-
-    $sth = $this->conn->prepare("SELECT clothing_id, clothing_url_image,clothing_vote,clothe_brand_libelle, clothing.user_id, clothe_category_libelle, clothe_material_libelle, cloth_name, cloth_color, cloth_reference, cloth_urlimage
-                                              FROM clothe
-                                              JOIN clothe_category ON clothe_category.clothe_category_id=clothe.cloth_category_id 
-                                              JOIN clothe_brand ON clothe_brand.clothe_brand_id=clothe.cloth_brand_id
-                                              JOIN clothe_material ON clothe_material.clothe_material_id=clothe.cloth_material_id
-                                              JOIN clothing_clothe ON clothe.cloth_id=clothing_clothe.cloth_id
-                                              JOIN clothing ON clothing.clothing_id=clothing_clothe.clothing_id
-                                              WHERE clothing.user_id=:user_id");
-    $sth->bindValue(':user_id', $user_id, PDO::PARAM_INT);
-    $sth->execute();
-
-    if ($sth) {
-
-        /*while ($clothe = $sth->fetch()) {
-            if($clothe['clothing_id'] <> $clothingID) {
-                if($clothingID <> 0){
-                    array_push($clothesReponse, $clotheReponce);
-                }
-                $newClothes = new Clothes($clothe['clothing_url_image'],$clothe['clothing_vote']);
-                array_push($clothesReponse, $clotheReponce);
-            }
-            $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage'], $clothe['clothe_category_libelle'], $clothe['clothe_brand_libelle'], $clothe['clothe_material_libelle']);
-            array_push($clotheReponce, $newClothe);
-
-            $clothingID = $clothe['clothing_id'];
-        }
-        $sth->closeCursor();*/
-
-
-
-        return $clotheReponce;
-    } else {
-        // Failed
-        return false;
-    }
-  }
-
-
-
+    /**
+    * View clothes
+    * @param int $user_id
+    */
     public function viewAllClothes($user_id) {
         $clotheReponce = array();
 

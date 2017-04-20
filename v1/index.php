@@ -279,6 +279,12 @@ $app->get('/getClothe', 'authenticate', function(){
 
 
 /*----------------------------------------------------CLOTHES---------------------------------------------------------*/
+
+/**
+ * Liste tenues de l'utilisateur
+ * method GET
+ * url /getClothes
+ */
 $app->get('/getClothes', 'authenticate', function(){
     $app = \Slim\Slim::getInstance();
     try
@@ -289,8 +295,6 @@ $app->get('/getClothes', 'authenticate', function(){
 
         // fetching all user tasks
         $result = $db->viewAllClothes($user_id);
-        //var_dump($result);
-
 
         if($result){
 
