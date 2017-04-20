@@ -146,7 +146,7 @@ public function viewClothes($user_id) {
         $listClothe = array();
         $clothingID = 0;
 
-        $sth = $this->conn->prepare("SELECT SELECT clothing_id, clothing_url_image,clothing_vote, user_id
+        $sth = $this->conn->prepare("SELECT clothing_id, clothing_url_image,clothing_vote, user_id
                                               FROM clothing 
                                               WHERE clothing.user_id=:user_id");
         $sth->bindValue(':user_id', $user_id, PDO::PARAM_INT);
