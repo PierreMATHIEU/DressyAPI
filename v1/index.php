@@ -9,6 +9,11 @@ require '.././libs/Slim/Slim.php';
 
 require_once '../models/User.php';
 require_once '../models/UserLogin.php';
+require_once '../models/Clothe.php';
+require_once '../models/Clothes.php';
+require_once '../models/Category.php';
+require_once '../models/Brand.php';
+require_once '../models/Material.php';
 
 //require '../vendor/autoload.php';
 
@@ -262,10 +267,10 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmp["cloth_category"] = array();
                 var_dump($value->getClothCategory());
                 foreach ($value->getClothCategory() as $valCat){
-                    
+
                     $tmpCat = array();
-                    $tmpCat['id']= $valCat->getId();
-                    $tmpCat['libelle']= $valCat->getLibelle();
+                    $tmpCat["id"]= $valCat->getId();
+                    $tmpCat["libelle"]= $valCat->getLibelle();
                     array_push($tmp["cloth_category"], $tmpCat);
                 }
                 $tmp["cloth_brand"] = $value->getClothBrand();
