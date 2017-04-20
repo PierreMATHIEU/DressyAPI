@@ -275,13 +275,13 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmpBrand = array();
                 $tmpBrand["id"]= $value->getClothBrand()->getId();
                 $tmpBrand["libelle"]= $value->getClothBrand()->getLibelle();
-                array_push($tmp["cloth_category"], $tmpBrand);
+                array_push($tmp["cloth_brand"], $tmpBrand);
 
                 $tmp["cloth_material"] = array();
                 $tmpMat = array();
                 $tmpMat["id"]= $value->getClothMaterial()->getId();
                 $tmpMat["libelle"]= $value->getClothMaterial()->getLibelle();
-                array_push($tmp["cloth_category"], $tmpMat);
+                array_push($tmp["cloth_material"], $tmpMat);
 
                 array_push($response["listClothe"], $tmp);
             }
