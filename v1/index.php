@@ -258,7 +258,13 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmp["cloth_color"] = $value->getClothColor();
                 $tmp["cloth_reference"] = $value->getClothReference();
                 $tmp["cloth_urlImage"] = $value->getClothUrlImage();
-                $tmp["cloth_category"] = $value->getClothCategory();
+                $tmp["cloth_category"] = array();
+                foreach ($value->getClothCategory() as $valCat){
+                    $tmpCat = array();
+                    $tmpCat['id']= $valCat->getId();
+                    $tmpCat['libelle']= $valCat->getLibelle();
+                    array_push($tmp["cloth_category"], $tmpCat);
+                }
                 $tmp["cloth_brand"] = $value->getClothBrand();
                 $tmp["cloth_material"] = $value->getClothMaterial();
                 array_push($response["listClothe"], $tmp);
