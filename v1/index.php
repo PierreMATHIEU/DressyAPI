@@ -261,6 +261,7 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmp["cloth_urlImage"] = $value->getClothUrlImage();
                 $tmp["cloth_category"] = array();
                 foreach ($value->getClothCategory() as $valCat){
+                    var_dump($valCat);
                     $tmpCat = array();
                     $tmpCat['id']= $valCat->getId();
                     $tmpCat['libelle']= $valCat->getLibelle();
