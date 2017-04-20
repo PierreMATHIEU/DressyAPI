@@ -23,7 +23,7 @@ class Category
     }
 
     /**
-     * @return null
+     * @return int
      */
     public function getId()
     {
@@ -31,7 +31,7 @@ class Category
     }
 
     /**
-     * @param null $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -54,5 +54,5 @@ class Category
         $this->libelle = $libelle;
     }
 
-
+    
 }
