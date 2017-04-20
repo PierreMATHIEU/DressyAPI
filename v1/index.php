@@ -252,7 +252,7 @@ $app->get('/getClothe', 'authenticate', function(){
 
         // fetching all user tasks
         $result = $db->viewAllClothe($user_id);
-        var_dump($result);
+
         if($result){
             //$response['status'] = "success";
             $response["listClothe"] = array();
@@ -266,12 +266,12 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmp["cloth_urlImage"] = $value->getClothUrlImage();
 
                 $tmp["cloth_category"] = array();
-                var_dump($value->getClothCategory());
-                foreach ($value->getClothCategory() as $valCat){
-                    var_dump($valCat->getId());
+               
+                foreach ($value->getClothCategory() as $valcat){
+                    var_dump($valcat->getId());
                     $tmpCat = array();
-                    $tmpCat["category_id"]= $valCat->getCategoryId();
-                    $tmpCat["category_libelle"]= $valCat->getCategoryLibelle();
+                    $tmpCat["category_id"]= $valcat->getCategoryId();
+                    $tmpCat["category_libelle"]= $valcat->getCategoryLibelle();
                     array_push($tmp["cloth_category"], $tmpCat);
 
                 }

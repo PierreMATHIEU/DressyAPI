@@ -15,7 +15,7 @@ class Clothe
     private $cloth_urlimage;
     private $cloth_category= array();
     private $cloth_brand=array();
-    private $cloth_material=array();
+    private $cloth_material = array();
     private $user_id;
 
     /**
