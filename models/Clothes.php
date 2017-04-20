@@ -18,9 +18,10 @@ class Clothes
      * @param array $listClothe
      * @param $score
      */
-    public function __construct($urlImage, $score)
+    public function __construct($urlImage,$listClothe=array(), $score)
     {
         $this->urlImage = $urlImage;
+        $this->listClothe = $listClothe;
         $this->score = $score;
     }
 

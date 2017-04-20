@@ -247,11 +247,9 @@ $app->get('/getClothe', 'authenticate', function(){
 
         // fetching all user tasks
         $result = $db->viewAllClothe($user_id);
-        $res = $db->viewDetailsClothing($user_id);
 
         if($result){
             //$response['status'] = "success";
-            //$response['urlImage'] = $res->getUrlImage();
             $response["listClothe"] = array();
             foreach ($result as $value){
                 $tmp = array();
@@ -264,7 +262,6 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmp["cloth_material"] = $value->getClothMaterial();
                 array_push($response["listClothe"], $tmp);
             }
-            //$response['score'] = $res->getScore();
 
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
@@ -279,5 +276,53 @@ $app->get('/getClothe', 'authenticate', function(){
         echo '{"status":"error", "message":"'. $e->getMessage() .'"}';
     }
 });
+
+
+/*----------------------------------------------------CLOTHES---------------------------------------------------------*/
+$app->get('/getClothes', 'authenticate', function(){
+    $app = \Slim\Slim::getInstance();
+    try
+    {
+        global $user_id;
+        $response = array();
+        $db = new DbClotheHandler();
+
+        // fetching all user tasks
+        $result = $db->viewClothes($user_id);
+        $res = $db->viewDetailsClothing($user_id);
+        var_dump($result);
+        if($result){
+
+            $response['urlImage'] = $res->getUrlImage();
+            $response["listClothe"] = array();
+            foreach ($result as $value){
+                $tmp = array();
+                $tmp["cloth_name"] = $value->getClothName();
+                $tmp["cloth_color"] = $value->getClothColor();
+                $tmp["cloth_reference"] = $value->getClothReference();
+                $tmp["cloth_urlImage"] = $value->getClothUrlImage();
+                $tmp["cloth_category"] = $value->getClothCategory();
+                $tmp["cloth_brand"] = $value->getClothBrand();
+                $tmp["cloth_material"] = $value->getClothMaterial();
+                array_push($response["listClothe"], $tmp);
+            }
+            $response['score'] = $res->getScore();
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($response);
+            $db = null;
+        }else {
+            $app->response()->setStatus(401);
+            throw new PDOException('No records found');
+        }
+    } catch(PDOException $e) {
+        $app->response()->setStatus(404);
+        echo '{"status":"error", "message":"'. $e->getMessage() .'"}';
+    }
+});
+
+
+
 
 $app->run();
