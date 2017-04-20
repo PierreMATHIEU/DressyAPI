@@ -173,7 +173,7 @@ public function viewClothes($user_id) {
                     $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage'], $clothe['clothe_category_libelle'], $clothe['clothe_brand_libelle'], $clothe['clothe_material_libelle']);
                     array_push($listClothe, $newClothe);
                 }
-                $sth->closeCursor();
+                $sth2->closeCursor();
 
                 $newClothes = new Clothes($clothes['clothing_url_image'],$listClothe, $clothes['clothing_vote']);
 
