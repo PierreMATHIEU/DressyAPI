@@ -251,7 +251,6 @@ $app->get('/getClothe', 'authenticate', function(){
         if($result){
             //$response['status'] = "success";
             $response["listClothe"] = array();
-            var_dump($result);
             foreach ($result as $value){
                 $tmp = array();
                 $tmp["cloth_id"] = $value->getClothId();
