@@ -52,7 +52,7 @@ class DbClotheHandler {
     public function viewAllClothe($user_id) {
         $clotheReponce = array();
 
-        $sth = $this->conn->prepare("SELECT cloth_id,clothe_brand_id,clothe_brand_libelle, user_id, clothe_category_id,clothe_category_libelle, clothe_material_id,clothe_material_libelle, cloth_name, cloth_color, cloth_reference, cloth_urlimage
+        $sth = $this->conn->prepare("SELECT cloth_id, clothe_brand_id, clothe_brand_libelle, user_id, clothe_category_id, clothe_category_libelle, clothe_material_id,clothe_material_libelle, cloth_name, cloth_color, cloth_reference, cloth_urlimage
                                               FROM clothe
                                               JOIN clothe_category ON clothe_category.clothe_category_id=clothe.cloth_category_id 
                                               JOIN clothe_brand ON clothe_brand.clothe_brand_id=clothe.cloth_brand_id
