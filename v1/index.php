@@ -289,7 +289,7 @@ $app->get('/getClothes', 'authenticate', function(){
 
         // fetching all user tasks
         $result = $db->viewAllClothes($user_id);
-        var_dump($result);
+        //var_dump($result);
 
 
         if($result){
@@ -300,6 +300,8 @@ $app->get('/getClothes', 'authenticate', function(){
                 $tmp1["urlImage"] = $value->getUrlImage();
                 $tmp1["listClothe"] = array();
                 foreach ($value as $value2){
+                    var_dump("plop");
+                    var_dump($value2);
                     $tmp = array();
                     $tmp["cloth_name"] = $value2->getClothName();
                     $tmp["cloth_color"] = $value2->getClothColor();
