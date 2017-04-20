@@ -143,7 +143,7 @@ public function viewClothes($user_id) {
 
     public function viewAllClothes($user_id) {
         $clotheReponce = array();
-        $listClothe = array();
+
         $clothingID = 0;
 
         $sth = $this->conn->prepare("SELECT clothing_id, clothing_url_image,clothing_vote, user_id
@@ -157,7 +157,7 @@ public function viewClothes($user_id) {
         if ($sth) {
 
             while ($clothes = $sth->fetch()) {
-
+                $listClothe= array();
                 $sth2 = $this->conn->prepare("SELECT clothing.clothing_id,clothing_url_image,clothing_vote,clothe_brand_libelle, clothing.user_id, clothe_category_libelle, clothe_material_libelle, cloth_name, cloth_color, cloth_reference, cloth_urlimage
                                             FROM clothe
                                             JOIN clothe_category ON clothe_category.clothe_category_id=clothe.cloth_category_id 
