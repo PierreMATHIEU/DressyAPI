@@ -289,27 +289,30 @@ $app->get('/getClothes', 'authenticate', function(){
 
         // fetching all user tasks
         $result = $db->viewAllClothes($user_id);
-        var_dump($result);
+        //var_dump($result);
 
-
-        $res = $db->viewDetailsClothing($user_id);
 
         if($result){
 
-            $response['urlImage'] = $res->getUrlImage();
-            $response["listClothe"] = array();
+            $response["listClothes"] = array();
             foreach ($result as $value){
-                $tmp = array();
-                $tmp["cloth_name"] = $value->getClothName();
-                $tmp["cloth_color"] = $value->getClothColor();
-                $tmp["cloth_reference"] = $value->getClothReference();
-                $tmp["cloth_urlImage"] = $value->getClothUrlImage();
-                $tmp["cloth_category"] = $value->getClothCategory();
-                $tmp["cloth_brand"] = $value->getClothBrand();
-                $tmp["cloth_material"] = $value->getClothMaterial();
-                array_push($response["listClothe"], $tmp);
+                $tmp1 = array();
+                $tmp1["urlImage"] = $value->getUrlImage();
+                $tmp1["listClothe"] = array();
+                foreach ($value as $value2){
+                    $tmp = array();
+                    $tmp["cloth_name"] = $value2->getClothName();
+                    $tmp["cloth_color"] = $value2->getClothColor();
+                    $tmp["cloth_reference"] = $value2->getClothReference();
+                    $tmp["cloth_urlImage"] = $value2->getClothUrlImage();
+                    $tmp["cloth_category"] = $value2->getClothCategory();
+                    $tmp["cloth_brand"] = $value2->getClothBrand();
+                    $tmp["cloth_material"] = $value2->getClothMaterial();
+                    array_push($response["listClothe"], $tmp);
+                }
+                $tmp1["score"] = $value->getScore();
+                array_push($response["listClothes"], $tmp1);
             }
-            $response['score'] = $res->getScore();
 
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
