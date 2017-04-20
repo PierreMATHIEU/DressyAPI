@@ -8,7 +8,7 @@
  */
 class Clothe
 {
-    private $cloth_Id;
+    private $cloth_id;
     private $cloth_name;
     private $cloth_color;
     private $cloth_reference;
@@ -45,15 +45,15 @@ class Clothe
      */
     public function getClothId()
     {
-        return $this->cloth_Id;
+        return $this->cloth_id;
     }
 
     /**
      * @param mixed $cloth_Id
      */
-    public function setClothId($cloth_Id)
+    public function setClothId($cloth_id)
     {
-        $this->cloth_Id = $cloth_Id;
+        $this->cloth_id = $cloth_id;
     }
 
     /**
