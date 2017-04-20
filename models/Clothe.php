@@ -30,8 +30,8 @@ class Clothe
      */
        public function __construct($cloth_id=0,$cloth_name="", $cloth_color="", $cloth_reference=null, $cloth_urlimage=null, $cloth_category=array(), $cloth_brand=array(), $cloth_material=array(), $user_id=0)
     {
-        $this->cloth_name = $cloth_name;
         $this->cloth_id = $cloth_id;
+        $this->cloth_name = $cloth_name;
         $this->cloth_color = $cloth_color;
         $this->cloth_reference = $cloth_reference;
         $this->cloth_urlimage = $cloth_urlimage;
@@ -56,9 +56,8 @@ class Clothe
         $this->cloth_Id = $cloth_Id;
     }
 
-
     /**
-     * @return mixed
+     * @return string
      */
     public function getClothName()
     {
@@ -66,7 +65,7 @@ class Clothe
     }
 
     /**
-     * @param mixed $cloth_name
+     * @param string $cloth_name
      */
     public function setClothName($cloth_name)
     {
@@ -74,7 +73,7 @@ class Clothe
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getClothColor()
     {
@@ -82,7 +81,7 @@ class Clothe
     }
 
     /**
-     * @param mixed $cloth_color
+     * @param string $cloth_color
      */
     public function setClothColor($cloth_color)
     {
@@ -90,7 +89,7 @@ class Clothe
     }
 
     /**
-     * @return mixed
+     * @return null
      */
     public function getClothReference()
     {
@@ -98,7 +97,7 @@ class Clothe
     }
 
     /**
-     * @param mixed $cloth_reference
+     * @param null $cloth_reference
      */
     public function setClothReference($cloth_reference)
     {
@@ -106,23 +105,23 @@ class Clothe
     }
 
     /**
-     * @return mixed
+     * @return null
      */
-    public function getClothUrlImage()
+    public function getClothUrlimage()
     {
         return $this->cloth_urlimage;
     }
 
     /**
-     * @param mixed $cloth_urlImage
+     * @param null $cloth_urlimage
      */
-    public function setClothUrlImage($cloth_urlimage)
+    public function setClothUrlimage($cloth_urlimage)
     {
         $this->cloth_urlimage = $cloth_urlimage;
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getClothCategory()
     {
@@ -130,7 +129,7 @@ class Clothe
     }
 
     /**
-     * @param mixed $cloth_category
+     * @param array $cloth_category
      */
     public function setClothCategory($cloth_category)
     {
@@ -138,7 +137,7 @@ class Clothe
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getClothBrand()
     {
@@ -146,7 +145,7 @@ class Clothe
     }
 
     /**
-     * @param mixed $cloth_brand
+     * @param array $cloth_brand
      */
     public function setClothBrand($cloth_brand)
     {
@@ -154,7 +153,7 @@ class Clothe
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getClothMaterial()
     {
@@ -162,11 +161,29 @@ class Clothe
     }
 
     /**
-     * @param mixed $cloth_material
+     * @param array $cloth_material
      */
     public function setClothMaterial($cloth_material)
     {
         $this->cloth_material = $cloth_material;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * @param mixed $user_id
+     */
+    public function setUserId($user_id)
+    {
+        $this->user_id = $user_id;
+    }
+
+
 
 }
