@@ -299,6 +299,8 @@ $app->get('/getClothes', 'authenticate', function(){
                 $tmp1 = array();
                 $tmp1["urlImage"] = $value->getUrlImage();
                 $tmp1["listClothe"] = array();
+                var_dump("OK");
+                var_dump($value);
                 foreach ($value as $value2){
                     var_dump("plop");
                     var_dump($value2);
