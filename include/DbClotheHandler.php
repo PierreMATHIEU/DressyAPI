@@ -91,7 +91,7 @@ class DbClotheHandler {
         if ($sth) {
 
             while ($clothe = $sth->fetch()) {
-                $newBrand = new Brand($clothe['clothe_brand_id'],$clothe['clothe_brand_libelle']);
+                 $newBrand = new Brand($clothe['clothe_brand_id'],$clothe['clothe_brand_libelle']);
                 $newCategory = new Category($clothe['clothe_category_id'],$clothe['clothe_category_libelle']);
                 $newMaterial = new Material($clothe['clothe_material_id'],$clothe['clothe_material_libelle']);
                 $newClothe = new Clothe($clothe['cloth_id'],$clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage'], $newCategory, $newBrand, $newMaterial);
@@ -206,7 +206,9 @@ class DbClotheHandler {
      * @param Clothe $clothe
      */
     public function createClothes($clothes) {
-        var_dump($clothes);
+        $new_brand = array_values($clothes->getClothBrand());
+        $new_cat = array_values($clothes->getClothCategory());
+        $new_mat = array_values($clothes->getClothMaterial());
 
         $stmt = $this->conn->prepare("INSERT INTO clothing(user_id, clothing_url_image, clothing_vote) 
                                               VALUES (:user_id, :clothing_url_image, :clothing_vote");
@@ -217,6 +219,7 @@ class DbClotheHandler {
 
 
         if ($stmt->execute()) {
+
             return true;
         } else {
             // Failed to create user
