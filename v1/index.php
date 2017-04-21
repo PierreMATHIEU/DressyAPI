@@ -309,13 +309,13 @@ $app->get('/getClothe', 'authenticate', function(){
  */
 $app->post('/deleteClothe', 'authenticate', function() use ($app) {
     $response = array();
-
+    global $user_id;
     // reading post params
     $content = trim(file_get_contents("php://input"));
     $allPostVars = json_decode($content, true);
 
 
-    $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material']);
+    $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'],$user_id);
 
     $db = new DbClotheHandler();
     $res = $db->deleteClothe($clothe);
