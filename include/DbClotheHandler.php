@@ -23,7 +23,6 @@ class DbClotheHandler {
     */
     public function createClothe($clothe) {
         var_dump($clothe->getClothCategory());
-        var_dump($clothe->getClothCategory()->getId());
         var_dump("ok");
         foreach ($clothe->getClothCategory() as $val){
             var_dump($val);
