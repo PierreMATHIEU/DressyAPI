@@ -232,13 +232,13 @@ $app->post('/addClothe', 'authenticate', function() use ($app) {
                 }else{
                     $app->response->setStatus(400);
                     $app->response()->headers->set('Content-Type', 'application/json');
-                    echo json_encode('{}');
+                    echo json_encode (json_decode ("{}"));
                 }
 
            }catch(PDOException $e) {
                $app->response()->setStatus(404);
                $app->response()->headers->set('Content-Type', 'application/json');
-               echo json_encode('{}');
+               echo json_encode (json_decode ("{}"));
            }
 
 
@@ -293,11 +293,12 @@ $app->get('/getClothe', 'authenticate', function(){
         }else {
             $app->response()->setStatus(401);
             $app->response()->headers->set('Content-Type', 'application/json');
-            echo json_encode('{}');
+            echo json_encode (json_decode ("{}"));
         }
     }catch(PDOException $e) {
         $app->response()->setStatus(404);
         $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
     }
 });
 
@@ -323,9 +324,11 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
     if ($res === 0) {
         $app->response->setStatus(200);
         $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
     } else {
         $app->response->setStatus(400);
         $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
     }
 
 });
@@ -389,11 +392,13 @@ $app->get('/getClothes', 'authenticate', function(){
             $db = null;
         }else {
             $app->response()->setStatus(401);
-            throw new PDOException('No records found');
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
         }
     } catch(PDOException $e) {
         $app->response()->setStatus(404);
-        echo '{"status":"error", "message":"'. $e->getMessage() .'"}';
+        $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
     }
 });
 
@@ -418,9 +423,11 @@ $app->post('/deleteClothes', 'authenticate', function() use ($app) {
     if ($res === 0) {
         $app->response->setStatus(200);
         $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
     } else {
         $app->response->setStatus(400);
         $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
     }
 
 });
@@ -474,10 +481,12 @@ $app->get('/getClotheProperties','authenticate', function (){
         }else {
             $app->response->setStatus(400);
             $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
         }
     } catch(PDOException $e) {
         $app->response->setStatus(404);
         $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
     }
 });
 
@@ -509,10 +518,12 @@ $app->get('/getBrand','authenticate', function (){
         }else {
             $app->response->setStatus(400);
             $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
         }
     }catch(PDOException $e) {
         $app->response->setStatus(404);
         $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
     }
 });
 
@@ -544,10 +555,12 @@ $app->get('/getCategory','authenticate', function (){
         }else {
             $app->response->setStatus(400);
             $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
         }
     }catch(PDOException $e) {
         $app->response->setStatus(404);
         $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
     }
 });
 
@@ -579,10 +592,12 @@ $app->get('/getMaterial','authenticate', function (){
         }else {
             $app->response->setStatus(400);
             $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
         }
     }catch(PDOException $e) {
         $app->response->setStatus(404);
         $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
     }
 });
 
