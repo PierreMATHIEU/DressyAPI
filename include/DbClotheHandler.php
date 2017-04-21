@@ -201,6 +201,29 @@ class DbClotheHandler {
         $stmt=null;
     }
 
+    /**
+     * Create clothe
+     * @param Clothe $clothe
+     */
+    public function createClothes($clothes) {
+
+
+        $stmt = $this->conn->prepare("INSERT INTO clothing(user_id, clothing_url_image, clothing_vote) 
+                                              VALUES (:user_id, :clothing_url_image, :clothing_vote");
+
+        $stmt->bindValue(':user_id',$clothes->getUserId(), PDO::PARAM_INT);
+        $stmt->bindValue(':clothing_url_image', $clothes->getUrlImage(), PDO::PARAM_STR);
+        $stmt->bindValue(':clothing_vote',$clothes->getScore(), PDO::PARAM_STR);
+
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            // Failed to create user
+            return false;
+        }
+
+    }
 
     /*----------------------------------------------CLOTHES-PROPERTIES-----------------------------------------*/
 

@@ -335,7 +335,43 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
 
 
 /*----------------------------------------------------CLOTHES---------------------------------------------------------*/
+/**
+ * create clothe
+ * url - /addClothe
+ * method - POST
+ * params - clothe
+ */
+$app->post('/addClothes', 'authenticate', function() use ($app) {
+    try{
+        global $user_id;
+        $response = array();
 
+        $content = trim(file_get_contents("php://input"));
+        $allPostVars = json_decode($content, true);
+
+
+        $clothe= new Clothes($allPostVars['urlImage'],$allPostVars['listClothe'], $allPostVars['score'], $user_id);
+
+        $db = new DbClotheHandler();
+        $res = $db->createClothes($clothe);
+        if ($res == true ){
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
+        }else{
+            $app->response->setStatus(400);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
+        }
+
+    }catch(PDOException $e) {
+        $app->response()->setStatus(404);
+        $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
+    }
+
+
+});
 /**
  * Liste tenues de l'utilisateur
  * method GET

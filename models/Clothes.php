@@ -12,6 +12,7 @@ class Clothes
     private $urlImage;
     private $listClothe = array();
     private $score = 0;
+    private $user_id;
 
     /**
      * Clothes constructor.
@@ -19,12 +20,13 @@ class Clothes
      * @param array $listClothe
      * @param $score
      */
-    public function __construct($clothes_id=0,$urlImage="",$listClothe=array(), $score=0)
+    public function __construct($clothes_id=0,$urlImage="",$listClothe=array(), $score=0, $user_id)
     {
         $this->clothes_id = $clothes_id;
         $this->urlImage = $urlImage;
         $this->listClothe = $listClothe;
         $this->score = $score;
+        $this->user_id = $user_id;
     }
 
     /**
@@ -90,6 +92,22 @@ class Clothes
     public function setScore($score)
     {
         $this->score = $score;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * @param mixed $user_id
+     */
+    public function setUserId($user_id)
+    {
+        $this->user_id = $user_id;
     }
 
 
