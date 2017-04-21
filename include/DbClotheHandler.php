@@ -52,8 +52,8 @@ class DbClotheHandler {
 
         $stmt = $this->conn->prepare("DELETE FROM clothe WHERE cloth_id=:cloth_id");
         $stmt->bindValue(':cloth_id', $clothe->getClothId(), PDO::PARAM_INT);
-
-        if ($stmt->execute()) {
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
             // User successfully inserted
             return 0;
         } else {
