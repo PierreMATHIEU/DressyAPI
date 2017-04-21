@@ -98,6 +98,7 @@ class DbClotheHandler {
             // Failed
             return false;
         }
+        var_dump("popopolo");
         $this->conn = null;
     }
 
