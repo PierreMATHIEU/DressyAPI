@@ -43,8 +43,13 @@ class DbClotheHandler {
           // Failed to create user
           return CLOTHE_CREATE_FAILED;
       }
+
     }
 
+    /**
+     * Delete clothe
+     * @param Clothe $clothe
+     */
     public function deleteClothe($clothe){
         $stmt0 = $this->conn->prepare("DELETE FROM clothing_clothe WHERE cloth_id=:cloth_id");
         $stmt0->bindValue(':cloth_id', $clothe->getClothId(), PDO::PARAM_INT);
@@ -54,12 +59,11 @@ class DbClotheHandler {
         $stmt->bindValue(':cloth_id', $clothe->getClothId(), PDO::PARAM_INT);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
-            // User successfully inserted
             return 0;
         } else {
-            // Failed to create user
             return 1;
         }
+        $this->conn = null;
     }
 
     /**
@@ -94,6 +98,7 @@ class DbClotheHandler {
             // Failed
             return false;
         }
+        $this->conn = null;
     }
 
 
