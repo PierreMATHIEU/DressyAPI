@@ -264,11 +264,11 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmp["cloth_reference"] = $value->getClothReference();
                 $tmp["cloth_urlImage"] = $value->getClothUrlImage();
 
-                $tmp["cloth_category"] = array();
-                $tmpCat = array();
-                $tmpCat["id"]= $value->getClothCategory()->getCategoryId();
-                $tmpCat["libelle"]= $value->getClothCategory()->getCategoryLibelle();
-                array_push($tmp["cloth_category"], $tmpCat);
+                $tmp["cloth_category"] = new Category($value->getClothCategory()->getCategoryId(),$value->getClothCategory()->getCategoryLibelle());
+                //$tmpCat = new Category($value->getClothCategory()->getCategoryId(),$value->getClothCategory()->getCategoryLibelle());
+                //$tmpCat["id"]= $value->getClothCategory()->getCategoryId();
+                //$tmpCat["libelle"]= $value->getClothCategory()->getCategoryLibelle();
+                //array_push($tmp["cloth_category"], $tmpCat);
 
                 $tmp["cloth_brand"] = array();
                 $tmpBrand = array();
