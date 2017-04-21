@@ -19,7 +19,7 @@ class Clothes
      * @param array $listClothe
      * @param $score
      */
-    public function __construct($clothes_id,$urlImage,$listClothe=array(), $score)
+    public function __construct($clothes_id=0,$urlImage="",$listClothe=array(), $score=0)
     {
         $this->clothes_id = $clothes_id;
         $this->urlImage = $urlImage;

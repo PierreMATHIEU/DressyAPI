@@ -402,7 +402,27 @@ $app->get('/getClothes', 'authenticate', function(){
     }
 });
 
+$app->post('/deleteClothes', 'authenticate', function() use ($app) {
 
+    // reading post params
+    $content = trim(file_get_contents("php://input"));
+    $allPostVars = json_decode($content, true);
+
+
+    $clothes= new Clothes($allPostVars['id'],$allPostVars['urlImage'], $allPostVars['listClothe'],$allPostVars['score']);
+
+    $db = new DbClotheHandler();
+    $res = $db->deleteClothes($clothes);
+
+    if ($res === 0) {
+        $app->response->setStatus(200);
+        $app->response()->headers->set('Content-Type', 'application/json');
+    } else {
+        $app->response->setStatus(400);
+        $app->response()->headers->set('Content-Type', 'application/json');
+    }
+
+});
 
 
 $app->run();

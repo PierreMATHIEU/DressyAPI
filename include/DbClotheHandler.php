@@ -175,5 +175,29 @@ class DbClotheHandler {
 
 
 
+    /**
+     * Delete clothe
+     * @param Clothe $clothe
+     */
+    public function deleteClothes($clothes){
+        $stmt0 = $this->conn->prepare("DELETE FROM clothing_clothe WHERE clothing_id=:clothes_id");
+        $stmt0->bindValue(':clothes_id', $clothes->getClothesId(), PDO::PARAM_INT);
+        $stmt0->execute();
+
+        $stmt = $this->conn->prepare("DELETE FROM clothing WHERE clothing_id=:clothes_id");
+        $stmt->bindValue(':clothes_id', $clothes->getClothesId(), PDO::PARAM_INT);
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            return 0;
+        } else {
+            return 1;
+        }
+        $this->conn = null;
+        $stmt=null;
+    }
+
+
+
+
 
 }
