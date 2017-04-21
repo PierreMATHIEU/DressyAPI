@@ -22,18 +22,17 @@ class DbClotheHandler {
     * @param Clothe $clothe
     */
     public function createClothe($clothe) {
-        var_dump($clothe->getClothCategory());
-        var_dump("ok");
-        foreach ($clothe->getClothCategory() as $val){
-            var_dump($val);
-        }
+        $new_brand = array_values($clothe->getClothBrand());
+        $new_cat = array_values($clothe->getClothCategory());
+        $new_mat = array_values($clothe->getClothMaterial());
+
 
       $stmt = $this->conn->prepare("INSERT INTO clothe(cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage, user_id) 
                                               VALUES (:cloth_brand_id, :cloth_category_id, :cloth_material_id, :cloth_name, :cloth_color, :cloth_reference, :cloth_urlimage, :user_id)");
 
-        $stmt->bindValue(':cloth_brand_id', $clothe->getClothBrand()->getId(), PDO::PARAM_INT);
-        $stmt->bindValue(':cloth_category_id', $clothe->getClothCategory()->getId(), PDO::PARAM_INT);
-        $stmt->bindValue(':cloth_material_id', $clothe->getClothMaterial()->getId(), PDO::PARAM_INT);
+        $stmt->bindValue(':cloth_brand_id',$new_brand[0], PDO::PARAM_INT);
+        $stmt->bindValue(':cloth_category_id', $new_cat[0], PDO::PARAM_INT);
+        $stmt->bindValue(':cloth_material_id',$new_mat[0], PDO::PARAM_INT);
         $stmt->bindValue(':cloth_name', $clothe->getClothName(), PDO::PARAM_STR);
         $stmt->bindValue(':cloth_color', $clothe->getClothColor(), PDO::PARAM_STR);
         $stmt->bindValue(':cloth_reference', $clothe->getClothReference(), PDO::PARAM_STR);
