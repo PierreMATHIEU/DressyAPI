@@ -293,11 +293,12 @@ $app->get('/getClothe', 'authenticate', function(){
         }else {
             $app->response()->setStatus(401);
             $app->response()->headers->set('Content-Type', 'application/json');
-            //echo json_encode (json_decode ("{}"));
+            echo json_encode (json_decode ("{}"));
         }
     }catch(PDOException $e) {
         $app->response()->setStatus(404);
         $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
     }
 });
 
@@ -448,7 +449,7 @@ $app->post('/deleteClothes', 'authenticate', function() use ($app) {
     // reading post params
     $content = trim(file_get_contents("php://input"));
     $allPostVars = json_decode($content, true);
-    
+
     $clothes= new Clothes($allPostVars['id'],$allPostVars['urlImage'], $allPostVars['listClothe'],$allPostVars['score'], $user_id);
 
     $db = new DbClotheHandler();
