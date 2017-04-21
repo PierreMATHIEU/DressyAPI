@@ -267,22 +267,14 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmp["cloth_category"] = new Category();
                 $tmp["cloth_category"]->category_id = $value->getClothCategory()->getCategoryId();
                 $tmp["cloth_category"]->category_libelle = $value->getClothCategory()->getCategoryLibelle();
-                //$tmpCat = new Category($value->getClothCategory()->getCategoryId(),$value->getClothCategory()->getCategoryLibelle());
-                //$tmpCat["id"]= $value->getClothCategory()->getCategoryId();
-                //$tmpCat["libelle"]= $value->getClothCategory()->getCategoryLibelle();
-                //array_push($tmp["cloth_category"], $tmpCat);
 
-                $tmp["cloth_brand"] = array();
-                $tmpBrand = array();
-                $tmpBrand["id"]= $value->getClothBrand()->getId();
-                $tmpBrand["libelle"]= $value->getClothBrand()->getLibelle();
-                array_push($tmp["cloth_brand"], $tmpBrand);
+                $tmp["cloth_brand"] = new Brand();
+                $tmp["cloth_brand"]->id = $value->getClothBrand()->getId();
+                $tmp["cloth_brand"]->libelle = $value->getClothBrand()->getLibelle();
 
-                $tmp["cloth_material"] = array();
-                $tmpMat = array();
-                $tmpMat["id"]= $value->getClothMaterial()->getId();
-                $tmpMat["libelle"]= $value->getClothMaterial()->getLibelle();
-                array_push($tmp["cloth_material"], $tmpMat);
+                $tmp["cloth_material"] = new Material();
+                $tmp["cloth_material"]->id = $value->getClothMaterial()->getId();
+                $tmp["cloth_material"]->libelle = $value->getClothMaterial()->getLibelle();
 
                 array_push($response["listClothe"], $tmp);
             }
@@ -365,24 +357,18 @@ $app->get('/getClothes', 'authenticate', function(){
                     $tmp["cloth_reference"] = $value2->getClothReference();
                     $tmp["cloth_urlImage"] = $value2->getClothUrlImage();
 
-                    $tmp["cloth_category"] = array();
-                    $tmpCat = array();
-                    $tmpCat["id"]= $value2->getClothCategory()->getCategoryId();
-                    $tmpCat["libelle"]= $value2->getClothCategory()->getCategoryLibelle();
-                    array_push($tmp["cloth_category"], $tmpCat);
+                    $tmp["cloth_category"] = new Category();
+                    $tmp["cloth_category"]->category_id = $value->getClothCategory()->getCategoryId();
+                    $tmp["cloth_category"]->category_libelle = $value->getClothCategory()->getCategoryLibelle();
 
-                    $tmp["cloth_brand"] = array();
-                    $tmpBrand = array();
-                    $tmpBrand["id"]= $value2->getClothBrand()->getId();
-                    $tmpBrand["libelle"]= $value2->getClothBrand()->getLibelle();
-                    array_push($tmp["cloth_brand"], $tmpBrand);
+                    $tmp["cloth_brand"] = new Brand();
+                    $tmp["cloth_brand"]->id = $value->getClothBrand()->getId();
+                    $tmp["cloth_brand"]->libelle = $value->getClothBrand()->getLibelle();
 
-                    $tmp["cloth_material"] = array();
-                    $tmpMat = array();
-                    $tmpMat["id"]= $value2->getClothMaterial()->getId();
-                    $tmpMat["libelle"]= $value2->getClothMaterial()->getLibelle();
-                    array_push($tmp["cloth_material"], $tmpMat);
-
+                    $tmp["cloth_material"] = new Material();
+                    $tmp["cloth_material"]->id = $value->getClothMaterial()->getId();
+                    $tmp["cloth_material"]->libelle = $value->getClothMaterial()->getLibelle();
+                    
                     array_push($tmp1["listClothe"], $tmp);
                 }
                 $tmp1["score"] = $value->getScore();

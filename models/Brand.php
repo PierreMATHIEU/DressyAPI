@@ -8,8 +8,8 @@
  */
 class Brand
 {
-    private $id;
-    private $libelle;
+    public $id;
+    public $libelle;
 
     /**
      * Brand constructor.

@@ -8,8 +8,8 @@
  */
 class Material
 {
-    private $id;
-    private $libelle;
+    public $id;
+    public $libelle;
 
     /**
      * Brand constructor.
