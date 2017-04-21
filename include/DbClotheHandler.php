@@ -200,6 +200,7 @@ class DbClotheHandler {
     /*----------------------------------------------CLOTHES-PROPERTIES-----------------------------------------*/
 
     public function viewAllBrand(){
+        $clotheReponce = array();
         $sth = $this->conn->prepare("SELECT clothe_brand_id, clothe_brand_libelle
                                               FROM clothe_brand");
         $sth->execute();
