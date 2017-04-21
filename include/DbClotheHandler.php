@@ -206,7 +206,7 @@ class DbClotheHandler {
      * @param Clothe $clothe
      */
     public function createClothes($clothes) {
-
+        var_dump($clothes);
 
         $stmt = $this->conn->prepare("INSERT INTO clothing(user_id, clothing_url_image, clothing_vote) 
                                               VALUES (:user_id, :clothing_url_image, :clothing_vote");

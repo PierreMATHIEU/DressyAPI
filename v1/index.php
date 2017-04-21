@@ -350,10 +350,10 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
         $allPostVars = json_decode($content, true);
 
 
-        $clothe= new Clothes($allPostVars['urlImage'],$allPostVars['listClothe'], $allPostVars['score'], $user_id);
+        $clothes = new Clothes($allPostVars['urlImage'],$allPostVars['listClothe'], $allPostVars['score'], $user_id);
 
         $db = new DbClotheHandler();
-        $res = $db->createClothes($clothe);
+        $res = $db->createClothes($clothes);
         if ($res == true ){
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
