@@ -523,8 +523,8 @@ $app->get('/getCategory','authenticate', function (){
             $response["listCategories"] = array();
             foreach ($result as $value){
                 $tmp = array();
-                $tmp["id"] = $value->getCategoryId();
-                $tmp["libelle"] = $value->getCategoryLibelle();
+                $tmp["id"] = $value->getId();
+                $tmp["libelle"] = $value->getLibelle();
 
                 array_push($response["listCategories"], $tmp);
             }
