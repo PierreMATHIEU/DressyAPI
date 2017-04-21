@@ -259,7 +259,7 @@ $app->get('/getClothe', 'authenticate', function(){
 
         // fetching all user tasks
         $result = $db->viewAllClothe($user_id);
-        var_dump($result);
+
         if($result){
             $response["listClothe"] = array();
 
