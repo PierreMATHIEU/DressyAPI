@@ -445,10 +445,8 @@ $app->get('/getClotheProperties','authenticate', function (){
         $resultBrand = $db->viewAllBrand();
         $resultCategory = $db2->viewAllCategory();
         $resultMaterial = $db3->viewAllMaterial();
-        
-        var_dump("ok1");
+
         if($resultMaterial){
-            var_dump("ok2");
             $response["listBrands"] = array();
             foreach ($resultBrand as $value){
                 $tmpB = array();
@@ -481,7 +479,7 @@ $app->get('/getClotheProperties','authenticate', function (){
             $app->response->setStatus(400);
             $app->response()->headers->set('Content-Type', 'application/json');
         }
-    }catch(PDOException $e) {
+    } catch(PDOException $e) {
         $app->response->setStatus(404);
         $app->response()->headers->set('Content-Type', 'application/json');
     }
