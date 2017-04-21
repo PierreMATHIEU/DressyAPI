@@ -22,7 +22,7 @@ class DbClotheHandler {
     * @param Clothe $clothe
     */
     public function createClothe($clothe) {
-        var_dump($clothe);
+        var_dump($clothe->getClothCategory()->getId());
       $stmt = $this->conn->prepare("INSERT INTO clothe(cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage, user_id) 
                                               VALUES (:cloth_brand_id, :cloth_category_id, :cloth_material_id, :cloth_name, :cloth_color, :cloth_reference, :cloth_urlimage, :user_id)");
 
