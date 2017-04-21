@@ -213,28 +213,32 @@ function validateEmail($email) {
  * params - clothe
  */
 $app->post('/addClothe', 'authenticate', function() use ($app) {
-            $response = array();
+           try{
+               global $user_id;
+               $response = array();
 
-            // reading post params
-            $content = trim(file_get_contents("php://input"));
-            //Attempt to decode the incoming RAW post data from JSON.
-            $allPostVars = json_decode($content, true);
+               $content = trim(file_get_contents("php://input"));
+               $allPostVars = json_decode($content, true);
 
 
-            $clothe= new Clothe($allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material']);
+               $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material']);
 
-            $db = new DbClotheHandler();
-            $res = $db->createClothe($clothe);
+               $db = new DbClotheHandler();
+               $res = $db->createClothe($clothe);
+                if ($res == true ){
+                    $app->response->setStatus(200);
+                    $app->response()->headers->set('Content-Type', 'application/json');
+                }else{
+                    $app->response->setStatus(400);
+                    $app->response()->headers->set('Content-Type', 'application/json');
+                }
 
-            if ($res == CLOTHE_CREATED_SUCCESSFULLY) {
-                $response["error"] = false;
-                $response["message"] = "Clothe created successfully";
+           }catch(PDOException $e) {
+               $app->response()->setStatus(404);
+               echo '{"status":"error", "message":"'. $e->getMessage() .'"}';
+           }
 
-            } else {
-                $response["error"] = true;
-                $response["message"] = "Failed to create clothe. Please try again";
-            }
-            echoRespnse(201, $response);
+
         });
 
 /**
