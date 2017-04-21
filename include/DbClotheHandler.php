@@ -92,14 +92,13 @@ class DbClotheHandler {
                array_push($clotheReponce, $newClothe);
             }
             $sth->closeCursor();
-
+            $this->conn = null;
             return $clotheReponce;
         } else {
             // Failed
             return false;
         }
-        var_dump("popopolo");
-        $this->conn = null;
+
     }
 
 
