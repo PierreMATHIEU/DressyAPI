@@ -454,9 +454,7 @@ $app->get('/getClotheProperties','authenticate', function (){
                 $tmp["libelle"] = $value->getLibelle();
                 array_push($response["listBrands"], $tmp);
             }
-            array_push($response["listClothesProperties"], $response["listBrands"]);
 
-            var_dump($response["listBrands"]);
             $response["listCategories"] = array();
             foreach ($resultCategory as $value){
                 $tmp = array();
@@ -464,7 +462,6 @@ $app->get('/getClotheProperties','authenticate', function (){
                 $tmp["libelle"] = $value->getCategoryLibelle();
                 array_push($response["listCategories"], $tmp);
             }
-            array_push($response["listClothesProperties"], $response["listCategories"]);
 
             $response["listMaterials"]=array();
             foreach ($resultMaterial as $value){
