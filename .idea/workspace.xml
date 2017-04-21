@@ -27,8 +27,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="485" column="60" lean-forward="false" selection-start-line="485" selection-start-column="60" selection-end-line="485" selection-end-column="60" />
+            <state relative-caret-position="563">
+              <caret line="466" column="84" lean-forward="false" selection-start-line="466" selection-start-column="84" selection-end-line="466" selection-end-column="84" />
               <folding>
                 <element signature="n#authenticate#0;n#!!top" expanded="false" />
                 <element signature="e#2071#3460#1#PHP" expanded="false" />
@@ -41,8 +41,9 @@
                 <element signature="e#9949#10740#1#PHP" expanded="false" />
                 <element signature="e#10982#13603#1#PHP" expanded="false" />
                 <element signature="e#13755#14385#1#PHP" expanded="false" />
-                <element signature="e#14554#15604#1#PHP" expanded="false" />
-                <element signature="e#16771#17830#1#PHP" expanded="false" />
+                <element signature="e#16723#17765#1#PHP" expanded="false" />
+                <element signature="e#17810#18879#1#PHP" expanded="false" />
+                <element signature="e#18924#19975#1#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -61,7 +62,7 @@
       <file leaf-file-name="DbClotheHandler.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
+            <state relative-caret-position="434">
               <caret line="265" column="1" lean-forward="true" selection-start-line="265" selection-start-column="1" selection-end-line="265" selection-end-column="1" />
               <folding>
                 <element signature="n#__construct#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
@@ -73,6 +74,7 @@
                 <element signature="n#deleteClothes#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
                 <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
                 <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
+                <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
                 <marker date="1492793708303" expanded="true" signature="578:901" ph="INSERT INTO clothe... " />
                 <marker date="1492793708303" expanded="true" signature="1969:2021" ph="DELETE FROM " />
                 <marker date="1492793708303" expanded="true" signature="2170:2213" ph="DELETE FROM " />
@@ -327,12 +329,12 @@
       <workItem from="1492617499159" duration="4325000" />
       <workItem from="1492626130110" duration="1126000" />
       <workItem from="1492702919294" duration="17443000" />
-      <workItem from="1492788592299" duration="5207000" />
+      <workItem from="1492788592299" duration="5724000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60273000" />
+    <option name="totallyTimeSpent" value="60790000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -366,7 +368,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -393,6 +395,7 @@
             <element signature="n#deleteClothes#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
+            <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <marker date="1492793708303" expanded="true" signature="578:901" ph="INSERT INTO clothe... " />
             <marker date="1492793708303" expanded="true" signature="1969:2021" ph="DELETE FROM " />
             <marker date="1492793708303" expanded="true" signature="2170:2213" ph="DELETE FROM " />
@@ -444,8 +447,9 @@
             <element signature="e#9949#10740#1#PHP" expanded="false" />
             <element signature="e#10982#13603#1#PHP" expanded="false" />
             <element signature="e#13755#14385#1#PHP" expanded="false" />
-            <element signature="e#14554#15604#1#PHP" expanded="false" />
-            <element signature="e#16771#17830#1#PHP" expanded="false" />
+            <element signature="e#16723#17765#1#PHP" expanded="false" />
+            <element signature="e#17810#18879#1#PHP" expanded="false" />
+            <element signature="e#18924#19975#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -487,6 +491,7 @@
             <element signature="n#deleteClothes#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
+            <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <marker date="1492793708303" expanded="true" signature="578:901" ph="INSERT INTO clothe... " />
             <marker date="1492793708303" expanded="true" signature="1969:2021" ph="DELETE FROM " />
             <marker date="1492793708303" expanded="true" signature="2170:2213" ph="DELETE FROM " />
@@ -522,8 +527,9 @@
             <element signature="e#9949#10740#1#PHP" expanded="false" />
             <element signature="e#10982#13603#1#PHP" expanded="false" />
             <element signature="e#13755#14385#1#PHP" expanded="false" />
-            <element signature="e#14554#15604#1#PHP" expanded="false" />
-            <element signature="e#16771#17830#1#PHP" expanded="false" />
+            <element signature="e#16723#17765#1#PHP" expanded="false" />
+            <element signature="e#17810#18879#1#PHP" expanded="false" />
+            <element signature="e#18924#19975#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -573,6 +579,7 @@
             <element signature="n#deleteClothes#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
+            <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <marker date="1492793708303" expanded="true" signature="578:901" ph="INSERT INTO clothe... " />
             <marker date="1492793708303" expanded="true" signature="1969:2021" ph="DELETE FROM " />
             <marker date="1492793708303" expanded="true" signature="2170:2213" ph="DELETE FROM " />
@@ -608,8 +615,9 @@
             <element signature="e#9949#10740#1#PHP" expanded="false" />
             <element signature="e#10982#13603#1#PHP" expanded="false" />
             <element signature="e#13755#14385#1#PHP" expanded="false" />
-            <element signature="e#14554#15604#1#PHP" expanded="false" />
-            <element signature="e#16771#17830#1#PHP" expanded="false" />
+            <element signature="e#16723#17765#1#PHP" expanded="false" />
+            <element signature="e#17810#18879#1#PHP" expanded="false" />
+            <element signature="e#18924#19975#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -667,6 +675,7 @@
             <element signature="n#deleteClothes#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
+            <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <marker date="1492793708303" expanded="true" signature="578:901" ph="INSERT INTO clothe... " />
             <marker date="1492793708303" expanded="true" signature="1969:2021" ph="DELETE FROM " />
             <marker date="1492793708303" expanded="true" signature="2170:2213" ph="DELETE FROM " />
@@ -702,8 +711,9 @@
             <element signature="e#9949#10740#1#PHP" expanded="false" />
             <element signature="e#10982#13603#1#PHP" expanded="false" />
             <element signature="e#13755#14385#1#PHP" expanded="false" />
-            <element signature="e#14554#15604#1#PHP" expanded="false" />
-            <element signature="e#16771#17830#1#PHP" expanded="false" />
+            <element signature="e#16723#17765#1#PHP" expanded="false" />
+            <element signature="e#17810#18879#1#PHP" expanded="false" />
+            <element signature="e#18924#19975#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -843,17 +853,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Brand.php">
+    <entry file="file://$PROJECT_DIR$/models/Category.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="43" column="30" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="30" />
+        <state relative-caret-position="272">
+          <caret line="43" column="38" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
+        <state relative-caret-position="434">
           <caret line="265" column="1" lean-forward="true" selection-start-line="265" selection-start-column="1" selection-end-line="265" selection-end-column="1" />
           <folding>
             <element signature="n#__construct#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
@@ -865,6 +875,7 @@
             <element signature="n#deleteClothes#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
+            <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <marker date="1492793708303" expanded="true" signature="578:901" ph="INSERT INTO clothe... " />
             <marker date="1492793708303" expanded="true" signature="1969:2021" ph="DELETE FROM " />
             <marker date="1492793708303" expanded="true" signature="2170:2213" ph="DELETE FROM " />
@@ -884,18 +895,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Category.php">
+    <entry file="file://$PROJECT_DIR$/models/Brand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="43" column="38" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="38" />
+        <state relative-caret-position="291">
+          <caret line="43" column="30" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="485" column="60" lean-forward="false" selection-start-line="485" selection-start-column="60" selection-end-line="485" selection-end-column="60" />
+        <state relative-caret-position="563">
+          <caret line="466" column="84" lean-forward="false" selection-start-line="466" selection-start-column="84" selection-end-line="466" selection-end-column="84" />
           <folding>
             <element signature="n#authenticate#0;n#!!top" expanded="false" />
             <element signature="e#2071#3460#1#PHP" expanded="false" />
@@ -908,8 +919,9 @@
             <element signature="e#9949#10740#1#PHP" expanded="false" />
             <element signature="e#10982#13603#1#PHP" expanded="false" />
             <element signature="e#13755#14385#1#PHP" expanded="false" />
-            <element signature="e#14554#15604#1#PHP" expanded="false" />
-            <element signature="e#16771#17830#1#PHP" expanded="false" />
+            <element signature="e#16723#17765#1#PHP" expanded="false" />
+            <element signature="e#17810#18879#1#PHP" expanded="false" />
+            <element signature="e#18924#19975#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

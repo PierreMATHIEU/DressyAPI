@@ -432,6 +432,63 @@ $app->post('/deleteClothes', 'authenticate', function() use ($app) {
 
 /*----------------------------------------------CLOTHES-PROPERTIES--------------------------------------------------------*/
 
+$app->get('/getClotheProperties','authenticate', function (){
+    $app = \Slim\Slim::getInstance();
+    try
+    {
+        global $user_id;
+        $response = array();
+        $db = new DbClotheHandler();
+
+        // fetching all user tasks
+        $resultBrand = $db->viewAllBrand();
+        $resultCategory = $db->viewAllCategory();
+        $resultMaterial = $db->viewAllMaterial();
+
+        if($resultMaterial){
+            $response["listClothesProperties"] = array();
+
+            $response["listBrands"] = array();
+            foreach ($resultBrand as $value){
+                $tmp = array();
+                $tmp["id"] = $value->getId();
+                $tmp["libelle"] = $value->getLibelle();
+                array_push($response["listBrands"], $tmp);
+            }
+            array_push($response["listClothesProperties"], $response["listBrands"]);
+
+            $response["listCategories"] = array();
+            foreach ($resultCategory as $value){
+                $tmp = array();
+                $tmp["id"] = $value->getCategoryId();
+                $tmp["libelle"] = $value->getCategoryLibelle();
+                array_push($response["listCategories"], $tmp);
+            }
+            array_push($response["listClothesProperties"], $response["listCategories"]);
+
+            $response["listMaterials"]=array();
+            foreach ($resultMaterial as $value){
+                $tmp = array();
+                $tmp["id"] = $value->getId();
+                $tmp["libelle"] = $value->getLibelle();
+                array_push($response["listMaterials"], $tmp);
+            }
+            array_push($response["listClothesProperties"], $response["listMaterials"]);
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($response);
+            $db = null;
+        }else {
+            $app->response->setStatus(400);
+            $app->response()->headers->set('Content-Type', 'application/json');
+        }
+    }catch(PDOException $e) {
+        $app->response->setStatus(404);
+        $app->response()->headers->set('Content-Type', 'application/json');
+    }
+});
+
 $app->get('/getBrand','authenticate', function (){
     $app = \Slim\Slim::getInstance();
     try
@@ -441,7 +498,7 @@ $app->get('/getBrand','authenticate', function (){
         $db = new DbClotheHandler();
 
         // fetching all user tasks
-        $result = $db->viewAllBrand($user_id);
+        $result = $db->viewAllBrand();
 
         if($result){
             $response["listBrands"] = array();
@@ -476,7 +533,7 @@ $app->get('/getCategory','authenticate', function (){
         $db = new DbClotheHandler();
 
         // fetching all user tasks
-        $result = $db->viewAllCategory($user_id);
+        $result = $db->viewAllCategory();
 
         if($result){
             $response["listCategories"] = array();
@@ -511,7 +568,7 @@ $app->get('/getMaterial','authenticate', function (){
         $db = new DbClotheHandler();
 
         // fetching all user tasks
-        $result = $db->viewAllMaterial($user_id);
+        $result = $db->viewAllMaterial();
 
         if($result){
             $response["listMaterials"] = array();
