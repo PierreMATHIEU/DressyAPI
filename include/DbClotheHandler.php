@@ -132,7 +132,7 @@ class DbClotheHandler {
                 }
                 $sth2->closeCursor();
 
-                $newClothes = new Clothes($clothes['clothing_url_image'],$listClothe, $clothes['clothing_vote']);
+                $newClothes = new Clothes($clothes['clothing_id'],$clothes['clothing_url_image'],$listClothe, $clothes['clothing_vote']);
                 array_push($clotheReponce, $newClothes);
             }
             $sth->closeCursor();

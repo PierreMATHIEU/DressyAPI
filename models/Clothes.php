@@ -8,6 +8,7 @@
  */
 class Clothes
 {
+    private $clothes_id;
     private $urlImage;
     private $listClothe = array();
     private $score = 0;
@@ -18,11 +19,28 @@ class Clothes
      * @param array $listClothe
      * @param $score
      */
-    public function __construct($urlImage,$listClothe=array(), $score)
+    public function __construct($clothes_id,$urlImage,$listClothe=array(), $score)
     {
+        $this->clothes_id = $clothes_id;
         $this->urlImage = $urlImage;
         $this->listClothe = $listClothe;
         $this->score = $score;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClothesId()
+    {
+        return $this->clothes_id;
+    }
+
+    /**
+     * @param mixed $clothes_id
+     */
+    public function setClothesId($clothes_id)
+    {
+        $this->clothes_id = $clothes_id;
     }
 
 

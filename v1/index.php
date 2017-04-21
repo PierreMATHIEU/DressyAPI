@@ -355,6 +355,7 @@ $app->get('/getClothes', 'authenticate', function(){
             $response["listClothes"] = array();
             foreach ($result as $value){
                 $tmp1 = array();
+                $tmp1["id"] = $value->getClothesId();
                 $tmp1["urlImage"] = $value->getUrlImage();
                 $tmp1["listClothe"] = array();
                 foreach ($value->getListClothe() as $value2){
