@@ -26,7 +26,6 @@ class DbClotheHandler {
         $new_cat = array_values($clothe->getClothCategory());
         $new_mat = array_values($clothe->getClothMaterial());
 
-
       $stmt = $this->conn->prepare("INSERT INTO clothe(cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage, user_id) 
                                               VALUES (:cloth_brand_id, :cloth_category_id, :cloth_material_id, :cloth_name, :cloth_color, :cloth_reference, :cloth_urlimage, :user_id)");
 
