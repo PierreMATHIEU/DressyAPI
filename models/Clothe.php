@@ -38,6 +38,7 @@ class Clothe
         $this->cloth_category = $cloth_category;
         $this->cloth_brand = $cloth_brand;
         $this->cloth_material = $cloth_material;
+        $this->user_id = $user_id;
     }
 
     /**
