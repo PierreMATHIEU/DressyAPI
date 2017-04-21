@@ -64,6 +64,7 @@ class DbClotheHandler {
             return 1;
         }
         $this->conn = null;
+        $stmt=null;
     }
 
     /**
@@ -92,6 +93,7 @@ class DbClotheHandler {
                array_push($clotheReponce, $newClothe);
             }
             $sth->closeCursor();
+            $sth = null;
             $this->conn = null;
             return $clotheReponce;
         } else {
@@ -161,7 +163,9 @@ class DbClotheHandler {
                 array_push($clotheReponce, $newClothes);
             }
             $sth->closeCursor();
-
+            $sth2 = null;
+            $sth = null;
+            $this->conn = null;
             return $clotheReponce;
         } else {
             // Failed
