@@ -259,7 +259,7 @@ $app->get('/getClothe', 'authenticate', function(){
 
         // fetching all user tasks
         $result = $db->viewAllClothe($user_id);
-
+        var_dump($result);
         if($result){
             $response["listClothe"] = array();
 
@@ -293,12 +293,12 @@ $app->get('/getClothe', 'authenticate', function(){
         }else {
             $app->response()->setStatus(401);
             $app->response()->headers->set('Content-Type', 'application/json');
-            //echo json_encode (json_decode ("{}"));
+            echo json_encode (json_decode ("{}"));
         }
     }catch(PDOException $e) {
         $app->response()->setStatus(404);
         $app->response()->headers->set('Content-Type', 'application/json');
-        //echo json_encode (json_decode ("{}"));
+        echo json_encode (json_decode ("{}"));
     }
 });
 
