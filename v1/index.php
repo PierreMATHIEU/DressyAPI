@@ -318,7 +318,7 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
     $db = new DbClotheHandler();
     $res = $db->deleteClothe($clothe);
 
-    if ($res == 0) {
+    if ($res === 0) {
         $app->response->setStatus(200);
         $app->response()->headers->set('Content-Type', 'application/json');
     } else {
