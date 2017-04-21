@@ -8,8 +8,8 @@
  */
 class Category
 {
-    private $category_id=0;
-    private $category_libelle="";
+    public $category_id;
+    public $category_libelle;
 
     /**
      * Category constructor.
