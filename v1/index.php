@@ -444,13 +444,13 @@ $app->get('/getBrand','authenticate', function (){
         $result = $db->viewAllBrand($user_id);
 
         if($result){
-            $response["listBrand"] = array();
+            $response["listBrands"] = array();
             foreach ($result as $value){
                 $tmp = array();
                 $tmp["id"] = $value->getId();
                 $tmp["libelle"] = $value->getLibelle();
 
-                array_push($response["listBrand"], $tmp);
+                array_push($response["listBrands"], $tmp);
             }
 
             $app->response->setStatus(200);
@@ -467,6 +467,74 @@ $app->get('/getBrand','authenticate', function (){
     }
 });
 
+$app->get('/getCategory','authenticate', function (){
+    $app = \Slim\Slim::getInstance();
+    try
+    {
+        global $user_id;
+        $response = array();
+        $db = new DbClotheHandler();
 
+        // fetching all user tasks
+        $result = $db->viewAllCategory($user_id);
+
+        if($result){
+            $response["listCategories"] = array();
+            foreach ($result as $value){
+                $tmp = array();
+                $tmp["id"] = $value->getId();
+                $tmp["libelle"] = $value->getLibelle();
+
+                array_push($response["listCategories"], $tmp);
+            }
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($response);
+            $db = null;
+        }else {
+            $app->response->setStatus(400);
+            $app->response()->headers->set('Content-Type', 'application/json');
+        }
+    }catch(PDOException $e) {
+        $app->response->setStatus(404);
+        $app->response()->headers->set('Content-Type', 'application/json');
+    }
+});
+
+$app->get('/getMaterial','authenticate', function (){
+    $app = \Slim\Slim::getInstance();
+    try
+    {
+        global $user_id;
+        $response = array();
+        $db = new DbClotheHandler();
+
+        // fetching all user tasks
+        $result = $db->viewAllMaterial($user_id);
+
+        if($result){
+            $response["listMaterials"] = array();
+            foreach ($result as $value){
+                $tmp = array();
+                $tmp["id"] = $value->getId();
+                $tmp["libelle"] = $value->getLibelle();
+
+                array_push($response["listMaterials"], $tmp);
+            }
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($response);
+            $db = null;
+        }else {
+            $app->response->setStatus(400);
+            $app->response()->headers->set('Content-Type', 'application/json');
+        }
+    }catch(PDOException $e) {
+        $app->response->setStatus(404);
+        $app->response()->headers->set('Content-Type', 'application/json');
+    }
+});
 
 $app->run();

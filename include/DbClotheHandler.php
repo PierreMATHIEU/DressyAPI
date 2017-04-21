@@ -220,5 +220,47 @@ class DbClotheHandler {
         }
     }
 
+    public function viewAllCategory(){
+        $categoryReponce = array();
+        $sth = $this->conn->prepare("SELECT clothe_category_id, clothe_category_libelle
+                                              FROM clothe_category");
+        $sth->execute();
+
+        if ($sth) {
+
+            while ($category = $sth->fetch()) {
+                $newCategory = new Category($category['clothe_category_id'],$category['clothe_category_libelle']);
+                array_push($categoryReponce, $newCategory);
+            }
+            $sth->closeCursor();
+            $sth = null;
+            $this->conn = null;
+            return $categoryReponce;
+        } else {
+            return false;
+        }
+    }
+
+    public function viewAllMaterial(){
+        $materialReponce = array();
+        $sth = $this->conn->prepare("SELECT clothe_material_id, clothe_material_libelle
+                                              FROM clothe_material");
+        $sth->execute();
+
+        if ($sth) {
+
+            while ($material = $sth->fetch()) {
+                $newMaterial = new Material($material['clothe_material_id'],$material['clothe_material_libelle']);
+                array_push($materialReponce, $newMaterial);
+            }
+            $sth->closeCursor();
+            $sth = null;
+            $this->conn = null;
+            return $materialReponce;
+        } else {
+            return false;
+        }
+    }
+
 
 }
