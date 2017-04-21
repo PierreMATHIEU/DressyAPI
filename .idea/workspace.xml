@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fd1abc-d113-4ecb-b90f-8298f2706b2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/DbClotheHandler.php" afterPath="$PROJECT_DIR$/include/DbClotheHandler.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v1/index.php" afterPath="$PROJECT_DIR$/v1/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="240" column="38" lean-forward="false" selection-start-line="240" selection-start-column="38" selection-end-line="240" selection-end-column="38" />
+            <state relative-caret-position="369">
+              <caret line="230" column="43" lean-forward="true" selection-start-line="230" selection-start-column="43" selection-end-line="230" selection-end-column="43" />
               <folding>
                 <element signature="n#authenticate#0;n#!!top" expanded="false" />
                 <element signature="e#2071#3460#1#PHP" expanded="false" />
@@ -37,11 +36,11 @@
                 <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
                 <element signature="n#validateEmail#0;n#!!top" expanded="false" />
                 <element signature="n#echoRespnse#0;n#!!top" expanded="false" />
-                <element signature="e#13651#14281#1#PHP" expanded="false" />
-                <element signature="e#14461#16332#1#PHP" expanded="false" />
-                <element signature="e#16374#17416#1#PHP" expanded="false" />
-                <element signature="e#17461#18514#1#PHP" expanded="false" />
-                <element signature="e#18559#19610#1#PHP" expanded="false" />
+                <element signature="e#13654#14284#1#PHP" expanded="false" />
+                <element signature="e#14464#16335#1#PHP" expanded="false" />
+                <element signature="e#16377#17419#1#PHP" expanded="false" />
+                <element signature="e#17464#18517#1#PHP" expanded="false" />
+                <element signature="e#18562#19613#1#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -326,12 +325,12 @@
       <workItem from="1492617499159" duration="4325000" />
       <workItem from="1492626130110" duration="1126000" />
       <workItem from="1492702919294" duration="17443000" />
-      <workItem from="1492788592299" duration="15016000" />
+      <workItem from="1492788592299" duration="15064000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70082000" />
+    <option name="totallyTimeSpent" value="70130000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -437,11 +436,11 @@
             <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
             <element signature="n#validateEmail#0;n#!!top" expanded="false" />
             <element signature="n#echoRespnse#0;n#!!top" expanded="false" />
-            <element signature="e#13651#14281#1#PHP" expanded="false" />
-            <element signature="e#14461#16332#1#PHP" expanded="false" />
-            <element signature="e#16374#17416#1#PHP" expanded="false" />
-            <element signature="e#17461#18514#1#PHP" expanded="false" />
-            <element signature="e#18559#19610#1#PHP" expanded="false" />
+            <element signature="e#13654#14284#1#PHP" expanded="false" />
+            <element signature="e#14464#16335#1#PHP" expanded="false" />
+            <element signature="e#16377#17419#1#PHP" expanded="false" />
+            <element signature="e#17464#18517#1#PHP" expanded="false" />
+            <element signature="e#18562#19613#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -512,11 +511,11 @@
             <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
             <element signature="n#validateEmail#0;n#!!top" expanded="false" />
             <element signature="n#echoRespnse#0;n#!!top" expanded="false" />
-            <element signature="e#13651#14281#1#PHP" expanded="false" />
-            <element signature="e#14461#16332#1#PHP" expanded="false" />
-            <element signature="e#16374#17416#1#PHP" expanded="false" />
-            <element signature="e#17461#18514#1#PHP" expanded="false" />
-            <element signature="e#18559#19610#1#PHP" expanded="false" />
+            <element signature="e#13654#14284#1#PHP" expanded="false" />
+            <element signature="e#14464#16335#1#PHP" expanded="false" />
+            <element signature="e#16377#17419#1#PHP" expanded="false" />
+            <element signature="e#17464#18517#1#PHP" expanded="false" />
+            <element signature="e#18562#19613#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -595,11 +594,11 @@
             <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
             <element signature="n#validateEmail#0;n#!!top" expanded="false" />
             <element signature="n#echoRespnse#0;n#!!top" expanded="false" />
-            <element signature="e#13651#14281#1#PHP" expanded="false" />
-            <element signature="e#14461#16332#1#PHP" expanded="false" />
-            <element signature="e#16374#17416#1#PHP" expanded="false" />
-            <element signature="e#17461#18514#1#PHP" expanded="false" />
-            <element signature="e#18559#19610#1#PHP" expanded="false" />
+            <element signature="e#13654#14284#1#PHP" expanded="false" />
+            <element signature="e#14464#16335#1#PHP" expanded="false" />
+            <element signature="e#16377#17419#1#PHP" expanded="false" />
+            <element signature="e#17464#18517#1#PHP" expanded="false" />
+            <element signature="e#18562#19613#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -686,11 +685,11 @@
             <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
             <element signature="n#validateEmail#0;n#!!top" expanded="false" />
             <element signature="n#echoRespnse#0;n#!!top" expanded="false" />
-            <element signature="e#13651#14281#1#PHP" expanded="false" />
-            <element signature="e#14461#16332#1#PHP" expanded="false" />
-            <element signature="e#16374#17416#1#PHP" expanded="false" />
-            <element signature="e#17461#18514#1#PHP" expanded="false" />
-            <element signature="e#18559#19610#1#PHP" expanded="false" />
+            <element signature="e#13654#14284#1#PHP" expanded="false" />
+            <element signature="e#14464#16335#1#PHP" expanded="false" />
+            <element signature="e#16377#17419#1#PHP" expanded="false" />
+            <element signature="e#17464#18517#1#PHP" expanded="false" />
+            <element signature="e#18562#19613#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -880,8 +879,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="240" column="38" lean-forward="false" selection-start-line="240" selection-start-column="38" selection-end-line="240" selection-end-column="38" />
+        <state relative-caret-position="369">
+          <caret line="230" column="43" lean-forward="true" selection-start-line="230" selection-start-column="43" selection-end-line="230" selection-end-column="43" />
           <folding>
             <element signature="n#authenticate#0;n#!!top" expanded="false" />
             <element signature="e#2071#3460#1#PHP" expanded="false" />
@@ -889,11 +888,11 @@
             <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
             <element signature="n#validateEmail#0;n#!!top" expanded="false" />
             <element signature="n#echoRespnse#0;n#!!top" expanded="false" />
-            <element signature="e#13651#14281#1#PHP" expanded="false" />
-            <element signature="e#14461#16332#1#PHP" expanded="false" />
-            <element signature="e#16374#17416#1#PHP" expanded="false" />
-            <element signature="e#17461#18514#1#PHP" expanded="false" />
-            <element signature="e#18559#19610#1#PHP" expanded="false" />
+            <element signature="e#13654#14284#1#PHP" expanded="false" />
+            <element signature="e#14464#16335#1#PHP" expanded="false" />
+            <element signature="e#16377#17419#1#PHP" expanded="false" />
+            <element signature="e#17464#18517#1#PHP" expanded="false" />
+            <element signature="e#18562#19613#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
