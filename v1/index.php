@@ -456,6 +456,7 @@ $app->get('/getClotheProperties','authenticate', function (){
             }
             array_push($response["listClothesProperties"], $response["listBrands"]);
 
+            var_dump($response["listBrands"]);
             $response["listCategories"] = array();
             foreach ($resultCategory as $value){
                 $tmp = array();
