@@ -27,8 +27,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="456" column="0" lean-forward="true" selection-start-line="456" selection-start-column="0" selection-end-line="456" selection-end-column="0" />
+            <state relative-caret-position="431">
+              <caret line="470" column="60" lean-forward="false" selection-start-line="470" selection-start-column="60" selection-end-line="470" selection-end-column="60" />
               <folding>
                 <element signature="n#authenticate#0;n#!!top" expanded="false" />
                 <element signature="e#2071#3460#1#PHP" expanded="false" />
@@ -40,8 +40,8 @@
                 <element signature="e#7681#9817#1#PHP" expanded="false" />
                 <element signature="e#9949#10740#1#PHP" expanded="false" />
                 <element signature="e#13755#14385#1#PHP" expanded="false" />
-                <element signature="e#17490#18559#1#PHP" expanded="false" />
-                <element signature="e#18604#19655#1#PHP" expanded="false" />
+                <element signature="e#17502#18571#1#PHP" expanded="false" />
+                <element signature="e#18616#19667#1#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -291,12 +291,12 @@
       <workItem from="1492617499159" duration="4325000" />
       <workItem from="1492626130110" duration="1126000" />
       <workItem from="1492702919294" duration="17443000" />
-      <workItem from="1492788592299" duration="6257000" />
+      <workItem from="1492788592299" duration="6309000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61323000" />
+    <option name="totallyTimeSpent" value="61375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -407,8 +407,8 @@
             <element signature="e#7681#9817#1#PHP" expanded="false" />
             <element signature="e#9949#10740#1#PHP" expanded="false" />
             <element signature="e#13755#14385#1#PHP" expanded="false" />
-            <element signature="e#17490#18559#1#PHP" expanded="false" />
-            <element signature="e#18604#19655#1#PHP" expanded="false" />
+            <element signature="e#17502#18571#1#PHP" expanded="false" />
+            <element signature="e#18616#19667#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -484,8 +484,8 @@
             <element signature="e#7681#9817#1#PHP" expanded="false" />
             <element signature="e#9949#10740#1#PHP" expanded="false" />
             <element signature="e#13755#14385#1#PHP" expanded="false" />
-            <element signature="e#17490#18559#1#PHP" expanded="false" />
-            <element signature="e#18604#19655#1#PHP" expanded="false" />
+            <element signature="e#17502#18571#1#PHP" expanded="false" />
+            <element signature="e#18616#19667#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -569,8 +569,8 @@
             <element signature="e#7681#9817#1#PHP" expanded="false" />
             <element signature="e#9949#10740#1#PHP" expanded="false" />
             <element signature="e#13755#14385#1#PHP" expanded="false" />
-            <element signature="e#17490#18559#1#PHP" expanded="false" />
-            <element signature="e#18604#19655#1#PHP" expanded="false" />
+            <element signature="e#17502#18571#1#PHP" expanded="false" />
+            <element signature="e#18616#19667#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -662,8 +662,8 @@
             <element signature="e#7681#9817#1#PHP" expanded="false" />
             <element signature="e#9949#10740#1#PHP" expanded="false" />
             <element signature="e#13755#14385#1#PHP" expanded="false" />
-            <element signature="e#17490#18559#1#PHP" expanded="false" />
-            <element signature="e#18604#19655#1#PHP" expanded="false" />
+            <element signature="e#17502#18571#1#PHP" expanded="false" />
+            <element signature="e#18616#19667#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -854,8 +854,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="456" column="0" lean-forward="true" selection-start-line="456" selection-start-column="0" selection-end-line="456" selection-end-column="0" />
+        <state relative-caret-position="431">
+          <caret line="470" column="60" lean-forward="false" selection-start-line="470" selection-start-column="60" selection-end-line="470" selection-end-column="60" />
           <folding>
             <element signature="n#authenticate#0;n#!!top" expanded="false" />
             <element signature="e#2071#3460#1#PHP" expanded="false" />
@@ -867,8 +867,8 @@
             <element signature="e#7681#9817#1#PHP" expanded="false" />
             <element signature="e#9949#10740#1#PHP" expanded="false" />
             <element signature="e#13755#14385#1#PHP" expanded="false" />
-            <element signature="e#17490#18559#1#PHP" expanded="false" />
-            <element signature="e#18604#19655#1#PHP" expanded="false" />
+            <element signature="e#17502#18571#1#PHP" expanded="false" />
+            <element signature="e#18616#19667#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

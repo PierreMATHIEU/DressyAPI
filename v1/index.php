@@ -449,26 +449,26 @@ $app->get('/getClotheProperties','authenticate', function (){
 
             $response["listBrands"] = array();
             foreach ($resultBrand as $value){
-                $tmp = array();
-                $tmp["id"] = $value->getId();
-                $tmp["libelle"] = $value->getLibelle();
-                array_push($response["listBrands"], $tmp);
+                $tmpB = array();
+                $tmpB["id"] = $value->getId();
+                $tmpB["libelle"] = $value->getLibelle();
+                array_push($response["listBrands"], $tmpB);
             }
 
             $response["listCategories"] = array();
             foreach ($resultCategory as $value){
-                $tmp = array();
-                $tmp["id"] = $value->getCategoryId();
-                $tmp["libelle"] = $value->getCategoryLibelle();
-                array_push($response["listCategories"], $tmp);
+                $tmpC = array();
+                $tmpC["id"] = $value->getCategoryId();
+                $tmpC["libelle"] = $value->getCategoryLibelle();
+                array_push($response["listCategories"], $tmpC);
             }
 
             $response["listMaterials"]=array();
             foreach ($resultMaterial as $value){
-                $tmp = array();
-                $tmp["id"] = $value->getId();
-                $tmp["libelle"] = $value->getLibelle();
-                array_push($response["listMaterials"], $tmp);
+                $tmpM = array();
+                $tmpM["id"] = $value->getId();
+                $tmpM["libelle"] = $value->getLibelle();
+                array_push($response["listMaterials"], $tmpM);
             }
 
             $app->response->setStatus(200);
