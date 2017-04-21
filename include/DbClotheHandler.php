@@ -56,7 +56,6 @@ class DbClotheHandler {
      * @param Clothe $clothe
      */
     public function deleteClothe($clothe){
-        var_dump($clothe);
         $stmt0 = $this->conn->prepare("DELETE FROM clothing_clothe WHERE cloth_id=:cloth_id");
         $stmt0->bindValue(':cloth_id', $clothe->getClothId(), PDO::PARAM_INT);
         $stmt0->execute();

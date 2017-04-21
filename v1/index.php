@@ -444,13 +444,12 @@ $app->get('/getClothes', 'authenticate', function(){
  * param - clothes
  */
 $app->post('/deleteClothes', 'authenticate', function() use ($app) {
-
+    global $user_id;
     // reading post params
     $content = trim(file_get_contents("php://input"));
     $allPostVars = json_decode($content, true);
-
-
-    $clothes= new Clothes($allPostVars['id'],$allPostVars['urlImage'], $allPostVars['listClothe'],$allPostVars['score']);
+    
+    $clothes= new Clothes($allPostVars['id'],$allPostVars['urlImage'], $allPostVars['listClothe'],$allPostVars['score'], $user_id);
 
     $db = new DbClotheHandler();
     $res = $db->deleteClothes($clothes);
