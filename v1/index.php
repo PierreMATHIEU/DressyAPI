@@ -439,11 +439,13 @@ $app->get('/getClotheProperties','authenticate', function (){
         global $user_id;
         $response = array();
         $db = new DbClotheHandler();
-
+        $db2 = new DbClotheHandler();
+        $db3 = new DbClotheHandler();
         // fetching all user tasks
         $resultBrand = $db->viewAllBrand();
-        $resultCategory = $db->viewAllCategory();
-        $resultMaterial = $db->viewAllMaterial();
+        $resultCategory = $db2->viewAllCategory();
+        $resultMaterial = $db3->viewAllMaterial();
+        
         var_dump("ok1");
         if($resultMaterial){
             var_dump("ok2");
