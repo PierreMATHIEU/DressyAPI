@@ -122,6 +122,8 @@ class DbClotheHandler {
         }
     }
 
+
+    /*---------------------------------------------CLOTHES---------------------------------------------------*/
     /**
     * View clothes
     * @param int $user_id
@@ -173,11 +175,9 @@ class DbClotheHandler {
         }
     }
 
-
-
     /**
-     * Delete clothe
-     * @param Clothe $clothe
+     * Delete clothes
+     * @param Clothes $clothes
      */
     public function deleteClothes($clothes){
         $stmt0 = $this->conn->prepare("DELETE FROM clothing_clothe WHERE clothing_id=:clothes_id");
@@ -197,7 +197,27 @@ class DbClotheHandler {
     }
 
 
+    /*----------------------------------------------CLOTHES-PROPERTIES-----------------------------------------*/
 
+    public function viewAllBrand(){
+        $sth = $this->conn->prepare("SELECT clothe_brand_id, clothe_brand_libelle
+                                              FROM clothe_brand");
+        $sth->execute();
+
+        if ($sth) {
+
+            while ($clothe = $sth->fetch()) {
+                $newBrand = new Brand($clothe['clothe_brand_id'],$clothe['clothe_brand_libelle']);
+                array_push($clotheReponce, $newBrand);
+            }
+            $sth->closeCursor();
+            $sth = null;
+            $this->conn = null;
+            return $clotheReponce;
+        } else {
+            return false;
+        }
+    }
 
 
 }

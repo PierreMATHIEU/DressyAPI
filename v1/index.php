@@ -329,7 +329,6 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
 });
 
 
-
 /*----------------------------------------------------CLOTHES---------------------------------------------------------*/
 
 /**
@@ -402,6 +401,12 @@ $app->get('/getClothes', 'authenticate', function(){
     }
 });
 
+/**
+ * Supprime une tenue de l'utilisateur
+ * method POST
+ * url /deleteClothes
+ * param - clothes
+ */
 $app->post('/deleteClothes', 'authenticate', function() use ($app) {
 
     // reading post params
@@ -423,6 +428,45 @@ $app->post('/deleteClothes', 'authenticate', function() use ($app) {
     }
 
 });
+
+
+/*----------------------------------------------CLOTHES-PROPERTIES--------------------------------------------------------*/
+
+$app->get('/getBrand','authenticate', function (){
+    $app = \Slim\Slim::getInstance();
+    try
+    {
+        global $user_id;
+        $response = array();
+        $db = new DbClotheHandler();
+
+        // fetching all user tasks
+        $result = $db->viewAllBrand($user_id);
+
+        if($result){
+            $response["listBrand"] = array();
+            foreach ($result as $value){
+                $tmp = array();
+                $tmp["id"] = $value->getId();
+                $tmp["libelle"] = $value->getLibelle();
+
+                array_push($response["listBrand"], $tmp);
+            }
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($response);
+            $db = null;
+        }else {
+            $app->response->setStatus(400);
+            $app->response()->headers->set('Content-Type', 'application/json');
+        }
+    }catch(PDOException $e) {
+        $app->response->setStatus(404);
+        $app->response()->headers->set('Content-Type', 'application/json');
+    }
+});
+
 
 
 $app->run();
