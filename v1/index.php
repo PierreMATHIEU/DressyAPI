@@ -321,11 +321,9 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
     if ($res == 0) {
         $app->response->setStatus(200);
         $app->response()->headers->set('Content-Type', 'application/json');
-        echoRespnse(200);
     } else {
         $app->response->setStatus(400);
         $app->response()->headers->set('Content-Type', 'application/json');
-        echoRespnse(400);
     }
 
 });
