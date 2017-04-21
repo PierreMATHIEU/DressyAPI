@@ -446,7 +446,6 @@ $app->get('/getClotheProperties','authenticate', function (){
         $resultMaterial = $db->viewAllMaterial();
 
         if($resultMaterial){
-            $response["listClothesProperties"] = array();
 
             $response["listBrands"] = array();
             foreach ($resultBrand as $value){
@@ -473,7 +472,6 @@ $app->get('/getClotheProperties','authenticate', function (){
                 $tmp["libelle"] = $value->getLibelle();
                 array_push($response["listMaterials"], $tmp);
             }
-            array_push($response["listClothesProperties"], $response["listMaterials"]);
 
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
