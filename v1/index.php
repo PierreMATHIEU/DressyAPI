@@ -310,24 +310,23 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
 
     // reading post params
     $content = trim(file_get_contents("php://input"));
-    //Attempt to decode the incoming RAW post data from JSON.
     $allPostVars = json_decode($content, true);
 
 
-    $clothe= new Clothe($allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material']);
+    $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material']);
 
     $db = new DbClotheHandler();
-    $res = $db->createClothe($clothe);
+    $res = $db->deleteClothe($clothe);
 
-    if ($res == CLOTHE_CREATED_SUCCESSFULLY) {
-        $response["error"] = false;
-        $response["message"] = "Clothe created successfully";
+    if ($res == 0) {
+        $app->response->setStatus(200);
+        $app->response()->headers->set('Content-Type', 'application/json');
 
     } else {
-        $response["error"] = true;
-        $response["message"] = "Failed to create clothe. Please try again";
+        $app->response->setStatus(400);
+        $app->response()->headers->set('Content-Type', 'application/json');
     }
-    echoRespnse(201, $response);
+    //echoRespnse(201, $response);
 });
 
 
@@ -365,7 +364,7 @@ $app->get('/getClothes', 'authenticate', function(){
                     $tmp["cloth_color"] = $value2->getClothColor();
                     $tmp["cloth_reference"] = $value2->getClothReference();
                     $tmp["cloth_urlImage"] = $value2->getClothUrlImage();
-                    
+
                     $tmp["cloth_category"] = array();
                     $tmpCat = array();
                     $tmpCat["id"]= $value2->getClothCategory()->getCategoryId();

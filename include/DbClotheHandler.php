@@ -45,6 +45,19 @@ class DbClotheHandler {
       }
     }
 
+    public function deleteClothe($clothe){
+        $stmt = $this->conn->prepare("DELETE FROM clothe WHERE cloth_id=:cloth_id");
+        $stmt->bindValue(':cloth_id', $clothe->getClothId(), PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+            // User successfully inserted
+            return 0;
+        } else {
+            // Failed to create user
+            return 1;
+        }
+    }
+
     /**
      * View clothe
      * @param int $clothingId
