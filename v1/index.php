@@ -235,7 +235,7 @@ $app->post('/addClothe', 'authenticate', function() use ($app) {
 
            }catch(PDOException $e) {
                $app->response()->setStatus(404);
-               echo '{"status":"error", "message":"'. $e->getMessage() .'"}';
+               $app->response()->headers->set('Content-Type', 'application/json');
            }
 
 
@@ -289,11 +289,11 @@ $app->get('/getClothe', 'authenticate', function(){
             $db = null;
         }else {
             $app->response()->setStatus(401);
-            throw new PDOException('No records found');
+            $app->response()->headers->set('Content-Type', 'application/json');
         }
     }catch(PDOException $e) {
         $app->response()->setStatus(404);
-        echo '{"status":"error", "message":"'. $e->getMessage() .'"}';
+        $app->response()->headers->set('Content-Type', 'application/json');
     }
 });
 
