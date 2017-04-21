@@ -8,50 +8,50 @@
  */
 class Category
 {
-    public $category_id;
-    public $category_libelle;
+    public $id;
+    public $libelle;
 
     /**
      * Category constructor.
-     * @param $category_id
-     * @param $category_libelle
+     * @param $id
+     * @param $libelle
      */
-    public function __construct($category_id=0, $category_libelle="")
+    public function __construct($id=0, $libelle="")
     {
-        $this->category_id = $category_id;
-        $this->category_libelle = $category_libelle;
+        $this->id = $id;
+        $this->libelle = $libelle;
     }
 
     /**
      * @return int
      */
-    public function getCategoryId()
+    public function getId()
     {
-        return $this->category_id;
+        return $this->id;
     }
 
     /**
-     * @param int $category_id
+     * @param int $id
      */
-    public function setCategoryId($category_id)
+    public function setId($id)
     {
-        $this->category_id = $category_id;
+        $this->id = $id;
     }
 
     /**
      * @return string
      */
-    public function getCategoryLibelle()
+    public function getLibelle()
     {
-        return $this->category_libelle;
+        return $this->libelle;
     }
 
     /**
-     * @param string $category_libelle
+     * @param string $libelle
      */
-    public function setCategoryLibelle($category_libelle)
+    public function setLibelle($libelle)
     {
-        $this->category_libelle = $category_libelle;
+        $this->libelle = $libelle;
     }
 
 

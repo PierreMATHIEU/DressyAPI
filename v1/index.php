@@ -265,8 +265,8 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmp["cloth_urlImage"] = $value->getClothUrlImage();
 
                 $tmp["cloth_category"] = new Category();
-                $tmp["cloth_category"]->category_id = $value->getClothCategory()->getCategoryId();
-                $tmp["cloth_category"]->category_libelle = $value->getClothCategory()->getCategoryLibelle();
+                $tmp["cloth_category"]->id = $value->getClothCategory()->getId();
+                $tmp["cloth_category"]->libelle = $value->getClothCategory()->getLibelle();
 
                 $tmp["cloth_brand"] = new Brand();
                 $tmp["cloth_brand"]->id = $value->getClothBrand()->getId();
@@ -358,8 +358,8 @@ $app->get('/getClothes', 'authenticate', function(){
                     $tmp["cloth_urlImage"] = $value2->getClothUrlImage();
 
                     $tmp["cloth_category"] = new Category();
-                    $tmp["cloth_category"]->category_id = $value2->getClothCategory()->getCategoryId();
-                    $tmp["cloth_category"]->category_libelle = $value2->getClothCategory()->getCategoryLibelle();
+                    $tmp["cloth_category"]->id = $value2->getClothCategory()->getId();
+                    $tmp["cloth_category"]->libelle = $value2->getClothCategory()->getLibelle();
 
                     $tmp["cloth_brand"] = new Brand();
                     $tmp["cloth_brand"]->id = $value2->getClothBrand()->getId();
