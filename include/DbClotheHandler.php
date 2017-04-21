@@ -91,7 +91,7 @@ class DbClotheHandler {
         if ($sth) {
 
             while ($clothe = $sth->fetch()) {
-                var_dump($clothe);
+
                  $newBrand = new Brand($clothe['clothe_brand_id'],$clothe['clothe_brand_libelle']);
                 $newCategory = new Category($clothe['clothe_category_id'],$clothe['clothe_category_libelle']);
                 $newMaterial = new Material($clothe['clothe_material_id'],$clothe['clothe_material_libelle']);
