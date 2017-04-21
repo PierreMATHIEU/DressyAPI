@@ -228,7 +228,7 @@ $app->post('/addClothe', 'authenticate', function() use ($app) {
                 if ($res == true ){
                     $app->response->setStatus(200);
                     $app->response()->headers->set('Content-Type', 'application/json');
-                    echo json_encode($response);
+                    echo json_encode (json_decode ("{}"));
                 }else{
                     $app->response->setStatus(400);
                     $app->response()->headers->set('Content-Type', 'application/json');
