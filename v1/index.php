@@ -444,9 +444,9 @@ $app->get('/getClotheProperties','authenticate', function (){
         $resultBrand = $db->viewAllBrand();
         $resultCategory = $db->viewAllCategory();
         $resultMaterial = $db->viewAllMaterial();
-
+        var_dump("ok1");
         if($resultMaterial){
-
+            var_dump("ok2");
             $response["listBrands"] = array();
             foreach ($resultBrand as $value){
                 $tmpB = array();
@@ -463,7 +463,7 @@ $app->get('/getClotheProperties','authenticate', function (){
                 array_push($response["listCategories"], $tmpC);
             }
 
-            $response["listMaterials"]=array();
+            $response["listMaterials"] = array();
             foreach ($resultMaterial as $value){
                 $tmpM = array();
                 $tmpM["id"] = $value->getId();
