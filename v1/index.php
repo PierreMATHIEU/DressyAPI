@@ -365,10 +365,7 @@ $app->get('/getClothes', 'authenticate', function(){
                     $tmp["cloth_color"] = $value2->getClothColor();
                     $tmp["cloth_reference"] = $value2->getClothReference();
                     $tmp["cloth_urlImage"] = $value2->getClothUrlImage();
-                    //$tmp["cloth_category"] = $value2->getClothCategory();
-                    //$tmp["cloth_brand"] = $value2->getClothBrand();
-                    //$tmp["cloth_material"] = $value2->getClothMaterial();
-
+                    
                     $tmp["cloth_category"] = array();
                     $tmpCat = array();
                     $tmpCat["id"]= $value2->getClothCategory()->getCategoryId();
@@ -386,6 +383,8 @@ $app->get('/getClothes', 'authenticate', function(){
                     $tmpMat["id"]= $value2->getClothMaterial()->getId();
                     $tmpMat["libelle"]= $value2->getClothMaterial()->getLibelle();
                     array_push($tmp["cloth_material"], $tmpMat);
+
+                    array_push($tmp1["listClothe"], $tmp);
                 }
                 $tmp1["score"] = $value->getScore();
                 array_push($response["listClothes"], $tmp1);
