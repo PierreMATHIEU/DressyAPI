@@ -115,7 +115,7 @@ class DbClotheHandler {
 
             while ($clothes = $sth->fetch()) {
                 $listClothe= array();
-                $sth2 = $this->conn->prepare("SELECT clothing.clothing_id,clothing_url_image,clothing_vote,clothe_brand_libelle, clothing.user_id, clothe_category_libelle, clothe_material_libelle, cloth_name, cloth_color, cloth_reference, cloth_urlimage
+                $sth2 = $this->conn->prepare("SELECT cloth_id, clothe_brand_id, clothe_brand_libelle, user_id, clothe_category_id, clothe_category_libelle, clothe_material_id,clothe_material_libelle, cloth_name, cloth_color, cloth_reference, cloth_urlimage
                                             FROM clothe
                                             JOIN clothe_category ON clothe_category.clothe_category_id=clothe.cloth_category_id 
                                             JOIN clothe_brand ON clothe_brand.clothe_brand_id=clothe.cloth_brand_id
@@ -127,7 +127,10 @@ class DbClotheHandler {
                 $sth2->execute();
 
                 while ($clothe = $sth2->fetch()) {
-                    $newClothe = new Clothe($clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage'], $clothe['clothe_category_libelle'], $clothe['clothe_brand_libelle'], $clothe['clothe_material_libelle']);
+                    $newBrand = new Brand($clothe['clothe_brand_id'],$clothe['clothe_brand_libelle']);
+                    $newCategory = new Category($clothe['clothe_category_id'],$clothe['clothe_category_libelle']);
+                    $newMaterial = new Material($clothe['clothe_material_id'],$clothe['clothe_material_libelle']);
+                    $newClothe = new Clothe($clothe['cloth_id'],$clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage'], $newCategory, $newBrand, $newMaterial);
                     array_push($listClothe, $newClothe);
                 }
                 $sth2->closeCursor();
