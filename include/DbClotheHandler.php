@@ -42,8 +42,16 @@ class DbClotheHandler {
 
         if ($stmt->execute()) {
            // $newClothe = new Clothe($clothe->getClothId(),$clothe->getClothName(), $clothe->getClothColor(), $clothe->getClothReference(), $clothe->getClothUrlimage(), $clothe->getClothCategory()->getId(), $clothe->getClothBrand()->getId(), $clothe->getClothMaterial()->getId());
+            $stmt2 = $this->conn->prepare("SELECT cloth_id FROM clothe WHERE cloth_name=:clothName AND cloth_color=:clothColor 
+                                                      AND user_id=:userId");
+            $stmt2->bindValue(':clothName', $clothe->getClothName(), PDO::PARAM_STR);
+            $stmt2->bindValue(':clothColor', $clothe->getClothColor(), PDO::PARAM_STR);
+            $stmt2->bindValue(':userId', $clothe->getUserId(), PDO::PARAM_INT);
+            $stmt2->execute();
 
-            return true;
+            $clothe = $stmt2->fetch();
+            $resCloth = $clothe['cloth_id'];
+            return $resCloth;
       } else {
           // Failed to create user
           return false;
