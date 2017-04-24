@@ -217,11 +217,12 @@ class DbClotheHandler {
         $stmt->bindValue(':clothing_url_image', $clothes->getUrlImage(), PDO::PARAM_STR);
         $stmt->bindValue(':clothing_vote',$clothes->getScore(), PDO::PARAM_STR);
 
-        var_dump($clothes->getUrlImage());
         if ($stmt->execute()) {
 
             $clothes = $stmt->fetch();
             $resClothes_id = $clothes['clothing_id'];
+            var_dump($resClothes_id);
+            var_dump("POPOLO");
 
             foreach ($clotheArray as $clotheValue){
                 $stmt2 = $this->conn->prepare("INSERT INTO clothing_clothe(clothing_id, cloth_id) 
@@ -229,7 +230,7 @@ class DbClotheHandler {
                 $stmt2->bindValue(':clothing_id',$resClothes_id, PDO::PARAM_INT);
                 $stmt2->bindValue(':cloth_id', $clotheValue, PDO::PARAM_INT);
                 $stmt2->execute();
-
+                var_dump($clotheValue);
             }
 
             return $resClothes_id;
