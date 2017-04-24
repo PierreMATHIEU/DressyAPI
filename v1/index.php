@@ -347,37 +347,31 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
  */
 $app->post('/addClothes', 'authenticate', function() use ($app) {
     try{
-        $theArray = array();
+        $clotheArray = array();
         global $user_id;
         $response = array();
 
         $content = trim(file_get_contents("php://input"));
         $allPostVars = json_decode($content, true);
 
-
-        //var_dump($allPostVars['listClothe']);
         $clothes = new Clothes($allPostVars['urlImage'], $allPostVars['listClothe'],$allPostVars['score'], $user_id);
-        $cloth = new Clothe();
-
-        //var_dump($allPostVars['listClothe']-);
 
         foreach ($allPostVars['listClothe'] as $valueC){
-            //var_dump($valueC);
             $test = array_values($valueC);
-
-            //var_dump($test[0]);
-            array_push($theArray,$test[0]);
-            //var_dump('ok');
-            //var_dump($valueC);
+            array_push($clotheArray,$test[0]);
         }
 
-        var_dump($theArray);
+        //var_dump($clotheArray);
         $db = new DbClotheHandler();
-        $res = $db->createClothes($clothes);
+        $res = $db->createClothes($clothes, $clotheArray);
+
         if ($res == true ){
+            $clothesResponse = new Clothes();
+            $clothesResponse->setClothesId($res);
+
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
-            echo json_encode (json_decode ("{}"));
+            echo json_encode ($clothesResponse);
         }else{
             $app->response->setStatus(400);
             $app->response()->headers->set('Content-Type', 'application/json');
