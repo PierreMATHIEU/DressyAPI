@@ -28,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="320">
-              <caret line="374" column="79" lean-forward="false" selection-start-line="374" selection-start-column="79" selection-end-line="374" selection-end-column="79" />
+              <caret line="383" column="39" lean-forward="false" selection-start-line="383" selection-start-column="39" selection-end-line="383" selection-end-column="39" />
               <folding>
                 <element signature="n#authenticate#0;n#!!top" expanded="false" />
                 <element signature="e#2070#3459#1#PHP" expanded="false" />
@@ -359,12 +359,12 @@
       <workItem from="1492626130110" duration="1126000" />
       <workItem from="1492702919294" duration="17443000" />
       <workItem from="1492788592299" duration="18732000" />
-      <workItem from="1493016512329" duration="17874000" />
+      <workItem from="1493016512329" duration="18485000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91672000" />
+    <option name="totallyTimeSpent" value="92283000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1044,7 +1044,7 @@
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
-          <caret line="374" column="79" lean-forward="false" selection-start-line="374" selection-start-column="79" selection-end-line="374" selection-end-column="79" />
+          <caret line="383" column="39" lean-forward="false" selection-start-line="383" selection-start-column="39" selection-end-line="383" selection-end-column="39" />
           <folding>
             <element signature="n#authenticate#0;n#!!top" expanded="false" />
             <element signature="e#2070#3459#1#PHP" expanded="false" />
