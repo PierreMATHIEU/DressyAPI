@@ -27,8 +27,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="386" column="21" lean-forward="false" selection-start-line="386" selection-start-column="16" selection-end-line="386" selection-end-column="21" />
+            <state relative-caret-position="341">
+              <caret line="383" column="39" lean-forward="true" selection-start-line="383" selection-start-column="39" selection-end-line="383" selection-end-column="39" />
               <folding>
                 <element signature="n#authenticate#0;n#!!top" expanded="false" />
                 <element signature="e#2070#3459#1#PHP" expanded="false" />
@@ -52,8 +52,8 @@
       <file leaf-file-name="DbClotheHandler.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="233" column="33" lean-forward="false" selection-start-line="233" selection-start-column="19" selection-end-line="233" selection-end-column="33" />
+            <state relative-caret-position="267">
+              <caret line="229" column="34" lean-forward="false" selection-start-line="229" selection-start-column="33" selection-end-line="229" selection-end-column="34" />
               <folding>
                 <element signature="n#__construct#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
                 <element signature="n#deleteClothe#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
@@ -102,7 +102,7 @@
       <file leaf-file-name="Clothe.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Clothe.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
+            <state relative-caret-position="629">
               <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="30" />
               <folding />
             </state>
@@ -145,8 +145,8 @@
       <find>viewAllClothe</find>
       <find>$theArray</find>
       <find>var_dump</find>
-      <find>$resClothes_id</find>
       <find>$clothes</find>
+      <find>$resClothes_id</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -359,12 +359,12 @@
       <workItem from="1492626130110" duration="1126000" />
       <workItem from="1492702919294" duration="17443000" />
       <workItem from="1492788592299" duration="18732000" />
-      <workItem from="1493016512329" duration="18794000" />
+      <workItem from="1493016512329" duration="19526000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92592000" />
+    <option name="totallyTimeSpent" value="93324000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -979,6 +979,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/Clothes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Clothe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/include/DbConnect.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
@@ -989,8 +1005,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="233" column="33" lean-forward="false" selection-start-line="233" selection-start-column="19" selection-end-line="233" selection-end-column="33" />
+        <state relative-caret-position="267">
+          <caret line="229" column="34" lean-forward="false" selection-start-line="229" selection-start-column="33" selection-end-line="229" selection-end-column="34" />
           <folding>
             <element signature="n#__construct#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#deleteClothe#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
@@ -1025,26 +1041,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Clothe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Clothes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="386" column="21" lean-forward="false" selection-start-line="386" selection-start-column="16" selection-end-line="386" selection-end-column="21" />
+        <state relative-caret-position="341">
+          <caret line="383" column="39" lean-forward="true" selection-start-line="383" selection-start-column="39" selection-end-line="383" selection-end-column="39" />
           <folding>
             <element signature="n#authenticate#0;n#!!top" expanded="false" />
             <element signature="e#2070#3459#1#PHP" expanded="false" />

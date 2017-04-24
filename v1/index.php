@@ -381,7 +381,7 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
         }
 
     }catch(PDOException $e) {
-        $app->response()->setStatus(200);
+        $app->response()->setStatus(404);
         $app->response()->headers->set('Content-Type', 'application/json');
         //echo json_encode (json_decode ("{}"));
         echo '{"error":'. $e->getMessage() .'}';
