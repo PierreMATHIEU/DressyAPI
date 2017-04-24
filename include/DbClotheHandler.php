@@ -25,7 +25,7 @@ class DbClotheHandler {
         $new_brand = array_values($clothe->getClothBrand());
         $new_cat = array_values($clothe->getClothCategory());
         $new_mat = array_values($clothe->getClothMaterial());
-        $date = date('NOW');
+        $date = date('Y-m-d H:i:s');
 
         var_dump($date);
       $stmt = $this->conn->prepare("INSERT INTO clothe(cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage, user_id, cloth_created_at) 
