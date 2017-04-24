@@ -25,9 +25,10 @@ class DbClotheHandler {
         $new_brand = array_values($clothe->getClothBrand());
         $new_cat = array_values($clothe->getClothCategory());
         $new_mat = array_values($clothe->getClothMaterial());
+        $addDate = new DateTime();
 
-      $stmt = $this->conn->prepare("INSERT INTO clothe(cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage, user_id) 
-                                              VALUES (:cloth_brand_id, :cloth_category_id, :cloth_material_id, :cloth_name, :cloth_color, :cloth_reference, :cloth_urlimage, :user_id)");
+      $stmt = $this->conn->prepare("INSERT INTO clothe(cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage, user_id, cloth_created_at) 
+                                              VALUES (:cloth_brand_id, :cloth_category_id, :cloth_material_id, :cloth_name, :cloth_color, :cloth_reference, :cloth_urlimage, :user_id, $addDate)");
 
         $stmt->bindValue(':cloth_brand_id',$new_brand[0], PDO::PARAM_INT);
         $stmt->bindValue(':cloth_category_id', $new_cat[0], PDO::PARAM_INT);
@@ -43,10 +44,11 @@ class DbClotheHandler {
         if ($stmt->execute()) {
            // $newClothe = new Clothe($clothe->getClothId(),$clothe->getClothName(), $clothe->getClothColor(), $clothe->getClothReference(), $clothe->getClothUrlimage(), $clothe->getClothCategory()->getId(), $clothe->getClothBrand()->getId(), $clothe->getClothMaterial()->getId());
             $stmt2 = $this->conn->prepare("SELECT cloth_id FROM clothe WHERE cloth_name=:clothName AND cloth_color=:clothColor 
-                                                      AND user_id=:userId");
+                                                      AND user_id=:userId AND cloth_created_at=:clothCreatedAt");
             $stmt2->bindValue(':clothName', $clothe->getClothName(), PDO::PARAM_STR);
             $stmt2->bindValue(':clothColor', $clothe->getClothColor(), PDO::PARAM_STR);
             $stmt2->bindValue(':userId', $clothe->getUserId(), PDO::PARAM_INT);
+            $stmt2->bindValue(':clothCreatedAt', $addDate, PDO::PARAM_STR);
             $stmt2->execute();
 
             $clothe = $stmt2->fetch();
