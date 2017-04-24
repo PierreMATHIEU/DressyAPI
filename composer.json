@@ -1,6 +1,7 @@
 {
     "require": {
         "slim/slim": "^3.0",
-        "slim/pdo": "^1.10"
+        "slim/pdo": "^1.10",
+        "heroku/heroku-buildpack-php": "^121.0"
     }
 }
