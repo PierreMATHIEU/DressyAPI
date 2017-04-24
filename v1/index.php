@@ -347,6 +347,7 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
  */
 $app->post('/addClothes', 'authenticate', function() use ($app) {
     try{
+        $theArray = array();
         global $user_id;
         $response = array();
 
@@ -364,11 +365,13 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
             //var_dump($valueC);
             $test = array_values($valueC);
 
-            var_dump($test[0]);
-            var_dump('ok');
-            var_dump($valueC);
+            //var_dump($test[0]);
+            array_push($theArray,$test[0]);
+            //var_dump('ok');
+            //var_dump($valueC);
         }
 
+        var_dump($theArray);
         $db = new DbClotheHandler();
         $res = $db->createClothes($clothes);
         if ($res == true ){
