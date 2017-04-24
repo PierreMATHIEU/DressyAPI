@@ -354,6 +354,8 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
         $content = trim(file_get_contents("php://input"));
         $allPostVars = json_decode($content, true);
 
+        var_dump($user_id);
+
         $clothes = new Clothes($allPostVars['urlImage'], $allPostVars['listClothe'],$allPostVars['score'], $user_id);
 
         foreach ($allPostVars['listClothe'] as $valueC){

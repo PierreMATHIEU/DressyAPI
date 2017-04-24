@@ -12,7 +12,7 @@ class Clothes
     private $urlImage;
     private $listClothe = array();
     private $score = "";
-    private $user_id;
+    private $user_id = 0;
 
     /**
      * Clothes constructor.
