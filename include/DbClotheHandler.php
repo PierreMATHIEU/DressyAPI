@@ -57,7 +57,6 @@ class DbClotheHandler {
      * @param Clothe $clothe
      */
     public function updateClothe($clothe) {
-        var_dump($clothe);
         $new_brand = array_values($clothe->getClothBrand());
         $new_cat = array_values($clothe->getClothCategory());
         $new_mat = array_values($clothe->getClothMaterial());
