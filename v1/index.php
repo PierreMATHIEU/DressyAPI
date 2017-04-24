@@ -384,7 +384,7 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
         $app->response()->setStatus(200);
         $app->response()->headers->set('Content-Type', 'application/json');
         //echo json_encode (json_decode ("{}"));
-        echo '{"error":{"text":'. $e->getMessage() .'}}';
+        echo '{"error":'. $e->getMessage() .'}';
     }
 
 
