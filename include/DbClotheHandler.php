@@ -27,9 +27,9 @@ class DbClotheHandler {
         $new_mat = array_values($clothe->getClothMaterial());
         $date = date('NOW');
 
-
+        var_dump($date);
       $stmt = $this->conn->prepare("INSERT INTO clothe(cloth_brand_id, cloth_category_id, cloth_material_id, cloth_name, cloth_color, cloth_reference, cloth_urlimage, user_id, cloth_created_at) 
-                                              VALUES (:cloth_brand_id, :cloth_category_id, :cloth_material_id, :cloth_name, :cloth_color, :cloth_reference, :cloth_urlimage, :user_id, $date)");
+                                              VALUES (:cloth_brand_id, :cloth_category_id, :cloth_material_id, :cloth_name, :cloth_color, :cloth_reference, :cloth_urlimage, :user_id, now())");
 
         $stmt->bindValue(':cloth_brand_id',$new_brand[0], PDO::PARAM_INT);
         $stmt->bindValue(':cloth_category_id', $new_cat[0], PDO::PARAM_INT);
