@@ -362,7 +362,9 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
 
         foreach ($allPostVars['listClothe'] as $valueC){
             //var_dump($valueC);
-            var_dump(array_values($valueC));
+            $test = array_values($valueC);
+
+            var_dump($test[0]);
             var_dump('ok');
             var_dump($valueC);
         }
