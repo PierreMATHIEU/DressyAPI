@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fd1abc-d113-4ecb-b90f-8298f2706b2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/DbClotheHandler.php" afterPath="$PROJECT_DIR$/include/DbClotheHandler.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,8 +52,8 @@
       <file leaf-file-name="DbClotheHandler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="50" column="79" lean-forward="false" selection-start-line="50" selection-start-column="79" selection-end-line="50" selection-end-column="79" />
+            <state relative-caret-position="293">
+              <caret line="31" column="183" lean-forward="true" selection-start-line="31" selection-start-column="183" selection-end-line="31" selection-end-column="183" />
               <folding>
                 <element signature="n#__construct#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
                 <element signature="n#deleteClothe#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
@@ -66,26 +65,26 @@
                 <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
                 <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
                 <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
-                <marker date="1493021569482" expanded="true" signature="797:1162" ph="INSERT INTO clothe... " />
-                <marker date="1493021569482" expanded="true" signature="2179:2262" ph="SELECT cloth... clothe" />
-                <marker date="1493021569482" expanded="true" signature="2179:2337" ph="SELECT cloth... clothe" />
-                <marker date="1493021569482" expanded="true" signature="2179:2359" ph="SELECT cloth... clothe" />
-                <marker date="1493021569482" expanded="true" signature="2179:2380" ph="SELECT cloth... clothe" />
-                <marker date="1493021569482" expanded="true" signature="3022:3074" ph="DELETE FROM " />
-                <marker date="1493021569482" expanded="true" signature="3223:3266" ph="DELETE FROM " />
-                <marker date="1493021569482" expanded="true" signature="3720:4436" ph="SELECT cloth... clothe" />
-                <marker date="1493021569482" expanded="true" signature="5487:5775" ph="SELECT cloth... clothing" />
-                <marker date="1493021569482" expanded="true" signature="6433:6633" ph="SELECT cloth... clothing" />
-                <marker date="1493021569482" expanded="true" signature="6439:6633" ph="SELECT cloth... clothing" />
-                <marker date="1493021569482" expanded="true" signature="6878:7836" ph="SELECT cloth... clothe" />
-                <marker date="1493021569482" expanded="true" signature="9286:9343" ph="DELETE FROM " />
-                <marker date="1493021569482" expanded="true" signature="9497:9547" ph="DELETE FROM " />
-                <marker date="1493021569482" expanded="true" signature="10162:10327" ph="INSERT INTO clothe... " />
-                <marker date="1493021569482" expanded="true" signature="10959:11067" ph="SELECT cloth... clothe" />
-                <marker date="1493021569482" expanded="true" signature="11629:11746" ph="SELECT cloth... clothe_brand" />
-                <marker date="1493021569482" expanded="true" signature="12333:12442" ph="SELECT cloth... clothe_brand" />
-                <marker date="1493021569482" expanded="true" signature="12333:12444" ph="SELECT cloth... clothe_ma" />
-                <marker date="1493021569482" expanded="true" signature="12333:12450" ph="SELECT cloth... clothe_material" />
+                <marker date="1493021629750" expanded="true" signature="797:1161" ph="INSERT INTO clothe... " />
+                <marker date="1493021629750" expanded="true" signature="2178:2261" ph="SELECT cloth... clothe" />
+                <marker date="1493021629750" expanded="true" signature="2178:2336" ph="SELECT cloth... clothe" />
+                <marker date="1493021629750" expanded="true" signature="2178:2358" ph="SELECT cloth... clothe" />
+                <marker date="1493021629750" expanded="true" signature="2178:2379" ph="SELECT cloth... clothe" />
+                <marker date="1493021629750" expanded="true" signature="3021:3073" ph="DELETE FROM " />
+                <marker date="1493021629750" expanded="true" signature="3222:3265" ph="DELETE FROM " />
+                <marker date="1493021629750" expanded="true" signature="3719:4435" ph="SELECT cloth... clothe" />
+                <marker date="1493021629750" expanded="true" signature="5486:5774" ph="SELECT cloth... clothing" />
+                <marker date="1493021629750" expanded="true" signature="6432:6632" ph="SELECT cloth... clothing" />
+                <marker date="1493021629750" expanded="true" signature="6438:6632" ph="SELECT cloth... clothing" />
+                <marker date="1493021629750" expanded="true" signature="6877:7835" ph="SELECT cloth... clothe" />
+                <marker date="1493021629750" expanded="true" signature="9285:9342" ph="DELETE FROM " />
+                <marker date="1493021629750" expanded="true" signature="9496:9546" ph="DELETE FROM " />
+                <marker date="1493021629750" expanded="true" signature="10161:10326" ph="INSERT INTO clothe... " />
+                <marker date="1493021629750" expanded="true" signature="10958:11066" ph="SELECT cloth... clothe" />
+                <marker date="1493021629750" expanded="true" signature="11628:11745" ph="SELECT cloth... clothe_brand" />
+                <marker date="1493021629750" expanded="true" signature="12332:12441" ph="SELECT cloth... clothe_brand" />
+                <marker date="1493021629750" expanded="true" signature="12332:12443" ph="SELECT cloth... clothe_ma" />
+                <marker date="1493021629750" expanded="true" signature="12332:12449" ph="SELECT cloth... clothe_material" />
               </folding>
             </state>
           </provider>
@@ -358,12 +357,12 @@
       <workItem from="1492626130110" duration="1126000" />
       <workItem from="1492702919294" duration="17443000" />
       <workItem from="1492788592299" duration="18732000" />
-      <workItem from="1493016512329" duration="4774000" />
+      <workItem from="1493016512329" duration="4831000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78572000" />
+    <option name="totallyTimeSpent" value="78629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -425,26 +424,26 @@
             <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
-            <marker date="1493021569482" expanded="true" signature="797:1162" ph="INSERT INTO clothe... " />
-            <marker date="1493021569482" expanded="true" signature="2179:2262" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2337" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2359" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2380" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="3022:3074" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="3223:3266" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="3720:4436" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="5487:5775" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6433:6633" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6439:6633" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6878:7836" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="9286:9343" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="9497:9547" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="10162:10327" ph="INSERT INTO clothe... " />
-            <marker date="1493021569482" expanded="true" signature="10959:11067" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="11629:11746" ph="SELECT cloth... clothe_brand" />
-            <marker date="1493021569482" expanded="true" signature="12333:12442" ph="SELECT cloth... clothe_brand" />
-            <marker date="1493021569482" expanded="true" signature="12333:12444" ph="SELECT cloth... clothe_ma" />
-            <marker date="1493021569482" expanded="true" signature="12333:12450" ph="SELECT cloth... clothe_material" />
+            <marker date="1493021629750" expanded="true" signature="797:1161" ph="INSERT INTO clothe... " />
+            <marker date="1493021629750" expanded="true" signature="2178:2261" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2336" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2358" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2379" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="3021:3073" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="3222:3265" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="3719:4435" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="5486:5774" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6432:6632" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6438:6632" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6877:7835" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="9285:9342" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="9496:9546" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="10161:10326" ph="INSERT INTO clothe... " />
+            <marker date="1493021629750" expanded="true" signature="10958:11066" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="11628:11745" ph="SELECT cloth... clothe_brand" />
+            <marker date="1493021629750" expanded="true" signature="12332:12441" ph="SELECT cloth... clothe_brand" />
+            <marker date="1493021629750" expanded="true" signature="12332:12443" ph="SELECT cloth... clothe_ma" />
+            <marker date="1493021629750" expanded="true" signature="12332:12449" ph="SELECT cloth... clothe_material" />
           </folding>
         </state>
       </provider>
@@ -519,26 +518,26 @@
             <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
-            <marker date="1493021569482" expanded="true" signature="797:1162" ph="INSERT INTO clothe... " />
-            <marker date="1493021569482" expanded="true" signature="2179:2262" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2337" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2359" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2380" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="3022:3074" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="3223:3266" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="3720:4436" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="5487:5775" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6433:6633" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6439:6633" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6878:7836" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="9286:9343" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="9497:9547" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="10162:10327" ph="INSERT INTO clothe... " />
-            <marker date="1493021569482" expanded="true" signature="10959:11067" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="11629:11746" ph="SELECT cloth... clothe_brand" />
-            <marker date="1493021569482" expanded="true" signature="12333:12442" ph="SELECT cloth... clothe_brand" />
-            <marker date="1493021569482" expanded="true" signature="12333:12444" ph="SELECT cloth... clothe_ma" />
-            <marker date="1493021569482" expanded="true" signature="12333:12450" ph="SELECT cloth... clothe_material" />
+            <marker date="1493021629750" expanded="true" signature="797:1161" ph="INSERT INTO clothe... " />
+            <marker date="1493021629750" expanded="true" signature="2178:2261" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2336" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2358" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2379" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="3021:3073" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="3222:3265" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="3719:4435" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="5486:5774" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6432:6632" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6438:6632" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6877:7835" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="9285:9342" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="9496:9546" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="10161:10326" ph="INSERT INTO clothe... " />
+            <marker date="1493021629750" expanded="true" signature="10958:11066" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="11628:11745" ph="SELECT cloth... clothe_brand" />
+            <marker date="1493021629750" expanded="true" signature="12332:12441" ph="SELECT cloth... clothe_brand" />
+            <marker date="1493021629750" expanded="true" signature="12332:12443" ph="SELECT cloth... clothe_ma" />
+            <marker date="1493021629750" expanded="true" signature="12332:12449" ph="SELECT cloth... clothe_material" />
           </folding>
         </state>
       </provider>
@@ -619,26 +618,26 @@
             <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
-            <marker date="1493021569482" expanded="true" signature="797:1162" ph="INSERT INTO clothe... " />
-            <marker date="1493021569482" expanded="true" signature="2179:2262" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2337" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2359" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2380" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="3022:3074" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="3223:3266" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="3720:4436" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="5487:5775" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6433:6633" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6439:6633" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6878:7836" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="9286:9343" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="9497:9547" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="10162:10327" ph="INSERT INTO clothe... " />
-            <marker date="1493021569482" expanded="true" signature="10959:11067" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="11629:11746" ph="SELECT cloth... clothe_brand" />
-            <marker date="1493021569482" expanded="true" signature="12333:12442" ph="SELECT cloth... clothe_brand" />
-            <marker date="1493021569482" expanded="true" signature="12333:12444" ph="SELECT cloth... clothe_ma" />
-            <marker date="1493021569482" expanded="true" signature="12333:12450" ph="SELECT cloth... clothe_material" />
+            <marker date="1493021629750" expanded="true" signature="797:1161" ph="INSERT INTO clothe... " />
+            <marker date="1493021629750" expanded="true" signature="2178:2261" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2336" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2358" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2379" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="3021:3073" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="3222:3265" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="3719:4435" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="5486:5774" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6432:6632" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6438:6632" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6877:7835" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="9285:9342" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="9496:9546" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="10161:10326" ph="INSERT INTO clothe... " />
+            <marker date="1493021629750" expanded="true" signature="10958:11066" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="11628:11745" ph="SELECT cloth... clothe_brand" />
+            <marker date="1493021629750" expanded="true" signature="12332:12441" ph="SELECT cloth... clothe_brand" />
+            <marker date="1493021629750" expanded="true" signature="12332:12443" ph="SELECT cloth... clothe_ma" />
+            <marker date="1493021629750" expanded="true" signature="12332:12449" ph="SELECT cloth... clothe_material" />
           </folding>
         </state>
       </provider>
@@ -711,26 +710,26 @@
             <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
-            <marker date="1493021569482" expanded="true" signature="797:1162" ph="INSERT INTO clothe... " />
-            <marker date="1493021569482" expanded="true" signature="2179:2262" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2337" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2359" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2380" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="3022:3074" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="3223:3266" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="3720:4436" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="5487:5775" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6433:6633" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6439:6633" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6878:7836" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="9286:9343" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="9497:9547" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="10162:10327" ph="INSERT INTO clothe... " />
-            <marker date="1493021569482" expanded="true" signature="10959:11067" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="11629:11746" ph="SELECT cloth... clothe_brand" />
-            <marker date="1493021569482" expanded="true" signature="12333:12442" ph="SELECT cloth... clothe_brand" />
-            <marker date="1493021569482" expanded="true" signature="12333:12444" ph="SELECT cloth... clothe_ma" />
-            <marker date="1493021569482" expanded="true" signature="12333:12450" ph="SELECT cloth... clothe_material" />
+            <marker date="1493021629750" expanded="true" signature="797:1161" ph="INSERT INTO clothe... " />
+            <marker date="1493021629750" expanded="true" signature="2178:2261" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2336" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2358" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2379" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="3021:3073" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="3222:3265" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="3719:4435" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="5486:5774" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6432:6632" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6438:6632" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6877:7835" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="9285:9342" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="9496:9546" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="10161:10326" ph="INSERT INTO clothe... " />
+            <marker date="1493021629750" expanded="true" signature="10958:11066" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="11628:11745" ph="SELECT cloth... clothe_brand" />
+            <marker date="1493021629750" expanded="true" signature="12332:12441" ph="SELECT cloth... clothe_brand" />
+            <marker date="1493021629750" expanded="true" signature="12332:12443" ph="SELECT cloth... clothe_ma" />
+            <marker date="1493021629750" expanded="true" signature="12332:12449" ph="SELECT cloth... clothe_material" />
           </folding>
         </state>
       </provider>
@@ -811,26 +810,26 @@
             <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
-            <marker date="1493021569482" expanded="true" signature="797:1162" ph="INSERT INTO clothe... " />
-            <marker date="1493021569482" expanded="true" signature="2179:2262" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2337" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2359" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2380" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="3022:3074" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="3223:3266" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="3720:4436" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="5487:5775" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6433:6633" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6439:6633" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6878:7836" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="9286:9343" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="9497:9547" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="10162:10327" ph="INSERT INTO clothe... " />
-            <marker date="1493021569482" expanded="true" signature="10959:11067" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="11629:11746" ph="SELECT cloth... clothe_brand" />
-            <marker date="1493021569482" expanded="true" signature="12333:12442" ph="SELECT cloth... clothe_brand" />
-            <marker date="1493021569482" expanded="true" signature="12333:12444" ph="SELECT cloth... clothe_ma" />
-            <marker date="1493021569482" expanded="true" signature="12333:12450" ph="SELECT cloth... clothe_material" />
+            <marker date="1493021629750" expanded="true" signature="797:1161" ph="INSERT INTO clothe... " />
+            <marker date="1493021629750" expanded="true" signature="2178:2261" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2336" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2358" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2379" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="3021:3073" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="3222:3265" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="3719:4435" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="5486:5774" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6432:6632" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6438:6632" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6877:7835" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="9285:9342" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="9496:9546" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="10161:10326" ph="INSERT INTO clothe... " />
+            <marker date="1493021629750" expanded="true" signature="10958:11066" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="11628:11745" ph="SELECT cloth... clothe_brand" />
+            <marker date="1493021629750" expanded="true" signature="12332:12441" ph="SELECT cloth... clothe_brand" />
+            <marker date="1493021629750" expanded="true" signature="12332:12443" ph="SELECT cloth... clothe_ma" />
+            <marker date="1493021629750" expanded="true" signature="12332:12449" ph="SELECT cloth... clothe_material" />
           </folding>
         </state>
       </provider>
@@ -1032,8 +1031,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="50" column="79" lean-forward="false" selection-start-line="50" selection-start-column="79" selection-end-line="50" selection-end-column="79" />
+        <state relative-caret-position="293">
+          <caret line="31" column="183" lean-forward="true" selection-start-line="31" selection-start-column="183" selection-end-line="31" selection-end-column="183" />
           <folding>
             <element signature="n#__construct#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#deleteClothe#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
@@ -1045,26 +1044,26 @@
             <element signature="n#viewAllBrand#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllCategory#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewAllMaterial#0;n#DbClotheHandler#0;n#!!top" expanded="false" />
-            <marker date="1493021569482" expanded="true" signature="797:1162" ph="INSERT INTO clothe... " />
-            <marker date="1493021569482" expanded="true" signature="2179:2262" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2337" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2359" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="2179:2380" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="3022:3074" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="3223:3266" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="3720:4436" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="5487:5775" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6433:6633" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6439:6633" ph="SELECT cloth... clothing" />
-            <marker date="1493021569482" expanded="true" signature="6878:7836" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="9286:9343" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="9497:9547" ph="DELETE FROM " />
-            <marker date="1493021569482" expanded="true" signature="10162:10327" ph="INSERT INTO clothe... " />
-            <marker date="1493021569482" expanded="true" signature="10959:11067" ph="SELECT cloth... clothe" />
-            <marker date="1493021569482" expanded="true" signature="11629:11746" ph="SELECT cloth... clothe_brand" />
-            <marker date="1493021569482" expanded="true" signature="12333:12442" ph="SELECT cloth... clothe_brand" />
-            <marker date="1493021569482" expanded="true" signature="12333:12444" ph="SELECT cloth... clothe_ma" />
-            <marker date="1493021569482" expanded="true" signature="12333:12450" ph="SELECT cloth... clothe_material" />
+            <marker date="1493021629750" expanded="true" signature="797:1161" ph="INSERT INTO clothe... " />
+            <marker date="1493021629750" expanded="true" signature="2178:2261" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2336" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2358" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="2178:2379" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="3021:3073" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="3222:3265" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="3719:4435" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="5486:5774" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6432:6632" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6438:6632" ph="SELECT cloth... clothing" />
+            <marker date="1493021629750" expanded="true" signature="6877:7835" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="9285:9342" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="9496:9546" ph="DELETE FROM " />
+            <marker date="1493021629750" expanded="true" signature="10161:10326" ph="INSERT INTO clothe... " />
+            <marker date="1493021629750" expanded="true" signature="10958:11066" ph="SELECT cloth... clothe" />
+            <marker date="1493021629750" expanded="true" signature="11628:11745" ph="SELECT cloth... clothe_brand" />
+            <marker date="1493021629750" expanded="true" signature="12332:12441" ph="SELECT cloth... clothe_brand" />
+            <marker date="1493021629750" expanded="true" signature="12332:12443" ph="SELECT cloth... clothe_ma" />
+            <marker date="1493021629750" expanded="true" signature="12332:12449" ph="SELECT cloth... clothe_material" />
           </folding>
         </state>
       </provider>
