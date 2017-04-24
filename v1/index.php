@@ -364,7 +364,6 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
         var_dump("ok");
         $db = new DbClotheHandler();
         $res = $db->createClothes($clothes, $clotheArray);
-        var_dump($res);
 
         if ($res == true ){
             $clothesResponse = new Clothes();
