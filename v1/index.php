@@ -355,7 +355,7 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
 
 
         //var_dump($allPostVars['listClothe']);
-        $clothes = new Clothes($allPostVars['urlImage'], var_dump($allPostVars['listClothe']),$allPostVars['score'], $user_id);
+        $clothes = new Clothes($allPostVars['urlImage'], $allPostVars['listClothe'],$allPostVars['score'], $user_id);
 
         var_dump($clothes);
 
