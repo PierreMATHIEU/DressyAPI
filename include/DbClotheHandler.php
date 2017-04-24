@@ -208,13 +208,9 @@ class DbClotheHandler {
      * @param Clothe $clothe, Array de clothid : $clotheArray
      */
     public function createClothes($clothes, $clotheArray) {
-        var_dump($clothes);
-        var_dump("OK2");
-        var_dump($clotheArray);
         $stmt = $this->conn->prepare("INSERT INTO clothing(user_id, clothing_url_image, clothing_vote) 
                                               VALUES (:user_id, :clothing_url_image, :clothing_vote)
                                               RETURNING clothing_id
-                                              
                                               ");
 
         $stmt->bindValue(':user_id',$clothes->getUserId(), PDO::PARAM_INT);
@@ -223,8 +219,8 @@ class DbClotheHandler {
 
         if ($stmt->execute()) {
 
-            $clothe = $stmt->fetch();
-            $resClothes_id = $clothe['cloth_id'];
+            $clothes = $stmt->fetch();
+            $resClothes_id = $clothes['clothing_id'];
 
             foreach ($clotheArray as $clotheValue){
                 $stmt2 = $this->conn->prepare("INSERT INTO clothing_clothe(clothing_id, cloth_id) 
