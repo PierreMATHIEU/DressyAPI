@@ -228,7 +228,7 @@ $app->post('/addClothe', 'authenticate', function() use ($app) {
                if($res){
 
                    $tmp = new Clothe();
-                   $tmp->setClothId($res->getClothId());
+                   $tmp->cloth_id = $res->getClothId();
                    var_dump($tmp);
                }
 
