@@ -8,7 +8,7 @@
  */
 class Clothe
 {
-    private $cloth_id;
+    public $cloth_id;
     private $cloth_name;
     private $cloth_color;
     private $cloth_reference;
