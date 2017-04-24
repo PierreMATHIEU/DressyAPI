@@ -221,16 +221,15 @@ class DbClotheHandler {
 
             $clothes = $stmt->fetch();
             $resClothes_id = $clothes['clothing_id'];
-            var_dump($resClothes_id);
-            var_dump("POPOLO");
 
             foreach ($clotheArray as $clotheValue){
+                var_dump($clotheValue);
                 $stmt2 = $this->conn->prepare("INSERT INTO clothing_clothe(clothing_id, cloth_id) 
                                               VALUES (:clothing_id, :cloth_id");
                 $stmt2->bindValue(':clothing_id',$resClothes_id, PDO::PARAM_INT);
                 $stmt2->bindValue(':cloth_id', $clotheValue, PDO::PARAM_INT);
                 $stmt2->execute();
-                var_dump($clotheValue);
+
             }
 
             return $resClothes_id;
