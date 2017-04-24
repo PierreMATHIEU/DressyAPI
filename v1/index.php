@@ -373,7 +373,7 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
 
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
-            echo json_encode ($clothesResponse->getClothesId());
+            echo json_encode ($clothesResponse);
         }else{
             $app->response->setStatus(400);
             $app->response()->headers->set('Content-Type', 'application/json');
