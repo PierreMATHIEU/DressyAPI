@@ -48,7 +48,7 @@ class DbClotheHandler {
             $stmt2->bindValue(':clothName', $clothe->getClothName(), PDO::PARAM_STR);
             $stmt2->bindValue(':clothColor', $clothe->getClothColor(), PDO::PARAM_STR);
             $stmt2->bindValue(':userId', $clothe->getUserId(), PDO::PARAM_INT);
-            $stmt2->bindValue(':clothCreatedAt', $addDate, PDO::PARAM_STR);
+            $stmt2->bindValue(':clothCreatedAt', $addDate);
             $stmt2->execute();
 
             $clothe = $stmt2->fetch();
