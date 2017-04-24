@@ -45,7 +45,6 @@ class DbClotheHandler {
            // $newClothe = new Clothe($clothe->getClothId(),$clothe->getClothName(), $clothe->getClothColor(), $clothe->getClothReference(), $clothe->getClothUrlimage(), $clothe->getClothCategory()->getId(), $clothe->getClothBrand()->getId(), $clothe->getClothMaterial()->getId());
 
             $clothe = $stmt->fetch();
-            var_dump($clothe);
             $resCloth = $clothe['cloth_id'];
             return $resCloth;
       } else {
