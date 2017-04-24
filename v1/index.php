@@ -345,7 +345,7 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
  * method - POST
  * params - clothe
  */
-$app->post('/addClothes', 'authenticate', function() use ($app) {
+$app->post('/addCloth', 'authenticate', function() use ($app) {
     try{
         global $user_id;
         $response = array();
