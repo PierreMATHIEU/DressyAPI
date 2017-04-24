@@ -230,7 +230,7 @@ $app->post('/addClothe', 'authenticate', function() use ($app) {
                     //var_dump($res);
                     //var_dump("ok");
                     $tmp = new Clothe();
-                    $tmp->setClothId($res);
+                    $tmp->cloth_id = $res;
                     //var_dump($res->getClothId());
 
                     $app->response->setStatus(200);
