@@ -40,9 +40,7 @@ class DbClotheHandler {
         $stmt->bindValue(':user_id', $clothe->getUserId(), PDO::PARAM_INT);
 
 
-
         if ($stmt->execute()) {
-           // $newClothe = new Clothe($clothe->getClothId(),$clothe->getClothName(), $clothe->getClothColor(), $clothe->getClothReference(), $clothe->getClothUrlimage(), $clothe->getClothCategory()->getId(), $clothe->getClothBrand()->getId(), $clothe->getClothMaterial()->getId());
 
             $clothe = $stmt->fetch();
             $resCloth = $clothe['cloth_id'];
