@@ -224,12 +224,14 @@ $app->post('/addClothe', 'authenticate', function() use ($app) {
 
                $db = new DbClotheHandler();
                $res = $db->createClothe($clothe);
+
                if($res){
 
                    $tmp = new Clothe();
-                   $tmp->setClothId($res->getId());
+                   $tmp->setClothId($res->getClothId());
                    var_dump($tmp);
                }
+
                 if ($res == true ){
                     $app->response->setStatus(200);
                     $app->response()->headers->set('Content-Type', 'application/json');
