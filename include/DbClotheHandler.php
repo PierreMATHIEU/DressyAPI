@@ -217,7 +217,7 @@ class DbClotheHandler {
         $stmt->bindValue(':clothing_url_image', $clothes->getUrlImage(), PDO::PARAM_STR);
         $stmt->bindValue(':clothing_vote',$clothes->getScore(), PDO::PARAM_STR);
 
-        //var_dump($clothes->getUserId());
+        var_dump($clothes->getUrlImage());
         if ($stmt->execute()) {
 
             $clothes = $stmt->fetch();
