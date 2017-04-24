@@ -53,6 +53,40 @@ class DbClotheHandler {
     }
 
     /**
+     * Update clothe
+     * @param Clothe $clothe
+     */
+    public function updateClothe($clothe) {
+        $new_brand = array_values($clothe->getClothBrand());
+        $new_cat = array_values($clothe->getClothCategory());
+        $new_mat = array_values($clothe->getClothMaterial());
+
+        $stmt = $this->conn->prepare("UPDATE clothe SET cloth_brand_id=:cloth_brand_id, cloth_category_id=:cloth_category_id, cloth_material_id=:cloth_material_id, cloth_name=:cloth_name, cloth_color=:cloth_color, cloth_reference=:cloth_reference, cloth_urlimage=:cloth_urlimage, user_id=:user_id, cloth_created_at=now()
+                                                WHERE cloth_id = :cloth_id
+                                              RETURNING cloth_id");
+
+        $stmt->bindValue(':cloth_id',$clothe->getClothId(), PDO::PARAM_INT);
+        $stmt->bindValue(':cloth_brand_id',$new_brand[0], PDO::PARAM_INT);
+        $stmt->bindValue(':cloth_category_id', $new_cat[0], PDO::PARAM_INT);
+        $stmt->bindValue(':cloth_material_id',$new_mat[0], PDO::PARAM_INT);
+        $stmt->bindValue(':cloth_name', $clothe->getClothName(), PDO::PARAM_STR);
+        $stmt->bindValue(':cloth_color', $clothe->getClothColor(), PDO::PARAM_STR);
+        $stmt->bindValue(':cloth_reference', $clothe->getClothReference(), PDO::PARAM_STR);
+        $stmt->bindValue(':cloth_urlimage', $clothe->getClothUrlimage(), PDO::PARAM_STR);
+        $stmt->bindValue(':user_id', $clothe->getUserId(), PDO::PARAM_INT);
+
+
+        if ($stmt->execute()) {
+
+            return $clothe->getClothId();
+        } else {
+            // Failed to create user
+            return false;
+        }
+
+    }
+
+    /**
      * Delete clothe
      * @param Clothe $clothe
      */

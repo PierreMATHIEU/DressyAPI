@@ -337,6 +337,41 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
 
 });
 
+$app->post('/updateClothe', 'authenticate', function () use ($app) {
+    try{
+        global $user_id;
+        //$response = array();
+
+        $content = trim(file_get_contents("php://input"));
+        $allPostVars = json_decode($content, true);
+
+
+        $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'],$user_id);
+
+        $db = new DbClotheHandler();
+        $res = $db->updateClothe($clothe);
+
+
+        if ($res == true ){
+            $tmp = new Clothe();
+            $tmp->setClothId($res);
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($tmp);
+        }else{
+            $app->response->setStatus(400);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
+        }
+
+    }catch(PDOException $e) {
+        $app->response()->setStatus(404);
+        $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
+    }
+
+});
 
 /*----------------------------------------------------CLOTHES---------------------------------------------------------*/
 /**
