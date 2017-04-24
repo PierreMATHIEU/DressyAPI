@@ -369,6 +369,8 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
             $clothesResponse = new Clothes();
             $clothesResponse->setClothesId($res);
 
+            var_dump($clothesResponse);
+
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
             echo json_encode ($clothesResponse);
