@@ -227,11 +227,11 @@ $app->post('/addClothe', 'authenticate', function() use ($app) {
 
 
                 if ($res == true ){
-                    var_dump($res);
-                    var_dump("ok");
+                    //var_dump($res);
+                    //var_dump("ok");
                     $tmp = new Clothe();
-                    //$tmp->cloth_id = $res->getClothId();
-                    var_dump($res->getClothId());
+                    $tmp->setClothId($res);
+                    //var_dump($res->getClothId());
 
                     $app->response->setStatus(200);
                     $app->response()->headers->set('Content-Type', 'application/json');
