@@ -361,7 +361,8 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
         //var_dump($allPostVars['listClothe']-);
 
         foreach ($allPostVars['listClothe'] as $valueC){
-            var_dump($valueC);
+            //var_dump($valueC);
+            var_dump($valueC->getClothId());
         }
 
         $db = new DbClotheHandler();
