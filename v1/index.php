@@ -6,7 +6,6 @@ require_once '../include/PassHash.php';
 require '.././libs/Slim/Slim.php';
 
 
-
 require_once '../models/User.php';
 require_once '../models/UserLogin.php';
 require_once '../models/Clothe.php';
@@ -291,7 +290,7 @@ $app->get('/getClothe', 'authenticate', function(){
             echo json_encode($response);
             $db = null;
         }else {
-            $app->response()->setStatus(401);
+            $app->response()->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
             echo json_encode (json_decode ("{}"));
         }
@@ -427,7 +426,7 @@ $app->get('/getClothes', 'authenticate', function(){
             echo json_encode($response);
             $db = null;
         }else {
-            $app->response()->setStatus(401);
+            $app->response()->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
             echo json_encode(json_decode ("{}"));
         }
