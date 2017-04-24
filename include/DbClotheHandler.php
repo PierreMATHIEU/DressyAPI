@@ -220,11 +220,8 @@ class DbClotheHandler {
         if ($stmt->execute()) {
 
             $clothes = $stmt->fetch();
-            var_dump($clothes);
-            var_dump("ok2");
             $resClothes_id = $clothes['clothing_id'];
-            var_dump($resClothes_id);
-
+            
             foreach ($clotheArray as $clotheValue){
                 $stmt2 = $this->conn->prepare("INSERT INTO clothing_clothe(clothing_id, cloth_id) 
                                               VALUES (:clothing_id, :cloth_id");
