@@ -293,10 +293,9 @@ class DbClotheHandler {
 
             foreach ($clotheArray as $clotheValue){
                 $stmt2 = $this->conn->prepare("DELETE FROM clothing_clothe 
-                                                        WHERE clothing_id=:clothing_id AND cloth_id=:cloth_id");
+                                                        WHERE clothing_id=:clothing_id");
 
                 $stmt2->bindValue(':clothing_id',$resClothes_id, PDO::PARAM_INT);
-                $stmt2->bindValue(':cloth_id', $clotheValue, PDO::PARAM_INT);
                 $stmt2->execute();
 
             }
@@ -310,7 +309,7 @@ class DbClotheHandler {
                 $stmt3->execute();
 
             }
-        
+
             return $resClothes_id;
         } else {
             // Failed to create user
