@@ -278,8 +278,9 @@ class DbClotheHandler {
      * @param Clothe $clothe, Array de clothid : $clotheArray
      */
     public function updateClothes($clothes, $clotheArray) {
+        var_dump($clothes);
         $stmt = $this->conn->prepare("UPDATE clothing SET user_id=:user_id, clothing_url_image=:clothing_url_image, clothing_vote=:clothing_vote
-                                                WHERE clothing_id=:clothing_id");
+                                                WHERE clothing_id = :clothing_id");
 
         $stmt->bindValue(':clothing_id',$clothes->getClothesId(), PDO::PARAM_INT);
         $stmt->bindValue(':user_id',$clothes->getUserId(), PDO::PARAM_INT);
