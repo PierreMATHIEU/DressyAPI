@@ -540,7 +540,7 @@ $app->post('/updateClothes', 'authenticate', function () use ($app) {
         $allPostVars = json_decode($content, true);
 
 
-        $clothes = new Clothes($allPostVars['id'], $user_id, $allPostVars['urlImage'], $allPostVars['score']);
+        $clothes = new Clothes($allPostVars['id'], $allPostVars['urlImage'], $allPostVars['score'], $user_id);
 
         foreach ($allPostVars['listClothe'] as $valueC){
             $test = array_values($valueC);
