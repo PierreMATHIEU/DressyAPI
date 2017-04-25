@@ -292,6 +292,7 @@ class DbClotheHandler {
             $resClothes_id = $clothes->getClothesId();
 
             foreach ($clotheArray as $clotheValue){
+                var_dump($clotheValue);
                 $stmt2 = $this->conn->prepare("DELETE FROM clothing_clothe 
                                                         WHERE clothing_id=:clothing_id AND cloth_id=:cloth_id");
 
