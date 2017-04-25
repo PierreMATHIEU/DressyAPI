@@ -550,7 +550,12 @@ $app->post('/updateClothes', 'authenticate', function () use ($app) {
         $db = new DbClotheHandler();
         $res = $db->updateClothes($clothes, $clotheArray);
 
+        var_dump($clothes);
+        var_dump("ok");
+        var_dump($clotheArray);
+        var_dump("ok1");
 
+        var_dump($res);
         if ($res == true ){
             $clothesResponse = new Clothes();
             $clothesResponse->setClothesId($res);
