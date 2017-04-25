@@ -273,6 +273,42 @@ class DbClotheHandler {
 
     }
 
+    /**
+     * Create clothe
+     * @param Clothe $clothe, Array de clothid : $clotheArray
+     */
+    public function updateClothes($clothes, $clotheArray) {
+        $stmt = $this->conn->prepare("INSERT INTO clothing(user_id, clothing_url_image, clothing_vote) 
+                                              VALUES (:user_id, :clothing_url_image, :clothing_vote)
+                                              RETURNING clothing_id
+                                              ");
+
+        $stmt->bindValue(':user_id',$clothes->getUserId(), PDO::PARAM_INT);
+        $stmt->bindValue(':clothing_url_image', $clothes->getUrlImage(), PDO::PARAM_STR);
+        $stmt->bindValue(':clothing_vote',$clothes->getScore(), PDO::PARAM_STR);
+
+        if ($stmt->execute()) {
+
+            $clothes = $stmt->fetch();
+            $resClothes_id = $clothes['clothing_id'];
+
+            foreach ($clotheArray as $clotheValue){
+                $stmt2 = $this->conn->prepare("INSERT INTO clothing_clothe(clothing_id, cloth_id) 
+                                              VALUES (:clothing_id, :cloth_id)");
+                $stmt2->bindValue(':clothing_id',$resClothes_id, PDO::PARAM_INT);
+                $stmt2->bindValue(':cloth_id', $clotheValue, PDO::PARAM_INT);
+                $stmt2->execute();
+
+            }
+
+            return $resClothes_id;
+        } else {
+            // Failed to create user
+            return false;
+        }
+
+    }
+
     /*----------------------------------------------CLOTHES-PROPERTIES-----------------------------------------*/
 
     public function viewAllBrand(){

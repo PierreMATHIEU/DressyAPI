@@ -337,6 +337,12 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
 
 });
 
+/**
+ * update clothe
+ * url - /updateClothe
+ * method - POST
+ * params - clothe
+ */
 $app->post('/updateClothe', 'authenticate', function () use ($app) {
     try{
         global $user_id;
@@ -513,6 +519,53 @@ $app->post('/deleteClothes', 'authenticate', function() use ($app) {
         echo json_encode (json_decode ("{}"));
     } else {
         $app->response->setStatus(400);
+        $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
+    }
+
+});
+
+/**
+ * update clothes
+ * url - /updateClothes
+ * method - POST
+ * params - clothes
+ */
+$app->post('/updateClothes', 'authenticate', function () use ($app) {
+    try{
+        global $user_id;
+
+        $content = trim(file_get_contents("php://input"));
+        $allPostVars = json_decode($content, true);
+
+
+        $clothes = new Clothes(0,$allPostVars['urlImage'], $allPostVars['listClothe'],$allPostVars['score'], $user_id);
+
+        foreach ($allPostVars['listClothe'] as $valueC){
+            $test = array_values($valueC);
+            array_push($clotheArray,$test[0]);
+        }
+
+        $db = new DbClotheHandler();
+        $res = $db->updateClothes($clothes, $clotheArray);
+
+
+        if ($res == true ){
+            $clothesResponse = new Clothes();
+            $clothesResponse->setClothesId($res);
+
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo '{"id":'. $clothesResponse->getClothesId() .'}';
+        }else{
+            $app->response->setStatus(400);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
+        }
+
+    }catch(PDOException $e) {
+        $app->response()->setStatus(404);
         $app->response()->headers->set('Content-Type', 'application/json');
         echo json_encode (json_decode ("{}"));
     }
