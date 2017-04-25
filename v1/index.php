@@ -547,13 +547,15 @@ $app->post('/updateClothes', 'authenticate', function () use ($app) {
             array_push($clotheArray,$test[0]);
         }
 
-        $db = new DbClotheHandler();
-        $res = $db->updateClothes($clothes, $clotheArray);
-
         var_dump($clothes);
         var_dump("ok");
         var_dump($clotheArray);
         var_dump("ok1");
+
+
+        $db = new DbClotheHandler();
+        $res = $db->updateClothes($clothes, $clotheArray);
+
 
         var_dump($res);
         if ($res == true ){
