@@ -291,15 +291,6 @@ class DbClotheHandler {
         if ($stmt->execute()) {
             $resClothes_id = $clothes->getClothesId();
 
-            foreach ($clotheArray as $clotheValue){
-                $stmt2 = $this->conn->prepare("UPDATE clothing_clothe SET clothing_id=:clothing_id, cloth_id=:cloth_id");
-
-                $stmt2->bindValue(':clothing_id',$resClothes_id, PDO::PARAM_INT);
-                $stmt2->bindValue(':cloth_id', $clotheValue, PDO::PARAM_INT);
-                $stmt2->execute();
-
-            }
-
             return $resClothes_id;
         } else {
             // Failed to create user
