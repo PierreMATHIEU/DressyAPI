@@ -278,11 +278,10 @@ class DbClotheHandler {
      * @param Clothe $clothe, Array de clothid : $clotheArray
      */
     public function updateClothes($clothes, $clotheArray) {
-        $stmt = $this->conn->prepare("INSERT INTO clothing(user_id, clothing_url_image, clothing_vote) 
-                                              VALUES (:user_id, :clothing_url_image, :clothing_vote)
-                                              RETURNING clothing_id
+        $stmt = $this->conn->prepare("UPDATE clothing SET user_id=:user_id, clothing_url_image=:clothing_url_image, clothing_vote=:clothing_vote
+                                                WHERE clothing_id = :clothing_id
                                               ");
-
+        $stmt->bindValue(':cloth_id',$clothes->getClothesId(), PDO::PARAM_INT);
         $stmt->bindValue(':user_id',$clothes->getUserId(), PDO::PARAM_INT);
         $stmt->bindValue(':clothing_url_image', $clothes->getUrlImage(), PDO::PARAM_STR);
         $stmt->bindValue(':clothing_vote',$clothes->getScore(), PDO::PARAM_STR);
@@ -290,11 +289,11 @@ class DbClotheHandler {
         if ($stmt->execute()) {
 
             $clothes = $stmt->fetch();
-            $resClothes_id = $clothes['clothing_id'];
+            $resClothes_id = $clothes->getClothesId();
 
             foreach ($clotheArray as $clotheValue){
-                $stmt2 = $this->conn->prepare("INSERT INTO clothing_clothe(clothing_id, cloth_id) 
-                                              VALUES (:clothing_id, :cloth_id)");
+                $stmt2 = $this->conn->prepare("UPDATE clothing_clothe SET clothing_id=:clothing_id, cloth_id=:cloth_id");
+
                 $stmt2->bindValue(':clothing_id',$resClothes_id, PDO::PARAM_INT);
                 $stmt2->bindValue(':cloth_id', $clotheValue, PDO::PARAM_INT);
                 $stmt2->execute();
