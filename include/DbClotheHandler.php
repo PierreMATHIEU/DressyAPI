@@ -297,7 +297,6 @@ class DbClotheHandler {
 
                 $stmt2->bindValue(':clothing_id',$resClothes_id, PDO::PARAM_INT);
                 $stmt2->execute();
-
             }
 
             foreach ($clotheArray as $clotheValue){
@@ -307,7 +306,6 @@ class DbClotheHandler {
                 $stmt3->bindValue(':clothing_id',$resClothes_id, PDO::PARAM_INT);
                 $stmt3->bindValue(':cloth_id', $clotheValue, PDO::PARAM_INT);
                 $stmt3->execute();
-
             }
 
             return $resClothes_id;

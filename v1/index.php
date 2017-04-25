@@ -2,6 +2,7 @@
 
 require_once '../include/DbHandler.php';
 require_once '../include/DbClotheHandler.php';
+require_once '../include/DbPostHandler.php';
 require_once '../include/PassHash.php';
 require '.././libs/Slim/Slim.php';
 
@@ -573,7 +574,6 @@ $app->post('/updateClothes', 'authenticate', function () use ($app) {
 
 });
 
-
 /*----------------------------------------------CLOTHES-PROPERTIES--------------------------------------------------------*/
 
 $app->get('/getClotheProperties','authenticate', function (){
@@ -741,5 +741,50 @@ $app->get('/getMaterial','authenticate', function (){
         echo json_encode (json_decode ("{}"));
     }
 });
+
+
+/*----------------------------------------------POST--------------------------------------------------------*/
+/**
+ * create post
+ * url - /addPost
+ * method - POST
+ * params - post
+ */
+$app->post('/addPost', 'authenticate', function() use ($app) {
+    try{
+        global $user_id;
+        $response = array();
+
+        $content = trim(file_get_contents("php://input"));
+        $allPostVars = json_decode($content, true);
+
+
+        $post= new Post($allPostVars['title'],$allPostVars['desc'], $allPostVars['clothes_id'], $user_id);
+
+        $db = new DbPostHandler();
+        $res = $db->createPost($post);
+
+        if ($res == true ){
+            $tmp = new Post();
+            $tmp->setPostId($res);
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($tmp);
+        }else{
+            $app->response->setStatus(400);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
+        }
+
+    }catch(PDOException $e) {
+        $app->response()->setStatus(404);
+        $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
+    }
+
+
+});
+
 
 $app->run();
