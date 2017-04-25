@@ -289,12 +289,9 @@ class DbClotheHandler {
 
 
         if ($stmt->execute()) {
-            var_dump("ok");
-            $clothes = $stmt->fetch();
             $resClothes_id = $clothes->getClothesId();
 
-            var_dump($clothes);
-
+            var_dump($clotheArray);
             foreach ($clotheArray as $clotheValue){
                 var_dump("ok");
                 var_dump($clotheValue);
