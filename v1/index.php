@@ -534,6 +534,7 @@ $app->post('/deleteClothes', 'authenticate', function() use ($app) {
 $app->post('/updateClothes', 'authenticate', function () use ($app) {
     try{
         global $user_id;
+        $clotheArray = array();
 
         $content = trim(file_get_contents("php://input"));
         $allPostVars = json_decode($content, true);
@@ -542,7 +543,6 @@ $app->post('/updateClothes', 'authenticate', function () use ($app) {
         $clothes = new Clothes($allPostVars['id'], $user_id, $allPostVars['urlImage'], $allPostVars['score']);
 
         foreach ($allPostVars['listClothe'] as $valueC){
-            var_dump($valueC);
             $test = array_values($valueC);
             array_push($clotheArray,$test[0]);
         }
