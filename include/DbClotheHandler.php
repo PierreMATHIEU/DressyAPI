@@ -291,7 +291,11 @@ class DbClotheHandler {
             $clothes = $stmt->fetch();
             $resClothes_id = $clothes->getClothesId();
 
+            var_dump($clothes);
+
             foreach ($clotheArray as $clotheValue){
+                var_dump("ok");
+                var_dump($clotheValue);
                 $stmt2 = $this->conn->prepare("UPDATE clothing_clothe SET clothing_id=:clothing_id, cloth_id=:cloth_id");
 
                 $stmt2->bindValue(':clothing_id',$resClothes_id, PDO::PARAM_INT);
