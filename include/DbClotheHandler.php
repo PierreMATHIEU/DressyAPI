@@ -292,16 +292,15 @@ class DbClotheHandler {
             $resClothes_id = $clothes->getClothesId();
 
             foreach ($clotheArray as $clotheValue){
-                var_dump($clotheValue);
                 $stmt2 = $this->conn->prepare("DELETE FROM clothing_clothe 
                                                         WHERE clothing_id=:clothing_id AND cloth_id=:cloth_id");
 
                 $stmt2->bindValue(':clothing_id',$resClothes_id, PDO::PARAM_INT);
                 $stmt2->bindValue(':cloth_id', $clotheValue, PDO::PARAM_INT);
-
+                $stmt2->execute();
 
             }
-        if($stmt2->execute()){
+
             foreach ($clotheArray as $clotheValue){
                 $stmt3 = $this->conn->prepare("INSERT INTO clothing_clothe(clothing_id, cloth_id) 
                                               VALUES (:clothing_id, :cloth_id)");
@@ -311,9 +310,7 @@ class DbClotheHandler {
                 $stmt3->execute();
 
             }
-        }
-
-
+        
             return $resClothes_id;
         } else {
             // Failed to create user
