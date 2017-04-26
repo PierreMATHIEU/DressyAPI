@@ -402,7 +402,7 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
         foreach ($allPostVars['listClothe'] as $valueC){
             array_push($clotheArray,$valueC['cloth_id']);
         }
-        var_dump($clotheArray);
+
         $db = new DbClotheHandler();
         $res = $db->createClothes($clothes, $clotheArray);
 
@@ -410,8 +410,7 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
             $clothesResponse = new Clothes();
             $clothesResponse->setClothesId($res);
 
-            //var_dump($clothesResponse);
-
+            
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
             echo '{"id":'. $clothesResponse->getClothesId() .'}';
