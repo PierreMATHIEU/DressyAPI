@@ -404,7 +404,7 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
             var_dump("ok");
             var_dump($valueC);
             var_dump("ok1");
-            var_dump($valueC->getClothId());
+            var_dump(array_search("cloth_id",$valueC));
             $test = array_values($valueC);
             array_push($clotheArray,$test[0]);
         }
