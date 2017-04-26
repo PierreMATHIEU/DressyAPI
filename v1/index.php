@@ -404,7 +404,7 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
         }
         var_dump($clotheArray);
         $db = new DbClotheHandler();
-        //$res = $db->createClothes($clothes, $clotheArray);
+        $res = $db->createClothes($clothes, $clotheArray);
 
         if ($res == true ){
             $clothesResponse = new Clothes();
@@ -543,8 +543,7 @@ $app->post('/updateClothes', 'authenticate', function () use ($app) {
         $clothes = new Clothes($allPostVars['id'], $allPostVars['urlImage'],$allPostVars['listClothe'], $allPostVars['score'], $user_id);
 
         foreach ($allPostVars['listClothe'] as $valueC){
-            $test = array_values($valueC);
-            array_push($clotheArray,$test[0]);
+            array_push($clotheArray,$valueC['cloth_id']);
         }
 
 
