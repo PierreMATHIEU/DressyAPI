@@ -400,12 +400,13 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
         $clothes = new Clothes(0,$allPostVars['urlImage'], $allPostVars['listClothe'],$allPostVars['score'], $user_id);
 
         foreach ($allPostVars['listClothe'] as $valueC){
+            var_dump($allPostVars['listClothe']->getClothId());
             $test = array_values($valueC);
             array_push($clotheArray,$test[0]);
         }
 
         $db = new DbClotheHandler();
-        $res = $db->createClothes($clothes, $clotheArray);
+        //$res = $db->createClothes($clothes, $clotheArray);
 
         if ($res == true ){
             $clothesResponse = new Clothes();
