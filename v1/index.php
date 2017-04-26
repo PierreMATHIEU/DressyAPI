@@ -400,7 +400,11 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
         $clothes = new Clothes(0,$allPostVars['urlImage'], $allPostVars['listClothe'],$allPostVars['score'], $user_id);
 
         foreach ($allPostVars['listClothe'] as $valueC){
-            var_dump($allPostVars['listClothe']->getClothId());
+            var_dump($allPostVars['listClothe'] );
+            var_dump("ok");
+            var_dump($valueC);
+            var_dump("ok1");
+            var_dump($valueC->getClothId());
             $test = array_values($valueC);
             array_push($clotheArray,$test[0]);
         }
