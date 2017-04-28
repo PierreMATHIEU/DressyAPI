@@ -56,9 +56,9 @@ class DbPostHandler
      */
     public function viewTopPost($user_id){
         $postReponse = array();
-        $sth = $this->conn->prepare("SELECT post_id, clothing_id, post_title, post_description, user_id, post_created_at
+        $sth = $this->conn->prepare("SELECT post_id, clothing_id, post_title, post_description, user_id 
                                               FROM post
-                                              JOIN clothing ON clothing.clothing_id=post.clothing_id");
+                                              ");
         $sth->execute();
 
         $sth2 = $this->conn->prepare("SELECT login
@@ -67,6 +67,7 @@ class DbPostHandler
         $sth2->bindValue(':userid', $user_id , PDO::PARAM_INT);
         $sth2->execute();
         $sth2Res = $sth2->fetch();
+
         if ($sth) {
 
             while ($post = $sth->fetch()) {
@@ -74,6 +75,7 @@ class DbPostHandler
                 array_push($postReponse, $newPost);
             }
             $sth->closeCursor();
+            var_dump($postReponse);
             $sth = null;
             $this->conn = null;
             return $postReponse;
