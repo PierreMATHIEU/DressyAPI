@@ -70,7 +70,8 @@ class DbPostHandler{
                 $sth2->execute();
                 $sth2Res = $sth2->fetch();
 
-                $test = viewAllClothes($postR['clothing_id']);
+                $dbH = new DbPostHandler();
+                $test = $dbH->viewSpecifiqueClothes($postR['clothing_id']);
                 var_dump($test);
 
                 $newPost = new Post($postR['post_id'], $sth2Res['user_login'],$postR['post_title'], $postR['post_description'], $postR['clothing_id'], $postR['user_id']);
@@ -87,7 +88,7 @@ class DbPostHandler{
      * View clothes
      * @param int $user_id
      */
-    public function viewAllClothes($clothes_id) {
+    public function viewSpecifiqueClothes($clothes_id) {
         $clotheReponce = array();
 
         $sth = $this->conn->prepare("SELECT clothing_id, clothing_url_image,clothing_vote, user_id
