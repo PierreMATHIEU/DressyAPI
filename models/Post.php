@@ -9,6 +9,7 @@
 class Post
 {
     private $post_id;
+    private $username;
     private $title;
     private $desc;
     private $clothes_id;
@@ -21,8 +22,9 @@ class Post
      * @param $desc
      * @param $clothes
      */
-    public function __construct($post_id=0, $title="", $desc="", $clothes_id=0, $user_id=0)
+    public function __construct($post_id=0, $username="",$title="", $desc="", $clothes_id=0, $user_id=0)
     {
+        $this->username = $username;
         $this->title = $title;
         $this->desc = $desc;
         $this->clothes_id = $clothes_id;
@@ -43,6 +45,22 @@ class Post
     public function setPostId($post_id)
     {
         $this->post_id = $post_id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param string $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
     }
 
 

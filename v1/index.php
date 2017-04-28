@@ -33,7 +33,7 @@ function authenticate(\Slim\Route $route) {
     $theapp = new \Slim\Slim();
     $headers = $theapp->request->headers;
 
-   // $headers = apache_request_headers();
+    // $headers = apache_request_headers();
     $response = array();
     $app = \Slim\Slim::getInstance();
 
@@ -76,38 +76,38 @@ function authenticate(\Slim\Route $route) {
  * params - name, email, password
  */
 $app->post('/register', function() use ($app) {
-            $response = array();
+    $response = array();
 
-            // reading post params
-            //$allPostVars = $app->request->post();
-            $content = trim(file_get_contents("php://input"));
-          //Attempt to decode the incoming RAW post data from JSON.
-            $allPostVars = json_decode($content, true);
+    // reading post params
+    //$allPostVars = $app->request->post();
+    $content = trim(file_get_contents("php://input"));
+    //Attempt to decode the incoming RAW post data from JSON.
+    $allPostVars = json_decode($content, true);
 
-            //$allPostVars = json_decode($allPostVars,1);
+    //$allPostVars = json_decode($allPostVars,1);
 
-            $user = new User($allPostVars['user_pseudo'], $allPostVars['user_password'], $allPostVars['user_fisrtName'], $allPostVars['user_lastName'], $allPostVars['user_mail'], $allPostVars['user_country']);
+    $user = new User($allPostVars['user_pseudo'], $allPostVars['user_password'], $allPostVars['user_fisrtName'], $allPostVars['user_lastName'], $allPostVars['user_mail'], $allPostVars['user_country']);
 
-            // validating email address
-            validateEmail($user->getUser_mail());
+    // validating email address
+    validateEmail($user->getUser_mail());
 
-            $db = new DbHandler();
-            $res = $db->createUser($user);
+    $db = new DbHandler();
+    $res = $db->createUser($user);
 
-            if (is_string($res)) {
-                $response['status'] = "success";
-                $response["api_key"] = $res;
-                echoRespnse(200, $response);
-            } else if ($res === 2) {
-                $response['status'] = "error";
-                $response["message"] = "Oops! An error occurred while registereing";
-                echoRespnse(400, $response);
-            } else if ($res === 3) {
-                $response['status'] = "error";
-                $response["message"] = "Sorry, this email already existed";
-                echoRespnse(400, $response);
-            }
-        });
+    if (is_string($res)) {
+        $response['status'] = "success";
+        $response["api_key"] = $res;
+        echoRespnse(200, $response);
+    } else if ($res === 2) {
+        $response['status'] = "error";
+        $response["message"] = "Oops! An error occurred while registereing";
+        echoRespnse(400, $response);
+    } else if ($res === 3) {
+        $response['status'] = "error";
+        $response["message"] = "Sorry, this email already existed";
+        echoRespnse(400, $response);
+    }
+});
 
 /**
  * User Login
@@ -116,33 +116,33 @@ $app->post('/register', function() use ($app) {
  * params - email, password
  */
 $app->post('/login', function() use ($app) {
-            // check for required params
-            //verifyRequiredParams(array('email', 'password'));
-            $response = array();
+    // check for required params
+    //verifyRequiredParams(array('email', 'password'));
+    $response = array();
 
-            $content = trim(file_get_contents("php://input"));
-            $allPostVars = json_decode($content, true);
+    $content = trim(file_get_contents("php://input"));
+    $allPostVars = json_decode($content, true);
 
-            $userLogin = new UserLogin($allPostVars['user_mail'], $allPostVars['user_password']);
+    $userLogin = new UserLogin($allPostVars['user_mail'], $allPostVars['user_password']);
 
-            $db = new DbHandler();
-            // check for correct email and password
-            if ($db->checkLogin($userLogin)) {
-                // get the user by email
-                $res = $db->getUserByEmail($userLogin);
-                if ($res != NULL) {
-                    $response['api_key'] = $res;
-                    echoRespnse(200, $response);
-                } else {
-                    // unknown error occurred
+    $db = new DbHandler();
+    // check for correct email and password
+    if ($db->checkLogin($userLogin)) {
+        // get the user by email
+        $res = $db->getUserByEmail($userLogin);
+        if ($res != NULL) {
+            $response['api_key'] = $res;
+            echoRespnse(200, $response);
+        } else {
+            // unknown error occurred
 
-                    echoRespnse(400);
-                }
-            } else {
-                // user credentials are wrong
-                echoRespnse(400);
-            }
-        });
+            echoRespnse(400);
+        }
+    } else {
+        // user credentials are wrong
+        echoRespnse(400);
+    }
+});
 
 /**
  * Verifying required params posted or not
@@ -193,7 +193,7 @@ function validateEmail($email) {
  * @param String $status_code Http response code
  * @param Int $response Json response
  */
- function echoRespnse($status_code, $response) {
+function echoRespnse($status_code, $response) {
     $app = \Slim\Slim::getInstance();
     // Http response code
     $app->status($status_code);
@@ -204,7 +204,16 @@ function validateEmail($email) {
     echo json_encode($response);
 }
 
+function base64_to_jpeg($base64_string, $output_file) {
+    $ifp = fopen($output_file, "wb");
 
+    $data = explode(',', $base64_string);
+
+    fwrite($ifp, base64_decode($data[1]));
+    fclose($ifp);
+
+    return $output_file;
+}
 /*----------------------------------------------------CLOTHE---------------------------------------------------------*/
 /**
  * create clothe
@@ -213,41 +222,41 @@ function validateEmail($email) {
  * params - clothe
  */
 $app->post('/addClothe', 'authenticate', function() use ($app) {
-           try{
-               global $user_id;
-               $response = array();
+    try{
+        global $user_id;
+        $response = array();
 
-               $content = trim(file_get_contents("php://input"));
-               $allPostVars = json_decode($content, true);
-
-
-               $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'],$user_id);
-
-               $db = new DbClotheHandler();
-               $res = $db->createClothe($clothe);
+        $content = trim(file_get_contents("php://input"));
+        $allPostVars = json_decode($content, true);
 
 
-                if ($res == true ){
-                    $tmp = new Clothe();
-                    $tmp->setClothId($res);
+        $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'],$user_id);
 
-                    $app->response->setStatus(200);
-                    $app->response()->headers->set('Content-Type', 'application/json');
-                    echo json_encode($tmp);
-                }else{
-                    $app->response->setStatus(400);
-                    $app->response()->headers->set('Content-Type', 'application/json');
-                    echo json_encode (json_decode ("{}"));
-                }
-
-           }catch(PDOException $e) {
-               $app->response()->setStatus(404);
-               $app->response()->headers->set('Content-Type', 'application/json');
-               echo json_encode (json_decode ("{}"));
-           }
+        $db = new DbClotheHandler();
+        $res = $db->createClothe($clothe);
 
 
-        });
+        if ($res == true ){
+            $tmp = new Clothe();
+            $tmp->setClothId($res);
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($tmp);
+        }else{
+            $app->response->setStatus(400);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
+        }
+
+    }catch(PDOException $e) {
+        $app->response()->setStatus(404);
+        $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
+    }
+
+
+});
 
 /**
  * Liste des habits de l'utilisateur
@@ -410,7 +419,7 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
             $clothesResponse = new Clothes();
             $clothesResponse->setClothesId($res);
 
-            
+
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
             echo '{"id":'. $clothesResponse->getClothesId() .'}';
@@ -780,8 +789,52 @@ $app->post('/addPost', 'authenticate', function() use ($app) {
         echo json_encode (json_decode ("{}"));
     }
 
-
 });
+
+/**
+ * Liste des postes
+ * method GET
+ * url /getPost
+ */
+$app->get('/getPost', 'authenticate', function(){
+    $app = \Slim\Slim::getInstance();
+    try
+    {
+        global $user_id;
+        $response = array();
+        $db = new DbClotheHandler();
+
+        // fetching all user tasks
+        $result = $db->viewTopPost($user_id);
+
+        if($result){
+            $response["listPost"] = array();
+            foreach ($result as $value){
+                $tmp = array();
+                $tmp["username"]= $value->getUsername();
+                $tmp["title"]= $value->getTitle();
+                $tmp["desc"]= $value->getDesc();
+                $tmp["clothes"]= $value->getClothesId();
+
+                array_push($response["listPost"], $tmp);
+            }
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($response);
+            $db = null;
+        }else {
+            $app->response->setStatus(400);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
+        }
+    }catch(PDOException $e) {
+        $app->response->setStatus(404);
+        $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
+    }
+});
+
 
 
 $app->run();

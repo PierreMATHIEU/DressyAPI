@@ -54,22 +54,29 @@ class DbPostHandler
     /**
      * get post : top 40
      */
-    public function viewAllMaterial(){
-        $materialReponce = array();
-        $sth = $this->conn->prepare("SELECT clothe_material_id, clothe_material_libelle
-                                              FROM clothe_material");
+    public function viewTopPost($user_id){
+        $postReponse = array();
+        $sth = $this->conn->prepare("SELECT post_id, clothing_id, post_title, post_description, user_id, post_created_at
+                                              FROM post
+                                              JOIN clothing ON clothing.clothing_id=post.clothing_id");
         $sth->execute();
 
+        $sth2 = $this->conn->prepare("SELECT login
+                                              FROM users
+                                              WHERE user_id=:userid");
+        $sth2->bindValue(':userid', $user_id , PDO::PARAM_INT);
+        $sth2->execute();
+        $sth2Res = $sth2->fetch();
         if ($sth) {
 
-            while ($material = $sth->fetch()) {
-                $newMaterial = new Material($material['clothe_material_id'],$material['clothe_material_libelle']);
-                array_push($materialReponce, $newMaterial);
+            while ($post = $sth->fetch()) {
+                $newPost = new Post($post['post_id'], $sth2Res,$post['post_title'], $post['post_description'], $post['clothing_id'], $post['user_id']);
+                array_push($postReponse, $newPost);
             }
             $sth->closeCursor();
             $sth = null;
             $this->conn = null;
-            return $materialReponce;
+            return $postReponse;
         } else {
             return false;
         }
