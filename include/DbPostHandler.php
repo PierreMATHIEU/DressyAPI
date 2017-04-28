@@ -67,17 +67,15 @@ class DbPostHandler
         $sth2->bindValue(':userid', $user_id , PDO::PARAM_INT);
         $sth2->execute();
         $sth2Res = $sth2->fetch();
-
+    var_dump($sth);
         if ($sth) {
 
             while ($post = $sth->fetch()) {
+                var_dump($post);
                 $newPost = new Post($post['post_id'], $sth2Res,$post['post_title'], $post['post_description'], $post['clothing_id'], $post['user_id']);
                 array_push($postReponse, $newPost);
             }
-            $sth->closeCursor();
-            var_dump($postReponse);
-            $sth = null;
-            $this->conn = null;
+
             return $postReponse;
         } else {
             return false;
