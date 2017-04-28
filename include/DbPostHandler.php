@@ -1,10 +1,6 @@
 <?php
 
-require_once '../models/Clothe.php';
-require_once '../models/Clothes.php';
-require_once '../models/Brand.php';
-require_once '../models/Material.php';
-require_once '../models/Category.php';
+require_once '../models/Post.php';
 
 /**
  * Created by PhpStorm.
@@ -67,11 +63,9 @@ class DbPostHandler
         $sth2->bindValue(':userid', $user_id , PDO::PARAM_INT);
         $sth2->execute();
         $sth2Res = $sth2->fetch();
-    var_dump($sth);
         if ($sth) {
 
             while ($post = $sth->fetch()) {
-                var_dump($post);
                 $newPost = new Post($post['post_id'], $sth2Res,$post['post_title'], $post['post_description'], $post['clothing_id'], $post['user_id']);
                 array_push($postReponse, $newPost);
             }
