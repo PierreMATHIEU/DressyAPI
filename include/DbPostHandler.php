@@ -51,7 +51,6 @@ class DbPostHandler
      * get post : top 40
      */
     public function viewTopPost($user_id){
-        var_dump($user_id);
         $postReponse = array();
         $sth = $this->conn->prepare("SELECT post_id, clothing_id, post_title, post_description, user_id 
                                               FROM post
@@ -67,6 +66,7 @@ class DbPostHandler
         if ($sth) {
 
             while ($post = $sth->fetch()) {
+                var_dump($post);
                 $newPost = new Post($post['post_id'], $sth2Res,$post['post_title'], $post['post_description'], $post['clothing_id'], $post['user_id']);
                 array_push($postReponse, $newPost);
             }

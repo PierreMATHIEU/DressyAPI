@@ -802,7 +802,6 @@ $app->get('/getPost', 'authenticate', function(){
     {
         global $user_id;
         $response = array();
-        var_dump("OK");
         $db = new DbPostHandler();
         $result = $db->viewTopPost($user_id);
 
