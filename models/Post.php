@@ -6,6 +6,7 @@
  * Date: 25/04/2017
  * Time: 19:42
  */
+require_once 'Clothes.php';
 class Post
 {
     private $post_id;
@@ -22,7 +23,7 @@ class Post
      * @param $desc
      * @param $clothes
      */
-    public function __construct($post_id=0, $username="",$title="", $desc="", $clothes_id=array(), $user_id=0)
+    public function __construct($post_id=0, $username="",$title="", $desc="", $clothes_id, $user_id=0)
     {
         $this->post_id = $post_id;
         $this->username = $username;

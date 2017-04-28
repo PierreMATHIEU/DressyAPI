@@ -808,6 +808,7 @@ $app->get('/getPost', 'authenticate', function(){
         if($result){
             $response["listPost"] = array();
             foreach ($result as $value){
+                var_dump($value);
                 $tmp = array();
                 $tmp["username"]= $value->getUsername();
                 $tmp["title"]= $value->getTitle();
@@ -816,7 +817,6 @@ $app->get('/getPost', 'authenticate', function(){
 
                 array_push($response["listPost"], $tmp);
             }
-
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
             echo json_encode($response);
