@@ -8,8 +8,8 @@ require_once '../models/Post.php';
  * Date: 25/04/2017
  * Time: 19:49
  */
-class DbPostHandler
-{
+class DbPostHandler{
+
     private $conn;
 
     function __construct() {
@@ -57,10 +57,8 @@ class DbPostHandler
         $sth->execute();
 
         if ($sth) {
-            var_dump("og");
             while ($postR = $sth->fetch()) {
-                    var_dump($postR);
-                $sth2 = $this->conn->prepare("SELECT login
+                $sth2 = $this->conn->prepare("SELECT user_login
                                               FROM users
                                               WHERE user_id=:userid");
                 $sth2->bindValue(':userid', $user_id , PDO::PARAM_INT);
