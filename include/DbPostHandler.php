@@ -64,7 +64,7 @@ class DbPostHandler
         $sth2Res = $sth2->fetch();
 
         if ($sth) {
-
+            var_dump("og");
             while ($post = $sth->fetch()) {
                 var_dump($post);
                 $newPost = new Post($post['post_id'], $sth2Res,$post['post_title'], $post['post_description'], $post['clothing_id'], $post['user_id']);
