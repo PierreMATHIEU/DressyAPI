@@ -8,11 +8,11 @@
  */
 class Clothes
 {
-    private $clothes_id;
-    private $urlImage;
-    private $listClothe = array();
-    private $score = "";
-    private $user_id = 0;
+    public $clothes_id;
+    public $urlImage;
+    public $listClothe = array();
+    public $score = "";
+    public $user_id = 0;
 
     /**
      * Clothes constructor.
