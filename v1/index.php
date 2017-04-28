@@ -814,41 +814,7 @@ $app->get('/getPost', 'authenticate', function(){
                 $tmp["title"]= $value->getTitle();
                 $tmp["desc"]= $value->getDesc();
 
-                $tmp["clothesN"] = new Clothes();
-                $tmp["clothesN"]->setClothesId();
-                $tmp["clothesN"]->setUrlImage();
-
-                foreach ($value->getListClothe() as $value2){
-                    var_dump($value2);
-                    var_dump("foreadc");
-                    $tmp1 = array();
-                    $tmp1["cloth_id"] = $value2->getClothId();
-                    $tmp1["cloth_name"] = $value2->getClothName();
-                    $tmp1["cloth_color"] = $value2->getClothColor();
-                    $tmp1["cloth_reference"] = $value2->getClothReference();
-                    $tmp1["cloth_urlImage"] = $value2->getClothUrlImage();
-
-                    $tmp1["cloth_category"] = new Category();
-                    $tmp1["cloth_category"]->id = $value2->getClothCategory()->getId();
-                    $tmp1["cloth_category"]->libelle = $value2->getClothCategory()->getLibelle();
-
-                    $tmp1["cloth_brand"] = new Brand();
-                    $tmp1["cloth_brand"]->id = $value2->getClothBrand()->getId();
-                    $tmp1["cloth_brand"]->libelle = $value2->getClothBrand()->getLibelle();
-
-                    $tmp1["cloth_material"] = new Material();
-                    $tmp1["cloth_material"]->id = $value2->getClothMaterial()->getId();
-                    $tmp1["cloth_material"]->libelle = $value2->getClothMaterial()->getLibelle();
-                }
-                var_dump($tmp["clothesN"]);
-                var_dump("ok");
-
-                $tmp["clothesN"]->setListClothe($tmp1);
-                $tmp["clothes"]= $value->getClothesId($tmp["clothesN"]);
-                $tmp["score"] = $value->getScore();
-
-
-                array_push($response["listPost"], $tmp);
+               
             }
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
