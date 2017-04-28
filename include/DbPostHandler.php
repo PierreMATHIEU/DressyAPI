@@ -55,7 +55,6 @@ class DbPostHandler
 
         $sth = $this->conn->prepare("SELECT post_id, clothing_id, post_title, post_description, user_id FROM post");
         $sth->execute();
-        var_dump($sth);
         $sth2 = $this->conn->prepare("SELECT login
                                               FROM users
                                               WHERE user_id=:userid");
