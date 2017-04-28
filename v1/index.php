@@ -809,12 +809,14 @@ $app->get('/getPost', 'authenticate', function(){
             $response["listPost"] = array();
             foreach ($result as $value){
                 var_dump($value);
-                $tmp = array();
+                /*$tmp = array();
                 $tmp["username"]= $value->getUsername();
                 $tmp["title"]= $value->getTitle();
-                $tmp["desc"]= $value->getDesc();
+                $tmp["desc"]= $value->getDesc();*/
 
-               
+                $test = new Post($value->getPostId(),$value->getUsername(),$value->getTitle(),$value->getDesc(),$value->getClothesId(),$user_id);
+                array_push($response["listPost"],$test);
+
             }
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
