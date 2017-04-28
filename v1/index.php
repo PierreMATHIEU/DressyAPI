@@ -802,7 +802,7 @@ $app->get('/getPost', 'authenticate', function(){
     {
         global $user_id;
         $response = array();
-        $db = new DbClotheHandler();
+        $db = new DbPostHandler();
 
         // fetching all user tasks
         $result = $db->viewTopPost($user_id);
