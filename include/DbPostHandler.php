@@ -65,7 +65,7 @@ class DbPostHandler{
                 $sth2->execute();
                 $sth2Res = $sth2->fetch();
 
-                $newPost = new Post($postR['post_id'], $sth2Res,$postR['post_title'], $postR['post_description'], $postR['clothing_id'], $postR['user_id']);
+                $newPost = new Post($postR['post_id'], $sth2Res['user_login'],$postR['post_title'], $postR['post_description'], $postR['clothing_id'], $postR['user_id']);
                 array_push($postReponse, $newPost);
 
             }
