@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e0fd1abc-d113-4ecb-b90f-8298f2706b2c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/DbPostHandler.php" afterPath="$PROJECT_DIR$/include/DbPostHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Post.php" afterPath="$PROJECT_DIR$/models/Post.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,10 +25,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
+            <state relative-caret-position="53">
               <caret line="804" column="34" lean-forward="true" selection-start-line="804" selection-start-column="14" selection-end-line="804" selection-end-column="34" />
               <folding>
                 <element signature="n#authenticate#0;n#!!top" expanded="false" />
@@ -56,26 +57,27 @@
       <file leaf-file-name="Post.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+            <state relative-caret-position="34">
+              <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DbPostHandler.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DbPostHandler.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/DbPostHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="90" column="20" lean-forward="false" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
+            <state relative-caret-position="346">
+              <caret line="75" column="136" lean-forward="false" selection-start-line="75" selection-start-column="136" selection-end-line="75" selection-end-column="136" />
               <folding>
                 <element signature="n#createPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
-                <marker date="1493397773006" expanded="true" signature="689:956" ph="INSERT INTO post... " />
-                <marker date="1493397773006" expanded="true" signature="1666:1738" ph="SELECT cloth... clothe_material" />
-                <marker date="1493397773006" expanded="true" signature="1666:1742" ph="SELECT post_... post" />
-                <marker date="1493397773006" expanded="true" signature="1883:2025" ph="SELECT user_... users" />
-                <marker date="1493397773006" expanded="true" signature="2954:3162" ph="SELECT cloth... clothing" />
-                <marker date="1493397773006" expanded="true" signature="3414:4372" ph="SELECT cloth... clothe" />
+                <element signature="n#viewSpecifiqueClothes#0;n#DbPostHandler#0;n#!!top" expanded="false" />
+                <marker date="1493397956107" expanded="true" signature="689:956" ph="INSERT INTO post... " />
+                <marker date="1493397956107" expanded="true" signature="1666:1738" ph="SELECT cloth... clothe_material" />
+                <marker date="1493397956107" expanded="true" signature="1666:1742" ph="SELECT post_... post" />
+                <marker date="1493397956107" expanded="true" signature="1883:2025" ph="SELECT user_... users" />
+                <marker date="1493397956107" expanded="true" signature="2925:3133" ph="SELECT cloth... clothing" />
+                <marker date="1493397956107" expanded="true" signature="3385:4343" ph="SELECT cloth... clothe" />
               </folding>
             </state>
           </provider>
@@ -180,9 +182,9 @@
         <option value="$PROJECT_DIR$/models/Clothe.php" />
         <option value="$PROJECT_DIR$/models/Clothes.php" />
         <option value="$PROJECT_DIR$/include/DbClotheHandler.php" />
-        <option value="$PROJECT_DIR$/models/Post.php" />
         <option value="$PROJECT_DIR$/v1/index.php" />
         <option value="$PROJECT_DIR$/include/DbPostHandler.php" />
+        <option value="$PROJECT_DIR$/models/Post.php" />
       </list>
     </option>
   </component>
@@ -380,12 +382,12 @@
       <workItem from="1493138125000" duration="6667000" />
       <workItem from="1493224064698" duration="1677000" />
       <workItem from="1493307410550" duration="6479000" />
-      <workItem from="1493394091812" duration="3307000" />
+      <workItem from="1493394091812" duration="3609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114930000" />
+    <option name="totallyTimeSpent" value="115232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1209,22 +1211,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/DbClotheHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -1273,9 +1259,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/DbPostHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="75" column="136" lean-forward="false" selection-start-line="75" selection-start-column="136" selection-end-line="75" selection-end-column="136" />
+          <folding>
+            <element signature="n#createPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
+            <element signature="n#viewSpecifiqueClothes#0;n#DbPostHandler#0;n#!!top" expanded="false" />
+            <marker date="1493397956107" expanded="true" signature="689:956" ph="INSERT INTO post... " />
+            <marker date="1493397956107" expanded="true" signature="1666:1738" ph="SELECT cloth... clothe_material" />
+            <marker date="1493397956107" expanded="true" signature="1666:1742" ph="SELECT post_... post" />
+            <marker date="1493397956107" expanded="true" signature="1883:2025" ph="SELECT user_... users" />
+            <marker date="1493397956107" expanded="true" signature="2925:3133" ph="SELECT cloth... clothing" />
+            <marker date="1493397956107" expanded="true" signature="3385:4343" ph="SELECT cloth... clothe" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
+        <state relative-caret-position="53">
           <caret line="804" column="34" lean-forward="true" selection-start-line="804" selection-start-column="14" selection-end-line="804" selection-end-column="34" />
           <folding>
             <element signature="n#authenticate#0;n#!!top" expanded="false" />
@@ -1296,22 +1315,6 @@
             <element signature="e#22195#23346#1#PHP" expanded="false" />
             <element signature="e#23391#24540#1#PHP" expanded="false" />
             <element signature="e#24770#25813#1#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/DbPostHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="90" column="20" lean-forward="false" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
-          <folding>
-            <element signature="n#createPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
-            <marker date="1493397773006" expanded="true" signature="689:956" ph="INSERT INTO post... " />
-            <marker date="1493397773006" expanded="true" signature="1666:1738" ph="SELECT cloth... clothe_material" />
-            <marker date="1493397773006" expanded="true" signature="1666:1742" ph="SELECT post_... post" />
-            <marker date="1493397773006" expanded="true" signature="1883:2025" ph="SELECT user_... users" />
-            <marker date="1493397773006" expanded="true" signature="2954:3162" ph="SELECT cloth... clothing" />
-            <marker date="1493397773006" expanded="true" signature="3414:4372" ph="SELECT cloth... clothe" />
           </folding>
         </state>
       </provider>

@@ -22,7 +22,7 @@ class Post
      * @param $desc
      * @param $clothes
      */
-    public function __construct($post_id=0, $username="",$title="", $desc="", $clothes_id=0, $user_id=0)
+    public function __construct($post_id=0, $username="",$title="", $desc="", $clothes_id=array(), $user_id=0)
     {
         $this->post_id = $post_id;
         $this->username = $username;

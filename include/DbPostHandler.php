@@ -71,10 +71,9 @@ class DbPostHandler{
                 $sth2Res = $sth2->fetch();
 
                 $dbH = new DbPostHandler();
-                $test = $dbH->viewSpecifiqueClothes($postR['clothing_id']);
-                var_dump($test);
+                $clothes = $dbH->viewSpecifiqueClothes($postR['clothing_id']);
 
-                $newPost = new Post($postR['post_id'], $sth2Res['user_login'],$postR['post_title'], $postR['post_description'], $postR['clothing_id'], $postR['user_id']);
+                $newPost = new Post($postR['post_id'], $sth2Res['user_login'],$postR['post_title'], $postR['post_description'], $clothes, $postR['user_id']);
                 array_push($postReponse, $newPost);
 
             }
@@ -85,8 +84,8 @@ class DbPostHandler{
     }
     /*------------------------------------------------------------------------------------------*/
     /**
-     * View clothes
-     * @param int $user_id
+     * View clothes specifique
+     * @param int $clothes_id
      */
     public function viewSpecifiqueClothes($clothes_id) {
         $clotheReponce = array();
