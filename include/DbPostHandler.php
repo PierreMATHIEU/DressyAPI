@@ -55,17 +55,21 @@ class DbPostHandler
 
         $sth = $this->conn->prepare("SELECT post_id, clothing_id, post_title, post_description, user_id FROM post");
         $sth->execute();
-        $sth2 = $this->conn->prepare("SELECT login
-                                              FROM users
-                                              WHERE user_id=:userid");
-        $sth2->bindValue(':userid', $user_id , PDO::PARAM_INT);
-        $sth2->execute();
 
-        $sth2Res = $sth2->fetch();
+
 
         if ($sth) {
             var_dump("og");
             while ($post = $sth->fetch()) {
+
+                $sth2 = $this->conn->prepare("SELECT login
+                                              FROM users
+                                              WHERE user_id=:userid");
+                $sth2->bindValue(':userid', $user_id , PDO::PARAM_INT);
+                $sth2->execute();
+
+                $sth2Res = $sth2->fetch();
+
                 var_dump($post);
                 $newPost = new Post($post['post_id'], $sth2Res,$post['post_title'], $post['post_description'], $post['clothing_id'], $post['user_id']);
                 array_push($postReponse, $newPost);
