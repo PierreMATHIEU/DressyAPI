@@ -14,7 +14,7 @@ require_once '../models/Clothes.php';
 require_once '../models/Category.php';
 require_once '../models/Brand.php';
 require_once '../models/Material.php';
-
+require_once '../models/Post.php';
 //require '../vendor/autoload.php';
 
 \Slim\Slim::registerAutoloader();
@@ -802,9 +802,8 @@ $app->get('/getPost', 'authenticate', function(){
     {
         global $user_id;
         $response = array();
+        var_dump("OK");
         $db = new DbPostHandler();
-
-        // fetching all user tasks
         $result = $db->viewTopPost($user_id);
 
         if($result){

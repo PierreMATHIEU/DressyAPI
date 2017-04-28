@@ -51,6 +51,7 @@ class DbPostHandler
      * get post : top 40
      */
     public function viewTopPost($user_id){
+        var_dump($user_id);
         $postReponse = array();
         $sth = $this->conn->prepare("SELECT post_id, clothing_id, post_title, post_description, user_id 
                                               FROM post
