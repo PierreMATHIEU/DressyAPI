@@ -24,6 +24,7 @@ class Post
      */
     public function __construct($post_id=0, $username="",$title="", $desc="", $clothes_id=0, $user_id=0)
     {
+        $this->post_id = $post_id;
         $this->username = $username;
         $this->title = $title;
         $this->desc = $desc;
