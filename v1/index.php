@@ -771,7 +771,8 @@ $app->post('/addPost', 'authenticate', function() use ($app) {
 
         if ($res == true ){
             $tmp["post"] = new Post();
-            $tmp["post"]->setPostId($res);
+            $tmp["post"]->post_id = $res;
+            var_dump($tmp["post"]);
 
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
