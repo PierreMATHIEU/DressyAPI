@@ -29,8 +29,6 @@ class DbPostHandler{
      * @param Post $post
      */
     public function createPost($post) {
-        var_dump($post);
-
         $stmt = $this->conn->prepare("INSERT INTO post(clothing_id, post_title, post_description, user_id, post_created_at) 
                                               VALUES (:clothing_id, :post_title, :post_description, :user_id, now())
                                               RETURNING post_id");
@@ -39,8 +37,11 @@ class DbPostHandler{
         $stmt->bindValue(':post_title', $post->getTitle(), PDO::PARAM_STR);
         $stmt->bindValue(':post_description', $post->getDesc(), PDO::PARAM_STR);
         $stmt->bindValue(':user_id', $post->getUserId(), PDO::PARAM_INT);
-
-
+        var_dump($post->getClothesId());
+        var_dump($post->getTitle());
+        var_dump($post->getDesc());
+        var_dump($post->getUserId());
+        
         if ($stmt->execute()) {
 
             $post = $stmt->fetch();
