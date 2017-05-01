@@ -78,20 +78,20 @@
         <entry file="file://$PROJECT_DIR$/include/DbPostHandler.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="39" column="50" lean-forward="false" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+              <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
               <folding>
                 <element signature="n#__construct#0;n#DbPostHandler#0;n#!!top" expanded="false" />
                 <element signature="n#viewTopPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
                 <element signature="n#viewLastPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
                 <element signature="n#viewSpecifiqueClothes#0;n#DbPostHandler#0;n#!!top" expanded="false" />
-                <marker date="1493658041537" expanded="true" signature="688:955" ph="INSERT INTO post... " />
-                <marker date="1493658041537" expanded="true" signature="1830:1923" ph="SELECT post_... post" />
-                <marker date="1493658041537" expanded="true" signature="1830:2157" ph="SELECT post_... post" />
-                <marker date="1493658041537" expanded="true" signature="2298:2440" ph="SELECT user_... users" />
-                <marker date="1493658041537" expanded="true" signature="3199:3352" ph="SELECT post_... post" />
-                <marker date="1493658041537" expanded="true" signature="3493:3635" ph="SELECT user_... users" />
-                <marker date="1493658041537" expanded="true" signature="4545:4753" ph="SELECT cloth... clothing" />
-                <marker date="1493658041537" expanded="true" signature="5005:5963" ph="SELECT cloth... clothe" />
+                <marker date="1493658102827" expanded="true" signature="688:955" ph="INSERT INTO post... " />
+                <marker date="1493658102827" expanded="true" signature="1686:1779" ph="SELECT post_... post" />
+                <marker date="1493658102827" expanded="true" signature="1686:2013" ph="SELECT post_... post" />
+                <marker date="1493658102827" expanded="true" signature="2154:2296" ph="SELECT user_... users" />
+                <marker date="1493658102827" expanded="true" signature="3055:3208" ph="SELECT post_... post" />
+                <marker date="1493658102827" expanded="true" signature="3349:3491" ph="SELECT user_... users" />
+                <marker date="1493658102827" expanded="true" signature="4401:4609" ph="SELECT cloth... clothing" />
+                <marker date="1493658102827" expanded="true" signature="4861:5819" ph="SELECT cloth... clothe" />
               </folding>
             </state>
           </provider>
@@ -351,12 +351,12 @@
       <workItem from="1493224064698" duration="1677000" />
       <workItem from="1493307410550" duration="6479000" />
       <workItem from="1493394091812" duration="5558000" />
-      <workItem from="1493653579843" duration="4461000" />
+      <workItem from="1493653579843" duration="4514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121642000" />
+    <option name="totallyTimeSpent" value="121695000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1280,20 +1280,20 @@
     <entry file="file://$PROJECT_DIR$/include/DbPostHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="39" column="50" lean-forward="false" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+          <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
           <folding>
             <element signature="n#__construct#0;n#DbPostHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewTopPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewLastPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
             <element signature="n#viewSpecifiqueClothes#0;n#DbPostHandler#0;n#!!top" expanded="false" />
-            <marker date="1493658041537" expanded="true" signature="688:955" ph="INSERT INTO post... " />
-            <marker date="1493658041537" expanded="true" signature="1830:1923" ph="SELECT post_... post" />
-            <marker date="1493658041537" expanded="true" signature="1830:2157" ph="SELECT post_... post" />
-            <marker date="1493658041537" expanded="true" signature="2298:2440" ph="SELECT user_... users" />
-            <marker date="1493658041537" expanded="true" signature="3199:3352" ph="SELECT post_... post" />
-            <marker date="1493658041537" expanded="true" signature="3493:3635" ph="SELECT user_... users" />
-            <marker date="1493658041537" expanded="true" signature="4545:4753" ph="SELECT cloth... clothing" />
-            <marker date="1493658041537" expanded="true" signature="5005:5963" ph="SELECT cloth... clothe" />
+            <marker date="1493658102827" expanded="true" signature="688:955" ph="INSERT INTO post... " />
+            <marker date="1493658102827" expanded="true" signature="1686:1779" ph="SELECT post_... post" />
+            <marker date="1493658102827" expanded="true" signature="1686:2013" ph="SELECT post_... post" />
+            <marker date="1493658102827" expanded="true" signature="2154:2296" ph="SELECT user_... users" />
+            <marker date="1493658102827" expanded="true" signature="3055:3208" ph="SELECT post_... post" />
+            <marker date="1493658102827" expanded="true" signature="3349:3491" ph="SELECT user_... users" />
+            <marker date="1493658102827" expanded="true" signature="4401:4609" ph="SELECT cloth... clothing" />
+            <marker date="1493658102827" expanded="true" signature="4861:5819" ph="SELECT cloth... clothe" />
           </folding>
         </state>
       </provider>
