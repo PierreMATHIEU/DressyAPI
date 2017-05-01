@@ -63,11 +63,10 @@ class DbPostHandler{
 
         if ($sth) {
             while ($postR = $sth->fetch()) {
-                var_dump($postR);
                 $sth2 = $this->conn->prepare("SELECT user_login
                                               FROM users
                                               WHERE user_id=:userid");
-                $sth2->bindValue(':userid', $user_id , PDO::PARAM_INT);
+                $sth2->bindValue(':userid', $postR['user_id'] , PDO::PARAM_INT);
                 $sth2->execute();
                 $sth2Res = $sth2->fetch();
 
