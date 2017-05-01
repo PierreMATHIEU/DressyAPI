@@ -812,7 +812,7 @@ $app->get('/getPost', 'authenticate', function(){
                 $tmp["username"] = $value1->getUsername();
                 $tmp["title"] = $value1->getTitle();
                 $tmp["desc"] = $value1->getDesc();
-                $tmp["clothes"] = array();
+                $tmp["clothes"] = new Clothes();
 
                 foreach ($value1->getClothesId() as $value){
                     $tmp1 = array();
