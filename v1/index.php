@@ -770,10 +770,9 @@ $app->post('/addPost', 'authenticate', function() use ($app) {
         $res = $db->createPost($post);
 
         if ($res == true ){
-
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
-            echo json_encode('{'. $res .'}');
+            echo json_encode(array("id" => $res));
         }else{
             $app->response->setStatus(400);
             $app->response()->headers->set('Content-Type', 'application/json');
