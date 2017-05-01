@@ -849,7 +849,7 @@ $app->get('/getPost', 'authenticate', function(){
 
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
-            echo json_encode($response);
+            //echo json_encode($response);
             $db = null;
         }else {
             $app->response->setStatus(400);

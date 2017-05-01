@@ -63,6 +63,7 @@ class DbPostHandler{
 
         if ($sth) {
             while ($postR = $sth->fetch()) {
+                var_dump($postR);
                 $sth2 = $this->conn->prepare("SELECT user_login
                                               FROM users
                                               WHERE user_id=:userid");
