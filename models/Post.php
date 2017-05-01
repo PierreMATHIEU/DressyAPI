@@ -9,7 +9,7 @@
 require_once 'Clothes.php';
 class Post
 {
-    private $post_id;
+    public $post_id;
     private $username;
     private $title;
     private $desc;
