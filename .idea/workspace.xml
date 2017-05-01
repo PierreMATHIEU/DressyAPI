@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fd1abc-d113-4ecb-b90f-8298f2706b2c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v1/index.php" afterPath="$PROJECT_DIR$/v1/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +28,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="816" column="47" lean-forward="false" selection-start-line="816" selection-start-column="47" selection-end-line="816" selection-end-column="47" />
+            <state relative-caret-position="-433">
+              <caret line="816" column="60" lean-forward="false" selection-start-line="816" selection-start-column="60" selection-end-line="816" selection-end-column="60" />
               <folding>
                 <element signature="n#authenticate#0;n#!!top" expanded="false" />
                 <element signature="e#2150#3333#1#PHP" expanded="false" />
@@ -395,12 +396,12 @@
       <workItem from="1493224064698" duration="1677000" />
       <workItem from="1493307410550" duration="6479000" />
       <workItem from="1493394091812" duration="5558000" />
-      <workItem from="1493653579843" duration="1359000" />
+      <workItem from="1493653579843" duration="1658000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118540000" />
+    <option name="totallyTimeSpent" value="118839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1306,8 +1307,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="816" column="47" lean-forward="false" selection-start-line="816" selection-start-column="47" selection-end-line="816" selection-end-column="47" />
+        <state relative-caret-position="-433">
+          <caret line="816" column="60" lean-forward="false" selection-start-line="816" selection-start-column="60" selection-end-line="816" selection-end-column="60" />
           <folding>
             <element signature="n#authenticate#0;n#!!top" expanded="false" />
             <element signature="e#2150#3333#1#PHP" expanded="false" />

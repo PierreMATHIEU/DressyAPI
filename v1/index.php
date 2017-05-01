@@ -815,7 +815,6 @@ $app->get('/getPost', 'authenticate', function(){
                 $tmp["clothes"] = array();
 
                 foreach ($value1->getClothesId() as $value){
-                    var_dump($value);
                     $tmp1 = array();
                     $tmp1["id"] = $value->getClothesId();
                     $tmp1["urlImage"] = $value->getUrlImage();
