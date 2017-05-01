@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e0fd1abc-d113-4ecb-b90f-8298f2706b2c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/DbPostHandler.php" afterPath="$PROJECT_DIR$/include/DbPostHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v1/index.php" afterPath="$PROJECT_DIR$/v1/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="767" column="116" lean-forward="false" selection-start-line="767" selection-start-column="116" selection-end-line="767" selection-end-column="116" />
+            <state relative-caret-position="303">
+              <caret line="773" column="27" lean-forward="false" selection-start-line="773" selection-start-column="27" selection-end-line="773" selection-end-column="27" />
               <folding>
                 <element signature="n#authenticate#0;n#!!top" expanded="false" />
                 <element signature="e#2150#3333#1#PHP" expanded="false" />
@@ -47,8 +48,8 @@
                 <element signature="e#21010#22150#1#PHP" expanded="false" />
                 <element signature="e#22195#23346#1#PHP" expanded="false" />
                 <element signature="e#23391#24540#1#PHP" expanded="false" />
-                <element signature="e#25944#29184#1#PHP" expanded="false" />
-                <element signature="e#29297#32538#1#PHP" expanded="false" />
+                <element signature="e#25972#29212#1#PHP" expanded="false" />
+                <element signature="e#29325#32566#1#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -74,24 +75,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DbPostHandler.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DbPostHandler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/DbPostHandler.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+              <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
               <folding>
                 <element signature="n#__construct#0;n#DbPostHandler#0;n#!!top" expanded="false" />
                 <element signature="n#viewTopPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
                 <element signature="n#viewLastPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
                 <element signature="n#viewSpecifiqueClothes#0;n#DbPostHandler#0;n#!!top" expanded="false" />
-                <marker date="1493658176154" expanded="true" signature="688:955" ph="INSERT INTO post... " />
-                <marker date="1493658176154" expanded="true" signature="1701:1794" ph="SELECT post_... post" />
-                <marker date="1493658176154" expanded="true" signature="1701:2028" ph="SELECT post_... post" />
-                <marker date="1493658176154" expanded="true" signature="2169:2311" ph="SELECT user_... users" />
-                <marker date="1493658176154" expanded="true" signature="3070:3223" ph="SELECT post_... post" />
-                <marker date="1493658176154" expanded="true" signature="3364:3506" ph="SELECT user_... users" />
-                <marker date="1493658176154" expanded="true" signature="4416:4624" ph="SELECT cloth... clothing" />
-                <marker date="1493658176154" expanded="true" signature="4876:5834" ph="SELECT cloth... clothe" />
+                <marker date="1493658237525" expanded="true" signature="688:955" ph="INSERT INTO post... " />
+                <marker date="1493658237525" expanded="true" signature="1686:1779" ph="SELECT post_... post" />
+                <marker date="1493658237525" expanded="true" signature="1686:2013" ph="SELECT post_... post" />
+                <marker date="1493658237525" expanded="true" signature="2154:2296" ph="SELECT user_... users" />
+                <marker date="1493658237525" expanded="true" signature="3055:3208" ph="SELECT post_... post" />
+                <marker date="1493658237525" expanded="true" signature="3349:3491" ph="SELECT user_... users" />
+                <marker date="1493658237525" expanded="true" signature="4401:4609" ph="SELECT cloth... clothing" />
+                <marker date="1493658237525" expanded="true" signature="4861:5819" ph="SELECT cloth... clothe" />
               </folding>
             </state>
           </provider>
@@ -351,12 +352,12 @@
       <workItem from="1493224064698" duration="1677000" />
       <workItem from="1493307410550" duration="6479000" />
       <workItem from="1493394091812" duration="5558000" />
-      <workItem from="1493653579843" duration="4591000" />
+      <workItem from="1493653579843" duration="4649000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121772000" />
+    <option name="totallyTimeSpent" value="121830000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -489,8 +490,8 @@
             <element signature="e#21010#22150#1#PHP" expanded="false" />
             <element signature="e#22195#23346#1#PHP" expanded="false" />
             <element signature="e#23391#24540#1#PHP" expanded="false" />
-            <element signature="e#25944#29184#1#PHP" expanded="false" />
-            <element signature="e#29297#32538#1#PHP" expanded="false" />
+            <element signature="e#25972#29212#1#PHP" expanded="false" />
+            <element signature="e#29325#32566#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -597,8 +598,8 @@
             <element signature="e#21010#22150#1#PHP" expanded="false" />
             <element signature="e#22195#23346#1#PHP" expanded="false" />
             <element signature="e#23391#24540#1#PHP" expanded="false" />
-            <element signature="e#25944#29184#1#PHP" expanded="false" />
-            <element signature="e#29297#32538#1#PHP" expanded="false" />
+            <element signature="e#25972#29212#1#PHP" expanded="false" />
+            <element signature="e#29325#32566#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -697,8 +698,8 @@
             <element signature="e#21010#22150#1#PHP" expanded="false" />
             <element signature="e#22195#23346#1#PHP" expanded="false" />
             <element signature="e#23391#24540#1#PHP" expanded="false" />
-            <element signature="e#25944#29184#1#PHP" expanded="false" />
-            <element signature="e#29297#32538#1#PHP" expanded="false" />
+            <element signature="e#25972#29212#1#PHP" expanded="false" />
+            <element signature="e#29325#32566#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -795,8 +796,8 @@
             <element signature="e#21010#22150#1#PHP" expanded="false" />
             <element signature="e#22195#23346#1#PHP" expanded="false" />
             <element signature="e#23391#24540#1#PHP" expanded="false" />
-            <element signature="e#25944#29184#1#PHP" expanded="false" />
-            <element signature="e#29297#32538#1#PHP" expanded="false" />
+            <element signature="e#25972#29212#1#PHP" expanded="false" />
+            <element signature="e#29325#32566#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -901,8 +902,8 @@
             <element signature="e#21010#22150#1#PHP" expanded="false" />
             <element signature="e#22195#23346#1#PHP" expanded="false" />
             <element signature="e#23391#24540#1#PHP" expanded="false" />
-            <element signature="e#25944#29184#1#PHP" expanded="false" />
-            <element signature="e#29297#32538#1#PHP" expanded="false" />
+            <element signature="e#25972#29212#1#PHP" expanded="false" />
+            <element signature="e#29325#32566#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1015,8 +1016,8 @@
             <element signature="e#21010#22150#1#PHP" expanded="false" />
             <element signature="e#22195#23346#1#PHP" expanded="false" />
             <element signature="e#23391#24540#1#PHP" expanded="false" />
-            <element signature="e#25944#29184#1#PHP" expanded="false" />
-            <element signature="e#29297#32538#1#PHP" expanded="false" />
+            <element signature="e#25972#29212#1#PHP" expanded="false" />
+            <element signature="e#29325#32566#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1249,31 +1250,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/DbPostHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-          <folding>
-            <element signature="n#__construct#0;n#DbPostHandler#0;n#!!top" expanded="false" />
-            <element signature="n#viewTopPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
-            <element signature="n#viewLastPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
-            <element signature="n#viewSpecifiqueClothes#0;n#DbPostHandler#0;n#!!top" expanded="false" />
-            <marker date="1493658176154" expanded="true" signature="688:955" ph="INSERT INTO post... " />
-            <marker date="1493658176154" expanded="true" signature="1701:1794" ph="SELECT post_... post" />
-            <marker date="1493658176154" expanded="true" signature="1701:2028" ph="SELECT post_... post" />
-            <marker date="1493658176154" expanded="true" signature="2169:2311" ph="SELECT user_... users" />
-            <marker date="1493658176154" expanded="true" signature="3070:3223" ph="SELECT post_... post" />
-            <marker date="1493658176154" expanded="true" signature="3364:3506" ph="SELECT user_... users" />
-            <marker date="1493658176154" expanded="true" signature="4416:4624" ph="SELECT cloth... clothing" />
-            <marker date="1493658176154" expanded="true" signature="4876:5834" ph="SELECT cloth... clothe" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="767" column="116" lean-forward="false" selection-start-line="767" selection-start-column="116" selection-end-line="767" selection-end-column="116" />
+        <state relative-caret-position="303">
+          <caret line="773" column="27" lean-forward="false" selection-start-line="773" selection-start-column="27" selection-end-line="773" selection-end-column="27" />
           <folding>
             <element signature="n#authenticate#0;n#!!top" expanded="false" />
             <element signature="e#2150#3333#1#PHP" expanded="false" />
@@ -1292,8 +1272,29 @@
             <element signature="e#21010#22150#1#PHP" expanded="false" />
             <element signature="e#22195#23346#1#PHP" expanded="false" />
             <element signature="e#23391#24540#1#PHP" expanded="false" />
-            <element signature="e#25944#29184#1#PHP" expanded="false" />
-            <element signature="e#29297#32538#1#PHP" expanded="false" />
+            <element signature="e#25972#29212#1#PHP" expanded="false" />
+            <element signature="e#29325#32566#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DbPostHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+          <folding>
+            <element signature="n#__construct#0;n#DbPostHandler#0;n#!!top" expanded="false" />
+            <element signature="n#viewTopPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
+            <element signature="n#viewLastPost#0;n#DbPostHandler#0;n#!!top" expanded="false" />
+            <element signature="n#viewSpecifiqueClothes#0;n#DbPostHandler#0;n#!!top" expanded="false" />
+            <marker date="1493658237525" expanded="true" signature="688:955" ph="INSERT INTO post... " />
+            <marker date="1493658237525" expanded="true" signature="1686:1779" ph="SELECT post_... post" />
+            <marker date="1493658237525" expanded="true" signature="1686:2013" ph="SELECT post_... post" />
+            <marker date="1493658237525" expanded="true" signature="2154:2296" ph="SELECT user_... users" />
+            <marker date="1493658237525" expanded="true" signature="3055:3208" ph="SELECT post_... post" />
+            <marker date="1493658237525" expanded="true" signature="3349:3491" ph="SELECT user_... users" />
+            <marker date="1493658237525" expanded="true" signature="4401:4609" ph="SELECT cloth... clothing" />
+            <marker date="1493658237525" expanded="true" signature="4861:5819" ph="SELECT cloth... clothe" />
           </folding>
         </state>
       </provider>
