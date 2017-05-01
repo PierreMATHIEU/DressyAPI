@@ -37,11 +37,11 @@ class DbPostHandler{
         $stmt->bindValue(':post_title', $post->getTitle(), PDO::PARAM_STR);
         $stmt->bindValue(':post_description', $post->getDesc(), PDO::PARAM_STR);
         $stmt->bindValue(':user_id', $post->getUserId(), PDO::PARAM_INT);
-        var_dump($post->getClothesId());
+        var_dump($post->getClothesId()['clothes_id']);
         var_dump($post->getTitle());
         var_dump($post->getDesc());
         var_dump($post->getUserId());
-        
+
         if ($stmt->execute()) {
 
             $post = $stmt->fetch();
