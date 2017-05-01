@@ -27,8 +27,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="817" column="37" lean-forward="false" selection-start-line="817" selection-start-column="37" selection-end-line="817" selection-end-column="37" />
+            <state relative-caret-position="167">
+              <caret line="816" column="47" lean-forward="false" selection-start-line="816" selection-start-column="47" selection-end-line="816" selection-end-column="47" />
               <folding>
                 <element signature="n#authenticate#0;n#!!top" expanded="false" />
                 <element signature="e#2150#3333#1#PHP" expanded="false" />
@@ -66,8 +66,8 @@
       <file leaf-file-name="Post.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="111" column="32" lean-forward="false" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="32" />
+            <state relative-caret-position="221">
+              <caret line="103" column="32" lean-forward="false" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -174,6 +174,7 @@
       <find>var_dump</find>
       <find>vard</find>
       <find>$user_id</find>
+      <find>clothes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -394,12 +395,12 @@
       <workItem from="1493224064698" duration="1677000" />
       <workItem from="1493307410550" duration="6479000" />
       <workItem from="1493394091812" duration="5558000" />
-      <workItem from="1493653579843" duration="1292000" />
+      <workItem from="1493653579843" duration="1359000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118473000" />
+    <option name="totallyTimeSpent" value="118540000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1278,14 +1279,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="111" column="32" lean-forward="false" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/DbPostHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1303,10 +1296,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="103" column="32" lean-forward="false" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="817" column="37" lean-forward="false" selection-start-line="817" selection-start-column="37" selection-end-line="817" selection-end-column="37" />
+        <state relative-caret-position="167">
+          <caret line="816" column="47" lean-forward="false" selection-start-line="816" selection-start-column="47" selection-end-line="816" selection-end-column="47" />
           <folding>
             <element signature="n#authenticate#0;n#!!top" expanded="false" />
             <element signature="e#2150#3333#1#PHP" expanded="false" />
