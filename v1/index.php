@@ -792,11 +792,11 @@ $app->post('/addPost', 'authenticate', function() use ($app) {
 });
 
 /**
- * Liste des postes
+ * Liste des top postes
  * method GET
  * url /getPost
  */
-$app->get('/getPost', 'authenticate', function(){
+$app->get('/getTopPost', 'authenticate', function(){
     $app = \Slim\Slim::getInstance();
     try
     {
@@ -867,6 +867,80 @@ $app->get('/getPost', 'authenticate', function(){
     }
 });
 
+/**
+ * Liste des derniers postes
+ * method GET
+ * url /getPost
+ */
+$app->get('/getLastPost', 'authenticate', function(){
+    $app = \Slim\Slim::getInstance();
+    try
+    {
+        global $user_id;
+        $response = array();
+        $db = new DbPostHandler();
+        $result = $db->viewLastPost($user_id);
 
+        if($result){
+            $response["posts"]= array();
+            foreach ($result as $value1){
+                $tmp = array();
+                $tmp["username"] = $value1->getUsername();
+                $tmp["title"] = $value1->getTitle();
+                $tmp["desc"] = $value1->getDesc();
+                $tmp["clothes"] = new Clothes();
+
+                foreach ($value1->getClothesId() as $value){
+                    $tmp1 = array();
+                    $tmp["clothes"]->setClothesId($value->getClothesId());
+                    $tmp["clothes"]->setUrlImage($value->getUrlImage());
+                    $tmp["clothes"]->listClothe = array();
+                    //$tmp1["urlImage"] = $value->getUrlImage();
+                    //$tmp1["listClothe"] = array();
+                    foreach ($value->getListClothe() as $value2){
+                        $tmp2 = array();
+                        $tmp2["cloth_id"] = $value2->getClothId();
+                        $tmp2["cloth_name"] = $value2->getClothName();
+                        $tmp2["cloth_color"] = $value2->getClothColor();
+                        $tmp2["cloth_reference"] = $value2->getClothReference();
+                        $tmp2["cloth_urlImage"] = $value2->getClothUrlImage();
+
+                        $tmp2["cloth_category"] = new Category();
+                        $tmp2["cloth_category"]->id = $value2->getClothCategory()->getId();
+                        $tmp2["cloth_category"]->libelle = $value2->getClothCategory()->getLibelle();
+
+                        $tmp2["cloth_brand"] = new Brand();
+                        $tmp2["cloth_brand"]->id = $value2->getClothBrand()->getId();
+                        $tmp2["cloth_brand"]->libelle = $value2->getClothBrand()->getLibelle();
+
+                        $tmp2["cloth_material"] = new Material();
+                        $tmp2["cloth_material"]->id = $value2->getClothMaterial()->getId();
+                        $tmp2["cloth_material"]->libelle = $value2->getClothMaterial()->getLibelle();
+
+                        array_push($tmp["clothes"]->listClothe, $tmp2);
+                    }
+                    $tmp["clothes"]->setScore($value->getScore());
+                    $tmp["clothes"]->setUserId($value->getUserId());
+                    //$tmp1["score"] = $value->getScore();
+                    //array_push($tmp["clothes"], $tmp1);
+                }
+                array_push($response["posts"], $tmp);
+            }
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($response);
+            $db = null;
+        }else {
+            $app->response->setStatus(400);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
+        }
+    }catch(PDOException $e) {
+        $app->response->setStatus(404);
+        $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
+    }
+});
 
 $app->run();

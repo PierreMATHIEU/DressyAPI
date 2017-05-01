@@ -58,7 +58,10 @@ class DbPostHandler{
     public function viewTopPost($user_id){
         $postReponse = array();
 
-        $sth = $this->conn->prepare("SELECT post_id, clothing_id, post_title, post_description, user_id FROM post");
+        $sth = $this->conn->prepare("SELECT post_id, post.clothing_id, post_title, post_description, post.user_id, post_created_at
+                                              FROM post
+                                               JOIN clothing ON clothing.clothing_id=post.clothing_id 
+                                               ORDER BY clothing_vote DESC");
         $sth->execute();
 
         if ($sth) {
@@ -82,6 +85,38 @@ class DbPostHandler{
             return false;
         }
     }
+    /**
+     * get post : top 40
+     */
+    public function viewLastPost($user_id){
+        $postReponse = array();
+
+        $sth = $this->conn->prepare("SELECT post_id, clothing_id, post_title, post_description, user_id FROM post
+                                               ORDER BY post_created_at DESC");
+        $sth->execute();
+
+        if ($sth) {
+            while ($postR = $sth->fetch()) {
+                $sth2 = $this->conn->prepare("SELECT user_login
+                                              FROM users
+                                              WHERE user_id=:userid");
+                $sth2->bindValue(':userid', $postR['user_id'] , PDO::PARAM_INT);
+                $sth2->execute();
+                $sth2Res = $sth2->fetch();
+
+                $dbH = new DbPostHandler();
+                $clothes = $dbH->viewSpecifiqueClothes($postR['clothing_id']);
+
+                $newPost = new Post($postR['post_id'], $sth2Res['user_login'],$postR['post_title'], $postR['post_description'], $clothes, $postR['user_id']);
+                array_push($postReponse, $newPost);
+
+            }
+            return $postReponse;
+        } else {
+            return false;
+        }
+    }
+
     /*------------------------------------------------------------------------------------------*/
     /**
      * View clothes specifique
