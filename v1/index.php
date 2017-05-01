@@ -763,19 +763,19 @@ $app->post('/addPost', 'authenticate', function() use ($app) {
 
         $content = trim(file_get_contents("php://input"));
         $allPostVars = json_decode($content, true);
-        
+
         $post= new Post(0,$allPostVars['username'],$allPostVars['title'],$allPostVars['desc'], $allPostVars['clothes'], $user_id);
 
         $db = new DbPostHandler();
         $res = $db->createPost($post);
 
         if ($res == true ){
-            $tmp = new Post();
-            $tmp->setPostId($res);
+            $tmp["post"] = new Post();
+            $tmp["post"]->setPostId($res);
 
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
-            echo json_encode($tmp);
+            echo json_encode($tmp["post"]);
         }else{
             $app->response->setStatus(400);
             $app->response()->headers->set('Content-Type', 'application/json');
