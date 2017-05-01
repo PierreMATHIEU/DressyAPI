@@ -29,6 +29,7 @@ class DbPostHandler{
      * @param Post $post
      */
     public function createPost($post) {
+        var_dump($post);
 
         $stmt = $this->conn->prepare("INSERT INTO post(clothing_id, post_title, post_description, user_id, post_created_at) 
                                               VALUES (:clothing_id, :post_title, :post_description, :user_id, now())

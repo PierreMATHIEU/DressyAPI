@@ -765,7 +765,7 @@ $app->post('/addPost', 'authenticate', function() use ($app) {
         $allPostVars = json_decode($content, true);
 
 
-        $post= new Post($allPostVars['title'],$allPostVars['desc'], $allPostVars['clothes_id'], $user_id);
+        $post= new Post(0,$allPostVars['username'],$allPostVars['title'],$allPostVars['desc'], $allPostVars['clothes'], $user_id);
 
         $db = new DbPostHandler();
         $res = $db->createPost($post);
