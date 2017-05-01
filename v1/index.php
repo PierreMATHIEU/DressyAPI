@@ -815,6 +815,7 @@ $app->get('/getPost', 'authenticate', function(){
                 $tmp["clothes"] = array();
 
                 foreach ($result as $value){
+                    var_dump($value);
                     $tmp1 = array();
                     $tmp1["id"] = $value->getClothesId();
                     $tmp1["urlImage"] = $value->getUrlImage();
@@ -840,11 +841,9 @@ $app->get('/getPost', 'authenticate', function(){
                         $tmp2["cloth_material"]->libelle = $value2->getClothMaterial()->getLibelle();
 
                         array_push($tmp1["listClothe"], $tmp2);
-                        var_dump($tmp2);
                     }
                     $tmp1["score"] = $value->getScore();
                     array_push($tmp["clothes"], $tmp1);
-                    var_dump($tmp1);
                 }
                 array_push($response["posts"], $tmp);
             }
