@@ -816,9 +816,11 @@ $app->get('/getPost', 'authenticate', function(){
 
                 foreach ($value1->getClothesId() as $value){
                     $tmp1 = array();
-                    $tmp1["id"] = $value->getClothesId();
-                    $tmp1["urlImage"] = $value->getUrlImage();
-                    $tmp1["listClothe"] = array();
+                    $tmp["clothes"]->setClothesId($value->getClothesId());
+                    $tmp["clothes"]->setUrlImage($value->getUrlImage());
+                    $tmp["clothes"]->listClothe = array();
+                    //$tmp1["urlImage"] = $value->getUrlImage();
+                    //$tmp1["listClothe"] = array();
                     foreach ($value->getListClothe() as $value2){
                         $tmp2 = array();
                         $tmp2["cloth_id"] = $value2->getClothId();
@@ -839,10 +841,11 @@ $app->get('/getPost', 'authenticate', function(){
                         $tmp2["cloth_material"]->id = $value2->getClothMaterial()->getId();
                         $tmp2["cloth_material"]->libelle = $value2->getClothMaterial()->getLibelle();
 
-                        array_push($tmp1["listClothe"], $tmp2);
+                        array_push($tmp["clothes"]->listClothe, $tmp2);
                     }
-                    $tmp1["score"] = $value->getScore();
-                    array_push($tmp["clothes"], $tmp1);
+                    $tmp["clothes"]->setScore($value->getScore());
+                    //$tmp1["score"] = $value->getScore();
+                    //array_push($tmp["clothes"], $tmp1);
                 }
                 array_push($response["posts"], $tmp);
             }
