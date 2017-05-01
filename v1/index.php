@@ -844,6 +844,7 @@ $app->get('/getPost', 'authenticate', function(){
                         array_push($tmp["clothes"]->listClothe, $tmp2);
                     }
                     $tmp["clothes"]->setScore($value->getScore());
+                    $tmp["clothes"]->setUserId($value->getUserId());
                     //$tmp1["score"] = $value->getScore();
                     //array_push($tmp["clothes"], $tmp1);
                 }

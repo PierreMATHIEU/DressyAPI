@@ -27,8 +27,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="847" column="22" lean-forward="false" selection-start-line="847" selection-start-column="22" selection-end-line="847" selection-end-column="22" />
+            <state relative-caret-position="366">
+              <caret line="848" column="57" lean-forward="true" selection-start-line="848" selection-start-column="57" selection-end-line="848" selection-end-column="57" />
               <folding>
                 <element signature="n#authenticate#0;n#!!top" expanded="false" />
                 <element signature="e#2150#3333#1#PHP" expanded="false" />
@@ -56,8 +56,8 @@
       <file leaf-file-name="Clothes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Clothes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="32" />
+            <state relative-caret-position="240">
+              <caret line="99" column="29" lean-forward="false" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -395,12 +395,12 @@
       <workItem from="1493224064698" duration="1677000" />
       <workItem from="1493307410550" duration="6479000" />
       <workItem from="1493394091812" duration="5558000" />
-      <workItem from="1493653579843" duration="2441000" />
+      <workItem from="1493653579843" duration="2603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119622000" />
+    <option name="totallyTimeSpent" value="119784000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1291,16 +1291,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/Clothes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="32" />
+        <state relative-caret-position="240">
+          <caret line="99" column="29" lean-forward="false" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="847" column="22" lean-forward="false" selection-start-line="847" selection-start-column="22" selection-end-line="847" selection-end-column="22" />
+        <state relative-caret-position="366">
+          <caret line="848" column="57" lean-forward="true" selection-start-line="848" selection-start-column="57" selection-end-line="848" selection-end-column="57" />
           <folding>
             <element signature="n#authenticate#0;n#!!top" expanded="false" />
             <element signature="e#2150#3333#1#PHP" expanded="false" />
