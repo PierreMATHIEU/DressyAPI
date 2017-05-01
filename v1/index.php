@@ -806,18 +806,46 @@ $app->get('/getPost', 'authenticate', function(){
         $result = $db->viewTopPost($user_id);
 
         if($result){
-            $response["listPost"] = array();
-            foreach ($result as $value){
-                var_dump($value);
-                /*$tmp = array();
-                $tmp["username"]= $value->getUsername();
-                $tmp["title"]= $value->getTitle();
-                $tmp["desc"]= $value->getDesc();*/
+            $response["posts"]= array();
+            foreach ($result as $value1){
+                $tmp = array();
+                $tmp["username"] = $value1->getUsername();
+                $tmp["title"] = $value1->getTitle();
+                $tmp["desc"] = $value1->getDesc();
+                $tmp["clothes"] = array();
+                foreach ($result as $value){
+                    $tmp1 = array();
+                    $tmp1["id"] = $value->getClothesId();
+                    $tmp1["urlImage"] = $value->getUrlImage();
+                    $tmp1["listClothe"] = array();
+                    foreach ($value->getListClothe() as $value2){
+                        $tmp2 = array();
+                        $tmp2["cloth_id"] = $value2->getClothId();
+                        $tmp2["cloth_name"] = $value2->getClothName();
+                        $tmp2["cloth_color"] = $value2->getClothColor();
+                        $tmp2["cloth_reference"] = $value2->getClothReference();
+                        $tmp2["cloth_urlImage"] = $value2->getClothUrlImage();
 
-                $test = new Post($value->getPostId(),$value->getUsername(),$value->getTitle(),$value->getDesc(),$value->getClothesId(),$user_id);
-                array_push($response["listPost"],$test);
+                        $tmp2["cloth_category"] = new Category();
+                        $tmp2["cloth_category"]->id = $value2->getClothCategory()->getId();
+                        $tmp2["cloth_category"]->libelle = $value2->getClothCategory()->getLibelle();
 
+                        $tmp2["cloth_brand"] = new Brand();
+                        $tmp2["cloth_brand"]->id = $value2->getClothBrand()->getId();
+                        $tmp2["cloth_brand"]->libelle = $value2->getClothBrand()->getLibelle();
+
+                        $tmp2["cloth_material"] = new Material();
+                        $tmp2["cloth_material"]->id = $value2->getClothMaterial()->getId();
+                        $tmp2["cloth_material"]->libelle = $value2->getClothMaterial()->getLibelle();
+
+                        array_push($tmp1["listClothe"], $tmp2);
+                    }
+                    $tmp1["score"] = $value->getScore();
+                    array_push($tmp["clothes"], $tmp1);
+                }
+                array_push($tmp["posts"], $tmp);
             }
+
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
             echo json_encode($response);
