@@ -34,7 +34,7 @@ class DbPostHandler{
                                               VALUES (:clothing_id, :post_title, :post_description, :user_id, now())
                                               RETURNING post_id");
 
-        $stmt->bindValue(':clothing_id', $post->getClothesId()['clothes_id'], PDO::PARAM_INT);
+        $stmt->bindValue(':clothing_id', $post->getClothesId()['id'], PDO::PARAM_INT);
         $stmt->bindValue(':post_title', $post->getTitle(), PDO::PARAM_STR);
         $stmt->bindValue(':post_description', $post->getDesc(), PDO::PARAM_STR);
         $stmt->bindValue(':user_id', $post->getUserId(), PDO::PARAM_INT);
@@ -45,10 +45,9 @@ class DbPostHandler{
             $resPost = $post['post_id'];
             return $resPost;
         } else {
-            // Failed to create user
+            // Failed to create post
             return false;
         }
-
     }
 
     /**

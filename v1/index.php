@@ -226,13 +226,20 @@ function base64_to_jpeg($base64_string, $output_file) {
 $app->post('/addClothe', 'authenticate', function() use ($app) {
     try{
         global $user_id;
-        $response = array();
 
         $content = trim(file_get_contents("php://input"));
         $allPostVars = json_decode($content, true);
 
+        $cloth_id = (!empty($allPostVars['cloth_id'])) ? $allPostVars['cloth_id'] : 0;
+        $cloth_name = (!empty($allPostVars['cloth_name'])) ? $allPostVars['cloth_name'] : "";
+        $cloth_reference = (!empty($allPostVars['cloth_reference'])) ? $allPostVars['cloth_reference'] : "";
+        $cloth_urlImage = (!empty($allPostVars['cloth_urlImage'])) ? $allPostVars['cloth_urlImage'] : "";
+        $cloth_category = (!empty($allPostVars['cloth_category'])) ? $allPostVars['cloth_category'] : array();
+        $cloth_brand = (!empty($allPostVars['cloth_brand'])) ? $allPostVars['cloth_brand'] : array();
+        $cloth_material = (!empty($allPostVars['cloth_material'])) ? $allPostVars['cloth_material'] : array();
+        $cloth_color = (!empty($allPostVars['cloth_color'])) ? $allPostVars['cloth_color'] : array();
 
-        $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'], $allPostVars['cloth_color'],$user_id);
+        $clothe= new Clothe($cloth_id,$cloth_name,$cloth_reference,$cloth_urlImage, $cloth_category ,$cloth_brand,$cloth_material, $cloth_color,$user_id);
 
         $db = new DbClotheHandler();
         $res = $db->createClothe($clothe);
@@ -257,7 +264,6 @@ $app->post('/addClothe', 'authenticate', function() use ($app) {
         echo json_encode (json_decode ("{}"));
     }
 
-
 });
 
 /**
@@ -272,7 +278,6 @@ $app->get('/getClothe', 'authenticate', function(){
         global $user_id;
         $response = array();
         $db = new DbClotheHandler();
-        // fetching all user tasks
         $result = $db->viewAllClothe($user_id);
         if($result){
             $response["listClothe"] = array();
@@ -332,14 +337,21 @@ $app->get('/getClothe', 'authenticate', function(){
  * params - clothe
  */
 $app->post('/deleteClothe', 'authenticate', function() use ($app) {
-    $response = array();
+
     global $user_id;
-    // reading post params
     $content = trim(file_get_contents("php://input"));
     $allPostVars = json_decode($content, true);
 
+    $cloth_id = (!empty($allPostVars['cloth_id'])) ? $allPostVars['cloth_id'] : 0;
+    $cloth_name = (!empty($allPostVars['cloth_name'])) ? $allPostVars['cloth_name'] : "";
+    $cloth_reference = (!empty($allPostVars['cloth_reference'])) ? $allPostVars['cloth_reference'] : "";
+    $cloth_urlImage = (!empty($allPostVars['cloth_urlImage'])) ? $allPostVars['cloth_urlImage'] : "";
+    $cloth_category = (!empty($allPostVars['cloth_category'])) ? $allPostVars['cloth_category'] : array();
+    $cloth_brand = (!empty($allPostVars['cloth_brand'])) ? $allPostVars['cloth_brand'] : array();
+    $cloth_material = (!empty($allPostVars['cloth_material'])) ? $allPostVars['cloth_material'] : array();
+    $cloth_color = (!empty($allPostVars['cloth_color'])) ? $allPostVars['cloth_color'] : array();
 
-    $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'],$allPostVars['cloth_color'],$user_id);
+    $clothe= new Clothe($cloth_id,$cloth_name,$cloth_reference,$cloth_urlImage, $cloth_category ,$cloth_brand,$cloth_material, $cloth_color,$user_id);
 
     $db = new DbClotheHandler();
     $res = $db->deleteClothe($clothe);
@@ -365,17 +377,23 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
 $app->post('/updateClothe', 'authenticate', function () use ($app) {
     try{
         global $user_id;
-        //$response = array();
 
         $content = trim(file_get_contents("php://input"));
         $allPostVars = json_decode($content, true);
 
+        $cloth_id = (!empty($allPostVars['cloth_id'])) ? $allPostVars['cloth_id'] : 0;
+        $cloth_name = (!empty($allPostVars['cloth_name'])) ? $allPostVars['cloth_name'] : "";
+        $cloth_reference = (!empty($allPostVars['cloth_reference'])) ? $allPostVars['cloth_reference'] : "";
+        $cloth_urlImage = (!empty($allPostVars['cloth_urlImage'])) ? $allPostVars['cloth_urlImage'] : "";
+        $cloth_category = (!empty($allPostVars['cloth_category'])) ? $allPostVars['cloth_category'] : array();
+        $cloth_brand = (!empty($allPostVars['cloth_brand'])) ? $allPostVars['cloth_brand'] : array();
+        $cloth_material = (!empty($allPostVars['cloth_material'])) ? $allPostVars['cloth_material'] : array();
+        $cloth_color = (!empty($allPostVars['cloth_color'])) ? $allPostVars['cloth_color'] : array();
 
-        $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'],$allPostVars['cloth_color'],$user_id);
+        $clothe= new Clothe($cloth_id,$cloth_name,$cloth_reference,$cloth_urlImage, $cloth_category ,$cloth_brand,$cloth_material, $cloth_color,$user_id);
 
         $db = new DbClotheHandler();
         $res = $db->updateClothe($clothe);
-
 
         if ($res == true ){
             $tmp = new Clothe();
@@ -395,7 +413,6 @@ $app->post('/updateClothe', 'authenticate', function () use ($app) {
         $app->response()->headers->set('Content-Type', 'application/json');
         echo json_encode (json_decode ("{}"));
     }
-
 });
 
 /*----------------------------------------------------CLOTHES---------------------------------------------------------*/
@@ -411,11 +428,16 @@ $app->post('/addClothes', 'authenticate', function() use ($app) {
         global $user_id;
         $response = array();
 
+        $score = "";
+
         $content = trim(file_get_contents("php://input"));
         $allPostVars = json_decode($content, true);
 
+        $urlImage = (!empty($allPostVars['urlImage'] )) ? $allPostVars['urlImage'] : "";
+        $listClothe = (!empty($allPostVars['listClothe'] )) ? $allPostVars['listClothe'] : array();
+        $score = (!empty($allPostVars['score'] )) ? $allPostVars['score'] : 0;
 
-        $clothes = new Clothes(0,$allPostVars['urlImage'], $allPostVars['listClothe'],$allPostVars['score'], $user_id);
+        $clothes = new Clothes(0,$urlImage, $listClothe,$score, $user_id);
 
         foreach ($allPostVars['listClothe'] as $valueC){
             array_push($clotheArray,$valueC['cloth_id']);
@@ -533,7 +555,12 @@ $app->post('/deleteClothes', 'authenticate', function() use ($app) {
     $content = trim(file_get_contents("php://input"));
     $allPostVars = json_decode($content, true);
 
-    $clothes= new Clothes($allPostVars['id'],$allPostVars['urlImage'], $allPostVars['listClothe'],$allPostVars['score'], $user_id);
+    $id = (!empty($allPostVars['id'] )) ? $allPostVars['id'] : 0;
+    $urlImage = (!empty($allPostVars['urlImage'] )) ? $allPostVars['urlImage'] : "";
+    $listClothe = (!empty($allPostVars['listClothe'] )) ? $allPostVars['listClothe'] : array();
+    $score = (!empty($allPostVars['score'] )) ? $allPostVars['score'] : 0;
+
+    $clothes = new Clothes($id,$urlImage, $listClothe,$score, $user_id);
 
     $db = new DbClotheHandler();
     $res = $db->deleteClothes($clothes);
@@ -564,13 +591,16 @@ $app->post('/updateClothes', 'authenticate', function () use ($app) {
         $content = trim(file_get_contents("php://input"));
         $allPostVars = json_decode($content, true);
 
+        $id = (!empty($allPostVars['id'] )) ? $allPostVars['id'] : 0;
+        $urlImage = (!empty($allPostVars['urlImage'] )) ? $allPostVars['urlImage'] : "";
+        $listClothe = (!empty($allPostVars['listClothe'] )) ? $allPostVars['listClothe'] : array();
+        $score = (!empty($allPostVars['score'] )) ? $allPostVars['score'] : 0;
 
-        $clothes = new Clothes($allPostVars['id'], $allPostVars['urlImage'],$allPostVars['listClothe'], $allPostVars['score'], $user_id);
+        $clothes = new Clothes($id,$urlImage, $listClothe,$score, $user_id);
 
         foreach ($allPostVars['listClothe'] as $valueC){
             array_push($clotheArray,$valueC['cloth_id']);
         }
-
 
         $db = new DbClotheHandler();
         $res = $db->updateClothes($clothes, $clotheArray);
@@ -578,7 +608,6 @@ $app->post('/updateClothes', 'authenticate', function () use ($app) {
         if ($res == true ){
             $clothesResponse = new Clothes();
             $clothesResponse->setClothesId($res);
-
 
             $app->response->setStatus(200);
             $app->response()->headers->set('Content-Type', 'application/json');
@@ -833,12 +862,16 @@ $app->get('/getColor','authenticate', function (){
 $app->post('/addPost', 'authenticate', function() use ($app) {
     try{
         global $user_id;
-        $response = array();
 
         $content = trim(file_get_contents("php://input"));
         $allPostVars = json_decode($content, true);
 
-        $post= new Post(0,$allPostVars['username'],$allPostVars['title'],$allPostVars['desc'], $allPostVars['clothes'], $user_id);
+        $username = (!empty($allPostVars['username'] )) ? $allPostVars['username'] : "";
+        $title = (!empty($allPostVars['title'] )) ? $allPostVars['title'] : "";
+        $desc = (!empty($allPostVars['desc'] )) ? $allPostVars['desc'] : "";
+        $clothes = (!empty($allPostVars['clothes'] )) ? $allPostVars['clothes'] : array();
+
+        $post= new Post(0,$username,$title,$desc, $clothes, $user_id);
 
         $db = new DbPostHandler();
         $res = $db->createPost($post);
