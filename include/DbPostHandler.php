@@ -4,6 +4,7 @@ require_once '../models/Clothes.php';
 require_once '../models/Brand.php';
 require_once '../models/Material.php';
 require_once '../models/Category.php';
+require_once '../models/Color.php';
 
 require_once '../models/Post.php';
 
@@ -133,11 +134,12 @@ class DbPostHandler{
 
             while ($clothes = $sth->fetch()) {
                 $listClothe= array();
-                $sth2 = $this->conn->prepare("SELECT clothe.cloth_id, clothe_brand_id, clothe_brand_libelle, clothing.user_id, clothe_category_id, clothe_category_libelle, clothe_material_id,clothe_material_libelle, cloth_name, cloth_color, cloth_reference, cloth_urlimage
+                $sth2 = $this->conn->prepare("SELECT clothe.cloth_id, clothe_brand_id, clothe_brand_libelle,clothe_brand_id_fann,clothe_color_id,clothe_color_libelle,clothe_color_id_fann, clothing.user_id, clothe_category_id, clothe_category_libelle,clothe_category_id_fann, clothe_material_id,clothe_material_libelle,clothe_material_id_fann, cloth_name, cloth_reference, cloth_urlimage
                                             FROM clothe
                                             JOIN clothe_category ON clothe_category.clothe_category_id=clothe.cloth_category_id 
                                             JOIN clothe_brand ON clothe_brand.clothe_brand_id=clothe.cloth_brand_id
                                             JOIN clothe_material ON clothe_material.clothe_material_id=clothe.cloth_material_id
+                                            JOIN clothe_color ON clothe_color.clothe_color_id=clothe.cloth_color_id
                                             JOIN clothing_clothe ON clothe.cloth_id=clothing_clothe.cloth_id
                                             JOIN clothing ON clothing.clothing_id=clothing_clothe.clothing_id
                                             WHERE clothing.clothing_id=:clothing_id");
@@ -145,10 +147,11 @@ class DbPostHandler{
                 $sth2->execute();
 
                 while ($clothe = $sth2->fetch()) {
-                    $newBrand = new Brand($clothe['clothe_brand_id'],$clothe['clothe_brand_libelle']);
-                    $newCategory = new Category($clothe['clothe_category_id'],$clothe['clothe_category_libelle']);
-                    $newMaterial = new Material($clothe['clothe_material_id'],$clothe['clothe_material_libelle']);
-                    $newClothe = new Clothe($clothe['cloth_id'],$clothe['cloth_name'], $clothe['cloth_color'], $clothe['cloth_reference'], $clothe['cloth_urlimage'], $newCategory, $newBrand, $newMaterial);
+                    $newBrand = new Brand($clothe['clothe_brand_id'],$clothe['clothe_brand_libelle'],$clothe['clothe_brand_id_fann']);
+                    $newCategory = new Category($clothe['clothe_category_id'],$clothe['clothe_category_libelle'],$clothe['clothe_category_id_fann']);
+                    $newMaterial = new Material($clothe['clothe_material_id'],$clothe['clothe_material_libelle'],$clothe['clothe_material_id_fann']);
+                    $newColor= new Color($clothe['clothe_color_id'],$clothe['clothe_color_libelle'], $clothe['clothe_color_id_fann']);
+                    $newClothe = new Clothe($clothe['cloth_id'],$clothe['cloth_name'], $clothe['cloth_reference'], $clothe['cloth_urlimage'], $newCategory, $newBrand, $newMaterial,$newColor);
                     array_push($listClothe, $newClothe);
                 }
                 $sth2->closeCursor();

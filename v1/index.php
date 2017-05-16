@@ -6,7 +6,6 @@ require_once '../include/DbPostHandler.php';
 require_once '../include/PassHash.php';
 require '.././libs/Slim/Slim.php';
 
-
 require_once '../models/User.php';
 require_once '../models/UserLogin.php';
 require_once '../models/Clothe.php';
@@ -15,7 +14,10 @@ require_once '../models/Category.php';
 require_once '../models/Brand.php';
 require_once '../models/Material.php';
 require_once '../models/Post.php';
+require_once '../models/Color.php';
 //require '../vendor/autoload.php';
+
+include '../../dressyNetwork/Models/Network.php';
 
 \Slim\Slim::registerAutoloader();
 
@@ -230,7 +232,7 @@ $app->post('/addClothe', 'authenticate', function() use ($app) {
         $allPostVars = json_decode($content, true);
 
 
-        $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'],$user_id);
+        $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'], $allPostVars['cloth_color'],$user_id);
 
         $db = new DbClotheHandler();
         $res = $db->createClothe($clothe);
@@ -270,10 +272,8 @@ $app->get('/getClothe', 'authenticate', function(){
         global $user_id;
         $response = array();
         $db = new DbClotheHandler();
-
         // fetching all user tasks
         $result = $db->viewAllClothe($user_id);
-
         if($result){
             $response["listClothe"] = array();
 
@@ -281,21 +281,30 @@ $app->get('/getClothe', 'authenticate', function(){
                 $tmp = array();
                 $tmp["cloth_id"] = $value->getClothId();
                 $tmp["cloth_name"] = $value->getClothName();
-                $tmp["cloth_color"] = $value->getClothColor();
+
+                //$tmp["cloth_color"] = $value->getClothColor();
+                $tmp["cloth_color"] = new Color();
+                $tmp["cloth_color"]->setId($value->getClothColor()->getId());
+                $tmp["cloth_color"]->setLibelle($value->getClothColor()->getLibelle());
+                $tmp["cloth_color"]->setIdFann($value->getClothColor()->getIdFann());
+
                 $tmp["cloth_reference"] = $value->getClothReference();
                 $tmp["cloth_urlImage"] = $value->getClothUrlImage();
 
                 $tmp["cloth_category"] = new Category();
                 $tmp["cloth_category"]->id = $value->getClothCategory()->getId();
                 $tmp["cloth_category"]->libelle = $value->getClothCategory()->getLibelle();
+                $tmp["cloth_category"]->id_fann = $value->getClothCategory()->getIdFann();
 
                 $tmp["cloth_brand"] = new Brand();
                 $tmp["cloth_brand"]->id = $value->getClothBrand()->getId();
                 $tmp["cloth_brand"]->libelle = $value->getClothBrand()->getLibelle();
+                $tmp["cloth_brand"]->id_fann = $value->getClothBrand()->getIdFann();
 
                 $tmp["cloth_material"] = new Material();
                 $tmp["cloth_material"]->id = $value->getClothMaterial()->getId();
                 $tmp["cloth_material"]->libelle = $value->getClothMaterial()->getLibelle();
+                $tmp["cloth_material"]->id_fann = $value->getClothMaterial()->getIdFann();
 
                 array_push($response["listClothe"], $tmp);
             }
@@ -330,7 +339,7 @@ $app->post('/deleteClothe', 'authenticate', function() use ($app) {
     $allPostVars = json_decode($content, true);
 
 
-    $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'],$user_id);
+    $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'],$allPostVars['cloth_color'],$user_id);
 
     $db = new DbClotheHandler();
     $res = $db->deleteClothe($clothe);
@@ -362,7 +371,7 @@ $app->post('/updateClothe', 'authenticate', function () use ($app) {
         $allPostVars = json_decode($content, true);
 
 
-        $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'], $allPostVars['cloth_color'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'],$user_id);
+        $clothe= new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'],$allPostVars['cloth_color'],$user_id);
 
         $db = new DbClotheHandler();
         $res = $db->updateClothe($clothe);
@@ -466,21 +475,29 @@ $app->get('/getClothes', 'authenticate', function(){
                     $tmp = array();
                     $tmp["cloth_id"] = $value2->getClothId();
                     $tmp["cloth_name"] = $value2->getClothName();
-                    $tmp["cloth_color"] = $value2->getClothColor();
+
+                    $tmp["cloth_color"] = new Color();
+                    $tmp["cloth_color"]->setId($value2->getClothColor()->getId());
+                    $tmp["cloth_color"]->setLibelle($value2->getClothColor()->getLibelle());
+                    $tmp["cloth_color"]->setIdFann($value2->getClothColor()->getIdFann());
+
                     $tmp["cloth_reference"] = $value2->getClothReference();
                     $tmp["cloth_urlImage"] = $value2->getClothUrlImage();
 
                     $tmp["cloth_category"] = new Category();
                     $tmp["cloth_category"]->id = $value2->getClothCategory()->getId();
                     $tmp["cloth_category"]->libelle = $value2->getClothCategory()->getLibelle();
+                    $tmp["cloth_category"]->id_fann = $value2->getClothCategory()->getIdFann();
 
                     $tmp["cloth_brand"] = new Brand();
                     $tmp["cloth_brand"]->id = $value2->getClothBrand()->getId();
                     $tmp["cloth_brand"]->libelle = $value2->getClothBrand()->getLibelle();
+                    $tmp["cloth_brand"]->id_fann = $value2->getClothBrand()->getIdFann();
 
                     $tmp["cloth_material"] = new Material();
                     $tmp["cloth_material"]->id = $value2->getClothMaterial()->getId();
                     $tmp["cloth_material"]->libelle = $value2->getClothMaterial()->getLibelle();
+                    $tmp["cloth_material"]->id_fann = $value2->getClothMaterial()->getIdFann();
 
                     array_push($tmp1["listClothe"], $tmp);
                 }
@@ -588,20 +605,34 @@ $app->get('/getClotheProperties','authenticate', function (){
     {
         global $user_id;
         $response = array();
+        $db0 = new DbClotheHandler();
         $db = new DbClotheHandler();
         $db2 = new DbClotheHandler();
         $db3 = new DbClotheHandler();
+        $db4 = new DbClotheHandler();
         // fetching all user tasks
+
+        $resultColor = $db0->viewAllColor();
         $resultBrand = $db->viewAllBrand();
         $resultCategory = $db2->viewAllCategory();
         $resultMaterial = $db3->viewAllMaterial();
 
         if($resultMaterial){
+            $response["listColors"] = array();
+            foreach ($resultColor as $value){
+                $tmpA = array();
+                $tmpA["id"] = $value->getId();
+                $tmpA["libelle"] = $value->getLibelle();
+                $tmpA["id_fann"] = $value->getIdFann();
+                array_push($response["listColors"], $tmpA);
+            }
+
             $response["listBrands"] = array();
             foreach ($resultBrand as $value){
                 $tmpB = array();
                 $tmpB["id"] = $value->getId();
                 $tmpB["libelle"] = $value->getLibelle();
+                $tmpB["id_fann"] = $value->getIdFann();
                 array_push($response["listBrands"], $tmpB);
             }
 
@@ -610,6 +641,7 @@ $app->get('/getClotheProperties','authenticate', function (){
                 $tmpC = array();
                 $tmpC["id"] = $value->getId();
                 $tmpC["libelle"] = $value->getLibelle();
+                $tmpC["id_fann"] = $value->getIdFann();
                 array_push($response["listCategories"], $tmpC);
             }
 
@@ -618,6 +650,7 @@ $app->get('/getClotheProperties','authenticate', function (){
                 $tmpM = array();
                 $tmpM["id"] = $value->getId();
                 $tmpM["libelle"] = $value->getLibelle();
+                $tmpM["id_fann"] = $value->getIdFann();
                 array_push($response["listMaterials"], $tmpM);
             }
 
@@ -654,6 +687,7 @@ $app->get('/getBrand','authenticate', function (){
                 $tmp = array();
                 $tmp["id"] = $value->getId();
                 $tmp["libelle"] = $value->getLibelle();
+                $tmp["id_fann"] = $value->getIdFann();
 
                 array_push($response["listBrands"], $tmp);
             }
@@ -691,6 +725,7 @@ $app->get('/getCategory','authenticate', function (){
                 $tmp = array();
                 $tmp["id"] = $value->getId();
                 $tmp["libelle"] = $value->getLibelle();
+                $tmp["id_fann"] = $value->getIdFann();
 
                 array_push($response["listCategories"], $tmp);
             }
@@ -728,8 +763,47 @@ $app->get('/getMaterial','authenticate', function (){
                 $tmp = array();
                 $tmp["id"] = $value->getId();
                 $tmp["libelle"] = $value->getLibelle();
+                $tmp["id_fann"] = $value->getIdFann();
 
                 array_push($response["listMaterials"], $tmp);
+            }
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($response);
+            $db = null;
+        }else {
+            $app->response->setStatus(400);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
+        }
+    }catch(PDOException $e) {
+        $app->response->setStatus(404);
+        $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
+    }
+});
+
+$app->get('/getColor','authenticate', function (){
+    $app = \Slim\Slim::getInstance();
+    try
+    {
+        global $user_id;
+        $response = array();
+        $db = new DbClotheHandler();
+
+        // fetching all user tasks
+        $result = $db->viewAllColor();
+
+        if($result){
+            $response["listColors"] = array();
+            foreach ($result as $value){
+                $tmp = array();
+                $tmp["id"] = $value->getId();
+                $tmp["libelle"] = $value->getLibelle();
+                $tmp["id_fann"] = $value->getIdFann();
+
+                array_push($response["listColors"], $tmp);
             }
 
             $app->response->setStatus(200);
@@ -821,21 +895,29 @@ $app->get('/getTopPost', 'authenticate', function(){
                         $tmp2 = array();
                         $tmp2["cloth_id"] = $value2->getClothId();
                         $tmp2["cloth_name"] = $value2->getClothName();
-                        $tmp2["cloth_color"] = $value2->getClothColor();
+
+                        $tmp2["cloth_color"] = new Color();
+                        $tmp2["cloth_color"]->setId($value2->getClothColor()->getId());
+                        $tmp2["cloth_color"]->setLibelle($value2->getClothColor()->getLibelle());
+                        $tmp2["cloth_color"]->setIdFann($value2->getClothColor()->getIdFann());
+
                         $tmp2["cloth_reference"] = $value2->getClothReference();
                         $tmp2["cloth_urlImage"] = $value2->getClothUrlImage();
 
                         $tmp2["cloth_category"] = new Category();
                         $tmp2["cloth_category"]->id = $value2->getClothCategory()->getId();
                         $tmp2["cloth_category"]->libelle = $value2->getClothCategory()->getLibelle();
+                        $tmp2["cloth_category"]->id_fann = $value2->getClothCategory()->getIdFann();
 
                         $tmp2["cloth_brand"] = new Brand();
                         $tmp2["cloth_brand"]->id = $value2->getClothBrand()->getId();
                         $tmp2["cloth_brand"]->libelle = $value2->getClothBrand()->getLibelle();
+                        $tmp2["cloth_brand"]->id_fann = $value2->getClothBrand()->getIdFann();
 
                         $tmp2["cloth_material"] = new Material();
                         $tmp2["cloth_material"]->id = $value2->getClothMaterial()->getId();
                         $tmp2["cloth_material"]->libelle = $value2->getClothMaterial()->getLibelle();
+                        $tmp2["cloth_material"]->id_fann = $value2->getClothMaterial()->getIdFann();
 
                         array_push($tmp["clothes"]->listClothe, $tmp2);
                     }
@@ -897,21 +979,29 @@ $app->get('/getLastPost', 'authenticate', function(){
                         $tmp2 = array();
                         $tmp2["cloth_id"] = $value2->getClothId();
                         $tmp2["cloth_name"] = $value2->getClothName();
-                        $tmp2["cloth_color"] = $value2->getClothColor();
+
+                        $tmp2["cloth_color"] = new Color();
+                        $tmp2["cloth_color"]->setId($value2->getClothColor()->getId());
+                        $tmp2["cloth_color"]->setLibelle($value2->getClothColor()->getLibelle());
+                        $tmp2["cloth_color"]->setIdFann($value2->getClothColor()->getIdFann());
+
                         $tmp2["cloth_reference"] = $value2->getClothReference();
                         $tmp2["cloth_urlImage"] = $value2->getClothUrlImage();
 
                         $tmp2["cloth_category"] = new Category();
                         $tmp2["cloth_category"]->id = $value2->getClothCategory()->getId();
                         $tmp2["cloth_category"]->libelle = $value2->getClothCategory()->getLibelle();
+                        $tmp2["cloth_category"]->id_fann = $value2->getClothCategory()->getIdFann();
 
                         $tmp2["cloth_brand"] = new Brand();
                         $tmp2["cloth_brand"]->id = $value2->getClothBrand()->getId();
                         $tmp2["cloth_brand"]->libelle = $value2->getClothBrand()->getLibelle();
+                        $tmp2["cloth_brand"]->id_fann = $value2->getClothBrand()->getIdFann();
 
                         $tmp2["cloth_material"] = new Material();
                         $tmp2["cloth_material"]->id = $value2->getClothMaterial()->getId();
                         $tmp2["cloth_material"]->libelle = $value2->getClothMaterial()->getLibelle();
+                        $tmp2["cloth_material"]->id_fann = $value2->getClothMaterial()->getIdFann();
 
                         array_push($tmp["clothes"]->listClothe, $tmp2);
                     }
@@ -937,6 +1027,93 @@ $app->get('/getLastPost', 'authenticate', function(){
         $app->response()->headers->set('Content-Type', 'application/json');
         echo json_encode (json_decode ("{}"));
     }
+});
+
+/*------------------------------------------------SIMILARITY----------------------------------------------------*/
+/**
+ * Get similarity
+ * url - /getSimilarity
+ * method - POST
+ * params - post
+ */
+$app->post('/getSimilarity', 'authenticate', function() use ($app) {
+    try{
+        global $user_id;
+        $response = array();
+
+        $content = trim(file_get_contents("php://input"));
+        $allPostVars = json_decode($content, true);
+
+        $clothe = new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'], $allPostVars['cloth_color'],$user_id);
+
+        $category = $clothe->getClothCategory();
+        $material = $clothe->getClothMaterial();
+        $color = $clothe->getClothColor();
+
+        $fann = new Network(3,3,3,3,0.001,500000,1000);
+        $similarityTab = $fann->use($category['id_fann'],$material['id_fann'],$color['id_fann']);
+        $newSimilarirtTab = array();
+        foreach ($similarityTab as $value){
+            if((round($value,2,PHP_ROUND_HALF_UP)*100) % 2 == 0){
+                array_push($newSimilarirtTab,round($value,2,PHP_ROUND_HALF_UP));
+            }else{
+                array_push($newSimilarirtTab,round($value,2,PHP_ROUND_HALF_UP) - 0.01);
+            }
+        }
+
+        $db = new DbClotheHandler();
+        $result = $db->getSimilarity($user_id, $newSimilarirtTab);
+
+        if($result){
+            $response["listClothe"] = array();
+
+            foreach ($result as $value){
+                $tmp = array();
+                $tmp["cloth_id"] = $value->getClothId();
+                $tmp["cloth_name"] = $value->getClothName();
+
+                $tmp["cloth_color"] = new Color();
+                $tmp["cloth_color"]->setId($value->getClothColor()->getId());
+                $tmp["cloth_color"]->setLibelle($value->getClothColor()->getLibelle());
+                $tmp["cloth_color"]->setIdFann($value->getClothColor()->getIdFann());
+
+                $tmp["cloth_reference"] = $value->getClothReference();
+                $tmp["cloth_urlImage"] = $value->getClothUrlImage();
+
+                $tmp["cloth_category"] = new Category();
+                $tmp["cloth_category"]->id = $value->getClothCategory()->getId();
+                $tmp["cloth_category"]->libelle = $value->getClothCategory()->getLibelle();
+                $tmp["cloth_category"]->id_fann = $value->getClothCategory()->getIdFann();
+
+                $tmp["cloth_brand"] = new Brand();
+                $tmp["cloth_brand"]->id = $value->getClothBrand()->getId();
+                $tmp["cloth_brand"]->libelle = $value->getClothBrand()->getLibelle();
+                $tmp["cloth_brand"]->id_fann = $value->getClothBrand()->getIdFann();
+
+                $tmp["cloth_material"] = new Material();
+                $tmp["cloth_material"]->id = $value->getClothMaterial()->getId();
+                $tmp["cloth_material"]->libelle = $value->getClothMaterial()->getLibelle();
+                $tmp["cloth_material"]->id_fann = $value->getClothMaterial()->getIdFann();
+
+                array_push($response["listClothe"], $tmp);
+            }
+
+            $app->response->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode($response);
+            $db = null;
+        }else {
+            $app->response()->setStatus(200);
+            $app->response()->headers->set('Content-Type', 'application/json');
+            echo json_encode (json_decode ("{}"));
+        }
+
+    }catch(PDOException $e) {
+        $app->response()->setStatus(404);
+        $app->response()->headers->set('Content-Type', 'application/json');
+        echo json_encode (json_decode ("{}"));
+    }
+
 });
 
 $app->run();

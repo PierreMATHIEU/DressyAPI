@@ -3,17 +3,17 @@
 /**
  * Created by PhpStorm.
  * User: Piou
- * Date: 20/04/2017
- * Time: 21:59
+ * Date: 02/05/2017
+ * Time: 10:28
  */
-class Material
+class Color
 {
     public $id;
     public $libelle;
     public $id_fann;
 
     /**
-     * Material constructor.
+     * Color constructor.
      * @param $id
      * @param $libelle
      * @param $id_fann
@@ -72,5 +72,6 @@ class Material
     {
         $this->id_fann = $id_fann;
     }
+
 
 }

@@ -10,20 +10,23 @@ class Brand
 {
     public $id;
     public $libelle;
+    public $id_fann;
 
     /**
      * Brand constructor.
      * @param $id
      * @param $libelle
+     * @param $id_fann
      */
-    public function __construct($id=null, $libelle="")
+    public function __construct($id=0, $libelle="", $id_fann=0)
     {
         $this->id = $id;
         $this->libelle = $libelle;
+        $this->id_fann = $id_fann;
     }
 
     /**
-     * @return null
+     * @return int
      */
     public function getId()
     {
@@ -31,7 +34,7 @@ class Brand
     }
 
     /**
-     * @param null $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -54,6 +57,21 @@ class Brand
         $this->libelle = $libelle;
     }
 
+    /**
+     * @return int
+     */
+    public function getIdFann()
+    {
+        return $this->id_fann;
+    }
+
+    /**
+     * @param int $id_fann
+     */
+    public function setIdFann($id_fann)
+    {
+        $this->id_fann = $id_fann;
+    }
 
 
 }

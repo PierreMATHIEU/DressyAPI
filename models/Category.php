@@ -10,20 +10,23 @@ class Category
 {
     public $id;
     public $libelle;
+    public $id_fann;
 
     /**
      * Category constructor.
      * @param $id
      * @param $libelle
+     * @param $id_fann
      */
-    public function __construct($id=0, $libelle="")
+    public function __construct($id=0, $libelle="", $id_fann=0)
     {
         $this->id = $id;
         $this->libelle = $libelle;
+        $this->id_fann = $id_fann;
     }
 
     /**
-     * @return int
+     * @return mixed
      */
     public function getId()
     {
@@ -31,7 +34,7 @@ class Category
     }
 
     /**
-     * @param int $id
+     * @param mixed $id
      */
     public function setId($id)
     {
@@ -39,7 +42,7 @@ class Category
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getLibelle()
     {
@@ -47,12 +50,30 @@ class Category
     }
 
     /**
-     * @param string $libelle
+     * @param mixed $libelle
      */
     public function setLibelle($libelle)
     {
         $this->libelle = $libelle;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdFann()
+    {
+        return $this->id_fann;
+    }
+
+    /**
+     * @param mixed $id_fann
+     */
+    public function setIdFann($id_fann)
+    {
+        $this->id_fann = $id_fann;
+    }
+
+
 
 
 }

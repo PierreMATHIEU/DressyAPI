@@ -10,12 +10,12 @@ class Clothe
 {
     public $cloth_id;
     private $cloth_name;
-    private $cloth_color;
     private $cloth_reference;
     private $cloth_urlimage;
     private $cloth_category= array();
     private $cloth_brand=array();
     private $cloth_material = array();
+    private $cloth_color = array();
     private $user_id;
 
     /**
@@ -28,16 +28,16 @@ class Clothe
      * @param $cloth_brand
      * @param $cloth_material
      */
-       public function __construct($cloth_id=0,$cloth_name="", $cloth_color="", $cloth_reference=null, $cloth_urlimage=null, $cloth_category=array(), $cloth_brand=array(), $cloth_material=array(), $user_id=0)
+       public function __construct($cloth_id=0,$cloth_name="", $cloth_reference=null, $cloth_urlimage=null, $cloth_category=array(), $cloth_brand=array(), $cloth_material=array(), $cloth_color=array(), $user_id=0)
     {
         $this->cloth_id = $cloth_id;
         $this->cloth_name = $cloth_name;
-        $this->cloth_color = $cloth_color;
         $this->cloth_reference = $cloth_reference;
         $this->cloth_urlimage = $cloth_urlimage;
         $this->cloth_category = $cloth_category;
         $this->cloth_brand = $cloth_brand;
         $this->cloth_material = $cloth_material;
+        $this->cloth_color = $cloth_color;
         $this->user_id = $user_id;
     }
 
@@ -73,21 +73,6 @@ class Clothe
         $this->cloth_name = $cloth_name;
     }
 
-    /**
-     * @return string
-     */
-    public function getClothColor()
-    {
-        return $this->cloth_color;
-    }
-
-    /**
-     * @param string $cloth_color
-     */
-    public function setClothColor($cloth_color)
-    {
-        $this->cloth_color = $cloth_color;
-    }
 
     /**
      * @return null
@@ -168,6 +153,24 @@ class Clothe
     {
         $this->cloth_material = $cloth_material;
     }
+
+    /**
+     * @return array
+     */
+    public function getClothColor()
+    {
+        return $this->cloth_color;
+    }
+
+    /**
+     * @param array $cloth_color
+     */
+    public function setClothColor($cloth_color)
+    {
+        $this->cloth_color = $cloth_color;
+    }
+
+
 
     /**
      * @return mixed
