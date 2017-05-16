@@ -206,6 +206,37 @@ function echoRespnse($status_code, $response) {
     echo json_encode($response);
 }
 
+function imageBase64(){
+    $target_dir = "/var/www/html/uploads/";
+    $target_file_name = $target_dir.basename($_FILES["file"]["name"]);
+    $response = array();
+
+
+    if (isset($_FILES["file"]))
+    {
+        //Déplace un fichier téléchargé
+        if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file_name))
+        {
+            $success = true;
+            $message = "Successfully Uploaded";
+        }
+        else
+        {
+            $success = false;
+            $message = "Error while uploading";
+        }
+    }
+    else
+    {
+        $success = false;
+        $message = "Required Field Missing";
+    }
+
+    $response["success"] = $success;
+    $response["message"] = $message;
+    echo json_encode($response);
+}
+
 function base64_to_jpeg($base64_string, $output_file) {
     $ifp = fopen($output_file, "wb");
 
