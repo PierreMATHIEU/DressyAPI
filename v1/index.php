@@ -17,7 +17,9 @@ require_once '../models/Post.php';
 require_once '../models/Color.php';
 //require '../vendor/autoload.php';
 
+include '../../dressyNetwork/Models/Prepare.php';
 include '../../dressyNetwork/Models/Network.php';
+//include '../../dressyNetwork/index.php';
 
 \Slim\Slim::registerAutoloader();
 
@@ -1108,25 +1110,25 @@ $app->post('/getSimilarity', 'authenticate', function() use ($app) {
         $content = trim(file_get_contents("php://input"));
         $allPostVars = json_decode($content, true);
 
-        $clothe = new Clothe($allPostVars['cloth_id'],$allPostVars['cloth_name'],$allPostVars['cloth_reference'],$allPostVars['cloth_urlImage'],$allPostVars['cloth_category'],$allPostVars['cloth_brand'],$allPostVars['cloth_material'], $allPostVars['cloth_color'],$user_id);
+        $cloth_id = (!empty($allPostVars['cloth_id'])) ? $allPostVars['cloth_id'] : 0;
+        $cloth_name = (!empty($allPostVars['cloth_name'])) ? $allPostVars['cloth_name'] : "";
+        $cloth_reference = (!empty($allPostVars['cloth_reference'])) ? $allPostVars['cloth_reference'] : "";
+        $cloth_urlImage = (!empty($allPostVars['cloth_urlImage'])) ? $allPostVars['cloth_urlImage'] : "";
+        $cloth_category = (!empty($allPostVars['cloth_category'])) ? $allPostVars['cloth_category'] : array();
+        $cloth_brand = (!empty($allPostVars['cloth_brand'])) ? $allPostVars['cloth_brand'] : array();
+        $cloth_material = (!empty($allPostVars['cloth_material'])) ? $allPostVars['cloth_material'] : array();
+        $cloth_color = (!empty($allPostVars['cloth_color'])) ? $allPostVars['cloth_color'] : array();
+
+        $clothe= new Clothe($cloth_id,$cloth_name,$cloth_reference,$cloth_urlImage, $cloth_category ,$cloth_brand,$cloth_material, $cloth_color,$user_id);
 
         $category = $clothe->getClothCategory();
         $material = $clothe->getClothMaterial();
         $color = $clothe->getClothColor();
 
-        $fann = new Network(3,3,3,3,0.001,500000,1000);
+        $fann = new Network();
         $similarityTab = $fann->use($category['id_fann'],$material['id_fann'],$color['id_fann']);
-        $newSimilarirtTab = array();
-        foreach ($similarityTab as $value){
-            if((round($value,2,PHP_ROUND_HALF_UP)*100) % 2 == 0){
-                array_push($newSimilarirtTab,round($value,2,PHP_ROUND_HALF_UP));
-            }else{
-                array_push($newSimilarirtTab,round($value,2,PHP_ROUND_HALF_UP) - 0.01);
-            }
-        }
-
         $db = new DbClotheHandler();
-        $result = $db->getSimilarity($user_id, $newSimilarirtTab);
+        $result = $db->getSimilarity($user_id, $similarityTab);
 
         if($result){
             $response["listClothe"] = array();
