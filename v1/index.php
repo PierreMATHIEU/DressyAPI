@@ -15,11 +15,9 @@ require_once '../models/Brand.php';
 require_once '../models/Material.php';
 require_once '../models/Post.php';
 require_once '../models/Color.php';
-//require '../vendor/autoload.php';
 
 include '../../dressyNetwork/Models/Prepare.php';
 include '../../dressyNetwork/Models/Network.php';
-//include '../../dressyNetwork/index.php';
 
 \Slim\Slim::registerAutoloader();
 
@@ -180,7 +178,7 @@ function verifyRequiredParams($required_fields) {
 }
 
 /**
- * Validating email address
+ * Validation de l'adresse email
  */
 function validateEmail($email) {
     $app = \Slim\Slim::getInstance();
@@ -239,16 +237,6 @@ function imageBase64(){
     echo json_encode($response);
 }
 
-function base64_to_jpeg($base64_string, $output_file) {
-    $ifp = fopen($output_file, "wb");
-
-    $data = explode(',', $base64_string);
-
-    fwrite($ifp, base64_decode($data[1]));
-    fclose($ifp);
-
-    return $output_file;
-}
 /*----------------------------------------------------CLOTHE---------------------------------------------------------*/
 /**
  * create clothe
@@ -448,9 +436,10 @@ $app->post('/updateClothe', 'authenticate', function () use ($app) {
     }
 });
 
+
 /*----------------------------------------------------CLOTHES---------------------------------------------------------*/
 /**
- * create clothe
+ * Créer une tenue
  * url - /addClothe
  * method - POST
  * params - clothe
@@ -611,7 +600,7 @@ $app->post('/deleteClothes', 'authenticate', function() use ($app) {
 });
 
 /**
- * update clothes
+ * Met à jour une tenue
  * url - /updateClothes
  * method - POST
  * params - clothes

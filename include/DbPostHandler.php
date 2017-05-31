@@ -84,7 +84,7 @@ class DbPostHandler{
         }
     }
     /**
-     * get post : top 40
+     * get post : Last 40
      */
     public function viewLastPost($user_id){
         $postReponse = array();

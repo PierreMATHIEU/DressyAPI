@@ -280,7 +280,7 @@ class DbClotheHandler {
     }
 
     /**
-     * Create clothe
+     * Update clothe
      * @param Clothe $clothe, Array de clothid : $clotheArray
      */
     public function updateClothes($clothes, $clotheArray) {
